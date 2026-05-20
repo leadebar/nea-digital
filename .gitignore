@@ -1,0 +1,9 @@
+.next
+node_modules
+.env*
+.vercel
+.tools
+.pnpm.cjs
+.pnpm-latest.json
+.data
+*.log
