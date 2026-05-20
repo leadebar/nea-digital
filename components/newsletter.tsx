@@ -20,7 +20,7 @@ export function Newsletter() {
             <LeadForm source="home-weekly-reset" compact />
           </div>
           <Link href="/weekly-reset" className="mt-5 inline-flex text-sm font-medium text-olive underline underline-offset-8">
-            Voir la page du freebie
+            The Weekly Reset Checklist
           </Link>
         </MotionDiv>
         <MotionDiv {...reveal}>
