@@ -40,8 +40,9 @@ export const metadata: Metadata = {
   },         
   verification: {
     other: {
-      "p:domain_verify": "787c16db9f9201d42bed07da8ccf182f"
+      "p:domain_verify": "787c16db9f9201d42bed07da8ccf182f",
     },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
