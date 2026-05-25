@@ -37,7 +37,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Néa Digital",
     description: "Planners, templates et services pour organiser ton digital."
-  }
+  },         
+  verification: {
+    other: {
+      "p:domain_verify": "787c16db9f9201d42bed07da8ccf182f"
+    }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
