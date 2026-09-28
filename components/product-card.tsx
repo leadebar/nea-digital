@@ -9,11 +9,13 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="p-6">
         <div className="mb-4 flex items-center justify-between gap-4">
           <p className="eyebrow text-[11px] text-taupe">{product.category}</p>
-          <p className="text-sm text-ink/60">{product.price}</p>
+          <p className="text-sm text-ink/60">{product.comingSoon ? "Prochainement" : product.price}</p>
         </div>
         <h3 className="editorial-title text-3xl text-ink">{product.name}</h3>
         <p className="mt-3 text-sm leading-7 text-ink/62">{product.summary}</p>
-        <span className="mt-6 inline-flex border-b border-olive pb-1 text-sm font-medium text-olive">Voir la ressource</span>
+        <span className="mt-6 inline-flex border-b border-olive pb-1 text-sm font-medium text-olive">
+          {product.comingSoon ? "Découvrir en avant-première" : "Voir la ressource"}
+        </span>
       </div>
     </Link>
   );

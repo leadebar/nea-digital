@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     "marketing digital",
     "stratégie digitale",
     "Pinterest",
-    "TikTok",
     "outils digitaux",
     "templates digitaux",
     "optimisation web"

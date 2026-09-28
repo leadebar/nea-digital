@@ -15,6 +15,7 @@ export default function ShopPage() {
       <div className="max-w-3xl">
         <p className="eyebrow mb-5 text-xs text-taupe">Boutique</p>
         <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">Boutique de planners digitaux, templates et ressources d'organisation.</h1>
+        <p className="mt-5 text-sm text-ink/55">Les ressources arrivent prochainement. Un aperçu en avant-première, juste en dessous.</p>
       </div>
       <div className="mt-10 flex flex-wrap gap-2">
         {filters.map((filter) => (

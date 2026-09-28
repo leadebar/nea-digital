@@ -11,7 +11,7 @@ import { posts } from "@/data/posts";
 export const metadata: Metadata = {
   title: "Téléchargement confirmé",
   description:
-    "Télécharge The Weekly Reset Checklist et découvre les ressources premium Néa Digital pour organiser ta semaine.",
+    "Télécharge Le Brief Prêt-à-Remplir et prépare ton projet avant le premier échange avec Néa Digital.",
   robots: {
     index: false,
     follow: true
@@ -19,8 +19,7 @@ export const metadata: Metadata = {
 };
 
 const socialLinks = [
-  { label: "Pinterest", href: "https://www.pinterest.com/" },
-  { label: "TikTok", href: "https://www.tiktok.com/" }
+  { label: "Pinterest", href: "https://www.pinterest.com/" }
 ];
 
 export default function DownloadSuccessPage() {
@@ -30,10 +29,10 @@ export default function DownloadSuccessPage() {
         <MotionDiv {...reveal}>
           <p className="eyebrow mb-5 text-xs text-taupe">Téléchargement prêt</p>
           <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">
-            Ta checklist est disponible.
+            Ton brief est disponible.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink/66">
-            Télécharge le PDF, fais ton reset, puis garde les ressources premium sous la main si tu veux structurer davantage.
+            Télécharge le PDF, remplis-le à ton rythme, puis envoie-le via la page contact pour qu'on en parle ensemble.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -44,7 +43,7 @@ export default function DownloadSuccessPage() {
               <Download className="h-4 w-4" />
               Télécharger le PDF
             </a>
-            <Button href="/shop" variant="light">Voir les ressources premium</Button>
+            <Button href="/services" variant="light">Voir les services</Button>
           </div>
         </MotionDiv>
         <MotionDiv {...reveal}>
@@ -57,10 +56,10 @@ export default function DownloadSuccessPage() {
           <div>
             <p className="eyebrow mb-4 text-xs text-taupe">Réseaux</p>
             <h2 className="display-title text-2xl leading-tight text-ink md:text-4xl">
-              Retrouve Néa Digital sur Pinterest et TikTok.
+              Retrouve Néa Digital sur Pinterest.
             </h2>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-3 sm:max-w-xs">
             {socialLinks.map((link) => (
               <Link
                 key={link.label}

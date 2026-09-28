@@ -108,7 +108,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <div className="text-[10px] tracking-[0.15em] uppercase text-white/30 mb-2">contact.neadigital@gmail.com</div>
-                <div className="text-[10px] tracking-[0.15em] uppercase text-white/30">TikTok · Pinterest</div>
+                <div className="text-[10px] tracking-[0.15em] uppercase text-white/30">Pinterest</div>
               </div>
             </div>
           </div>

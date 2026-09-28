@@ -10,13 +10,13 @@ import { weeklyResetFreebie } from "@/data/freebies";
 import { offers } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "La Checklist Audit de Présence Digitale",
+  title: "Le Brief Prêt-à-Remplir",
   description:
-    "Télécharge la Checklist Audit de Présence Digitale, un freebie Néa Digital pour faire le point sur ton site, ton SEO et tes réseaux en 20 minutes.",
+    "Télécharge Le Brief Prêt-à-Remplir, un freebie Néa Digital pour préparer ton projet avant le premier échange.",
   openGraph: {
-    title: "La Checklist Audit de Présence Digitale | Néa Digital",
+    title: "Le Brief Prêt-à-Remplir | Néa Digital",
     description:
-      "Un freebie pour faire le point sur ta présence en ligne en 20 minutes.",
+      "Un freebie pour arriver au premier échange avec un projet déjà clair.",
     url: "/weekly-reset"
   }
 };
@@ -57,7 +57,7 @@ export default function WeeklyResetPage() {
           <div>
             <p className="eyebrow mb-4 text-xs text-taupe">Aperçu</p>
             <h2 className="display-title text-2xl leading-tight text-ink md:text-4xl">
-              Un diagnostic court, utile, sans remplacer un audit complet.
+              Un document court, pour arriver prêt·e au premier échange.
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -80,7 +80,7 @@ export default function WeeklyResetPage() {
           <MotionDiv {...reveal}>
             <p className="eyebrow mb-4 text-xs text-taupe">Téléchargement gratuit</p>
             <h2 className="display-title text-2xl leading-tight text-ink md:text-4xl">
-              Reçois la checklist maintenant.
+              Reçois le brief maintenant.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-ink/65">
               Entre ton email et accède au PDF. Simple, rapide, sans créer de compte.
@@ -100,7 +100,7 @@ export default function WeeklyResetPage() {
             <Sparkles className="mx-auto mb-6 h-6 w-6 text-olive" />
             <p className="eyebrow mb-4 text-xs text-taupe">Aller plus loin</p>
             <h2 className="display-title text-2xl leading-tight text-ink md:text-4xl">
-              La checklist donne le diagnostic. Les services vont plus loin.
+              Le brief pose le cadre. Les services passent à l'action.
             </h2>
           </MotionDiv>
           <div className="mt-12 grid gap-6 md:grid-cols-3">

@@ -20,47 +20,43 @@ export type Freebie = {
 
 export const weeklyResetFreebie: Freebie = {
   slug: "weekly-reset",
-  name: "La Checklist Audit de Présence Digitale",
+  name: "Le Brief Prêt-à-Remplir",
   eyebrow: "Freebie",
-  headline: "Faites le point sur votre présence en ligne en 20 minutes.",
+  headline: "Arrivez au premier échange avec un projet déjà clair.",
   description:
-    "Une checklist courte pour vérifier ce qui fonctionne, ce qui bloque et ce qu'il faut corriger en premier sur votre site, votre SEO et vos réseaux.",
-  pages: "5 pages",
-  filePath: "/freebies/audit-presence-digitale.pdf",
-  fileName: "audit-presence-digitale.pdf",
+    "Un document court à remplir avant qu'on se parle : objectifs, existant, contraintes, inspirations. De quoi gagner du temps dès le premier rendez-vous.",
+  pages: "4 pages",
+  filePath: "/freebies/brief-pret-a-remplir.pdf",
+  fileName: "brief-pret-a-remplir.pdf",
   benefits: [
-    "Repérer les points bloquants de votre site en quelques minutes.",
-    "Vérifier les bases du SEO sans jargon technique.",
-    "Faire le tri entre ce qui est urgent et ce qui peut attendre.",
-    "Arriver au premier échange avec une vision claire de vos priorités."
+    "Clarifier ses objectifs avant même le premier échange.",
+    "Réunir en un seul document ce qui existe déjà (site, réseaux, contenus).",
+    "Gagner du temps sur le premier rendez-vous.",
+    "Arriver avec des attentes précises, pas juste une idée floue."
   ],
   preview: [
     {
-      title: "Site",
-      text: "Vitesse, affichage mobile, structure : les points à vérifier en premier."
+      title: "Objectifs",
+      text: "Ce que vous voulez atteindre, concrètement."
     },
     {
-      title: "SEO",
-      text: "Les bases pour être trouvé sur Google, expliquées simplement."
+      title: "Existant",
+      text: "Ce qui existe déjà : site, réseaux, contenus, outils."
     },
     {
-      title: "Contenu",
-      text: "Ce qui manque pour donner envie de rester ou de revenir."
+      title: "Contraintes",
+      text: "Délais, budget approximatif, points de vigilance."
     },
     {
-      title: "Réseaux",
-      text: "Cohérence et régularité, avant la quantité."
-    },
-    {
-      title: "Priorités",
-      text: "Un tri simple pour savoir par quoi commencer."
+      title: "Inspirations",
+      text: "Ce que vous aimez, ce que vous voulez éviter."
     }
   ],
   faq: [
     {
-      question: "Ce freebie remplace-t-il un audit complet ?",
+      question: "Ce document remplace-t-il un premier échange ?",
       answer:
-        "Non. C'est un point de départ pour repérer vos priorités. Néa Strategy va plus loin avec une analyse complète et un plan d'action détaillé."
+        "Non. Il le prépare. On en reparle ensemble pour affiner et répondre à vos questions."
     },
     {
       question: "Comment je le reçois ?",
@@ -70,7 +66,7 @@ export const weeklyResetFreebie: Freebie = {
     {
       question: "C'est technique ?",
       answer:
-        "Non. Chaque point est expliqué simplement, sans jargon, pour être utilisable même sans connaissances techniques."
+        "Non. Aucune connaissance technique ou marketing n'est nécessaire pour le remplir."
     },
     {
       question: "Vais-je recevoir trop d'emails ?",

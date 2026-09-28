@@ -22,10 +22,19 @@ export function ProductLanding({
         <div>
           <p className="eyebrow mb-5 text-xs text-taupe">{theme}</p>
           <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">{product.name}</h1>
+          {product.comingSoon ? (
+            <span className="mt-5 inline-flex rounded-[4px] bg-ink px-3 py-1.5 text-[10px] font-medium tracking-[0.1em] uppercase text-porcelain">
+              Prochainement
+            </span>
+          ) : null}
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink/65">{promise}</p>
           <p className="mt-4 max-w-xl text-sm leading-7 text-ink/58">{product.description}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/contact">{product.ctaLabel}</Button>
+            {product.comingSoon ? (
+              <Button href="/contact">Être prévenu·e de la sortie</Button>
+            ) : (
+              <Button href="/contact">{product.ctaLabel}</Button>
+            )}
             <Button href="#details" variant="light">Voir les fichiers inclus</Button>
           </div>
         </div>
@@ -114,7 +123,7 @@ export function ProductLanding({
       </section>
       <Newsletter />
       <div className="fixed inset-x-4 bottom-4 z-30 md:hidden">
-        <Button href="/contact">Commander {product.price}</Button>
+        <Button href="/contact">{product.comingSoon ? "Être prévenu·e de la sortie" : `Commander ${product.price}`}</Button>
       </div>
     </main>
   );

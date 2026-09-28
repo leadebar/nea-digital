@@ -139,5 +139,108 @@ export const posts: Post[] = [
         ]
       }
     ]
+  },
+  {
+    slug: "combien-de-temps-pour-voir-des-resultats",
+    title: "Combien de temps pour voir des résultats en marketing digital",
+    excerpt: "SEO, contenu, notoriété : des délais réalistes pour ne pas juger une action trop tôt, ni attendre trop longtemps avant d'ajuster.",
+    category: "Stratégie",
+    date: "2026-09-08",
+    readTime: "6 min",
+    image: "https://images.pexels.com/photos/30332440/pexels-photo-30332440.jpeg",
+    sections: [
+      {
+        id: "pas-immediat",
+        heading: "Rien n'est instantané, mais tout n'est pas long non plus",
+        paragraphs: [
+          "Une refonte de site peut changer la perception d'un visiteur immédiatement. Un référencement naturel, lui, prend généralement plusieurs mois avant de produire des résultats visibles. Confondre les deux délais mène à de mauvaises décisions : arrêter une action SEO trop tôt, ou attendre trop longtemps avant de corriger un site qui ne convertit pas."
+        ]
+      },
+      {
+        id: "reperes",
+        heading: "Des repères, pas des promesses",
+        paragraphs: [
+          "Le SEO demande généralement 3 à 6 mois avant les premiers effets mesurables, et plus encore sur des mots-clés concurrentiels. Le contenu régulier (newsletter, réseaux) construit la confiance sur la durée : les effets se voient sur plusieurs mois d'affilée, rarement sur une seule publication. Un site refondu peut, lui, améliorer la conversion dès sa mise en ligne.",
+          "Ces repères ne sont pas des garanties : ils dépendent du secteur, de la concurrence et du point de départ. Ils servent surtout à fixer les bonnes attentes avant de commencer."
+        ]
+      },
+      {
+        id: "mesurer",
+        heading: "Mesurer sans se focaliser sur le mauvais chiffre",
+        paragraphs: [
+          "Le trafic seul ne dit rien de la performance réelle. Ce qui compte, c'est le nombre de contacts ou de ventes générés, et l'évolution mois après mois plutôt que semaine après semaine.",
+          "Un point mensuel, avec deux ou trois indicateurs suivis dans la durée, donne une vision plus fiable qu'un tableau de bord consulté tous les jours."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "relancer-sa-newsletter-sans-repartir-de-zero",
+    title: "Relancer sa newsletter sans repartir de zéro",
+    excerpt: "Une liste qui dort depuis des mois n'est pas perdue. Voici comment la réactiver sans donner l'impression de réapparaître par surprise.",
+    category: "Contenu",
+    date: "2026-08-25",
+    readTime: "6 min",
+    image: "https://images.pexels.com/photos/5706021/pexels-photo-5706021.jpeg",
+    sections: [
+      {
+        id: "pas-perdue",
+        heading: "Une liste inactive n'est pas une liste morte",
+        paragraphs: [
+          "Une base d'abonnés qui n'a pas reçu d'email depuis longtemps garde de la valeur : ces personnes se sont inscrites volontairement à un moment donné. La question n'est pas de repartir de zéro, mais de recréer le lien sans faire comme si de rien n'était."
+        ]
+      },
+      {
+        id: "reprise",
+        heading: "Reconnaître la pause plutôt que l'ignorer",
+        paragraphs: [
+          "Le premier email de reprise gagne à assumer le silence : dire simplement qu'on n'a pas écrit depuis un moment, et pourquoi on revient, passe mieux qu'un email qui fait comme si la newsletter n'avait jamais été interrompue.",
+          "Cet email sert à réengager, pas à tout annoncer d'un coup. Il vaut mieux qu'il soit court et qu'il donne une bonne raison de continuer à lire."
+        ]
+      },
+      {
+        id: "rythme",
+        heading: "Reprendre à un rythme tenable",
+        paragraphs: [
+          "Repartir sur un rythme trop ambitieux (une newsletter par semaine après six mois de silence) mène souvent à une nouvelle interruption. Un rythme mensuel, tenu régulièrement, construit plus de confiance qu'un rythme hebdomadaire abandonné après trois envois.",
+          "Il est toujours possible d'accélérer une fois que le rythme de base est stable."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "seo-local-etre-visible-dans-sa-ville",
+    title: "SEO local : être visible dans sa ville avant tout",
+    excerpt: "Avant de viser un référencement national, s'assurer d'apparaître pour les recherches faites près de chez soi change souvent plus de choses.",
+    category: "Web & SEO",
+    date: "2026-08-04",
+    readTime: "6 min",
+    image: "https://images.pexels.com/photos/7663519/pexels-photo-7663519.jpeg",
+    sections: [
+      {
+        id: "priorite",
+        heading: "Pourquoi le local passe souvent avant le national",
+        paragraphs: [
+          "Pour une activité qui dépend d'une zone géographique, apparaître sur une recherche large et concurrentielle a moins d'impact qu'apparaître sur une recherche locale, faite par quelqu'un déjà prêt à passer à l'action.",
+          "Le volume de recherche est plus faible, mais l'intention est plus forte : une personne qui cherche un service près de chez elle est souvent plus proche de la décision."
+        ]
+      },
+      {
+        id: "bases",
+        heading: "Les bases à vérifier en premier",
+        paragraphs: [
+          "La fiche d'établissement Google doit être complète et à jour : adresse, horaires, catégorie, photos récentes.",
+          "Le nom de la ville ou de la zone d'intervention doit apparaître naturellement dans les titres et les textes du site, sans être répété de façon artificielle.",
+          "Les informations doivent être cohérentes partout où elles apparaissent : site, réseaux, annuaires professionnels."
+        ]
+      },
+      {
+        id: "avis",
+        heading: "Les avis comptent plus qu'on ne le pense",
+        paragraphs: [
+          "Le nombre et la régularité des avis influencent à la fois la confiance des visiteurs et le classement local. Demander un avis après une prestation réussie, simplement et au bon moment, reste l'un des leviers les plus efficaces et les moins coûteux."
+        ]
+      }
+    ]
   }
 ];

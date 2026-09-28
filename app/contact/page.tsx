@@ -49,7 +49,7 @@ export default function ContactPage() {
               {[
                 { label: "Email", val: "contact.neadigital@gmail.com" },
                 { label: "Réponse", val: "Sous 48h ouvrées" },
-                { label: "Réseaux", val: "TikTok · Pinterest" },
+                { label: "Réseaux", val: "Pinterest" },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
                   <div className="w-[5px] h-[5px] rounded-full bg-[#B08D57] shrink-0 mt-[5px]" />

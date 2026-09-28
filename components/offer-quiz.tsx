@@ -4,37 +4,44 @@ import { useState } from "react";
 import { StrategyIcon, ContentIcon, WebIcon, HarmonyIcon } from "@/components/offer-icons";
 import { offers, fullHarmony } from "@/data/site";
 
-type Score = { strategy: number; content: number; web: number };
+type Key = "strategy" | "content" | "web";
+type Score = Record<Key, number>;
+
+type Option = {
+  label: string;
+  score?: Partial<Score>;
+  harmony?: true;
+};
 
 type Question = {
   prompt: string;
-  options: { label: string; score: Partial<Score> }[];
+  options: Option[];
 };
 
 const questions: Question[] = [
   {
-    prompt: "Qu'est-ce qui vous freine le plus aujourd'hui ?",
+    prompt: "Quel est votre principal besoin aujourd'hui ?",
     options: [
-      { label: "Je ne sais pas où j'en suis, ni par où commencer", score: { strategy: 2 } },
-      { label: "Je n'ai pas le temps de publier régulièrement", score: { content: 2 } },
-      { label: "Mon site ne reflète pas mon activité, ou n'existe pas encore", score: { web: 2 } },
-      { label: "Un peu tout à la fois", score: { strategy: 1, content: 1, web: 1 } }
+      { label: "Savoir où j'en suis et quoi faire en premier", score: { strategy: 3 } },
+      { label: "Publier du contenu régulièrement sans y passer mes soirées", score: { content: 3 } },
+      { label: "Un site qui donne envie de me contacter", score: { web: 3 } },
+      { label: "Être accompagné·e sur tout, du site à la communication", harmony: true }
     ]
   },
   {
-    prompt: "Où en est votre site internet ?",
+    prompt: "Où en est votre site aujourd'hui ?",
     options: [
-      { label: "Il existe et fonctionne plutôt bien", score: { strategy: 1, content: 1 } },
-      { label: "Il existe mais mérite d'être revu", score: { web: 2 } },
-      { label: "Je n'en ai pas encore", score: { web: 2 } }
+      { label: "Je n'en ai pas encore", score: { web: 2 } },
+      { label: "Il existe mais ne me ressemble plus", score: { web: 2 } },
+      { label: "Il fonctionne bien, ce n'est pas la priorité", score: { strategy: 1, content: 1 } }
     ]
   },
   {
-    prompt: "Combien de temps voulez-vous y consacrer chaque semaine ?",
+    prompt: "Qu'est-ce qui vous ferait gagner le plus de temps ?",
     options: [
-      { label: "Aucun, je préfère déléguer entièrement", score: { strategy: 1, content: 1, web: 1 } },
-      { label: "Un peu, mais pas la rédaction", score: { content: 2 } },
-      { label: "Je veux garder la main, juste être bien conseillé", score: { strategy: 2 } }
+      { label: "Ne plus avoir à écrire moi-même", score: { content: 2 } },
+      { label: "Avoir un plan clair à suivre", score: { strategy: 2 } },
+      { label: "Ne plus avoir à penser à tout ça", harmony: true }
     ]
   }
 ];
@@ -45,14 +52,18 @@ const offerIcons = { strategy: StrategyIcon, content: ContentIcon, web: WebIcon 
 export function OfferQuiz() {
   const [step, setStep] = useState(0);
   const [score, setScore] = useState<Score>({ strategy: 0, content: 0, web: 0 });
+  const [forceHarmony, setForceHarmony] = useState(false);
   const [done, setDone] = useState(false);
 
-  const answer = (points: Partial<Score>) => {
-    setScore((prev) => ({
-      strategy: prev.strategy + (points.strategy ?? 0),
-      content: prev.content + (points.content ?? 0),
-      web: prev.web + (points.web ?? 0)
-    }));
+  const answer = (opt: Option) => {
+    if (opt.harmony) setForceHarmony(true);
+    if (opt.score) {
+      setScore((prev) => ({
+        strategy: prev.strategy + (opt.score?.strategy ?? 0),
+        content: prev.content + (opt.score?.content ?? 0),
+        web: prev.web + (opt.score?.web ?? 0)
+      }));
+    }
     if (step < questions.length - 1) {
       setStep(step + 1);
     } else {
@@ -63,15 +74,16 @@ export function OfferQuiz() {
   const restart = () => {
     setStep(0);
     setScore({ strategy: 0, content: 0, web: 0 });
+    setForceHarmony(false);
     setDone(false);
   };
 
-  const entries = Object.entries(score) as [keyof Score, number][];
+  const entries = Object.entries(score) as [Key, number][];
   const max = Math.max(...entries.map(([, v]) => v));
   const top = entries.filter(([, v]) => v === max).map(([k]) => k);
-  const isHarmony = top.length >= 2 || max === 0;
+  const isHarmony = forceHarmony || top.length >= 2 || max === 0;
   const winningKey = top[0] ?? "strategy";
-  const ResultIcon = isHarmony ? HarmonyIcon : offerIcons[winningKey as keyof typeof offerIcons];
+  const ResultIcon = isHarmony ? HarmonyIcon : offerIcons[winningKey];
 
   return (
     <div className="nea-reveal mx-auto max-w-2xl rounded-[8px] bg-white p-9 md:p-12 shadow-[0_30px_80px_rgba(28,26,26,0.06)]">
@@ -95,7 +107,7 @@ export function OfferQuiz() {
             {questions[step].options.map((opt) => (
               <button
                 key={opt.label}
-                onClick={() => answer(opt.score)}
+                onClick={() => answer(opt)}
                 className="group flex items-center justify-between gap-4 rounded-[4px] border border-[#EDE8DF] px-5 py-4 text-left text-[14px] text-[#1C1A1A] transition-all duration-250 hover:border-[#B08D57] hover:bg-[#F5F1EB]"
               >
                 {opt.label}

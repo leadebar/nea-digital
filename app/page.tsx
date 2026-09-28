@@ -141,10 +141,9 @@ export default function Home() {
 
         {/* ── QUIZ ── */}
         <section className="bg-[#F5F1EB] px-12 pb-24">
-          <div className="nea-reveal text-center max-w-xl mx-auto mb-12">
-            <SectionTag>30 secondes chrono</SectionTag>
-            <h2 className="font-['Museo_Moderno'] text-[clamp(26px,3.2vw,40px)] leading-[1.2] text-[#1C1A1A]">Vous ne savez pas par où commencer ?</h2>
-            <p className="text-[14px] text-[#7A7470] leading-[1.8] mt-4">Trois questions rapides pour savoir quelle offre correspond le mieux à votre situation.</p>
+          <div className="nea-reveal">
+            <SectionTag>Quelle offre pour vous</SectionTag>
+            <h2 className="font-['Museo_Moderno'] text-[clamp(24px,3vw,34px)] leading-[1.2] text-[#1C1A1A] mb-10">Trouvez votre offre en 3 questions.</h2>
           </div>
           <OfferQuiz />
         </section>

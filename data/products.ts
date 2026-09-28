@@ -3,6 +3,7 @@ export type Product = {
   name: string;
   category: string;
   price: string;
+  comingSoon?: boolean;
   summary: string;
   href: string;
   accent: string;
@@ -24,6 +25,7 @@ export const products: Product[] = [
     name: "Néa Digital Planner",
     category: "Organisation",
     price: "29 EUR",
+    comingSoon: true,
     summary: "Planifie tes semaines, tes objectifs et tes projets au même endroit.",
     href: "/products/digital-planner",
     accent: "linen",
@@ -98,6 +100,7 @@ export const products: Product[] = [
     name: "90 Days Reset",
     category: "Reset personnel",
     price: "34 EUR",
+    comingSoon: true,
     summary: "Un plan de 90 jours pour faire le point et reprendre une routine stable.",
     href: "/products/90-days-reset",
     accent: "sand",
@@ -141,6 +144,7 @@ export const products: Product[] = [
     name: "Finance Planner",
     category: "Finances personnelles",
     price: "27 EUR",
+    comingSoon: true,
     summary: "Suis ton budget, tes dépenses, ton épargne et tes objectifs.",
     href: "/products/finance-planner",
     accent: "olive",
