@@ -12,12 +12,6 @@ import { offers, fullHarmony, processSteps, servicesFaq } from "@/data/site";
 
 const offerIcons = { strategy: StrategyIcon, content: ContentIcon, web: WebIcon } as const;
 
-const credentials = [
-  "Cheffe de projet marketing digital — Michaël Zingraf Christie's International Real Estate",
-  "Master Marketing du Luxe — ISG Luxury Nice",
-  "5 ans d'expérience en marketing digital",
-];
-
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
 
 function SectionTag({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -71,16 +65,16 @@ export default function Home() {
             className="text-[#1C1A1A] relative"
             style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(48px,8vw,104px)", lineHeight: 0.98, letterSpacing: "0.02em" }}
           >
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) both" }}>UNE PRÉSENCE DIGITALE</span>
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>À VOTRE HAUTEUR</span>
+            <span className="block" style={{ animation: "nea-reveal 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) both" }}>STRATÉGIE, CONTENU,</span>
+            <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>SITE WEB.</span>
           </h1>
 
           <p className="text-[#7A7470] relative mt-4 mb-7 italic font-light" style={{ fontFamily: "'Museo_Moderno','Museo Moderno',serif", fontSize: "clamp(17px,2.2vw,24px)", animation: "nea-fade-up 0.8s 0.85s both" }}>
-            stratégie, contenu et site, pensés avec exigence.
+            Néa Digital, par Léa Debar.
           </p>
 
           <p className="text-[15px] font-light text-[#5C564F] leading-[1.85] max-w-[540px] mx-auto mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
-            Néa Digital accompagne <strong className="text-[#1C1A1A] font-medium">entreprises, marques et indépendants</strong> qui veulent une présence en ligne réfléchie — pas seulement un site de plus.
+            J'aide les entreprises, les marques et les indépendants à construire une présence en ligne qui tient debout : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie qui a du sens pour votre activité.
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap relative" style={{ animation: "nea-fade-up 0.8s 1.15s both" }}>
@@ -89,22 +83,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── PARCOURS / CRÉDIBILITÉ ── */}
-        <section className="bg-white px-12 py-14 border-y border-[#EDE8DF]">
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 max-w-4xl mx-auto">
-            {credentials.map((c) => (
-              <p key={c} className="text-[12px] text-[#7A7470] tracking-[0.02em] text-center">
-                {c}
-              </p>
-            ))}
-          </div>
-        </section>
-
         {/* ── OFFRES ── */}
         <section id="services" className="bg-[#F5F1EB] px-12 py-24">
           <div className="nea-reveal">
             <SectionTag>Ce que je fais</SectionTag>
-            <SectionTitle>Trois offres <em className="italic font-light text-[#8A8177]">claires</em>,<br />un même niveau d'exigence.</SectionTitle>
+            <SectionTitle>Trois façons de travailler ensemble.</SectionTitle>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
             {offers.map((offer, i) => {
@@ -156,7 +139,7 @@ export default function Home() {
         <section className="bg-white px-12 py-24">
           <div className="nea-reveal">
             <SectionTag>Ma méthode</SectionTag>
-            <SectionTitle>Comment je <em className="italic font-light text-[#8A8177]">travaille</em>.</SectionTitle>
+            <SectionTitle>Comment ça se passe.</SectionTitle>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-0.5">
             {processSteps.map((step, i) => (
@@ -173,7 +156,7 @@ export default function Home() {
         <section className="bg-[#F5F1EB] px-12 py-24">
           <div className="nea-reveal">
             <SectionTag>Blog</SectionTag>
-            <SectionTitle>Articles sur le marketing digital,<br />le SEO et <em className="italic font-light text-[#8A8177]">la stratégie de marque</em>.</SectionTitle>
+            <SectionTitle>Ce que j'écris sur le marketing digital et le SEO.</SectionTitle>
           </div>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {posts.map((post) => <BlogCard key={post.slug} post={post} />)}

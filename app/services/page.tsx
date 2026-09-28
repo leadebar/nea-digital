@@ -35,14 +35,13 @@ export default function ServicesPage() {
               <span className="w-7 h-px bg-[#B08D57]" />
             </div>
             <h1 className="text-[#1C1A1A] mb-4 leading-none" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(44px,7vw,80px)", letterSpacing: "0.02em" }}>
-              <span className="block" style={{ animation: "pro-reveal 0.9s 0.35s both" }}>UNE PRÉSENCE DIGITALE</span>
-              <span className="block" style={{ animation: "pro-reveal 0.9s 0.5s both" }}>PENSÉE AVEC EXIGENCE.</span>
+              <span className="block" style={{ animation: "pro-reveal 0.9s 0.35s both" }}>MES SERVICES</span>
             </h1>
             <p className="italic font-light text-[#7A7470] mb-8" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(16px,2vw,20px)", animation: "pro-fade-up 0.8s 0.8s both" }}>
               trois offres, un pack complet.
             </p>
             <p className="text-[14px] font-light text-[#5C564F] leading-[1.85] max-w-[440px] mx-auto mb-11" style={{ animation: "pro-fade-up 0.8s 0.95s both" }}>
-              J'accompagne <strong className="text-[#1C1A1A] font-medium">entreprises, marques et indépendants</strong> qui veulent une présence en ligne à la hauteur de ce qu'ils proposent.
+              J'accompagne <strong className="text-[#1C1A1A] font-medium">entreprises, marques et indépendants</strong> qui veulent un site qui marche et une communication qui tient dans la durée.
             </p>
             <div className="flex gap-4 flex-wrap justify-center" style={{ animation: "pro-fade-up 0.8s 1.1s both" }}>
               <a href="/contact" className="pro-btn-dark"><span>Devis gratuit →</span></a>
@@ -67,7 +66,7 @@ export default function ServicesPage() {
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Ce que je fais</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(26px,3.2vw,40px)] text-[#1C1A1A] leading-[1.2]">
-              Trois offres <em className="italic font-light text-[#8A8177]">claires</em><br />et des livrables soignés.
+              Trois offres, prises séparément ou ensemble.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
@@ -108,7 +107,7 @@ export default function ServicesPage() {
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#B08D57]">Pack recommandé</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(26px,3.2vw,40px)] text-white leading-[1.2]">
-              {fullHarmony.name} <em className="italic font-light text-[#B08D57]">— tout réuni.</em>
+              {fullHarmony.name}
             </h2>
           </div>
           <div className="pro-reveal bg-[#F5F1EB] p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 items-center">
@@ -136,7 +135,7 @@ export default function ServicesPage() {
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Comment ça marche</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(26px,3.2vw,40px)] text-[#1C1A1A] leading-[1.2]">
-              De la prise de contact<br />à la <em className="italic font-light text-[#8A8177]">livraison.</em>
+              De la prise de contact à la livraison.
             </h2>
           </div>
         </section>

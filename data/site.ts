@@ -14,40 +14,40 @@ export const offers = [
     num: "01",
     key: "strategy",
     title: "Néa Strategy",
-    tagline: "Un diagnostic clair, un plan d'action précis.",
-    desc: "Audit de votre présence digitale, analyse de votre positionnement et feuille de route priorisée pour les mois à venir.",
+    tagline: "Savoir où vous en êtes, et quoi faire ensuite.",
+    desc: "J'audite votre présence en ligne et vos concurrents, puis je vous donne un plan d'action concret, dans l'ordre.",
     items: ["Audit de présence digitale", "Analyse de positionnement et de concurrence", "Plan d'action priorisé", "Recommandations argumentées"]
   },
   {
     num: "02",
     key: "content",
     title: "Néa Content",
-    tagline: "Une prise de parole régulière et cohérente.",
-    desc: "Newsletter, articles, réseaux sociaux : un contenu pensé pour votre image de marque et votre audience, sans y passer vos journées.",
+    tagline: "Du contenu qui sort régulièrement, sans retomber sur vous.",
+    desc: "Newsletter, articles de blog, réseaux sociaux : je gère la rédaction et le calendrier, vous gardez la main sur le fond.",
     items: ["Newsletter", "Articles de blog SEO", "Contenu réseaux sociaux", "Calendrier éditorial"]
   },
   {
     num: "03",
     key: "web",
     title: "Néa Web",
-    tagline: "Un site à la hauteur de ce que vous proposez.",
-    desc: "Création ou refonte de site, pensé pour représenter votre marque, se trouver sur Google et convertir vos visiteurs.",
+    tagline: "Un site qui marche, pas juste qui existe.",
+    desc: "Création ou refonte : un site rapide, bien structuré pour Google, avec un vrai chemin vers le contact ou l'achat.",
     items: ["Création ou refonte de site", "Architecture & configuration technique", "SEO intégré dès la conception", "Formulaire de contact & conversion"]
   }
 ];
 
 export const fullHarmony = {
   name: "Full Harmony",
-  tagline: "Le pack complet : stratégie, contenu et site réunis.",
-  desc: "Pour qui veut une présence digitale cohérente de bout en bout, portée par un seul interlocuteur plutôt que plusieurs prestataires à coordonner.",
-  items: ["Tout Néa Strategy", "Tout Néa Content", "Tout Néa Web", "Un interlocuteur unique, un suivi mensuel"]
+  tagline: "Stratégie, contenu et site, réunis.",
+  desc: "Les trois offres ensemble, pour ne pas avoir à coordonner plusieurs prestataires vous-même.",
+  items: ["Tout Néa Strategy", "Tout Néa Content", "Tout Néa Web", "Un seul interlocuteur, un suivi mensuel"]
 };
 
 export const processSteps = [
-  { num: "01", title: "Premier échange", desc: "On prend le temps de comprendre votre activité, votre positionnement et vos objectifs." },
-  { num: "02", title: "Proposition détaillée", desc: "Un devis argumenté sous 48h, adapté à votre besoin réel — sans engagement de votre part." },
-  { num: "03", title: "Exécution suivie", desc: "50% à la commande, 50% à la livraison. Vous êtes informé·e à chaque étape." },
-  { num: "04", title: "Livraison & suivi", desc: "Un livrable soigné, dans les délais annoncés, avec un suivi mensuel disponible." }
+  { num: "01", title: "Premier échange", desc: "On parle de votre activité, de ce qui bloque et de ce que vous voulez atteindre." },
+  { num: "02", title: "Devis", desc: "Une proposition chiffrée sous 48h, sans engagement." },
+  { num: "03", title: "Travail", desc: "50% à la commande, 50% à la livraison. Vous savez où ça en est à chaque étape." },
+  { num: "04", title: "Livraison", desc: "Dans les délais annoncés. Un suivi mensuel reste possible ensuite." }
 ];
 
 // FAQ affichée sur la home et la page /services.

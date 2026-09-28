@@ -2,13 +2,6 @@
 
 import { useEffect } from "react";
 
-const valeurs = [
-  { title: "Clarté", desc: "Des ressources et des services pensés pour aller à l'essentiel, sans surcharge." },
-  { title: "Design utile", desc: "Chaque visuel, chaque outil a une raison d'être. Rien pour faire joli, tout pour servir." },
-  { title: "Régularité", desc: "Avancer un peu chaque jour plutôt que tout faire d'un coup. La constance prime sur l'intensité." },
-  { title: "Croissance", desc: "Chaque action — un planner rempli, un site optimisé — est un pas vers un objectif plus grand." },
-];
-
 const expertises = [
   { num: "01", title: "Marketing digital", items: ["Stratégie digitale", "SEO & référencement", "Contenu & newsletter", "Création de site web"] },
   { num: "02", title: "Organisation & productivité", items: ["Planners digitaux", "Trackers d'habitudes", "Suivi financier", "Gestion de projets", "Systèmes d'organisation"] },
@@ -51,7 +44,7 @@ export default function AboutPage() {
               className="text-[16px] font-light text-white/65 leading-[1.85] max-w-2xl"
               style={{ animation: "ab-fade-up 0.8s 0.6s both" }}
             >
-              Néa Digital c'est à la fois une offre de <strong className="text-white/90 font-medium">services marketing digital</strong> pour les entreprises, marques et indépendants, et une boutique de <strong className="text-white/90 font-medium">ressources digitales</strong> pour les femmes qui veulent s'organiser mieux. Deux univers distincts, une même exigence de clarté.
+              Néa Digital, c'est deux choses : des <strong className="text-white/90 font-medium">services marketing digital</strong> pour les entreprises, marques et indépendants, et une boutique de <strong className="text-white/90 font-medium">ressources digitales</strong> pour celles qui veulent s'organiser mieux.
             </p>
           </div>
         </section>
@@ -64,7 +57,7 @@ export default function AboutPage() {
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Pour les pros</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(24px,3vw,36px)] text-[#1C1A1A] leading-[1.15] mb-5">
-              Services marketing<br /><em className="italic font-light text-[#7A7470]">pour entreprises & indépendants.</em>
+              Services marketing pour entreprises & indépendants.
             </h2>
             <p className="text-[14px] text-[#7A7470] leading-[1.8] mb-8">
               Stratégie, contenu et création de site — j'accompagne entreprises, marques et indépendants pour développer une présence en ligne à la hauteur de leur activité. Des prestations soignées, sans jargon.
@@ -78,7 +71,7 @@ export default function AboutPage() {
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Pour s'organiser</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(24px,3vw,36px)] text-[#1C1A1A] leading-[1.15] mb-5">
-              Ressources digitales<br /><em className="italic font-light text-[#7A7470]">pour gagner en clarté.</em>
+              Ressources digitales pour s'organiser.
             </h2>
             <p className="text-[14px] text-[#7A7470] leading-[1.8] mb-8">
               Planners digitaux, trackers d'habitudes, suivi financier — des outils simples pour planifier, prioriser et suivre ce qui compte. Compatibles GoodNotes, Notability et imprimables A4.
@@ -95,16 +88,16 @@ export default function AboutPage() {
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">L'approche</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(28px,3.5vw,44px)] text-[#1C1A1A] leading-[1.15]">
-              Des outils <em className="italic font-light text-[#7A7470]">simples</em>,<br />une identité <em className="italic font-light text-[#7A7470]">cohérente</em>.
+              Une même approche pour les deux.
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
             <div className="ab-reveal md:col-span-2 bg-[#F5F1EB] p-11">
               <p className="text-[16px] text-[#1C1A1A] leading-[1.85] mb-6">
-                La marque s'adresse aux créatrices, indépendantes et petites marques qui veulent une organisation plus claire — ainsi qu'aux entreprises et indépendants qui veulent une présence en ligne à la hauteur de ce qu'ils proposent.
+                D'un côté, des créatrices et indépendantes qui veulent une organisation plus claire. De l'autre, des entreprises qui veulent une présence en ligne qui tient debout.
               </p>
               <p className="text-[15px] text-[#7A7470] leading-[1.85]">
-                L'objectif dans les deux cas est le même : <strong className="text-[#1C1A1A] font-medium">gagner du temps</strong>, avancer avec régularité et avoir des actions faciles à suivre. Pas de complexité inutile, pas de promesses vagues — juste des outils et des services qui fonctionnent.
+                Dans les deux cas, je travaille pareil : je comprends d'abord ce dont vous avez besoin, je livre ensuite quelque chose d'utilisable tout de suite — <strong className="text-[#1C1A1A] font-medium">sans y ajouter de complexité</strong>.
               </p>
             </div>
             <div className="ab-reveal bg-[#1C1A1A] p-11 flex flex-col justify-between">
@@ -121,28 +114,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── VALEURS ── */}
-        <section className="bg-[#F5F1EB] px-12 py-24">
-          <div className="ab-reveal mb-14">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-px bg-[#B08D57]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Valeurs</span>
-            </div>
-            <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(28px,3.5vw,44px)] text-[#1C1A1A] leading-[1.15]">
-              Ce qui guide<br /><em className="italic font-light text-[#7A7470]">chaque décision.</em>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0.5">
-            {valeurs.map((v, i) => (
-              <div key={v.title} className="ab-reveal bg-white p-9 transition-colors duration-300 hover:bg-[#EDE8DF]" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="text-[#EDE8DF] leading-none mb-4 tracking-[0.05em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "48px" }}>0{i + 1}</div>
-                <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[18px] font-semibold text-[#1C1A1A] mb-3">{v.title}</h3>
-                <p className="text-[13px] text-[#7A7470] leading-[1.7]">{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* ── EXPERTISES ── */}
         <section className="bg-[#1C1A1A] px-12 py-24">
           <div className="ab-reveal mb-14">
@@ -151,8 +122,11 @@ export default function AboutPage() {
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#B08D57]">Expertises</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(28px,3.5vw,44px)] text-white leading-[1.15]">
-              Ce que je <em className="italic font-light text-[#B08D57]">sais faire.</em>
+              Compétences.
             </h2>
+            <p className="text-[14px] text-white/50 leading-[1.8] max-w-lg mt-4">
+              Avant Néa Digital, cinq ans de marketing digital dont deux comme cheffe de projet chez Michaël Zingraf Christie's International Real Estate, après un master en marketing du luxe (ISG Luxury Nice).
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.06]">
             {expertises.map((exp, i) => (
