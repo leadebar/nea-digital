@@ -5,6 +5,7 @@ import { BlogCard } from "@/components/blog-card";
 import { Newsletter } from "@/components/newsletter";
 import { FAQ } from "@/components/faq";
 import { StrategyIcon, ContentIcon, WebIcon, HarmonyIcon } from "@/components/offer-icons";
+import { OfferQuiz } from "@/components/offer-quiz";
 import { posts } from "@/data/posts";
 import { offers, fullHarmony, processSteps, servicesFaq } from "@/data/site";
 
@@ -102,7 +103,7 @@ export default function Home() {
                   <h3 className="text-[20px] font-semibold text-[#1C1A1A] mb-1" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }}>{offer.title}</h3>
                   <p className="text-[13px] text-[#B08D57] font-medium mb-3 italic">{offer.tagline}</p>
                   <p className="text-[13px] text-[#7A7470] leading-[1.7] mb-6">{offer.desc}</p>
-                  <ul className="flex flex-col gap-2">
+                  <ul className="flex flex-col gap-2 mb-8">
                     {offer.items.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-[13px] text-[#1C1A1A] leading-[1.4]">
                         <span className="text-[#B08D57] text-[11px] mt-[2px] shrink-0">—</span>
@@ -110,6 +111,9 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
+                  <a href="/contact" className="text-[11px] font-medium tracking-[0.08em] uppercase text-[#1C1A1A] border-b border-[#B08D57] pb-0.5 hover:text-[#7A7470] transition-colors">
+                    Demander un devis →
+                  </a>
                 </div>
               );
             })}
@@ -133,6 +137,16 @@ export default function Home() {
             <a href="/contact" className="nea-btn-fill bg-white text-[#1C1A1A] whitespace-nowrap"><span>Demander un devis</span></a>
           </div>
           <p className="text-center text-[12px] text-[#9A928C] mt-8 tracking-[0.05em]">Tarifs communiqués sur devis, adaptés à chaque projet.</p>
+        </section>
+
+        {/* ── QUIZ ── */}
+        <section className="bg-[#F5F1EB] px-12 pb-24">
+          <div className="nea-reveal text-center max-w-xl mx-auto mb-12">
+            <SectionTag>30 secondes chrono</SectionTag>
+            <h2 className="font-['Museo_Moderno'] text-[clamp(26px,3.2vw,40px)] leading-[1.2] text-[#1C1A1A]">Vous ne savez pas par où commencer ?</h2>
+            <p className="text-[14px] text-[#7A7470] leading-[1.8] mt-4">Trois questions rapides pour savoir quelle offre correspond le mieux à votre situation.</p>
+          </div>
+          <OfferQuiz />
         </section>
 
         {/* ── MÉTHODE ── */}

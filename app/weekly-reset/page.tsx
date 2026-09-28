@@ -6,18 +6,17 @@ import { FAQ } from "@/components/faq";
 import { FreebieMockup } from "@/components/freebie-mockup";
 import { LeadForm } from "@/components/lead-form";
 import { MotionDiv, MotionSection, reveal } from "@/components/motion";
-import { ProductCard } from "@/components/product-card";
 import { weeklyResetFreebie } from "@/data/freebies";
-import { products } from "@/data/products";
+import { offers } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "The Weekly Reset Checklist",
+  title: "La Checklist Audit de Présence Digitale",
   description:
-    "Télécharge The Weekly Reset Checklist, un freebie Néa Digital pour organiser ta semaine, clarifier tes priorités et améliorer ta productivité.",
+    "Télécharge la Checklist Audit de Présence Digitale, un freebie Néa Digital pour faire le point sur ton site, ton SEO et tes réseaux en 20 minutes.",
   openGraph: {
-    title: "The Weekly Reset Checklist | Néa Digital",
+    title: "La Checklist Audit de Présence Digitale | Néa Digital",
     description:
-      "Un mini freebie premium pour remettre ta semaine au clair en 20 minutes.",
+      "Un freebie pour faire le point sur ta présence en ligne en 20 minutes.",
     url: "/weekly-reset"
   }
 };
@@ -58,7 +57,7 @@ export default function WeeklyResetPage() {
           <div>
             <p className="eyebrow mb-4 text-xs text-taupe">Aperçu</p>
             <h2 className="display-title text-2xl leading-tight text-ink md:text-4xl">
-              Un reset court, utile, sans remplacer un planner complet.
+              Un diagnostic court, utile, sans remplacer un audit complet.
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -101,12 +100,19 @@ export default function WeeklyResetPage() {
             <Sparkles className="mx-auto mb-6 h-6 w-6 text-olive" />
             <p className="eyebrow mb-4 text-xs text-taupe">Aller plus loin</p>
             <h2 className="display-title text-2xl leading-tight text-ink md:text-4xl">
-              Le freebie donne le départ. Les ressources premium structurent la suite.
+              La checklist donne le diagnostic. Les services vont plus loin.
             </h2>
           </MotionDiv>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {products.map((product) => (
-              <ProductCard key={product.slug} product={product} />
+            {offers.map((offer) => (
+              <div key={offer.key} className="rounded-[8px] border border-ink/10 bg-white p-7 shadow-line">
+                <span className="eyebrow text-[10px] text-taupe">{offer.num}</span>
+                <h3 className="mt-4 text-lg font-medium text-ink">{offer.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-ink/62">{offer.tagline}</p>
+                <Link href="/services" className="mt-5 inline-flex text-sm font-medium text-olive underline underline-offset-8">
+                  Voir l'offre →
+                </Link>
+              </div>
             ))}
           </div>
         </div>

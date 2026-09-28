@@ -20,7 +20,7 @@ export default function MentionsLegalesPage() {
       <p><strong>Éditeur :</strong> [Prénom NOM], entrepreneur individuel / micro-entreprise</p>
       <p><strong>SIRET :</strong> [SIRET à compléter]</p>
       <p><strong>Adresse du siège :</strong> [adresse professionnelle à compléter]</p>
-      <p><strong>Email :</strong> contact@neadigital.fr</p>
+      <p><strong>Email :</strong> contact.neadigital@gmail.com</p>
       <p><strong>Directeur de la publication :</strong> [Prénom NOM]</p>
 
       <h2>Activité</h2>
@@ -38,7 +38,7 @@ export default function MentionsLegalesPage() {
       <p>Néa Digital met en œuvre des moyens raisonnables pour assurer l'exactitude des informations publiées. Le site peut toutefois contenir des erreurs, omissions ou informations devenues obsolètes. Les ressources proposées sont des supports d'organisation et ne constituent pas un conseil juridique, financier, fiscal ou médical personnalisé.</p>
 
       <h2>Contact</h2>
-      <p>Pour toute question concernant le site ou les ressources, vous pouvez écrire à : contact@neadigital.fr.</p>
+      <p>Pour toute question concernant le site ou les ressources, vous pouvez écrire à : contact.neadigital@gmail.com.</p>
     </LegalPage>
   );
 }

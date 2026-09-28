@@ -1,12 +1,17 @@
 import Link from "next/link";
-import { ArticleVisual } from "@/components/editorial-visual";
 import { formatDate } from "@/lib/utils";
 import type { Post } from "@/data/posts";
 
 export function BlogCard({ post }: { post: Post }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group grid gap-5">
-      <ArticleVisual label={post.category} />
+      <div className="relative aspect-[16/11] overflow-hidden rounded-[8px] shadow-line">
+        <img
+          src={post.image}
+          alt={post.title}
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+      </div>
       <div>
         <p className="eyebrow text-[11px] text-taupe">{post.category} · {formatDate(post.date)} · {post.readTime}</p>
         <h3 className="mt-3 text-2xl font-medium leading-tight text-ink transition group-hover:text-olive">{post.title}</h3>

@@ -17,7 +17,7 @@ export default function PolitiqueConfidentialitePage() {
 
       <h2>Responsable du traitement</h2>
       <p>Le responsable du traitement est [Prénom NOM], entrepreneur individuel exerçant sous le nom commercial Néa Digital.</p>
-      <p><strong>Email de contact :</strong> contact@neadigital.fr</p>
+      <p><strong>Email de contact :</strong> contact.neadigital@gmail.com</p>
 
       <h2>Données collectées</h2>
       <p>Selon votre utilisation du site, Néa Digital peut collecter les données suivantes :</p>
@@ -56,11 +56,11 @@ export default function PolitiqueConfidentialitePage() {
       <p>Le site utilise les cookies strictement nécessaires à son fonctionnement. Si des outils de mesure d'audience, de publicité ou de suivi marketing sont ajoutés ultérieurement, un bandeau de consentement et une politique cookies dédiée devront être mis en place.</p>
 
       <h2>Newsletter</h2>
-      <p>L'inscription à la newsletter est facultative. Vous pouvez vous désinscrire à tout moment via le lien présent dans les emails ou en écrivant à contact@neadigital.fr.</p>
+      <p>L'inscription à la newsletter est facultative. Vous pouvez vous désinscrire à tout moment via le lien présent dans les emails ou en écrivant à contact.neadigital@gmail.com.</p>
 
       <h2>Vos droits</h2>
       <p>Conformément au RGPD, vous pouvez demander l'accès, la rectification, l'effacement, la limitation, l'opposition au traitement ou la portabilité de vos données lorsque ces droits s'appliquent.</p>
-      <p>Pour exercer vos droits, contactez : contact@neadigital.fr.</p>
+      <p>Pour exercer vos droits, contactez : contact.neadigital@gmail.com.</p>
       <p>Vous pouvez également déposer une réclamation auprès de la CNIL : cnil.fr.</p>
     </LegalPage>
   );

@@ -47,7 +47,7 @@ export default function ContactPage() {
 
             <div className="flex flex-col gap-5 relative" style={{ animation: "ct-fade-up 0.8s 0.85s both" }}>
               {[
-                { label: "Email", val: "contact@neadigital.fr" },
+                { label: "Email", val: "contact.neadigital@gmail.com" },
                 { label: "Réponse", val: "Sous 48h ouvrées" },
                 { label: "Réseaux", val: "TikTok · Pinterest" },
               ].map((item) => (
@@ -143,7 +143,7 @@ export default function ContactPage() {
                   <textarea className="ct-input ct-textarea" placeholder="Votre question ou message..." />
                 </FormGroup>
                 <button className="ct-btn-submit"><span>Envoyer →</span></button>
-                <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Réponse sous 48h · contact@neadigital.fr</p>
+                <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Réponse sous 48h · contact.neadigital@gmail.com</p>
               </div>
             )}
           </div>

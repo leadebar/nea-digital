@@ -34,7 +34,7 @@ export function Footer() {
           <div className="grid gap-3 text-sm text-porcelain/70">
             <span>TikTok</span>
             <span>Pinterest</span>
-            <span className="flex items-center gap-2"><Mail className="h-4 w-4" /> contact@neadigital.fr</span>
+            <span className="flex items-center gap-2"><Mail className="h-4 w-4" /> contact.neadigital@gmail.com</span>
           </div>
         </div>
         <div>

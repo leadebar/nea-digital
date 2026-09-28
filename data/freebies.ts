@@ -20,47 +20,47 @@ export type Freebie = {
 
 export const weeklyResetFreebie: Freebie = {
   slug: "weekly-reset",
-  name: "The Weekly Reset Checklist",
+  name: "La Checklist Audit de Présence Digitale",
   eyebrow: "Freebie",
-  headline: "Remets ta semaine au clair en 20 minutes.",
+  headline: "Faites le point sur votre présence en ligne en 20 minutes.",
   description:
-    "Une checklist premium et volontairement courte pour faire le point, choisir tes priorités et repartir avec une semaine plus lisible.",
+    "Une checklist courte pour vérifier ce qui fonctionne, ce qui bloque et ce qu'il faut corriger en premier sur votre site, votre SEO et vos réseaux.",
   pages: "5 pages",
-  filePath: "/freebies/the-weekly-reset-checklist.pdf",
-  fileName: "the-weekly-reset-checklist.pdf",
+  filePath: "/freebies/audit-presence-digitale.pdf",
+  fileName: "audit-presence-digitale.pdf",
   benefits: [
-    "Faire le point sans tout reprendre à zéro.",
-    "Choisir les 3 priorités qui comptent vraiment.",
-    "Organiser une semaine plus calme et plus claire.",
-    "Créer un quick win avant de passer aux ressources complètes."
+    "Repérer les points bloquants de votre site en quelques minutes.",
+    "Vérifier les bases du SEO sans jargon technique.",
+    "Faire le tri entre ce qui est urgent et ce qui peut attendre.",
+    "Arriver au premier échange avec une vision claire de vos priorités."
   ],
   preview: [
     {
-      title: "Reset rapide",
-      text: "Une page pour vider la tête et fermer les boucles ouvertes."
+      title: "Site",
+      text: "Vitesse, affichage mobile, structure : les points à vérifier en premier."
+    },
+    {
+      title: "SEO",
+      text: "Les bases pour être trouvé sur Google, expliquées simplement."
+    },
+    {
+      title: "Contenu",
+      text: "Ce qui manque pour donner envie de rester ou de revenir."
+    },
+    {
+      title: "Réseaux",
+      text: "Cohérence et régularité, avant la quantité."
     },
     {
       title: "Priorités",
-      text: "Un tri simple pour garder uniquement les actions utiles."
-    },
-    {
-      title: "Semaine claire",
-      text: "Une structure courte pour poser les blocs essentiels."
-    },
-    {
-      title: "Glow up discret",
-      text: "Un mini rituel pour garder ton énergie et ton organisation."
-    },
-    {
-      title: "Prochaine étape",
-      text: "Un pont naturel vers les planners et templates premium."
+      text: "Un tri simple pour savoir par quoi commencer."
     }
   ],
   faq: [
     {
-      question: "Le freebie remplace-t-il un planner complet ?",
+      question: "Ce freebie remplace-t-il un audit complet ?",
       answer:
-        "Non. Il donne un reset rapide pour la semaine. Les planners premium vont plus loin avec suivi, objectifs, finances et routines."
+        "Non. C'est un point de départ pour repérer vos priorités. Néa Strategy va plus loin avec une analyse complète et un plan d'action détaillé."
     },
     {
       question: "Comment je le reçois ?",
@@ -68,14 +68,14 @@ export const weeklyResetFreebie: Freebie = {
         "Après inscription, tu arrives sur une page de téléchargement avec le PDF disponible immédiatement."
     },
     {
-      question: "Est-ce imprimable ?",
+      question: "C'est technique ?",
       answer:
-        "Oui. Le format est simple, léger et pensé pour une utilisation digitale ou imprimée."
+        "Non. Chaque point est expliqué simplement, sans jargon, pour être utilisable même sans connaissances techniques."
     },
     {
       question: "Vais-je recevoir trop d'emails ?",
       answer:
-        "Non. L'objectif est de rester utile : organisation, clarté, ressources et nouveautés importantes."
+        "Non. L'objectif est de rester utile : marketing digital, SEO et actualités importantes, rien de plus."
     }
   ]
 };
