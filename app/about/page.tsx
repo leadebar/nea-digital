@@ -10,7 +10,7 @@ const valeurs = [
 ];
 
 const expertises = [
-  { num: "01", title: "Marketing digital", items: ["Stratégie digitale", "SEO & référencement", "Google Ads", "Contenu & newsletter", "Création de site web"] },
+  { num: "01", title: "Marketing digital", items: ["Stratégie digitale", "SEO & référencement", "Contenu & newsletter", "Création de site web"] },
   { num: "02", title: "Organisation & productivité", items: ["Planners digitaux", "Trackers d'habitudes", "Suivi financier", "Gestion de projets", "Systèmes d'organisation"] },
 ];
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
               Services marketing<br /><em className="italic font-light text-[#7A7470]">pour TPE & artisans.</em>
             </h2>
             <p className="text-[14px] text-[#7A7470] leading-[1.8] mb-8">
-              Création de site web, SEO local, Google Ads, contenu — j'accompagne les artisans et indépendants pour développer leur visibilité en ligne. Des prestations concrètes, des résultats mesurables, sans jargon.
+              Stratégie, contenu et création de site — j'accompagne les artisans et indépendants pour développer leur visibilité en ligne. Des prestations concrètes, sans jargon.
             </p>
             <a href="/services" className="ab-btn-dark inline-block"><span>Voir les services →</span></a>
           </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 ))}
               </div>
               <div>
-                <div className="text-[10px] tracking-[0.15em] uppercase text-white/30 mb-2">hello@nea-digital.com</div>
+                <div className="text-[10px] tracking-[0.15em] uppercase text-white/30 mb-2">contact@neadigital.fr</div>
                 <div className="text-[10px] tracking-[0.15em] uppercase text-white/30">TikTok · Pinterest</div>
               </div>
             </div>

@@ -7,68 +7,17 @@ import { Newsletter } from "@/components/newsletter";
 import { FAQ } from "@/components/faq";
 import { posts } from "@/data/posts";
 import { products } from "@/data/products";
+import { offers, fullHarmony, servicesFaq } from "@/data/site";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
-
-const services = [
-  {
-    num: "01",
-    title: "Création de site web",
-    desc: "Un site professionnel, rapide et optimisé SEO, livré en 2 à 3 semaines.",
-    items: ["Nom de domaine & configuration", "Google Business Profile", "5 à 7 pages responsive", "Formulaire de contact", "SEO de base intégré", "Maintenance mensuelle disponible"],
-  },
-  {
-    num: "02",
-    title: "SEO & Référencement",
-    desc: "Être trouvé sur Google par vos clients locaux, sans budget publicitaire.",
-    items: ["Audit SEO complet", "Optimisation technique on-page", "Rédaction d'articles de blog", "Google Business optimisé", "Suivi mensuel & reporting", "Stratégie de mots-clés locaux"],
-  },
-  {
-    num: "03",
-    title: "Google Ads & Contenu",
-    desc: "Générer des contacts rapidement grâce à la publicité ciblée.",
-    items: ["Création de campagne Google Ads", "Ciblage géographique local", "Suivi & optimisation mensuelle", "Newsletter mensuelle", "Calendrier éditorial", "Reporting de performance"],
-  },
-];
-
-const packs = [
-  {
-    label: "Essentiel",
-    name: "PACK PRÉSENCE",
-    tagline: "Pour exister en ligne rapidement avec une base solide.",
-    items: ["Nom de domaine", "Google Business Profile", "Site vitrine 5 pages", "SEO de base", "Formation prise en main"],
-    featured: false,
-  },
-  {
-    label: "⭐ Recommandé",
-    name: "PACK LANCEMENT",
-    tagline: "Tout pour lancer une présence complète et générer des leads.",
-    items: ["Tout le Pack Présence", "Optimisation SEO on-page", "2 articles de blog SEO", "Stratégie digitale 3 mois", "1 mois de suivi offert"],
-    featured: true,
-  },
-  {
-    label: "Mensuel",
-    name: "PACK VISIBILITÉ",
-    tagline: "Rester visible en continu, sans s'en occuper soi-même.",
-    items: ["Maintenance site", "Suivi SEO + 1 article/mois", "Google Business mis à jour", "Newsletter mensuelle", "Rapport mensuel"],
-    featured: false,
-  },
-];
 
 const realisations = [
   {
     tag: "Plomberie · Cagnes-sur-Mer",
     name: "LP PLOMBERIE",
-    desc: "Création du site vitrine, SEO local, Google Business, rédaction de blog et audit Semrush complet. Présence locale forte sur les recherches plombier de proximité.",
+    desc: "Création du site vitrine, SEO local, mise en place de Google Business et rédaction de blog.",
     pills: ["Création web", "SEO local", "Google Business", "Blog"],
     href: "https://lpplomberie.com",
-  },
-  {
-    tag: "Marketing Digital · Sud de France",
-    name: "NÉA DIGITAL",
-    desc: "Création du site vitrine & boutique, stratégie SEO, Pinterest, lancement de produits digitaux. Ce site est lui-même une démonstration du savoir-faire Néa Digital.",
-    pills: ["Création web", "SEO", "Pinterest", "Stratégie"],
-    href: "https://neadigital.fr",
   },
 ];
 
@@ -76,8 +25,8 @@ const realisations = [
 
 function SectionTag({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <div className={`flex items-center gap-3 mb-3.5 ${light ? "text-[#F3B7C1]" : "text-[#C4687A]"}`}>
-      <span className={`w-7 h-[1.5px] ${light ? "bg-[#F3B7C1]" : "bg-[#F3B7C1]"}`} />
+    <div className={`flex items-center gap-3 mb-3.5 ${light ? "text-[#C8B89A]" : "text-[#7A7470]"}`}>
+      <span className="w-7 h-[1.5px] bg-[#C8B89A]" />
       <span className="font-['DM_Sans'] text-[10px] font-medium tracking-[0.2em] uppercase">
         {children}
       </span>
@@ -119,7 +68,7 @@ export default function Home() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       pts.forEach((p) => {
         ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(243,183,193,${p.o})`; ctx.fill();
+        ctx.fillStyle = `rgba(200,184,154,${p.o})`; ctx.fill();
         p.x += p.vx; p.y += p.vy;
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
@@ -170,15 +119,15 @@ export default function Home() {
       <main className="relative z-10">
 
         {/* ── HERO ── */}
-        <section className="relative min-h-screen bg-[#F3B7C1] flex flex-col items-center justify-center text-center px-12 pt-32 pb-20 overflow-hidden">
+        <section className="relative min-h-screen bg-[#1C1A1A] flex flex-col items-center justify-center text-center px-12 pt-32 pb-20 overflow-hidden">
           <span
-            className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.07] whitespace-nowrap leading-none"
+            className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.05] whitespace-nowrap leading-none"
             style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(120px,25vw,380px)", letterSpacing: "0.05em", animation: "nea-watermark 8s ease-in-out infinite" }}
             aria-hidden="true"
           >NÉA.</span>
 
-          <p className="text-[11px] font-medium tracking-[0.2em] uppercase text-white/70 mb-6 relative" style={{ animation: "nea-slide-top 0.7s 0.2s cubic-bezier(0.22,1,0.36,1) both" }}>
-            Marketing digital · Création web · SEO · Google Ads
+          <p className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#C8B89A] mb-6 relative" style={{ animation: "nea-slide-top 0.7s 0.2s cubic-bezier(0.22,1,0.36,1) both" }}>
+            Stratégie · Contenu · Web
           </p>
 
           <h1
@@ -189,46 +138,47 @@ export default function Home() {
             <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>EN LIGNE</span>
           </h1>
 
-          <p className="text-white/80 relative mt-3 mb-6 italic font-light" style={{ fontFamily: "'Museo_Moderno','Museo Moderno',serif", fontSize: "clamp(18px,2.5vw,28px)", animation: "nea-fade-up 0.8s 0.85s both" }}>
+          <p className="text-white/70 relative mt-3 mb-6 italic font-light" style={{ fontFamily: "'Museo_Moderno','Museo Moderno',serif", fontSize: "clamp(18px,2.5vw,28px)", animation: "nea-fade-up 0.8s 0.85s both" }}>
             enfin entre de bonnes mains.
           </p>
 
-          <p className="text-[15px] font-light text-white/80 leading-[1.8] max-w-[500px] mx-auto mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
+          <p className="text-[15px] font-light text-white/60 leading-[1.8] max-w-[500px] mx-auto mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
             Néa Digital accompagne les <strong className="text-white font-medium">TPE, artisans et indépendants</strong> pour créer et développer leur présence digitale — de A à Z, sans jargon.
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap relative" style={{ animation: "nea-fade-up 0.8s 1.15s both" }}>
-            <a href="/contact" className="nea-btn-fill bg-white text-[#C4687A]"><span>Demander un devis gratuit</span></a>
-            <a href="#services" className="nea-btn-ghost"><span>Voir les services</span></a>
+            <a href="/contact" className="nea-btn-fill bg-[#F5F1EB] text-[#1C1A1A]"><span>Demander un devis gratuit</span></a>
+            <a href="#services" className="nea-btn-ghost"><span>Voir les offres</span></a>
           </div>
 
-          <div className="flex gap-14 justify-center mt-[72px] pt-11 border-t border-white/20 w-full max-w-[560px] relative" style={{ animation: "nea-fade-up 0.8s 1.3s both" }}>
-            {[{ num: "2", label: "Sites livrés" }, { num: "+40%", label: "Trafic organique" }, { num: "48H", label: "Délai de réponse" }].map((s) => (
+          <div className="flex gap-14 justify-center mt-[72px] pt-11 border-t border-white/10 w-full max-w-[560px] relative" style={{ animation: "nea-fade-up 0.8s 1.3s both" }}>
+            {[{ num: "48H", label: "Délai de réponse" }, { num: "2–3", label: "Semaines pour un site" }, { num: "100%", label: "Sur devis, sans engagement" }].map((s) => (
               <div key={s.label} className="flex flex-col items-center group">
                 <span className="text-white leading-none tracking-[0.05em] transition-transform group-hover:scale-110" style={{ fontFamily: "'Bebas Neue'", fontSize: "42px" }}>{s.num}</span>
-                <span className="text-[10px] text-white/55 mt-1 tracking-[0.1em] uppercase">{s.label}</span>
+                <span className="text-[10px] text-white/45 mt-1 tracking-[0.1em] uppercase">{s.label}</span>
               </div>
             ))}
           </div>
         </section>
 
-        {/* ── SERVICES ── */}
-        <section id="services" className="px-12 py-24">
+        {/* ── OFFRES ── */}
+        <section id="services" className="bg-[#F5F1EB] px-12 py-24">
           <div className="nea-reveal">
-            <SectionTag>Ce que je fais</SectionTag>
-            <SectionTitle>Des services <em className="italic font-light text-[#C4687A]">concrets</em><br />pour exister en ligne.</SectionTitle>
+            <SectionTag>Nos offres</SectionTag>
+            <SectionTitle>Trois offres <em className="italic font-light text-[#7A7470]">claires</em>,<br />pensées pour les artisans.</SectionTitle>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
-            {services.map((svc, i) => (
-              <div key={svc.num} className={`svc-3d nea-reveal bg-white p-11 relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_30px_80px_rgba(243,183,193,0.3)]`} style={{ transitionDelay: `${i * 0.1}s` }}>
-                <span className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#F3B7C1] to-[#C4687A] scale-x-0 origin-left transition-transform duration-400 group-hover:scale-x-100" />
-                <div className="text-[#FAE0E5] leading-none mb-5 tracking-[0.05em] transition-colors duration-300 hover:text-[#F3B7C1]" style={{ fontFamily: "'Bebas Neue'", fontSize: "64px" }}>{svc.num}</div>
-                <h3 className="text-[21px] font-semibold text-[#1C1A1A] mb-3" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }}>{svc.title}</h3>
-                <p className="text-[13px] text-[#9A8A8E] leading-[1.7] mb-6">{svc.desc}</p>
+            {offers.map((offer, i) => (
+              <div key={offer.key} className="svc-3d nea-reveal bg-white p-11 relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_30px_80px_rgba(28,26,26,0.08)]" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <span className="absolute top-0 left-0 right-0 h-[3px] bg-[#C8B89A] scale-x-0 origin-left transition-transform duration-400 group-hover:scale-x-100" />
+                <div className="text-[#EDE8DF] leading-none mb-5 tracking-[0.05em] transition-colors duration-300 hover:text-[#C8B89A]" style={{ fontFamily: "'Bebas Neue'", fontSize: "64px" }}>{offer.num}</div>
+                <h3 className="text-[21px] font-semibold text-[#1C1A1A] mb-1" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }}>{offer.title}</h3>
+                <p className="text-[13px] text-[#C8B89A] font-medium mb-3 italic">{offer.tagline}</p>
+                <p className="text-[13px] text-[#7A7470] leading-[1.7] mb-6">{offer.desc}</p>
                 <ul className="flex flex-col gap-2">
-                  {svc.items.map((item) => (
+                  {offer.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-[13px] text-[#1C1A1A] leading-[1.4]">
-                      <span className="text-[#C4687A] text-[11px] mt-[2px] shrink-0 transition-transform duration-200">→</span>
+                      <span className="text-[#C8B89A] text-[11px] mt-[2px] shrink-0">→</span>
                       {item}
                     </li>
                   ))}
@@ -236,66 +186,57 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </section>
 
-        {/* ── PACKS ── */}
-        <section className="bg-[#1C1A1A] px-12 py-24">
-          <div className="nea-reveal">
-            <SectionTag light>Offres</SectionTag>
-            <SectionTitle light>Des packs <em className="italic font-light text-[#F3B7C1]">clés en main</em><br />pensés pour les artisans.</SectionTitle>
+          {/* Full Harmony */}
+          <div className="nea-reveal mt-0.5 bg-[#1C1A1A] p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
+            <div>
+              <p className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#C8B89A] mb-3">Pack recommandé</p>
+              <h3 className="text-[28px] text-white mb-2" style={{ fontFamily: "'Bebas Neue'", letterSpacing: "0.04em" }}>{fullHarmony.name}</h3>
+              <p className="text-[14px] text-white/60 leading-[1.7] mb-4 max-w-md">{fullHarmony.desc}</p>
+              <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                {fullHarmony.items.map((item) => (
+                  <li key={item} className="flex items-center gap-2 text-[13px] text-white/75">
+                    <span className="text-[#C8B89A]">✓</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <a href="/contact" className="nea-btn-fill bg-[#F5F1EB] text-[#1C1A1A] whitespace-nowrap"><span>Demander un devis</span></a>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {packs.map((pack, i) => (
-              <div key={pack.name} className={`nea-reveal rounded-sm p-9 border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.3)] ${pack.featured ? "bg-[#F3B7C1] border-[#F3B7C1]" : "border-white/10 hover:border-[#F3B7C1]/50"}`} style={{ transitionDelay: `${i * 0.1}s` }}>
-                <p className={`text-[10px] tracking-[0.15em] uppercase mb-3.5 ${pack.featured ? "text-white/80" : "text-white/40"}`}>{pack.label}</p>
-                <h3 className="text-[34px] text-white mb-2 tracking-[0.06em]" style={{ fontFamily: "'Bebas Neue'" }}>{pack.name}</h3>
-                <p className={`text-[13px] leading-[1.65] mb-7 ${pack.featured ? "text-white/85" : "text-white/50"}`}>{pack.tagline}</p>
-                <ul className="flex flex-col gap-2.5 mb-8">
-                  {pack.items.map((item) => (
-                    <li key={item} className={`flex gap-2.5 text-[13px] ${pack.featured ? "text-white/90" : "text-white/65"}`}>
-                      <span className={pack.featured ? "text-white/90" : "text-[#F3B7C1]"}>✓</span>{item}
-                    </li>
-                  ))}
-                </ul>
-                <a href="/contact" className={`nea-pack-btn block text-center py-3 rounded-sm text-[11px] font-medium tracking-[0.08em] uppercase ${pack.featured ? "bg-white text-[#C4687A] hover:bg-[#FDF4F6]" : "border border-white/20 text-white hover:border-white/50"}`}>
-                  Demander un devis
-                </a>
-              </div>
-            ))}
-          </div>
+          <p className="text-center text-[12px] text-[#9A928C] mt-8 tracking-[0.05em]">Tous les tarifs sont communiqués sur devis — chaque projet est unique.</p>
         </section>
 
         {/* ── RÉALISATIONS ── */}
         <section id="realisations" className="px-12 py-24">
           <div className="nea-reveal">
             <SectionTag>Réalisations</SectionTag>
-            <SectionTitle>Des projets <em className="italic font-light text-[#C4687A]">réels</em>,<br />des résultats concrets.</SectionTitle>
+            <SectionTitle>Un projet <em className="italic font-light text-[#7A7470]">réel</em>.</SectionTitle>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0.5">
+          <div className="grid grid-cols-1 gap-0.5 max-w-2xl">
             {realisations.map((r, i) => (
               <a key={r.name} href={r.href} target="_blank" rel="noopener noreferrer"
-                className="nea-reveal group bg-white relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(243,183,193,0.25)] block"
+                className="nea-reveal group bg-[#F5F1EB] relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_80px_rgba(28,26,26,0.1)] block"
                 style={{ padding: "52px 44px", transitionDelay: `${i * 0.1}s` }}
               >
-                <p className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#C4687A] mb-4">{r.tag}</p>
+                <p className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#C8B89A] mb-4">{r.tag}</p>
                 <h3 className="text-[42px] text-[#1C1A1A] mb-3 tracking-[0.05em]" style={{ fontFamily: "'Bebas Neue'" }}>{r.name}</h3>
-                <p className="text-[14px] text-[#9A8A8E] leading-[1.75] mb-7">{r.desc}</p>
+                <p className="text-[14px] text-[#7A7470] leading-[1.75] mb-7">{r.desc}</p>
                 <div className="flex gap-2 flex-wrap">
                   {r.pills.map((pill) => (
-                    <span key={pill} className="text-[11px] px-3.5 py-1 rounded-full bg-[#FDF4F6] border border-[#FAE0E5] text-[#1C1A1A] transition-colors group-hover:bg-white">{pill}</span>
+                    <span key={pill} className="text-[11px] px-3.5 py-1 rounded-full bg-white border border-[#EDE8DF] text-[#1C1A1A] transition-colors group-hover:bg-[#EDE8DF]">{pill}</span>
                   ))}
                 </div>
-                <span className="absolute bottom-11 right-11 text-[32px] text-[#FAE0E5] transition-all duration-300 group-hover:text-[#C4687A] group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                <span className="absolute bottom-11 right-11 text-[32px] text-[#EDE8DF] transition-all duration-300 group-hover:text-[#C8B89A] group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
               </a>
             ))}
           </div>
         </section>
 
         {/* ── PRODUITS ── */}
-        <section id="boutique" className="bg-[#FAE0E5] px-12 py-24">
+        <section id="boutique" className="bg-[#EDE8DF] px-12 py-24">
           <div className="nea-reveal">
             <SectionTag>Boutique</SectionTag>
-            <SectionTitle>Des ressources digitales<br />pour <em className="italic font-light text-[#C4687A]">s'organiser</em> au quotidien.</SectionTitle>
+            <SectionTitle>Des ressources digitales<br />pour <em className="italic font-light text-[#7A7470]">s'organiser</em> au quotidien.</SectionTitle>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {products.map((product) => <ProductCard key={product.slug} product={product} />)}
@@ -306,7 +247,7 @@ export default function Home() {
         <section className="px-12 py-24">
           <div className="nea-reveal">
             <SectionTag>Blog</SectionTag>
-            <SectionTitle>Articles sur le marketing digital,<br />le SEO et <em className="italic font-light text-[#C4687A]">l'organisation</em>.</SectionTitle>
+            <SectionTitle>Articles sur le marketing digital,<br />le SEO et <em className="italic font-light text-[#7A7470]">l'organisation</em>.</SectionTitle>
           </div>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {posts.map((post) => <BlogCard key={post.slug} post={post} />)}
@@ -314,16 +255,16 @@ export default function Home() {
         </section>
 
         {/* ── CTA ── */}
-        <section id="contact" className="relative bg-[#F3B7C1] px-12 py-32 text-center overflow-hidden">
-          <span className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.08] whitespace-nowrap leading-none" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(80px,18vw,260px)", letterSpacing: "0.05em", animation: "nea-watermark 6s ease-in-out infinite" }} aria-hidden="true">CONTACT</span>
+        <section id="contact" className="relative bg-[#1C1A1A] px-12 py-32 text-center overflow-hidden">
+          <span className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.04] whitespace-nowrap leading-none" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(80px,18vw,260px)", letterSpacing: "0.05em", animation: "nea-watermark 6s ease-in-out infinite" }} aria-hidden="true">CONTACT</span>
           <h2 className="nea-reveal text-white relative tracking-[0.04em] leading-none mb-3" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(48px,7vw,90px)" }}>PRÊT·E À PASSER<br />À L'ACTION ?</h2>
-          <p className="nea-reveal relative mb-4 italic font-light text-white/75" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(18px,2vw,24px)" }}>votre présence digitale vous attend.</p>
-          <p className="nea-reveal text-[13px] text-white/55 tracking-[0.05em] relative mb-10">Devis gratuit · Réponse sous 48h · Sans engagement</p>
-          <a href="/contact" className="nea-reveal nea-btn-fill bg-white text-[#C4687A] inline-block relative"><span>Contactez-moi →</span></a>
+          <p className="nea-reveal relative mb-4 italic font-light text-[#C8B89A]" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(18px,2vw,24px)" }}>votre présence digitale vous attend.</p>
+          <p className="nea-reveal text-[13px] text-white/45 tracking-[0.05em] relative mb-10">Devis gratuit · Réponse sous 48h · Sans engagement</p>
+          <a href="/contact" className="nea-reveal nea-btn-fill bg-[#F5F1EB] text-[#1C1A1A] inline-block relative"><span>Contactez-moi →</span></a>
         </section>
 
         <Newsletter />
-        <FAQ />
+        <FAQ items={servicesFaq} title="Questions fréquentes sur les services." />
 
       </main>
 
@@ -340,14 +281,14 @@ export default function Home() {
         .nea-reveal.nea-visible { opacity:1; transform:translateY(0); }
 
         .nea-btn-fill { position:relative; overflow:hidden; font-size:12px; font-weight:500; padding:15px 32px; border-radius:2px; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.35s; display:inline-block; }
-        .nea-btn-fill::before { content:''; position:absolute; inset:0; background:#1C1A1A; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
-        .nea-btn-fill:hover { color:white; }
+        .nea-btn-fill::before { content:''; position:absolute; inset:0; background:#C8B89A; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .nea-btn-fill:hover { color:#1C1A1A; }
         .nea-btn-fill:hover::before { transform:translateY(0); }
         .nea-btn-fill span { position:relative; z-index:1; }
 
-        .nea-btn-ghost { position:relative; overflow:hidden; border:1.5px solid rgba(255,255,255,0.5); color:white; font-size:12px; font-weight:500; padding:15px 32px; border-radius:2px; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.35s, border-color 0.3s; display:inline-block; }
-        .nea-btn-ghost::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.15); transform:translateX(-101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
-        .nea-btn-ghost:hover { border-color:white; }
+        .nea-btn-ghost { position:relative; overflow:hidden; border:1.5px solid rgba(255,255,255,0.25); color:white; font-size:12px; font-weight:500; padding:15px 32px; border-radius:2px; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.35s, border-color 0.3s; display:inline-block; }
+        .nea-btn-ghost::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.1); transform:translateX(-101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .nea-btn-ghost:hover { border-color:rgba(255,255,255,0.5); }
         .nea-btn-ghost:hover::before { transform:translateX(0); }
         .nea-btn-ghost span { position:relative; z-index:1; }
 

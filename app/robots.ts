@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/"
     },
-    sitemap: "https://nea-digital.com/sitemap.xml"
+    sitemap: "https://neadigital.fr/sitemap.xml"
   };
 }

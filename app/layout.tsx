@@ -5,7 +5,7 @@ import { Navbar } from "@/components/navbar";
 import { JsonLd } from "@/components/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nea-digital.com"),
+  metadataBase: new URL("https://neadigital.fr"),
   title: {
     default: "Néa Digital | Planners, stratégie digitale et organisation",
     template: "%s | Néa Digital"
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://nea-digital.com",
+    url: "https://neadigital.fr",
     siteName: "Néa Digital",
     title: "Néa Digital",
     description: "Planners, templates et services pour organisation digitale."

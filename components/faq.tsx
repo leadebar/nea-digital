@@ -1,12 +1,18 @@
 import { faq } from "@/data/site";
 
-export function FAQ({ items = faq }: { items?: typeof faq }) {
+export function FAQ({
+  items = faq,
+  title = "Questions fréquentes sur les ressources digitales.",
+}: {
+  items?: typeof faq;
+  title?: string;
+}) {
   return (
     <section className="container-premium py-20">
       <div className="grid gap-8 md:grid-cols-[.7fr_1fr]">
         <div>
           <p className="eyebrow mb-4 text-xs text-taupe">FAQ</p>
-          <h2 className="display-title text-2xl text-ink md:text-4xl">Questions fréquentes sur les ressources digitales.</h2>
+          <h2 className="display-title text-2xl text-ink md:text-4xl">{title}</h2>
         </div>
         <div className="divide-y divide-ink/10 border-y border-ink/10">
           {items.map((item) => (

@@ -2,68 +2,7 @@
 
 import { useEffect } from "react";
 import { FAQ } from "@/components/faq";
-
-const services = [
-  {
-    num: "01",
-    title: "Création de site web",
-    tagline: "Livré en 2 à 3 semaines, prêt à être trouvé.",
-    desc: "De la configuration du nom de domaine à la mise en ligne. Votre site est rapide, responsive et optimisé pour Google dès le premier jour.",
-    items: ["Nom de domaine & configuration DNS", "Google Business Profile", "5 à 7 pages responsive", "Formulaire de contact", "SEO de base intégré", "Maintenance mensuelle disponible"],
-  },
-  {
-    num: "02",
-    title: "SEO & Référencement",
-    tagline: "Apparaître sur Google sans payer de publicité.",
-    desc: "Un travail de fond durable pour apparaître en première page sur les recherches de vos clients locaux. Audit, optimisation et suivi mensuel.",
-    items: ["Audit SEO complet", "Optimisation technique on-page", "Stratégie de mots-clés locaux", "Google Business optimisé", "Rédaction d'articles de blog", "Suivi mensuel & reporting"],
-  },
-  {
-    num: "03",
-    title: "Google Ads",
-    tagline: "Des leads qualifiés dès le premier jour.",
-    desc: "Création et gestion de campagnes Google Ads ciblées géographiquement. Vous payez uniquement pour des clics de prospects réels dans votre zone.",
-    items: ["Création de campagne Google Ads", "Ciblage géographique local", "Rédaction des annonces", "Suivi & optimisation mensuelle", "Reporting de performance", "Budget maîtrisé"],
-  },
-  {
-    num: "04",
-    title: "Contenu & Newsletter",
-    tagline: "Rester visible sans y passer des heures.",
-    desc: "Création de contenu régulier pour maintenir votre présence digitale — articles de blog SEO, newsletter mensuelle et calendrier éditorial.",
-    items: ["Calendrier éditorial mensuel", "Rédaction articles de blog SEO", "Newsletter mensuelle", "Mise à jour Google Business", "Rapport de performance", "Suggestions de sujets"],
-  },
-];
-
-const packs = [
-  {
-    label: "Essentiel",
-    name: "PACK PRÉSENCE",
-    tagline: "Pour exister en ligne rapidement avec une base solide.",
-    items: ["Nom de domaine", "Google Business Profile", "Site vitrine 5 pages", "SEO de base", "Formation prise en main"],
-    featured: false,
-  },
-  {
-    label: "⭐ Recommandé",
-    name: "PACK LANCEMENT",
-    tagline: "Tout pour lancer une présence complète et générer des leads.",
-    items: ["Tout le Pack Présence", "Optimisation SEO on-page", "2 articles de blog SEO", "Stratégie digitale 3 mois", "1 mois de suivi offert"],
-    featured: true,
-  },
-  {
-    label: "Mensuel",
-    name: "PACK VISIBILITÉ",
-    tagline: "Rester visible en continu, sans s'en occuper soi-même.",
-    items: ["Maintenance site", "Suivi SEO + 1 article/mois", "Google Business mis à jour", "Newsletter mensuelle", "Rapport mensuel"],
-    featured: false,
-  },
-];
-
-const process = [
-  { num: "01", title: "Premier contact", desc: "On échange 30 minutes pour comprendre votre activité, vos objectifs et vos besoins." },
-  { num: "02", title: "Devis gratuit", desc: "Je vous envoie une proposition détaillée sous 48h, sans engagement de votre part." },
-  { num: "03", title: "Lancement", desc: "Une fois validé, on démarre. Vous êtes informé à chaque étape, sans surprise." },
-  { num: "04", title: "Livraison & suivi", desc: "Votre projet est livré dans les délais. Un suivi mensuel est disponible." },
-];
+import { offers, fullHarmony, processSteps, servicesFaq } from "@/data/site";
 
 export default function ServicesPage() {
   useEffect(() => {
@@ -105,7 +44,7 @@ export default function ServicesPage() {
           <div className="flex flex-col justify-center px-12 py-20">
             <div className="flex items-center gap-3 mb-6" style={{ animation: "pro-fade-up 0.7s 0.2s both" }}>
               <span className="w-7 h-px bg-[#C8B89A]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#C8B89A]">Marketing digital · TPE & Artisans</span>
+              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#C8B89A]">Stratégie · Contenu · Web</span>
             </div>
             <h1 className="text-white mb-3 leading-none" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(52px,6vw,88px)", letterSpacing: "0.03em" }}>
               <span className="block" style={{ animation: "pro-reveal 0.9s 0.35s both" }}>VOTRE PRÉSENCE</span>
@@ -113,14 +52,14 @@ export default function ServicesPage() {
               <span className="block" style={{ animation: "pro-reveal 0.9s 0.65s both" }}>SANS JARGON.</span>
             </h1>
             <p className="italic font-light text-[#C8B89A] mb-8" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(16px,2vw,22px)", animation: "pro-fade-up 0.8s 0.8s both" }}>
-              site web, seo, google ads, contenu.
+              trois offres, un pack complet.
             </p>
             <p className="text-[14px] font-light text-white/60 leading-[1.8] max-w-[420px] mb-11" style={{ animation: "pro-fade-up 0.8s 0.95s both" }}>
-              J'accompagne les <strong className="text-white/90 font-medium">TPE, artisans et indépendants</strong> pour créer et développer leur visibilité en ligne — de A à Z, résultats mesurables.
+              J'accompagne les <strong className="text-white/90 font-medium">TPE, artisans et indépendants</strong> pour créer et développer leur visibilité en ligne — de A à Z.
             </p>
             <div className="flex gap-4 flex-wrap" style={{ animation: "pro-fade-up 0.8s 1.1s both" }}>
               <a href="/contact" className="pro-btn-cream"><span>Devis gratuit →</span></a>
-              <a href="#services-detail" className="pro-btn-outline"><span>Voir les services</span></a>
+              <a href="#services-detail" className="pro-btn-outline"><span>Voir les offres</span></a>
             </div>
           </div>
 
@@ -140,7 +79,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* ── SERVICES ── */}
+        {/* ── OFFRES ── */}
         <section id="services-detail" className="bg-[#F5F1EB] px-12 py-24">
           <div className="pro-reveal mb-14">
             <div className="flex items-center gap-3 mb-3">
@@ -148,19 +87,19 @@ export default function ServicesPage() {
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Ce que je fais</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(28px,3.5vw,44px)] text-[#1C1A1A] leading-[1.15]">
-              Des prestations <em className="italic font-light text-[#7A7470]">claires</em><br />et des livrables concrets.
+              Trois offres <em className="italic font-light text-[#7A7470]">claires</em><br />et des livrables concrets.
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0.5">
-            {services.map((svc, i) => (
-              <div key={svc.num} className={`svc-3d pro-reveal bg-white p-11 relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_24px_60px_rgba(28,26,26,0.08)]`} style={{ transitionDelay: `${(i % 2) * 0.1}s` }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
+            {offers.map((offer, i) => (
+              <div key={offer.key} className={`svc-3d pro-reveal bg-white p-11 relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_24px_60px_rgba(28,26,26,0.08)]`} style={{ transitionDelay: `${(i % 3) * 0.1}s` }}>
                 <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#1C1A1A] scale-x-0 origin-left transition-transform duration-400 group-hover:scale-x-100" />
-                <div className="leading-none mb-4 tracking-[0.05em] text-[#EDE8DF] transition-colors duration-300 hover:text-[#C8B89A]" style={{ fontFamily: "'Bebas Neue'", fontSize: "56px" }}>{svc.num}</div>
-                <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[22px] font-semibold text-[#1C1A1A] mb-1">{svc.title}</h3>
-                <p className="text-[13px] text-[#C8B89A] font-medium mb-3 italic">{svc.tagline}</p>
-                <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-6">{svc.desc}</p>
+                <div className="leading-none mb-4 tracking-[0.05em] text-[#EDE8DF] transition-colors duration-300 hover:text-[#C8B89A]" style={{ fontFamily: "'Bebas Neue'", fontSize: "56px" }}>{offer.num}</div>
+                <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[22px] font-semibold text-[#1C1A1A] mb-1">{offer.title}</h3>
+                <p className="text-[13px] text-[#C8B89A] font-medium mb-3 italic">{offer.tagline}</p>
+                <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-6">{offer.desc}</p>
                 <ul className="flex flex-col gap-2 mb-8">
-                  {svc.items.map((item) => (
+                  {offer.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-[13px] text-[#1C1A1A] leading-[1.4]">
                       <span className="text-[#C8B89A] text-[11px] flex-shrink-0 mt-[2px]">—</span>
                       {item}
@@ -175,42 +114,29 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* ── PACKS ── */}
+        {/* ── FULL HARMONY ── */}
         <section className="bg-[#1C1A1A] px-12 py-24">
           <div className="pro-reveal mb-14">
             <div className="flex items-center gap-3 mb-3">
               <span className="w-7 h-px bg-[#C8B89A]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#C8B89A]">Offres</span>
+              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#C8B89A]">Pack recommandé</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(28px,3.5vw,44px)] text-white leading-[1.15]">
-              Des packs <em className="italic font-light text-[#C8B89A]">clés en main</em><br />pensés pour les artisans.
+              {fullHarmony.name} <em className="italic font-light text-[#C8B89A]">— tout réuni.</em>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.06]">
-            {packs.map((pack, i) => (
-              <div
-                key={pack.name}
-                className={`pro-reveal p-10 border transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(0,0,0,0.3)] ${pack.featured ? "bg-[#F5F1EB] border-[#F5F1EB]" : "bg-[#1C1A1A] border-white/[0.08] hover:border-[#C8B89A]"}`}
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                <p className={`text-[10px] tracking-[0.15em] uppercase mb-3.5 ${pack.featured ? "text-[#7A7470]" : "text-white/30"}`}>{pack.label}</p>
-                <h3 className={`text-[30px] mb-2 tracking-[0.06em] ${pack.featured ? "text-[#1C1A1A]" : "text-white"}`} style={{ fontFamily: "'Bebas Neue'" }}>{pack.name}</h3>
-                <p className={`text-[13px] leading-[1.6] mb-6 ${pack.featured ? "text-[#7A7470]" : "text-white/45"}`}>{pack.tagline}</p>
-                <ul className="flex flex-col gap-2.5 mb-8">
-                  {pack.items.map((item) => (
-                    <li key={item} className={`flex gap-2.5 text-[13px] ${pack.featured ? "text-[#1C1A1A]" : "text-white/60"}`}>
-                      <span className={pack.featured ? "text-[#C8B89A]" : "text-white/20"}>—</span>{item}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="/contact"
-                  className={`pro-pack-btn block text-center py-3 rounded-sm text-[11px] font-medium tracking-[0.08em] uppercase ${pack.featured ? "bg-[#1C1A1A] text-[#F5F1EB] border border-[#1C1A1A]" : "border border-white/15 text-white/70 hover:border-white/30 hover:text-white"}`}
-                >
-                  Demander un devis
-                </a>
-              </div>
-            ))}
+          <div className="pro-reveal bg-[#F5F1EB] p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 items-center">
+            <div>
+              <p className="text-[15px] text-[#1C1A1A] leading-[1.7] mb-6 max-w-lg">{fullHarmony.desc}</p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {fullHarmony.items.map((item) => (
+                  <li key={item} className="flex items-center gap-2.5 text-[13px] text-[#1C1A1A]">
+                    <span className="text-[#C8B89A]">✓</span>{item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <a href="/contact" className="pro-pack-btn-dark whitespace-nowrap"><span>Demander un devis</span></a>
           </div>
           <p className="text-center text-[12px] text-white/25 mt-8 tracking-[0.05em]">Tous les tarifs sont sur devis — chaque projet est unique.</p>
         </section>
@@ -228,7 +154,7 @@ export default function ServicesPage() {
           </div>
         </section>
         <div className="grid grid-cols-1 md:grid-cols-4">
-          {process.map((step, i) => (
+          {processSteps.map((step, i) => (
             <div
               key={step.num}
               className={`pro-reveal bg-white p-11 border-r border-[#EDE8DF] last:border-r-0 transition-colors duration-300 hover:bg-[#F5F1EB]`}
@@ -255,12 +181,12 @@ export default function ServicesPage() {
             <p className="pro-reveal italic font-light text-white/50 mb-4" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(16px,2vw,22px)" }}>
               devis gratuit, réponse sous 48h.
             </p>
-            <p className="pro-reveal text-[12px] text-white/25 tracking-[0.08em] uppercase mb-10">Sans engagement · Échange de 30 minutes</p>
+            <p className="pro-reveal text-[12px] text-white/25 tracking-[0.08em] uppercase mb-10">Sans engagement · 50% à la commande, 50% à la livraison</p>
             <a href="/contact" className="pro-reveal pro-btn-cream inline-block"><span>Contactez-moi →</span></a>
           </div>
         </section>
 
-        <FAQ />
+        <FAQ items={servicesFaq} title="Questions fréquentes sur les services." />
 
       </main>
 
@@ -285,9 +211,11 @@ export default function ServicesPage() {
         .pro-btn-outline:hover::before { transform:translateX(0); }
         .pro-btn-outline span { position:relative; z-index:1; }
 
-        .pro-pack-btn { position:relative; overflow:hidden; transition:color 0.3s, border-color 0.3s; }
-        .pro-pack-btn::before { content:''; position:absolute; inset:0; background:rgba(255,255,255,0.08); transform:translateX(-101%); transition:transform 0.35s cubic-bezier(0.4,0,0.2,1); }
-        .pro-pack-btn:hover::before { transform:translateX(0); }
+        .pro-pack-btn-dark { position:relative; overflow:hidden; background:#1C1A1A; color:#F5F1EB; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:15px 30px; border-radius:2px; text-decoration:none; display:inline-block; text-align:center; transition:color 0.3s; }
+        .pro-pack-btn-dark::before { content:''; position:absolute; inset:0; background:#C8B89A; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .pro-pack-btn-dark:hover { color:#1C1A1A; }
+        .pro-pack-btn-dark:hover::before { transform:translateY(0); }
+        .pro-pack-btn-dark span { position:relative; z-index:1; }
       `}</style>
     </>
   );

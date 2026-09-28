@@ -19,7 +19,7 @@ export default function CGVPage() {
       <p>Les ressources sont vendues par [Prénom NOM], entrepreneur individuel / micro-entreprise, exerçant sous le nom commercial Néa Digital.</p>
       <p><strong>SIRET :</strong> [SIRET à compléter]</p>
       <p><strong>Adresse :</strong> [adresse professionnelle à compléter]</p>
-      <p><strong>Email :</strong> hello@nea-digital.com</p>
+      <p><strong>Email :</strong> contact@neadigital.fr</p>
       <p><strong>TVA :</strong> TVA non applicable, article 293 B du Code général des impôts, si ce régime est applicable à l'entreprise.</p>
 
       <h2>2. Ressources concernées</h2>
@@ -43,7 +43,7 @@ export default function CGVPage() {
       <p>Si cet accord exprès et cette renonciation ne sont pas recueillis, le droit de rétractation légal reste applicable.</p>
 
       <h2>8. Garantie légale de conformité</h2>
-      <p>Le client consommateur bénéficie de la garantie légale de conformité applicable aux contenus et services numériques. Si la ressource livrée ne correspond pas à sa description ou présente un défaut de conformité, le client peut contacter Néa Digital à hello@nea-digital.com.</p>
+      <p>Le client consommateur bénéficie de la garantie légale de conformité applicable aux contenus et services numériques. Si la ressource livrée ne correspond pas à sa description ou présente un défaut de conformité, le client peut contacter Néa Digital à contact@neadigital.fr.</p>
 
       <h2>9. Conditions d'utilisation des ressources</h2>
       <p>Les ressources achetées sont réservées à un usage personnel ou professionnel individuel selon la licence indiquée sur la page de vente. Toute revente, redistribution, partage public, modification en vue de revente ou mise à disposition gratuite des fichiers est interdite sans autorisation écrite.</p>

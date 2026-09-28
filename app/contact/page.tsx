@@ -47,7 +47,7 @@ export default function ContactPage() {
 
             <div className="flex flex-col gap-5 relative" style={{ animation: "ct-fade-up 0.8s 0.85s both" }}>
               {[
-                { label: "Email", val: "hello@nea-digital.com" },
+                { label: "Email", val: "contact@neadigital.fr" },
                 { label: "Réponse", val: "Sous 48h ouvrées" },
                 { label: "Réseaux", val: "TikTok · Pinterest" },
               ].map((item) => (
@@ -105,11 +105,10 @@ export default function ContactPage() {
                 <FormGroup label="Besoin *">
                   <select className="ct-input ct-select">
                     <option value="">Choisir une prestation</option>
-                    <option>Création de site web</option>
-                    <option>SEO & Référencement</option>
-                    <option>Google Ads</option>
-                    <option>Contenu & Newsletter</option>
-                    <option>Pack complet</option>
+                    <option>Néa Strategy</option>
+                    <option>Néa Content</option>
+                    <option>Néa Web</option>
+                    <option>Full Harmony (pack complet)</option>
                     <option>Autre / Je ne sais pas encore</option>
                   </select>
                 </FormGroup>
@@ -144,7 +143,7 @@ export default function ContactPage() {
                   <textarea className="ct-input ct-textarea" placeholder="Votre question ou message..." />
                 </FormGroup>
                 <button className="ct-btn-submit"><span>Envoyer →</span></button>
-                <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Réponse sous 48h · hello@nea-digital.com</p>
+                <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Réponse sous 48h · contact@neadigital.fr</p>
               </div>
             )}
           </div>
@@ -160,7 +159,7 @@ export default function ContactPage() {
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(22px,2.5vw,32px)] text-[#1C1A1A] leading-[1.2] mb-4">
               Vous êtes <em className="italic font-light text-[#7A7470]">artisan ou TPE</em> et vous cherchez à développer votre visibilité ?
             </h2>
-            <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-7">Création de site, SEO, Google Ads — je m'occupe de tout. Devis gratuit, sans engagement.</p>
+            <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-7">Stratégie, contenu, création de site — je m'occupe de tout. Devis gratuit, sans engagement.</p>
             <a href="/services" className="ct-btn-dark inline-block self-start"><span>Voir les services →</span></a>
           </div>
 

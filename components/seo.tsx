@@ -3,7 +3,7 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Néa Digital",
-    url: "https://nea-digital.com",
+    url: "https://neadigital.fr",
     sameAs: ["https://www.tiktok.com/@neadigital", "https://www.pinterest.com/neadigital"],
     description: "Planners, templates et services pour organisation, branding et marketing digital."
   };
