@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import os from "node:os";
 import path from "node:path";
 
 export type NewsletterLead = {
@@ -36,7 +37,14 @@ export async function saveNewsletterLead(input: {
     provider: resolveProvider()
   };
 
-  await saveToLocalJson(lead);
+  try {
+    await saveToLocalJson(lead);
+  } catch (error) {
+    // Le stockage local (fichier .data/) échoue sur les plateformes au système de
+    // fichiers en lecture seule comme Vercel. On ne bloque jamais le téléchargement
+    // du freebie pour ça : on logue l'erreur et on continue.
+    console.error("saveNewsletterLead: échec du stockage local", error);
+  }
 
   return lead;
 }
@@ -58,7 +66,7 @@ function resolveProvider(): NewsletterLead["provider"] {
 }
 
 async function saveToLocalJson(lead: NewsletterLead) {
-  const directory = process.env.NEA_LEADS_DIR || path.join(process.cwd(), ".data");
+  const directory = process.env.NEA_LEADS_DIR || path.join(os.tmpdir(), "nea-digital-leads");
   const filePath = path.join(directory, "weekly-reset-leads.json");
 
   await mkdir(directory, { recursive: true });

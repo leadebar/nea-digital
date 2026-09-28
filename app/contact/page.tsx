@@ -1,11 +1,47 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 
 type Tab = "devis" | "question";
+type FormState = "idle" | "loading" | "success" | "error";
+
+const initialDevis = { firstName: "", lastName: "", email: "", activity: "", need: "", project: "" };
+const initialQuestion = { firstName: "", email: "", subject: "", message: "" };
 
 export default function ContactPage() {
   const [activeTab, setActiveTab] = useState<Tab>("devis");
+  const [devis, setDevis] = useState(initialDevis);
+  const [question, setQuestion] = useState(initialQuestion);
+  const [state, setState] = useState<FormState>("idle");
+  const [feedback, setFeedback] = useState("");
+
+  async function submit(type: Tab, payload: Record<string, string>, event: FormEvent) {
+    event.preventDefault();
+    setState("loading");
+    setFeedback("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type, ...payload })
+      });
+      const result = (await response.json()) as { ok?: boolean; message?: string };
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.message || "Une erreur est survenue. Réessaie dans un instant.");
+      }
+
+      setState("success");
+      setFeedback("Message envoyé. Je te réponds sous 48h.");
+      if (type === "devis") setDevis(initialDevis);
+      else setQuestion(initialQuestion);
+    } catch (error) {
+      setState("error");
+      setFeedback(error instanceof Error ? error.message : "Une erreur est survenue. Réessaie dans un instant.");
+    }
+  }
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -73,7 +109,7 @@ export default function ContactPage() {
               ].map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => { setActiveTab(tab.id); setState("idle"); setFeedback(""); }}
                   className={`text-[11px] font-medium tracking-[0.08em] uppercase pb-2.5 pr-5 border-b-2 -mb-[1.5px] transition-all ${
                     activeTab === tab.id
                       ? "text-[#1C1A1A] border-[#1C1A1A]"
@@ -87,23 +123,23 @@ export default function ContactPage() {
 
             {/* Tab Devis */}
             {activeTab === "devis" && (
-              <div className="flex flex-col gap-[18px]">
+              <form className="flex flex-col gap-[18px]" onSubmit={(event) => submit("devis", devis, event)}>
                 <div className="grid grid-cols-2 gap-3.5">
                   <FormGroup label="Prénom *">
-                    <input type="text" className="ct-input" placeholder="Jean" />
+                    <input required type="text" className="ct-input" placeholder="Jean" value={devis.firstName} onChange={(e) => setDevis({ ...devis, firstName: e.target.value })} />
                   </FormGroup>
                   <FormGroup label="Nom *">
-                    <input type="text" className="ct-input" placeholder="Dupont" />
+                    <input required type="text" className="ct-input" placeholder="Dupont" value={devis.lastName} onChange={(e) => setDevis({ ...devis, lastName: e.target.value })} />
                   </FormGroup>
                 </div>
                 <FormGroup label="Email *">
-                  <input type="email" className="ct-input" placeholder="jean@exemple.fr" />
+                  <input required type="email" className="ct-input" placeholder="jean@exemple.fr" value={devis.email} onChange={(e) => setDevis({ ...devis, email: e.target.value })} />
                 </FormGroup>
                 <FormGroup label="Votre activité *">
-                  <input type="text" className="ct-input" placeholder="Plombier, boulanger, coach..." />
+                  <input required type="text" className="ct-input" placeholder="Plombier, boulanger, coach..." value={devis.activity} onChange={(e) => setDevis({ ...devis, activity: e.target.value })} />
                 </FormGroup>
                 <FormGroup label="Besoin *">
-                  <select className="ct-input ct-select">
+                  <select required className="ct-input ct-select" value={devis.need} onChange={(e) => setDevis({ ...devis, need: e.target.value })}>
                     <option value="">Choisir une prestation</option>
                     <option>Néa Strategy</option>
                     <option>Néa Content</option>
@@ -113,24 +149,32 @@ export default function ContactPage() {
                   </select>
                 </FormGroup>
                 <FormGroup label="Votre projet">
-                  <textarea className="ct-input ct-textarea" placeholder="Décrivez votre activité et ce que vous souhaitez améliorer..." />
+                  <textarea className="ct-input ct-textarea" placeholder="Décrivez votre activité et ce que vous souhaitez améliorer..." value={devis.project} onChange={(e) => setDevis({ ...devis, project: e.target.value })} />
                 </FormGroup>
-                <button className="ct-btn-submit"><span>Envoyer ma demande →</span></button>
-                <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Sans engagement · Réponse sous 48h</p>
-              </div>
+                <button type="submit" disabled={state === "loading"} className="ct-btn-submit disabled:cursor-wait disabled:opacity-70">
+                  <span>{state === "loading" ? "Envoi..." : "Envoyer ma demande →"}</span>
+                </button>
+                {feedback ? (
+                  <p className={`text-[12px] text-center leading-[1.6] ${state === "error" ? "text-[#B14B3F]" : "text-[#5C7A52]"}`} role={state === "error" ? "alert" : "status"}>
+                    {feedback}
+                  </p>
+                ) : (
+                  <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Sans engagement · Réponse sous 48h</p>
+                )}
+              </form>
             )}
 
             {/* Tab Question */}
             {activeTab === "question" && (
-              <div className="flex flex-col gap-[18px]">
+              <form className="flex flex-col gap-[18px]" onSubmit={(event) => submit("question", question, event)}>
                 <FormGroup label="Prénom *">
-                  <input type="text" className="ct-input" placeholder="Marie" />
+                  <input required type="text" className="ct-input" placeholder="Marie" value={question.firstName} onChange={(e) => setQuestion({ ...question, firstName: e.target.value })} />
                 </FormGroup>
                 <FormGroup label="Email *">
-                  <input type="email" className="ct-input" placeholder="marie@exemple.fr" />
+                  <input required type="email" className="ct-input" placeholder="marie@exemple.fr" value={question.email} onChange={(e) => setQuestion({ ...question, email: e.target.value })} />
                 </FormGroup>
                 <FormGroup label="Sujet *">
-                  <select className="ct-input ct-select">
+                  <select required className="ct-input ct-select" value={question.subject} onChange={(e) => setQuestion({ ...question, subject: e.target.value })}>
                     <option value="">Choisir un sujet</option>
                     <option>Question sur un planner</option>
                     <option>Problème de téléchargement</option>
@@ -140,11 +184,19 @@ export default function ContactPage() {
                   </select>
                 </FormGroup>
                 <FormGroup label="Message *">
-                  <textarea className="ct-input ct-textarea" placeholder="Votre question ou message..." />
+                  <textarea required className="ct-input ct-textarea" placeholder="Votre question ou message..." value={question.message} onChange={(e) => setQuestion({ ...question, message: e.target.value })} />
                 </FormGroup>
-                <button className="ct-btn-submit"><span>Envoyer →</span></button>
-                <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Réponse sous 48h · contact.neadigital@gmail.com</p>
-              </div>
+                <button type="submit" disabled={state === "loading"} className="ct-btn-submit disabled:cursor-wait disabled:opacity-70">
+                  <span>{state === "loading" ? "Envoi..." : "Envoyer →"}</span>
+                </button>
+                {feedback ? (
+                  <p className={`text-[12px] text-center leading-[1.6] ${state === "error" ? "text-[#B14B3F]" : "text-[#5C7A52]"}`} role={state === "error" ? "alert" : "status"}>
+                    {feedback}
+                  </p>
+                ) : (
+                  <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Réponse sous 48h · contact.neadigital@gmail.com</p>
+                )}
+              </form>
             )}
           </div>
         </section>

@@ -7,6 +7,7 @@ export type Product = {
   summary: string;
   href: string;
   accent: string;
+  cardImage: string;
   includes: string[];
   headline: string;
   description: string;
@@ -29,6 +30,7 @@ export const products: Product[] = [
     summary: "Planifie tes semaines, tes objectifs et tes projets au même endroit.",
     href: "/products/digital-planner",
     accent: "linen",
+    cardImage: "https://images.pexels.com/photos/12911169/pexels-photo-12911169.jpeg",
     includes: ["Planner principal 2026", "PDF A4 imprimable", "4 bonus inclus", "Version Google Sheets", "Guide d'utilisation"],
     headline: "Un planner 2026 complet pour organiser l'année sans multiplier les fichiers.",
     description:
@@ -104,6 +106,7 @@ export const products: Product[] = [
     summary: "Un plan de 90 jours pour faire le point et reprendre une routine stable.",
     href: "/products/90-days-reset",
     accent: "sand",
+    cardImage: "https://images.pexels.com/photos/5546879/pexels-photo-5546879.jpeg",
     includes: ["Audit de départ", "Vision 90 jours", "Suivi habitudes", "Pages journaling", "Bilans hebdomadaires"],
     headline: "Une ressource guidée pour reprendre une routine claire sur 90 jours.",
     description:
@@ -148,6 +151,7 @@ export const products: Product[] = [
     summary: "Suis ton budget, tes dépenses, ton épargne et tes objectifs.",
     href: "/products/finance-planner",
     accent: "olive",
+    cardImage: "https://images.pexels.com/photos/4386341/pexels-photo-4386341.jpeg",
     includes: ["Budget mensuel", "Suivi dépenses", "Épargne", "Dettes", "Objectifs financiers"],
     headline: "Un planner finance pour suivre son argent avec méthode.",
     description:
