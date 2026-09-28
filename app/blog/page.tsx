@@ -14,7 +14,7 @@ export default function BlogPage() {
       <div className="grid gap-10 md:grid-cols-[.9fr_1fr] md:items-end">
         <div>
           <p className="eyebrow mb-5 text-xs text-taupe">Blog</p>
-          <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">Stratégie, contenu et web : ce que j'écris sur le marketing digital.</h1>
+          <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">Le blog : stratégie, contenu et web.</h1>
         </div>
         <div className="rounded-[8px] bg-white p-3 shadow-line">
           <label className="flex min-h-12 items-center gap-3 px-3 text-sm text-ink/45">

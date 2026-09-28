@@ -11,24 +11,28 @@ export default function MentionsLegalesPage() {
     <LegalPage
       eyebrow="Informations légales"
       title="Mentions légales"
-      intro="Cette page regroupe les informations d'identification de l'éditeur du site Néa Digital. Les champs entre crochets sont à compléter avant la mise en ligne."
+      intro="Cette page regroupe les informations d'identification de l'éditeur du site Néa Digital."
     >
-      <p><strong>Dernière mise à jour :</strong> 20 mai 2026</p>
+      <p><strong>Dernière mise à jour :</strong> 28 septembre 2026</p>
+
+      <div className="mb-8 rounded-[8px] border border-[#B08D57]/30 bg-[#F5F1EB] p-5 text-sm text-[#7A7470]">
+        Deux informations restent à ajouter avant mise en ligne officielle : le numéro de SIRET et l'adresse du siège d'activité. Ce sont des données personnelles que je ne peux pas deviner à ta place.
+      </div>
 
       <h2>Éditeur du site</h2>
       <p><strong>Nom commercial :</strong> Néa Digital</p>
-      <p><strong>Éditeur :</strong> [Prénom NOM], entrepreneur individuel / micro-entreprise</p>
+      <p><strong>Éditeur :</strong> Léa Debar, entrepreneur individuel (micro-entreprise)</p>
       <p><strong>SIRET :</strong> [SIRET à compléter]</p>
       <p><strong>Adresse du siège :</strong> [adresse professionnelle à compléter]</p>
       <p><strong>Email :</strong> contact.neadigital@gmail.com</p>
-      <p><strong>Directeur de la publication :</strong> [Prénom NOM]</p>
+      <p><strong>Directrice de la publication :</strong> Léa Debar</p>
 
       <h2>Activité</h2>
-      <p>Néa Digital propose des ressources digitales, notamment des planners numériques, templates, ressources d'organisation et contenus d'accompagnement. Des services de stratégie digitale, organisation digitale et optimisation web peuvent également être proposés.</p>
+      <p>Néa Digital propose des services de stratégie digitale, création de contenu et création de site web, ainsi que des ressources digitales (planners numériques, templates, contenus d'accompagnement).</p>
 
       <h2>Hébergement</h2>
       <p><strong>Hébergeur :</strong> Vercel Inc.</p>
-      <p><strong>Adresse :</strong> [adresse de l'hébergeur à confirmer selon le compte ou le contrat Vercel]</p>
+      <p><strong>Adresse :</strong> 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis</p>
       <p><strong>Site web :</strong> vercel.com</p>
 
       <h2>Propriété intellectuelle</h2>

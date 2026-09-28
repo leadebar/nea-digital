@@ -169,7 +169,7 @@ export default function Home() {
         <section className="bg-[#F5F1EB] px-12 py-24">
           <div className="nea-reveal">
             <SectionTag>Blog</SectionTag>
-            <SectionTitle>Ce que j'écris sur le marketing digital et le SEO.</SectionTitle>
+            <SectionTitle>Stratégie, contenu, web : quelques repères.</SectionTitle>
           </div>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {posts.map((post) => <BlogCard key={post.slug} post={post} />)}

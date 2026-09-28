@@ -13,10 +13,10 @@ export default function PolitiqueConfidentialitePage() {
       title="Politique de confidentialité"
       intro="Cette politique explique quelles données personnelles peuvent être collectées sur le site Néa Digital, pourquoi elles sont utilisées et comment exercer vos droits."
     >
-      <p><strong>Dernière mise à jour :</strong> 20 mai 2026</p>
+      <p><strong>Dernière mise à jour :</strong> 28 septembre 2026</p>
 
       <h2>Responsable du traitement</h2>
-      <p>Le responsable du traitement est [Prénom NOM], entrepreneur individuel exerçant sous le nom commercial Néa Digital.</p>
+      <p>Le responsable du traitement est Léa Debar, entrepreneur individuel exerçant sous le nom commercial Néa Digital.</p>
       <p><strong>Email de contact :</strong> contact.neadigital@gmail.com</p>
 
       <h2>Données collectées</h2>

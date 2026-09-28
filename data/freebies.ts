@@ -20,43 +20,47 @@ export type Freebie = {
 
 export const weeklyResetFreebie: Freebie = {
   slug: "weekly-reset",
-  name: "Le Brief Prêt-à-Remplir",
+  name: "Les 5 Piliers d'une Présence Digitale qui Convertit",
   eyebrow: "Freebie",
-  headline: "Arrivez au premier échange avec un projet déjà clair.",
+  headline: "Ce qui différencie une présence en ligne qui attire des clients de celle qui n'attire personne.",
   description:
-    "Un document court à remplir avant qu'on se parle : objectifs, existant, contraintes, inspirations. De quoi gagner du temps dès le premier rendez-vous.",
-  pages: "4 pages",
-  filePath: "/freebies/brief-pret-a-remplir.pdf",
-  fileName: "brief-pret-a-remplir.pdf",
+    "Un guide court pour comprendre les 5 leviers qui font vraiment la différence : positionnement, site, contenu, visibilité et suivi. De quoi savoir où regarder en premier.",
+  pages: "6 pages",
+  filePath: "/freebies/5-piliers-presence-digitale.pdf",
+  fileName: "5-piliers-presence-digitale.pdf",
   benefits: [
-    "Clarifier ses objectifs avant même le premier échange.",
-    "Réunir en un seul document ce qui existe déjà (site, réseaux, contenus).",
-    "Gagner du temps sur le premier rendez-vous.",
-    "Arriver avec des attentes précises, pas juste une idée floue."
+    "Comprendre les 5 leviers qui font vraiment la différence.",
+    "Repérer en un coup d'œil ce qui manque à votre présence actuelle.",
+    "Avoir un langage commun pour en discuter avec un prestataire.",
+    "Savoir par où commencer, sans jargon inutile."
   ],
   preview: [
     {
-      title: "Objectifs",
-      text: "Ce que vous voulez atteindre, concrètement."
+      title: "Positionnement",
+      text: "Ce que vous vendez, à qui, et pourquoi vous plutôt qu'un autre."
     },
     {
-      title: "Existant",
-      text: "Ce qui existe déjà : site, réseaux, contenus, outils."
+      title: "Site",
+      text: "Ce qui transforme une visite en contact."
     },
     {
-      title: "Contraintes",
-      text: "Délais, budget approximatif, points de vigilance."
+      title: "Contenu",
+      text: "Ce qui construit la confiance dans la durée."
     },
     {
-      title: "Inspirations",
-      text: "Ce que vous aimez, ce que vous voulez éviter."
+      title: "Visibilité",
+      text: "Être vu au bon moment, par les bonnes personnes."
+    },
+    {
+      title: "Suivi",
+      text: "Ce qui permet de savoir si ça fonctionne vraiment."
     }
   ],
   faq: [
     {
-      question: "Ce document remplace-t-il un premier échange ?",
+      question: "Ce guide remplace-t-il un accompagnement ?",
       answer:
-        "Non. Il le prépare. On en reparle ensemble pour affiner et répondre à vos questions."
+        "Non. Il donne les repères pour comprendre où regarder. Néa Digital va plus loin avec un accompagnement adapté à votre situation."
     },
     {
       question: "Comment je le reçois ?",
@@ -64,9 +68,9 @@ export const weeklyResetFreebie: Freebie = {
         "Après inscription, tu arrives sur une page de téléchargement avec le PDF disponible immédiatement."
     },
     {
-      question: "C'est technique ?",
+      question: "C'est théorique ou concret ?",
       answer:
-        "Non. Aucune connaissance technique ou marketing n'est nécessaire pour le remplir."
+        "Les deux : chaque pilier est expliqué simplement, avec des exemples concrets, sans jargon inutile."
     },
     {
       question: "Vais-je recevoir trop d'emails ?",

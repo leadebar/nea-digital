@@ -11,7 +11,7 @@ import { posts } from "@/data/posts";
 export const metadata: Metadata = {
   title: "Téléchargement confirmé",
   description:
-    "Télécharge Le Brief Prêt-à-Remplir et prépare ton projet avant le premier échange avec Néa Digital.",
+    "Télécharge Les 5 Piliers d'une Présence Digitale qui Convertit, le guide gratuit Néa Digital.",
   robots: {
     index: false,
     follow: true
@@ -29,10 +29,10 @@ export default function DownloadSuccessPage() {
         <MotionDiv {...reveal}>
           <p className="eyebrow mb-5 text-xs text-taupe">Téléchargement prêt</p>
           <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">
-            Ton brief est disponible.
+            Ton guide est disponible.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink/66">
-            Télécharge le PDF, remplis-le à ton rythme, puis envoie-le via la page contact pour qu'on en parle ensemble.
+            Télécharge le PDF. Si un des points résonne particulièrement, discutons-en, ou jette un œil aux ressources à venir.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a

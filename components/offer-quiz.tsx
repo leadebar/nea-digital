@@ -89,18 +89,21 @@ export function OfferQuiz() {
     <div className="nea-reveal mx-auto max-w-2xl rounded-[8px] bg-white p-9 md:p-12 shadow-[0_30px_80px_rgba(28,26,26,0.06)]">
       {!done ? (
         <>
-          <div className="mb-8 flex items-center gap-2">
+          <div className="mb-8 flex items-center gap-3">
             {questions.map((_, i) => (
-              <span
-                key={i}
-                className={`h-[3px] flex-1 rounded-full transition-colors duration-300 ${i <= step ? "bg-[#B08D57]" : "bg-[#EDE8DF]"}`}
-              />
+              <div key={i} className="flex items-center gap-3">
+                <span
+                  className={`flex h-7 w-7 items-center justify-center rounded-full text-[11px] font-medium transition-colors duration-300 ${
+                    i < step ? "bg-[#B08D57] text-white" : i === step ? "border-2 border-[#B08D57] text-[#B08D57]" : "border border-[#E3DACB] text-[#B7ADA0]"
+                  }`}
+                >
+                  {i + 1}
+                </span>
+                {i < questions.length - 1 ? <span className={`h-px w-6 ${i < step ? "bg-[#B08D57]" : "bg-[#E3DACB]"}`} /> : null}
+              </div>
             ))}
           </div>
-          <p className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#B08D57] mb-4">
-            Question {step + 1} / {questions.length}
-          </p>
-          <h3 className="text-[22px] md:text-[26px] text-[#1C1A1A] mb-8 leading-[1.25]" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }}>
+          <h3 className="text-balance text-[22px] md:text-[26px] text-[#1C1A1A] mb-8 leading-[1.3]" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }}>
             {questions[step].prompt}
           </h3>
           <div className="flex flex-col gap-3">

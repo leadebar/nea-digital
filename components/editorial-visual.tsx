@@ -9,7 +9,7 @@ export function BrandShowcase() {
       </div>
       <div className="absolute inset-x-7 bottom-7 grid gap-3">
         {["Planning hebdo", "Mise en avant des ressources", "Suivi des ventes", "Budget & objectifs"].map((item) => (
-          <div key={item} className="flex items-center justify-between rounded-[6px] border border-porcelain/12 bg-porcelain/6 px-4 py-4">
+          <div key={item} className="flex items-center justify-between rounded-[6px] border border-porcelain/[12%] bg-porcelain/[6%] px-4 py-4">
             <span className="text-sm text-porcelain/82">{item}</span>
             <span className="h-2 w-10 rounded-full bg-sand" />
           </div>

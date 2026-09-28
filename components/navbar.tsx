@@ -11,13 +11,13 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink/10 bg-porcelain/82 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 border-b border-ink/10 bg-porcelain/[82%] backdrop-blur-xl">
       <nav className="container-premium flex h-20 items-center justify-between">
         <Link href="/" className="focus-ring" aria-label="Néa Digital accueil">
           <BrandLogo lockup="stacked" className="h-11 md:h-12" />
         </Link>
         <div className="hidden items-center gap-8 md:flex">
-          {navItems.map((item) => (
+          {navItems.filter((item) => item.href !== "/shop").map((item) => (
             <Link key={item.href} href={item.href} className="text-sm text-ink/70 transition hover:text-ink">
               {item.label}
             </Link>

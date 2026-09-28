@@ -60,8 +60,31 @@ export default async function ArticlePage({ params }: Props) {
                 {section.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
+                {section.list ? (
+                  <ul className="!my-6 !list-none !pl-0">
+                    {section.list.map((item) => (
+                      <li key={item} className="flex items-start gap-3 border-t border-ink/10 py-3 text-[15px] leading-7 text-ink/75">
+                        <span className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-olive" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             ))}
+            {post.takeaways?.length ? (
+              <div className="!mt-12 rounded-[8px] bg-linen p-7">
+                <p className="eyebrow mb-4 text-[11px] text-taupe">À retenir</p>
+                <ul className="!my-0 !list-none !pl-0">
+                  {post.takeaways.map((item) => (
+                    <li key={item} className="flex items-start gap-3 py-2 text-[15px] leading-7 text-ink/80">
+                      <span className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-olive" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
           </div>
         </div>
       </article>

@@ -7,16 +7,15 @@ import { FreebieMockup } from "@/components/freebie-mockup";
 import { LeadForm } from "@/components/lead-form";
 import { MotionDiv, MotionSection, reveal } from "@/components/motion";
 import { weeklyResetFreebie } from "@/data/freebies";
-import { offers } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Le Brief Prêt-à-Remplir",
+  title: "Les 5 Piliers d'une Présence Digitale qui Convertit",
   description:
-    "Télécharge Le Brief Prêt-à-Remplir, un freebie Néa Digital pour préparer ton projet avant le premier échange.",
+    "Télécharge Les 5 Piliers d'une Présence Digitale qui Convertit, un guide gratuit Néa Digital pour comprendre ce qui fait vraiment la différence.",
   openGraph: {
-    title: "Le Brief Prêt-à-Remplir | Néa Digital",
+    title: "Les 5 Piliers d'une Présence Digitale qui Convertit | Néa Digital",
     description:
-      "Un freebie pour arriver au premier échange avec un projet déjà clair.",
+      "Un guide court pour comprendre ce qui différencie une présence digitale qui convertit de celle qui n'attire personne.",
     url: "/weekly-reset"
   }
 };
@@ -57,7 +56,7 @@ export default function WeeklyResetPage() {
           <div>
             <p className="eyebrow mb-4 text-xs text-taupe">Aperçu</p>
             <h2 className="display-title text-2xl leading-tight text-ink md:text-4xl">
-              Un document court, pour arriver prêt·e au premier échange.
+              Un guide court, pour savoir où regarder en premier.
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -80,7 +79,7 @@ export default function WeeklyResetPage() {
           <MotionDiv {...reveal}>
             <p className="eyebrow mb-4 text-xs text-taupe">Téléchargement gratuit</p>
             <h2 className="display-title text-2xl leading-tight text-ink md:text-4xl">
-              Reçois le brief maintenant.
+              Reçois le guide maintenant.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-ink/65">
               Entre ton email et accède au PDF. Simple, rapide, sans créer de compte.
@@ -100,25 +99,31 @@ export default function WeeklyResetPage() {
             <Sparkles className="mx-auto mb-6 h-6 w-6 text-olive" />
             <p className="eyebrow mb-4 text-xs text-taupe">Aller plus loin</p>
             <h2 className="display-title text-2xl leading-tight text-ink md:text-4xl">
-              Le brief pose le cadre. Les services passent à l'action.
+              Le guide donne les repères. Deux façons d'aller plus loin.
             </h2>
           </MotionDiv>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {offers.map((offer) => (
-              <div key={offer.key} className="rounded-[8px] border border-ink/10 bg-white p-7 shadow-line">
-                <span className="eyebrow text-[10px] text-taupe">{offer.num}</span>
-                <h3 className="mt-4 text-lg font-medium text-ink">{offer.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-ink/62">{offer.tagline}</p>
-                <Link href="/services" className="mt-5 inline-flex text-sm font-medium text-olive underline underline-offset-8">
-                  Voir l'offre →
-                </Link>
-              </div>
-            ))}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
+            <div className="rounded-[8px] border border-ink/10 bg-white p-8 shadow-line">
+              <p className="eyebrow mb-3 text-[10px] text-taupe">Pour les pros</p>
+              <h3 className="text-lg font-medium text-ink">Un accompagnement sur mesure</h3>
+              <p className="mt-3 text-sm leading-7 text-ink/62">Stratégie, contenu ou site : on regarde ensemble ce qui vous ferait le plus avancer.</p>
+              <Link href="/services" className="mt-5 inline-flex text-sm font-medium text-olive underline underline-offset-8">
+                Voir les services →
+              </Link>
+            </div>
+            <div className="rounded-[8px] border border-ink/10 bg-white p-8 shadow-line">
+              <p className="eyebrow mb-3 text-[10px] text-taupe">Pour s'organiser</p>
+              <h3 className="text-lg font-medium text-ink">Des ressources digitales</h3>
+              <p className="mt-3 text-sm leading-7 text-ink/62">Planners et templates pour structurer votre activité au quotidien. Bientôt disponibles.</p>
+              <Link href="/shop" className="mt-5 inline-flex text-sm font-medium text-olive underline underline-offset-8">
+                Voir la boutique →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-porcelain/94 p-3 backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-porcelain/[94%] p-3 backdrop-blur md:hidden">
         <Link
           href="#weekly-reset-form"
           className="focus-ring flex min-h-12 items-center justify-center rounded-[4px] bg-ink px-5 text-sm font-medium text-porcelain"
