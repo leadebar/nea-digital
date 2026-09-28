@@ -32,8 +32,8 @@ export default function ContactPage() {
             >CONTACT</span>
 
             <div className="flex items-center gap-3 mb-6 relative" style={{ animation: "ct-fade-up 0.7s 0.2s both" }}>
-              <span className="w-7 h-px bg-[#B5542F]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#B5542F]">Parlons de votre projet</span>
+              <span className="w-7 h-px bg-[#B08D57]" />
+              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#B08D57]">Parlons de votre projet</span>
             </div>
 
             <h1 className="text-white leading-none mb-3 relative" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(52px,6vw,84px)", letterSpacing: "0.03em" }}>
@@ -41,7 +41,7 @@ export default function ContactPage() {
               <span className="block" style={{ animation: "ct-reveal 0.9s 0.5s both" }}>ENSEMBLE.</span>
             </h1>
 
-            <p className="italic font-light text-[#B5542F] mb-12 relative" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "18px", animation: "ct-fade-up 0.8s 0.7s both" }}>
+            <p className="italic font-light text-[#B08D57] mb-12 relative" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "18px", animation: "ct-fade-up 0.8s 0.7s both" }}>
               devis gratuit · réponse sous 48h.
             </p>
 
@@ -52,7 +52,7 @@ export default function ContactPage() {
                 { label: "Réseaux", val: "TikTok · Pinterest" },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
-                  <div className="w-[5px] h-[5px] rounded-full bg-[#B5542F] shrink-0 mt-[5px]" />
+                  <div className="w-[5px] h-[5px] rounded-full bg-[#B08D57] shrink-0 mt-[5px]" />
                   <div>
                     <div className="text-[10px] font-medium tracking-[0.08em] uppercase text-white/35 mb-0.5">{item.label}</div>
                     <div className="text-[14px] text-white/80">{item.val}</div>
@@ -153,11 +153,11 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="ct-reveal bg-[#FFFFFF] px-14 py-20 flex flex-col justify-center border-r border-[#EDE8DF]">
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-px bg-[#B5542F]" />
+              <span className="w-7 h-px bg-[#B08D57]" />
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Services pro</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(22px,2.5vw,32px)] text-[#1C1A1A] leading-[1.2] mb-4">
-              Vous êtes <em className="italic font-light text-[#7A7470]">artisan ou TPE</em> et vous cherchez à développer votre visibilité ?
+              Vous cherchez à <em className="italic font-light text-[#7A7470]">développer votre visibilité</em> en ligne ?
             </h2>
             <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-7">Stratégie, contenu, création de site — je m'occupe de tout. Devis gratuit, sans engagement.</p>
             <a href="/services" className="ct-btn-dark inline-block self-start"><span>Voir les services →</span></a>
@@ -165,7 +165,7 @@ export default function ContactPage() {
 
           <div className="ct-reveal bg-[#EDE8DF] px-14 py-20 flex flex-col justify-center">
             <div className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-px bg-[#B5542F]" />
+              <span className="w-7 h-px bg-[#B08D57]" />
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Boutique</span>
             </div>
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(22px,2.5vw,32px)] text-[#1C1A1A] leading-[1.2] mb-4">
@@ -189,18 +189,18 @@ export default function ContactPage() {
         .ct-reveal.ct-visible { opacity:1; transform:translateY(0); }
 
         .ct-input { width:100%; padding:12px 14px; border:1px solid #EDE8DF; border-radius:2px; font-family:'DM Sans',sans-serif; font-size:14px; color:#1C1A1A; background:white; transition:border-color 0.2s, box-shadow 0.2s; outline:none; }
-        .ct-input:focus { border-color:#B5542F; box-shadow:0 0 0 3px rgba(200,184,154,0.12); }
+        .ct-input:focus { border-color:#B08D57; box-shadow:0 0 0 3px rgba(200,184,154,0.12); }
         .ct-textarea { resize:vertical; min-height:110px; line-height:1.6; }
         .ct-select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237A7470' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; }
 
         .ct-btn-submit { width:100%; background:#1C1A1A; color:white; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; padding:14px; border-radius:2px; border:none; cursor:pointer; position:relative; overflow:hidden; transition:color 0.3s; margin-top:4px; }
-        .ct-btn-submit::before { content:''; position:absolute; inset:0; background:#B5542F; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .ct-btn-submit::before { content:''; position:absolute; inset:0; background:#B08D57; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
         .ct-btn-submit:hover { color:#1C1A1A; }
         .ct-btn-submit:hover::before { transform:translateY(0); }
         .ct-btn-submit span { position:relative; z-index:1; }
 
         .ct-btn-dark { position:relative; overflow:hidden; background:#1C1A1A; color:white; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:11px 22px; border-radius:2px; text-decoration:none; transition:color 0.3s; }
-        .ct-btn-dark::before { content:''; position:absolute; inset:0; background:#B5542F; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .ct-btn-dark::before { content:''; position:absolute; inset:0; background:#B08D57; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
         .ct-btn-dark:hover { color:#1C1A1A; }
         .ct-btn-dark:hover::before { transform:translateY(0); }
         .ct-btn-dark span { position:relative; z-index:1; }

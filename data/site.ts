@@ -14,40 +14,40 @@ export const offers = [
     num: "01",
     key: "strategy",
     title: "Néa Strategy",
-    tagline: "Clarifier votre présence et votre plan d'action.",
-    desc: "Un audit complet de votre visibilité actuelle et une feuille de route claire pour les prochains mois.",
-    items: ["Audit de présence digitale", "Analyse de la concurrence locale", "Plan d'action priorisé", "Recommandations concrètes"]
+    tagline: "Un diagnostic clair, un plan d'action précis.",
+    desc: "Audit de votre présence digitale, analyse de votre positionnement et feuille de route priorisée pour les mois à venir.",
+    items: ["Audit de présence digitale", "Analyse de positionnement et de concurrence", "Plan d'action priorisé", "Recommandations argumentées"]
   },
   {
     num: "02",
     key: "content",
     title: "Néa Content",
-    tagline: "Rester visible, sans y passer vos journées.",
-    desc: "Newsletter, articles de blog, posts LinkedIn ou Instagram — un contenu régulier pensé pour votre clientèle.",
-    items: ["Newsletter mensuelle", "Articles de blog SEO", "Posts réseaux sociaux", "Calendrier éditorial"]
+    tagline: "Une prise de parole régulière et cohérente.",
+    desc: "Newsletter, articles, réseaux sociaux : un contenu pensé pour votre image de marque et votre audience, sans y passer vos journées.",
+    items: ["Newsletter", "Articles de blog SEO", "Contenu réseaux sociaux", "Calendrier éditorial"]
   },
   {
     num: "03",
     key: "web",
     title: "Néa Web",
-    tagline: "Un site qui vous représente et qui se trouve sur Google.",
-    desc: "Création ou refonte de site vitrine, optimisé pour le référencement local et pensé pour convertir.",
-    items: ["Création ou refonte de site", "Nom de domaine & configuration", "SEO de base intégré", "Formulaire de contact"]
+    tagline: "Un site à la hauteur de ce que vous proposez.",
+    desc: "Création ou refonte de site, pensé pour représenter votre marque, se trouver sur Google et convertir vos visiteurs.",
+    items: ["Création ou refonte de site", "Architecture & configuration technique", "SEO intégré dès la conception", "Formulaire de contact & conversion"]
   }
 ];
 
 export const fullHarmony = {
   name: "Full Harmony",
   tagline: "Le pack complet : stratégie, contenu et site réunis.",
-  desc: "Pour qui veut une présence digitale cohérente de bout en bout, sans jongler entre plusieurs prestataires.",
-  items: ["Tout Néa Strategy", "Tout Néa Content", "Tout Néa Web", "Un seul interlocuteur, un suivi mensuel"]
+  desc: "Pour qui veut une présence digitale cohérente de bout en bout, portée par un seul interlocuteur plutôt que plusieurs prestataires à coordonner.",
+  items: ["Tout Néa Strategy", "Tout Néa Content", "Tout Néa Web", "Un interlocuteur unique, un suivi mensuel"]
 };
 
 export const processSteps = [
-  { num: "01", title: "Premier contact", desc: "On échange pour comprendre votre activité, vos objectifs et vos besoins." },
-  { num: "02", title: "Devis gratuit", desc: "Je vous envoie une proposition détaillée sous 48h, sans engagement de votre part." },
-  { num: "03", title: "Lancement", desc: "Une fois validé, on démarre : 50% à la commande, 50% à la livraison." },
-  { num: "04", title: "Livraison & suivi", desc: "Votre projet est livré dans les délais annoncés. Un suivi mensuel est disponible." }
+  { num: "01", title: "Premier échange", desc: "On prend le temps de comprendre votre activité, votre positionnement et vos objectifs." },
+  { num: "02", title: "Proposition détaillée", desc: "Un devis argumenté sous 48h, adapté à votre besoin réel — sans engagement de votre part." },
+  { num: "03", title: "Exécution suivie", desc: "50% à la commande, 50% à la livraison. Vous êtes informé·e à chaque étape." },
+  { num: "04", title: "Livraison & suivi", desc: "Un livrable soigné, dans les délais annoncés, avec un suivi mensuel disponible." }
 ];
 
 // FAQ affichée sur la home et la page /services.
