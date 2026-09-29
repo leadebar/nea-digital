@@ -88,7 +88,7 @@ export function AboutView() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
             <div className="ab-reveal md:col-span-2 bg-[#F5F1EB] p-11">
               <p className="text-[16px] text-[#1C1A1A] leading-[1.85] mb-6">
-                D'un côté, des créatrices et indépendantes qui veulent une organisation plus claire. De l'autre, des entreprises qui veulent une présence en ligne qui tient debout.
+                D'un côté, des créatrices et indépendantes qui veulent une organisation plus claire. De l'autre, des entreprises qui veulent une présence en ligne qui fonctionne vraiment.
               </p>
               <p className="text-[15px] text-[#7A7470] leading-[1.85]">
                 Dans les deux cas, je travaille pareil : je comprends d'abord ce dont vous avez besoin, puis je livre quelque chose d'utilisable tout de suite, <strong className="text-[#1C1A1A] font-medium">sans y ajouter de complexité</strong>.

@@ -76,7 +76,7 @@ export function HomeView() {
           </div>
 
           <p className="text-[11px] font-medium tracking-[0.25em] uppercase text-[#B08D57] mb-7 relative" style={{ animation: "nea-slide-top 0.7s 0.2s cubic-bezier(0.22,1,0.36,1) both" }}>
-            Stratégie · Contenu · Web
+            Agence marketing digital
           </p>
 
           <h1
@@ -88,7 +88,7 @@ export function HomeView() {
           </h1>
 
           <p className="text-[15px] font-light text-[#5C564F] leading-[1.85] max-w-[540px] mx-auto mt-6 mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
-            J'aide les entreprises, les marques et les indépendants à construire une présence en ligne qui tient debout : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie qui a du sens pour votre activité.
+            J'aide les entreprises, les marques et les indépendants à améliorer leur présence en ligne : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie claire pour votre activité.
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap relative" style={{ animation: "nea-fade-up 0.8s 1.15s both" }}>
