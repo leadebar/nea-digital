@@ -196,27 +196,6 @@ export function HomeView() {
         <FAQ items={servicesFaq} title="Questions fréquentes sur les services." />
 
       </main>
-
-      {/* ── GLOBAL STYLES ── */}
-      <style>{`
-        .nea-reveal { opacity:0; transform:translateY(16px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
-        .nea-reveal.nea-visible { opacity:1; transform:translateY(0); }
-
-        .nea-offer-row { transition: background-color 0.25s; }
-        .nea-offer-row:hover { background-color: rgba(227,54,62,0.05); }
-
-        .nea-btn {
-          display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:800;
-          text-transform:uppercase; letter-spacing:0.03em; padding:15px 30px; border-radius:2px;
-          text-decoration:none; transition: all 0.2s;
-        }
-        .nea-btn--fill { background:#2B2320; color:#FFF8EC; }
-        .nea-btn--fill:hover { background:#E3363E; }
-        .nea-btn--line { background:transparent; color:#2B2320; border-bottom:2px solid #E3363E; border-radius:0; padding-left:0; padding-right:0; }
-        .nea-btn--line:hover { color:#E3363E; }
-        .nea-btn--cream { background:#FFF8EC; color:#E3363E; }
-        .nea-btn--cream:hover { background:#2B2320; color:#FFF8EC; }
-      `}</style>
     </>
   );
 }
