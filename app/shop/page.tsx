@@ -17,9 +17,6 @@ export default function ShopPage() {
         <p className="eyebrow mb-5 text-xs text-taupe">Boutique</p>
         <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">Boutique de planners digitaux, templates et ressources d'organisation.</h1>
         <p className="mt-5 text-sm text-ink/55">Les ressources arrivent prochainement. Un aperçu en avant-première, juste en dessous.</p>
-        <div className="mt-8 max-w-md">
-          <NotifyMeForm product="Boutique Néa Digital" />
-        </div>
       </div>
       <div className="mt-10 flex flex-wrap gap-2">
         {filters.map((filter) => (
@@ -28,6 +25,13 @@ export default function ShopPage() {
       </div>
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {products.map((product) => <ProductCard key={product.slug} product={product} />)}
+      </div>
+      <div className="mt-20 max-w-md rounded-[8px] bg-linen p-8">
+        <p className="eyebrow mb-3 text-xs text-taupe">Aucune date encore fixée</p>
+        <h2 className="text-lg font-medium text-ink">Sois prévenue dès l'ouverture de la boutique.</h2>
+        <div className="mt-6">
+          <NotifyMeForm product="Boutique Néa Digital" />
+        </div>
       </div>
     </main>
   );
