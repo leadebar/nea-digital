@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { BlogCard } from "@/components/blog-card";
 import { Newsletter } from "@/components/newsletter";
 import { FAQ } from "@/components/faq";
 import { StrategyIcon, ContentIcon, WebIcon, HarmonyIcon } from "@/components/offer-icons";
 import { OfferQuiz } from "@/components/offer-quiz";
+import { StatsBand } from "@/components/stats-band";
 import { posts } from "@/data/posts";
 import { offers, fullHarmony, processSteps, servicesFaq } from "@/data/site";
 
@@ -38,6 +39,8 @@ function SectionTitle({ children, light = false }: { children: React.ReactNode; 
 // ─── PAGE ────────────────────────────────────────────────────────────────────
 
 export function HomeView() {
+  const heroBgRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("nea-visible"); }),
@@ -47,6 +50,23 @@ export function HomeView() {
     return () => obs.disconnect();
   }, []);
 
+  // Hero background reacts to the mouse with a light parallax drift.
+  useEffect(() => {
+    const el = heroBgRef.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
+    function handleMove(e: MouseEvent) {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      if (el) el.style.transform = `scale(1.08) translate(${x * -14}px, ${y * -10}px)`;
+    }
+
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
+
   return (
     <>
       <main className="relative">
@@ -54,14 +74,19 @@ export function HomeView() {
         {/* ── HERO ── */}
         <section className="relative isolate bg-[#F5F1EB] flex flex-col items-center justify-center text-center px-12 pt-40 pb-24 overflow-hidden">
           {/* Fond vidéo flouté (loop, muet). Respecte "réduire les animations" en repassant sur le poster. */}
-          <div className="absolute inset-0 z-0" aria-hidden="true">
+          <div
+            ref={heroBgRef}
+            className="absolute inset-0 z-0 transition-transform duration-300 ease-out will-change-transform"
+            style={{ transform: "scale(1.08)" }}
+            aria-hidden="true"
+          >
             <video
               autoPlay
               muted
               loop
               playsInline
               poster="/images/hero-bg-poster.jpg"
-              className="w-full h-full object-cover scale-110 motion-reduce:hidden"
+              className="w-full h-full object-cover motion-reduce:hidden"
               style={{ filter: "blur(4px) saturate(1.05) brightness(1.05)" }}
               onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
             >
@@ -72,7 +97,7 @@ export function HomeView() {
               alt=""
               fill
               sizes="100vw"
-              className="hidden motion-reduce:block object-cover scale-110"
+              className="hidden motion-reduce:block object-cover"
               style={{ filter: "blur(4px) saturate(1.05) brightness(1.05)" }}
             />
             <div className="absolute inset-0 bg-[#F5F1EB]/55" />
@@ -99,6 +124,8 @@ export function HomeView() {
             <a href="#services" className="nea-btn-ghost"><span>Voir les offres</span></a>
           </div>
         </section>
+
+        <StatsBand />
 
         {/* ── OFFRES ── */}
         <section id="services" className="bg-[#F5F1EB] px-12 py-24">
