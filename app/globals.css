@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Museo+Moderno:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-display: "Monument Extended", "Arial Black", sans-serif;
-  --font-editorial: "Bebas Neue", "Arial Narrow", sans-serif;
-  --font-body: "TT Commons Pro", "Inter", system-ui, sans-serif;
-  --background: #f8f6f3;
-  --foreground: #1f1f21;
+  --font-display: "Bricolage Grotesque", "Arial Black", sans-serif;
+  --font-editorial: "Bricolage Grotesque", "Arial Black", sans-serif;
+  --font-body: "DM Sans", "Inter", system-ui, sans-serif;
+  --background: #fff8ec;
+  --foreground: #2b2320;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1f1f21;
-    --foreground: #f8f6f3;
+    --background: #2b2320;
+    --foreground: #fff8ec;
     color-scheme: dark;
   }
 }
@@ -32,11 +32,20 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(205, 187, 163, 0.22), transparent 34rem),
+    radial-gradient(circle, rgba(43,35,32,0.05) 1px, transparent 1px) 0 0 / 22px 22px,
     var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
   text-rendering: optimizeLegibility;
+}
+
+.scallop-edge {
+  height: 22px;
+  background: radial-gradient(circle at 11px 0, transparent 11px, currentColor 11.5px) 0 0 / 22px 22px repeat-x;
+}
+.scallop-edge-up {
+  height: 22px;
+  background: radial-gradient(circle at 11px 22px, transparent 11px, currentColor 11.5px) 0 0 / 22px 22px repeat-x;
 }
 
 body::before {
@@ -50,8 +59,8 @@ body::before {
 }
 
 ::selection {
-  background: #4f503d;
-  color: #f8f6f3;
+  background: #e3363e;
+  color: #fff8ec;
 }
 
 .container-premium {
@@ -83,7 +92,7 @@ body::before {
 }
 
 .focus-ring:focus-visible {
-  outline-color: #4f503d;
+  outline-color: #e3363e;
 }
 
 .prose-premium h2 {

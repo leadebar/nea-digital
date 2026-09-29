@@ -12,11 +12,11 @@ export function Button({ href, children, variant = "dark" }: ButtonProps) {
     <Link
       href={href}
       className={cn(
-        "focus-ring inline-flex min-h-12 items-center justify-center rounded-[4px] px-6 text-sm font-medium transition duration-300",
-        variant === "dark" && "border border-ink bg-ink text-porcelain hover:bg-olive hover:border-olive",
-        variant === "light" && "border border-ink/14 bg-transparent text-ink hover:bg-linen",
-        variant === "cream" && "border border-porcelain bg-porcelain text-ink hover:border-sand hover:bg-sand",
-        variant === "ghost" && "px-0 text-ink underline underline-offset-8 hover:text-olive"
+        "focus-ring inline-flex min-h-12 items-center justify-center rounded-full border-2 px-7 text-sm font-bold uppercase tracking-[0.02em] transition duration-200",
+        variant === "dark" && "border-sand bg-sand text-porcelain hover:bg-transparent hover:text-sand",
+        variant === "light" && "border-ink/25 bg-transparent text-ink hover:border-sand hover:text-sand",
+        variant === "cream" && "border-porcelain bg-porcelain text-ink hover:border-sand hover:text-sand",
+        variant === "ghost" && "border-transparent px-0 normal-case text-ink underline decoration-2 underline-offset-8 hover:text-sand"
       )}
     >
       {children}

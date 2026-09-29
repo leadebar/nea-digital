@@ -16,22 +16,15 @@ const offerIcons = { strategy: StrategyIcon, content: ContentIcon, web: WebIcon 
 
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
 
-function SectionTag({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
-  return (
-    <div className={`flex items-center gap-3 mb-3.5 ${light ? "text-[#B08D57]" : "text-[#8A8177]"}`}>
-      <span className="w-7 h-[1.5px] bg-[#B08D57]" />
-      <span className="font-['DM_Sans'] text-[10px] font-medium tracking-[0.2em] uppercase">
-        {children}
-      </span>
-    </div>
-  );
+function ScallopEdge({ color = "text-porcelain", flip = false }: { color?: string; flip?: boolean }) {
+  return <div className={`${flip ? "scallop-edge-up" : "scallop-edge"} ${color}`} aria-hidden="true" />;
 }
 
-function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+function Eyebrow({ children, onDark = false }: { children: React.ReactNode; onDark?: boolean }) {
   return (
-    <h2 className={`font-['Museo_Moderno'] text-[clamp(26px,3.2vw,40px)] leading-[1.2] mb-14 ${light ? "text-white" : "text-[#1C1A1A]"}`}>
+    <p className={`mb-4 font-display text-[13px] font-extrabold uppercase tracking-[0.04em] ${onDark ? "text-porcelain" : "text-sand"}`}>
       {children}
-    </h2>
+    </p>
   );
 }
 
@@ -52,164 +45,164 @@ export function HomeView() {
       <main className="relative">
 
         {/* ── HERO ── */}
-        <section className="relative isolate bg-[#F5F1EB] flex flex-col items-center justify-center text-center px-12 pt-40 pb-24 overflow-hidden">
-          {/* Fond vidéo flouté (loop, muet). Respecte "réduire les animations" en repassant sur le poster. */}
-          <div className="absolute inset-0 z-0" aria-hidden="true">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/images/hero-bg-poster.jpg"
-              className="w-full h-full object-cover scale-110 motion-reduce:hidden"
-              style={{ filter: "blur(4px) saturate(1.05) brightness(1.05)" }}
-              onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
-            >
-              <source src="/videos/hero-bg.mp4" type="video/mp4" />
-            </video>
-            <Image
-              src="/images/hero-bg-poster.jpg"
-              alt=""
-              fill
-              sizes="100vw"
-              className="hidden motion-reduce:block object-cover scale-110"
-              style={{ filter: "blur(4px) saturate(1.05) brightness(1.05)" }}
-            />
-            <div className="absolute inset-0 bg-[#F5F1EB]/55" />
+        <section className="relative isolate bg-sand px-8 pt-16 pb-0 md:px-16">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 pb-16 pt-10 md:grid-cols-2">
+            <div className="text-center md:text-left">
+              <Eyebrow onDark>Agence marketing digital</Eyebrow>
+              <h1
+                className="font-display font-extrabold text-porcelain uppercase"
+                style={{ fontSize: "clamp(38px,5.6vw,66px)", lineHeight: 1.02, letterSpacing: "-0.01em" }}
+              >
+                Stratégie, contenu,
+                <br />
+                site web.
+              </h1>
+              <p className="mt-6 max-w-md text-[15px] leading-[1.8] text-porcelain/85 mx-auto md:mx-0">
+                J'aide les entreprises, les marques et les indépendants à améliorer leur présence en ligne : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie claire pour votre activité.
+              </p>
+              <div className="mt-9 flex flex-wrap justify-center gap-4 md:justify-start">
+                <a href="/contact" className="nea-pill nea-pill--cream">Demander un devis gratuit</a>
+                <a href="#services" className="nea-pill nea-pill--outline">Voir les offres</a>
+              </div>
+            </div>
+
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[28px] border-4 border-porcelain shadow-soft">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/images/hero-bg-poster.jpg"
+                className="h-full w-full object-cover motion-reduce:hidden"
+                onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
+              >
+                <source src="/videos/hero-bg.mp4" type="video/mp4" />
+              </video>
+              <Image
+                src="/images/hero-bg-poster.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 768px) 30vw, 80vw"
+                className="hidden object-cover motion-reduce:block"
+              />
+            </div>
           </div>
-
-          <p className="text-[11px] font-medium tracking-[0.25em] uppercase text-[#B08D57] mb-7 relative" style={{ animation: "nea-slide-top 0.7s 0.2s cubic-bezier(0.22,1,0.36,1) both" }}>
-            Agence marketing digital
-          </p>
-
-          <h1
-            className="text-[#1C1A1A] relative"
-            style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(48px,8vw,104px)", lineHeight: 0.98, letterSpacing: "0.02em" }}
-          >
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) both" }}>STRATÉGIE, CONTENU,</span>
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>SITE WEB.</span>
-          </h1>
-
-          <p className="text-[15px] font-light text-[#5C564F] leading-[1.85] max-w-[540px] mx-auto mt-6 mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
-            J'aide les entreprises, les marques et les indépendants à améliorer leur présence en ligne : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie claire pour votre activité.
-          </p>
-
-          <div className="flex gap-4 justify-center flex-wrap relative" style={{ animation: "nea-fade-up 0.8s 1.15s both" }}>
-            <a href="/contact" className="nea-btn-fill bg-[#1C1A1A] text-white"><span>Demander un devis gratuit</span></a>
-            <a href="#services" className="nea-btn-ghost"><span>Voir les offres</span></a>
-          </div>
+          <ScallopEdge color="text-porcelain" />
         </section>
 
         {/* ── OFFRES ── */}
-        <section id="services" className="bg-[#F5F1EB] px-12 py-24">
-          <div className="nea-reveal">
-            <SectionTag>Ce que je fais</SectionTag>
-            <SectionTitle>Comment travailler ensemble.</SectionTitle>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
-            {offers.map((offer, i) => {
-              const Icon = offerIcons[offer.key as keyof typeof offerIcons];
-              return (
-                <div key={offer.key} className="nea-reveal bg-white p-11 relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_30px_80px_rgba(28,26,26,0.06)]" style={{ transitionDelay: `${i * 0.1}s` }}>
-                  <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#B08D57] scale-x-0 origin-left transition-transform duration-400 group-hover:scale-x-100" />
-                  <div className="flex items-center gap-4 mb-5">
-                    <Icon className="w-9 h-9 text-[#B08D57] shrink-0" />
-                    <span className="text-[#EDE8DF] leading-none tracking-[0.05em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "38px" }}>{offer.num}</span>
-                  </div>
-                  <h3 className="text-[20px] font-semibold text-[#1C1A1A] mb-1" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }}>{offer.title}</h3>
-                  <p className="text-[13px] text-[#B08D57] font-medium mb-3 italic">{offer.tagline}</p>
-                  <p className="text-[13px] text-[#7A7470] leading-[1.7] mb-6">{offer.desc}</p>
-                  <ul className="flex flex-col gap-2 mb-8">
-                    {offer.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-[13px] text-[#1C1A1A] leading-[1.4]">
-                        <span className="mt-[7px] h-1 w-1 rounded-full bg-[#B08D57] shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <a href="/contact" className="text-[11px] font-medium tracking-[0.08em] uppercase text-[#1C1A1A] border-b border-[#B08D57] pb-0.5 hover:text-[#7A7470] transition-colors">
-                    Demander un devis →
-                  </a>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Full Harmony */}
-          <div className="nea-reveal mt-0.5 bg-[#1C1A1A] p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
-            <div>
-              <HarmonyIcon className="w-9 h-9 text-[#B08D57] mb-4" />
-              <p className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#B08D57] mb-3">Pack recommandé</p>
-              <h3 className="text-[26px] text-white mb-2" style={{ fontFamily: "'Bebas Neue'", letterSpacing: "0.03em" }}>{fullHarmony.name}</h3>
-              <p className="text-[14px] text-white/60 leading-[1.7] mb-4 max-w-md">{fullHarmony.desc}</p>
-              <ul className="flex flex-wrap gap-x-6 gap-y-2">
-                {fullHarmony.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-[13px] text-white/75">
-                    <span className="text-[#B08D57]">✓</span>{item}
-                  </li>
-                ))}
-              </ul>
+        <section id="services" className="bg-porcelain px-8 py-24 md:px-16">
+          <div className="mx-auto max-w-6xl">
+            <div className="nea-reveal text-center">
+              <Eyebrow>Ce que je fais</Eyebrow>
+              <h2 className="font-display text-[clamp(28px,3.4vw,40px)] font-extrabold uppercase text-ink mb-16">
+                Comment travailler ensemble
+              </h2>
             </div>
-            <a href="/contact" className="nea-btn-fill bg-white text-[#1C1A1A] whitespace-nowrap"><span>Demander un devis</span></a>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {offers.map((offer, i) => {
+                const Icon = offerIcons[offer.key as keyof typeof offerIcons];
+                return (
+                  <div
+                    key={offer.key}
+                    className="nea-reveal rounded-[24px] border-2 border-ink/10 bg-linen p-8 relative overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+                    style={{ transitionDelay: `${i * 0.1}s` }}
+                  >
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sand">
+                        <Icon className="w-6 h-6 text-porcelain" />
+                      </div>
+                      <span className="font-display text-[13px] font-extrabold uppercase text-sand">{offer.num}</span>
+                    </div>
+                    <h3 className="font-display text-[20px] font-extrabold text-ink mb-1">{offer.title}</h3>
+                    <p className="text-[13px] text-sand font-semibold mb-3">{offer.tagline}</p>
+                    <p className="text-[13px] text-ink/65 leading-[1.7] mb-6">{offer.desc}</p>
+                    <ul className="flex flex-col gap-2 mb-8">
+                      {offer.items.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-[13px] text-ink leading-[1.4]">
+                          <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-sand shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <a href="/contact" className="nea-pill nea-pill--outline-small">Demander un devis</a>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Full Harmony */}
+            <div className="nea-reveal mt-8 rounded-[28px] bg-ink p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
+              <div>
+                <HarmonyIcon className="w-9 h-9 text-sand mb-4" />
+                <p className="font-display text-[12px] font-extrabold uppercase tracking-[0.04em] text-sand mb-3">Pack recommandé</p>
+                <h3 className="font-display text-[26px] font-extrabold text-porcelain mb-2">{fullHarmony.name}</h3>
+                <p className="text-[14px] text-porcelain/65 leading-[1.7] mb-4 max-w-md">{fullHarmony.desc}</p>
+                <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                  {fullHarmony.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-[13px] text-porcelain/80">
+                      <span className="text-sand">✓</span>{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <a href="/contact" className="nea-pill nea-pill--cream whitespace-nowrap">Demander un devis</a>
+            </div>
+            <p className="text-center text-[12px] text-ink/40 mt-8">Tarifs communiqués sur devis, adaptés à chaque projet.</p>
           </div>
-          <p className="text-center text-[12px] text-[#9A928C] mt-8 tracking-[0.05em]">Tarifs communiqués sur devis, adaptés à chaque projet.</p>
         </section>
 
         {/* ── QUIZ ── */}
-        <section className="bg-[#F5F1EB] px-12 pb-24">
-          <div className="nea-reveal">
-            <SectionTag>Quelle offre pour vous</SectionTag>
-            <h2 className="font-['Museo_Moderno'] text-[clamp(24px,3vw,34px)] leading-[1.2] text-[#1C1A1A] mb-10">Trouvez votre offre en 3 questions.</h2>
+        <section className="bg-porcelain px-8 pb-24 md:px-16">
+          <div className="mx-auto max-w-6xl text-center">
+            <div className="nea-reveal">
+              <Eyebrow>Quelle offre pour vous</Eyebrow>
+              <h2 className="font-display text-[clamp(24px,3vw,32px)] font-extrabold uppercase text-ink mb-10">Trouvez votre offre en 3 questions</h2>
+            </div>
+            <OfferQuiz />
           </div>
-          <OfferQuiz />
         </section>
 
         {/* ── MÉTHODE ── */}
-        <section className="bg-white px-12 py-24">
-          <div className="nea-reveal">
-            <SectionTag>Ma méthode</SectionTag>
-            <SectionTitle>Comment ça se passe.</SectionTitle>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0.5">
-            {processSteps.map((step, i) => (
-              <div key={step.num} className="nea-reveal bg-[#F5F1EB] p-9" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="leading-none mb-5 tracking-[0.05em] text-[#B08D57]" style={{ fontFamily: "'Bebas Neue'", fontSize: "34px" }}>{step.num}</div>
-                <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[16px] font-semibold text-[#1C1A1A] mb-3">{step.title}</h3>
-                <p className="text-[13px] text-[#7A7470] leading-[1.7]">{step.desc}</p>
-              </div>
-            ))}
+        <section className="relative isolate bg-ink px-8 pb-24 pt-16 md:px-16">
+          <ScallopEdge color="text-porcelain" flip />
+          <div className="mx-auto max-w-6xl text-center mt-8">
+            <div className="nea-reveal">
+              <Eyebrow onDark>Ma méthode</Eyebrow>
+              <h2 className="font-display text-[clamp(28px,3.4vw,40px)] font-extrabold uppercase text-porcelain mb-16">Comment ça se passe</h2>
+            </div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-4 text-left">
+              {processSteps.map((step, i) => (
+                <div key={step.num} className="nea-reveal rounded-[20px] bg-porcelain/[0.06] p-7" style={{ transitionDelay: `${i * 0.1}s` }}>
+                  <div className="font-display font-extrabold text-sand text-[30px] mb-3">{step.num}</div>
+                  <h3 className="font-display text-[15px] font-extrabold text-porcelain mb-2">{step.title}</h3>
+                  <p className="text-[13px] text-porcelain/60 leading-[1.7]">{step.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ── BLOG ── */}
-        <section className="bg-[#F5F1EB] px-12 py-24">
-          <div className="nea-reveal">
-            <SectionTag>Blog</SectionTag>
-            <SectionTitle>Stratégie, contenu, web : quelques repères.</SectionTitle>
-          </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {posts.map((post) => <BlogCard key={post.slug} post={post} />)}
+        <section className="bg-porcelain px-8 py-24 md:px-16">
+          <div className="mx-auto max-w-6xl">
+            <div className="nea-reveal text-center">
+              <Eyebrow>Blog</Eyebrow>
+              <h2 className="font-display text-[clamp(28px,3.4vw,40px)] font-extrabold uppercase text-ink mb-16">Quelques repères</h2>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
+              {posts.map((post) => <BlogCard key={post.slug} post={post} />)}
+            </div>
           </div>
         </section>
 
         {/* ── CTA ── */}
-        <section id="contact" className="relative isolate bg-[#1C1A1A] px-12 py-32 text-center overflow-hidden">
-          <div className="absolute inset-0 z-0" aria-hidden="true">
-            <Image
-              src="/images/contact-bg.jpg"
-              alt=""
-              fill
-              sizes="100vw"
-              className="object-cover"
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-            />
-            <div className="absolute inset-0 bg-[#1C1A1A]/90" />
-          </div>
-
-          <h2 className="nea-reveal text-white relative tracking-[0.02em] leading-none mb-3" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(42px,6vw,76px)" }}>PARLONS DE<br />VOTRE PROJET.</h2>
-          <p className="nea-reveal relative mb-4 italic font-light text-[#B08D57]" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(17px,2vw,22px)" }}>un échange, un devis, sans engagement.</p>
-          <p className="nea-reveal text-[13px] text-white/45 tracking-[0.05em] relative mb-10">Devis gratuit · Réponse sous 48h</p>
-          <a href="/contact" className="nea-reveal nea-btn-fill bg-white text-[#1C1A1A] inline-block relative"><span>Contactez-moi →</span></a>
+        <section id="contact" className="relative isolate bg-sand px-8 py-28 text-center md:px-16">
+          <h2 className="nea-reveal font-display text-porcelain uppercase font-extrabold mb-3" style={{ fontSize: "clamp(34px,5.5vw,64px)", lineHeight: 1.02 }}>
+            Parlons de votre projet
+          </h2>
+          <p className="nea-reveal text-[14px] text-porcelain/80 mb-10">Devis gratuit · Réponse sous 48h · Sans engagement</p>
+          <a href="/contact" className="nea-reveal nea-pill nea-pill--cream inline-block">Contactez-moi</a>
         </section>
 
         <Newsletter />
@@ -219,24 +212,20 @@ export function HomeView() {
 
       {/* ── GLOBAL STYLES ── */}
       <style>{`
-        @keyframes nea-fade-up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-        @keyframes nea-slide-top { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
-        @keyframes nea-reveal { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
-
-        .nea-reveal { opacity:0; transform:translateY(24px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+        .nea-reveal { opacity:0; transform:translateY(20px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
         .nea-reveal.nea-visible { opacity:1; transform:translateY(0); }
 
-        .nea-btn-fill { position:relative; overflow:hidden; font-size:12px; font-weight:500; padding:15px 32px; border-radius:2px; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.35s; display:inline-block; }
-        .nea-btn-fill::before { content:''; position:absolute; inset:0; background:#B08D57; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
-        .nea-btn-fill:hover { color:white; }
-        .nea-btn-fill:hover::before { transform:translateY(0); }
-        .nea-btn-fill span { position:relative; z-index:1; }
-
-        .nea-btn-ghost { position:relative; overflow:hidden; border:1.5px solid rgba(28,26,26,0.2); color:#1C1A1A; font-size:12px; font-weight:500; padding:15px 32px; border-radius:2px; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.35s, border-color 0.3s; display:inline-block; }
-        .nea-btn-ghost::before { content:''; position:absolute; inset:0; background:rgba(28,26,26,0.06); transform:translateX(-101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
-        .nea-btn-ghost:hover { border-color:rgba(28,26,26,0.4); }
-        .nea-btn-ghost:hover::before { transform:translateX(0); }
-        .nea-btn-ghost span { position:relative; z-index:1; }
+        .nea-pill {
+          display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:800;
+          text-transform:uppercase; letter-spacing:0.02em; padding:14px 30px; border-radius:9999px;
+          text-decoration:none; border:2.5px solid transparent; transition: all 0.2s;
+        }
+        .nea-pill--cream { background:#FFF8EC; color:#E3363E; border-color:#FFF8EC; }
+        .nea-pill--cream:hover { background:transparent; color:#FFF8EC; border-color:#FFF8EC; }
+        .nea-pill--outline { background:transparent; color:#FFF8EC; border-color:#FFF8EC; }
+        .nea-pill--outline:hover { background:#FFF8EC; color:#E3363E; }
+        .nea-pill--outline-small { display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.02em; padding:10px 20px; border-radius:9999px; text-decoration:none; border:2px solid #E3363E; color:#E3363E; transition: all 0.2s; }
+        .nea-pill--outline-small:hover { background:#E3363E; color:#FFF8EC; }
       `}</style>
     </>
   );

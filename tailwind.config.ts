@@ -9,21 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        porcelain: "#F8F6F3",
-        linen: "#E9E2DA",
-        sand: "#CDBBA3",
-        taupe: "#A89782",
-        olive: "#4F503D",
-        ink: "#1F1F21"
+        porcelain: "#FFF8EC",
+        linen: "#FCEFD9",
+        sand: "#E3363E",
+        taupe: "#B08A6A",
+        olive: "#E3363E",
+        ink: "#2B2320"
       },
       fontFamily: {
-        display: ["var(--font-display)", "Impact", "sans-serif"],
-        editorial: ["var(--font-editorial)", "Bebas Neue", "sans-serif"],
+        display: ["var(--font-display)", "Arial Black", "sans-serif"],
+        editorial: ["var(--font-editorial)", "Arial Black", "sans-serif"],
         body: ["var(--font-body)", "Inter", "sans-serif"]
       },
       boxShadow: {
-        soft: "0 24px 80px rgba(31,31,33,0.08)",
-        line: "inset 0 0 0 1px rgba(31,31,33,0.09)"
+        soft: "0 24px 80px rgba(43,35,32,0.1)",
+        line: "inset 0 0 0 1px rgba(43,35,32,0.1)"
       }
     }
   },
