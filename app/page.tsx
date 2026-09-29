@@ -4,7 +4,7 @@ import { HomeView } from "@/components/views/home-view";
 export const metadata: Metadata = {
   title: "Néa Digital | Stratégie digitale, contenu et création de site",
   description:
-    "J'aide les entreprises, marques et indépendants à améliorer leur présence en ligne : stratégie, contenu et création de site, sur la Côte d'Azur et à distance.",
+    "J'aide les entreprises, marques et indépendants à améliorer leur présence en ligne : stratégie, contenu et création de site, à distance partout en France.",
   alternates: {
     canonical: "/"
   },
