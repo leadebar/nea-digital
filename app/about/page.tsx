@@ -23,12 +23,6 @@ export default function AboutPage() {
 
         {/* ── HERO ── */}
         <section className="bg-[#1C1A1A] px-12 pt-36 pb-24 relative overflow-hidden">
-          <span
-            className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.03] whitespace-nowrap leading-none"
-            style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(100px,20vw,280px)", letterSpacing: "0.05em" }}
-            aria-hidden="true"
-          >À PROPOS</span>
-
           <div className="relative max-w-3xl">
             <div className="flex items-center gap-3 mb-6" style={{ animation: "ab-slide-top 0.7s 0.2s both" }}>
               <span className="w-7 h-px bg-[#B08D57]" />
@@ -44,7 +38,7 @@ export default function AboutPage() {
               className="text-[16px] font-light text-white/65 leading-[1.85] max-w-2xl"
               style={{ animation: "ab-fade-up 0.8s 0.6s both" }}
             >
-              Néa Digital, c'est deux choses : des <strong className="text-white/90 font-medium">services marketing digital</strong> pour les entreprises, marques et indépendants, et une boutique de <strong className="text-white/90 font-medium">ressources digitales</strong> pour celles qui veulent s'organiser mieux.
+              Néa Digital, c'est deux choses : des <strong className="text-white/90 font-medium">services marketing digital</strong> pour les entreprises, marques et indépendants, et une boutique de <strong className="text-white/90 font-medium">ressources digitales</strong> pour s'organiser au quotidien.
             </p>
           </div>
         </section>
@@ -60,7 +54,7 @@ export default function AboutPage() {
               Services marketing pour entreprises & indépendants.
             </h2>
             <p className="text-[14px] text-[#7A7470] leading-[1.8] mb-8">
-              Stratégie, contenu et création de site — j'accompagne entreprises, marques et indépendants pour développer une présence en ligne à la hauteur de leur activité. Des prestations soignées, sans jargon.
+              Stratégie, contenu et visibilité digitale, avec la possibilité de créer ou refondre un site quand le projet le demande. J'accompagne entreprises, marques et indépendants pour développer une présence en ligne à la hauteur de leur activité, avec des prestations soignées, sans jargon.
             </p>
             <a href="/services" className="ab-btn-dark inline-block"><span>Voir les services →</span></a>
           </div>
@@ -74,7 +68,7 @@ export default function AboutPage() {
               Ressources digitales pour s'organiser.
             </h2>
             <p className="text-[14px] text-[#7A7470] leading-[1.8] mb-8">
-              Planners digitaux, trackers d'habitudes, suivi financier — des outils simples pour planifier, prioriser et suivre ce qui compte. Compatibles GoodNotes, Notability et imprimables A4.
+              Planners digitaux, trackers d'habitudes, suivi financier : des outils simples pour planifier, prioriser et suivre ce qui compte. Compatibles GoodNotes, Notability et imprimables A4.
             </p>
             <a href="/shop" className="ab-btn-dark inline-block"><span>Voir la boutique →</span></a>
           </div>
@@ -97,7 +91,7 @@ export default function AboutPage() {
                 D'un côté, des créatrices et indépendantes qui veulent une organisation plus claire. De l'autre, des entreprises qui veulent une présence en ligne qui tient debout.
               </p>
               <p className="text-[15px] text-[#7A7470] leading-[1.85]">
-                Dans les deux cas, je travaille pareil : je comprends d'abord ce dont vous avez besoin, je livre ensuite quelque chose d'utilisable tout de suite — <strong className="text-[#1C1A1A] font-medium">sans y ajouter de complexité</strong>.
+                Dans les deux cas, je travaille pareil : je comprends d'abord ce dont vous avez besoin, puis je livre quelque chose d'utilisable tout de suite, <strong className="text-[#1C1A1A] font-medium">sans y ajouter de complexité</strong>.
               </p>
             </div>
             <div className="ab-reveal bg-[#1C1A1A] p-11 flex flex-col justify-between">
@@ -107,7 +101,7 @@ export default function AboutPage() {
                 ))}
               </div>
               <div>
-                <div className="text-[10px] tracking-[0.15em] uppercase text-white/30 mb-2">contact.neadigital@gmail.com</div>
+                <a href="mailto:contact.neadigital@gmail.com" className="block text-[10px] tracking-[0.15em] uppercase text-white/30 mb-2 hover:text-white/60">contact.neadigital@gmail.com</a>
                 <div className="text-[10px] tracking-[0.15em] uppercase text-white/30">Pinterest</div>
               </div>
             </div>
@@ -124,9 +118,6 @@ export default function AboutPage() {
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(28px,3.5vw,44px)] text-white leading-[1.15]">
               Compétences.
             </h2>
-            <p className="text-[14px] text-white/50 leading-[1.8] max-w-lg mt-4">
-              Avant Néa Digital, cinq ans de marketing digital dont deux comme cheffe de projet chez Michaël Zingraf Christie's International Real Estate, après un master en marketing du luxe (ISG Luxury Nice).
-            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.06]">
             {expertises.map((exp, i) => (
@@ -148,11 +139,6 @@ export default function AboutPage() {
 
         {/* ── CTA ── */}
         <section className="bg-[#F5F1EB] px-12 py-28 relative overflow-hidden">
-          <span
-            className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#EDE8DF] whitespace-nowrap leading-none"
-            style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(80px,18vw,240px)", letterSpacing: "0.05em" }}
-            aria-hidden="true"
-          >NÉA.</span>
           <div className="relative text-center">
             <h2 className="ab-reveal text-[#1C1A1A] leading-none mb-4 tracking-[0.04em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(44px,6vw,80px)" }}>
               UN PROJET ?<br />UNE QUESTION ?

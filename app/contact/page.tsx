@@ -61,12 +61,6 @@ export default function ContactPage() {
 
           {/* Gauche — infos */}
           <div className="bg-[#1C1A1A] flex flex-col justify-center px-14 py-20 relative overflow-hidden">
-            <span
-              className="pointer-events-none select-none absolute bottom-[-10px] left-[-5px] text-white/[0.03] leading-none"
-              style={{ fontFamily: "'Bebas Neue'", fontSize: "180px", letterSpacing: "0.05em" }}
-              aria-hidden="true"
-            >CONTACT</span>
-
             <div className="flex items-center gap-3 mb-6 relative" style={{ animation: "ct-fade-up 0.7s 0.2s both" }}>
               <span className="w-7 h-px bg-[#B08D57]" />
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#B08D57]">Parlons de votre projet</span>
@@ -83,7 +77,7 @@ export default function ContactPage() {
 
             <div className="flex flex-col gap-5 relative" style={{ animation: "ct-fade-up 0.8s 0.85s both" }}>
               {[
-                { label: "Email", val: "contact.neadigital@gmail.com" },
+                { label: "Email", val: "contact.neadigital@gmail.com", href: "mailto:contact.neadigital@gmail.com" },
                 { label: "Réponse", val: "Sous 48h ouvrées" },
                 { label: "Réseaux", val: "Pinterest" },
               ].map((item) => (
@@ -91,7 +85,11 @@ export default function ContactPage() {
                   <div className="w-[5px] h-[5px] rounded-full bg-[#B08D57] shrink-0 mt-[5px]" />
                   <div>
                     <div className="text-[10px] font-medium tracking-[0.08em] uppercase text-white/35 mb-0.5">{item.label}</div>
-                    <div className="text-[14px] text-white/80">{item.val}</div>
+                    {item.href ? (
+                      <a href={item.href} className="text-[14px] text-white/80 hover:text-white">{item.val}</a>
+                    ) : (
+                      <div className="text-[14px] text-white/80">{item.val}</div>
+                    )}
                   </div>
                 </div>
               ))}
@@ -194,7 +192,7 @@ export default function ContactPage() {
                     {feedback}
                   </p>
                 ) : (
-                  <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Réponse sous 48h · contact.neadigital@gmail.com</p>
+                  <p className="text-[11px] text-[#7A7470] text-center leading-[1.6]">Réponse sous 48h · <a href="mailto:contact.neadigital@gmail.com" className="underline hover:text-[#1C1A1A]">contact.neadigital@gmail.com</a></p>
                 )}
               </form>
             )}
@@ -211,7 +209,7 @@ export default function ContactPage() {
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(22px,2.5vw,32px)] text-[#1C1A1A] leading-[1.2] mb-4">
               Vous cherchez à <em className="italic font-light text-[#7A7470]">développer votre visibilité</em> en ligne ?
             </h2>
-            <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-7">Stratégie, contenu, création de site — je m'occupe de tout. Devis gratuit, sans engagement.</p>
+            <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-7">Stratégie, contenu, création de site : je m'occupe de tout. Devis gratuit, sans engagement.</p>
             <a href="/services" className="ct-btn-dark inline-block self-start"><span>Voir les services →</span></a>
           </div>
 
@@ -223,7 +221,7 @@ export default function ContactPage() {
             <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(22px,2.5vw,32px)] text-[#1C1A1A] leading-[1.2] mb-4">
               Vous cherchez un <em className="italic font-light text-[#7A7470]">planner digital</em> pour vous organiser ?
             </h2>
-            <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-7">Planners, trackers, finance — des ressources pour gagner en clarté au quotidien.</p>
+            <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-7">Planners, trackers, finance : des ressources pour gagner en clarté au quotidien.</p>
             <a href="/shop" className="ct-btn-dark inline-block self-start"><span>Voir la boutique →</span></a>
           </div>
         </div>

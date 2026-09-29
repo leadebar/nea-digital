@@ -23,11 +23,6 @@ export default function ServicesPage() {
 
         {/* ── HERO ── */}
         <section className="bg-[#F5F1EB] px-12 pt-40 pb-24 text-center relative overflow-hidden">
-          <span
-            className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#1C1A1A]/[0.03] whitespace-nowrap leading-none"
-            style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(100px,20vw,280px)", letterSpacing: "0.05em" }}
-            aria-hidden="true"
-          >SERVICES</span>
           <div className="relative max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-3 mb-6" style={{ animation: "pro-fade-up 0.7s 0.2s both" }}>
               <span className="w-7 h-px bg-[#B08D57]" />
@@ -85,7 +80,7 @@ export default function ServicesPage() {
                   <ul className="flex flex-col gap-2 mb-8">
                     {offer.items.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-[13px] text-[#1C1A1A] leading-[1.4]">
-                        <span className="text-[#B08D57] text-[11px] flex-shrink-0 mt-[2px]">—</span>
+                        <span className="mt-[7px] h-1 w-1 rounded-full bg-[#B08D57] flex-shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -124,7 +119,7 @@ export default function ServicesPage() {
             </div>
             <a href="/contact" className="pro-pack-btn-dark whitespace-nowrap"><span>Demander un devis</span></a>
           </div>
-          <p className="text-center text-[12px] text-white/25 mt-8 tracking-[0.05em]">Tarifs communiqués sur devis — chaque projet est unique.</p>
+          <p className="text-center text-[12px] text-white/25 mt-8 tracking-[0.05em]">Tarifs communiqués sur devis. Chaque projet est unique.</p>
         </section>
 
         {/* ── PROCESSUS ── */}
@@ -155,11 +150,6 @@ export default function ServicesPage() {
 
         {/* ── CTA ── */}
         <section id="contact" className="relative bg-[#1C1A1A] px-12 py-32 overflow-hidden">
-          <span
-            className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.03] whitespace-nowrap leading-none"
-            style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(80px,18vw,260px)", letterSpacing: "0.05em" }}
-            aria-hidden="true"
-          >DEVIS</span>
           <div className="relative max-w-2xl">
             <h2 className="pro-reveal text-white leading-none mb-4 tracking-[0.02em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(42px,6vw,76px)" }}>
               DISCUTONS DE<br /><span className="text-[#B08D57]">VOTRE PROJET.</span>

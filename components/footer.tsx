@@ -16,7 +16,7 @@ export function Footer() {
         <div>
           <BrandLogo tone="sand" className="h-10" />
           <p className="mt-5 max-w-md text-sm leading-7 text-porcelain/65">
-            Planners, templates et services pour structurer ton digital.
+            Marketing digital pour les entreprises, ressources d'organisation pour les particuliers.
           </p>
         </div>
         <div>
@@ -33,7 +33,7 @@ export function Footer() {
           <p className="eyebrow mb-4 text-xs text-sand">Réseaux</p>
           <div className="grid gap-3 text-sm text-porcelain/70">
             <span>Pinterest</span>
-            <span className="flex items-center gap-2"><Mail className="h-4 w-4" /> contact.neadigital@gmail.com</span>
+            <a href="mailto:contact.neadigital@gmail.com" className="flex items-center gap-2 hover:text-porcelain"><Mail className="h-4 w-4" /> contact.neadigital@gmail.com</a>
           </div>
         </div>
         <div>

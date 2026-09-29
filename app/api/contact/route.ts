@@ -45,14 +45,14 @@ export async function POST(request: Request) {
       const need = (body.need as string).trim();
       const project = isNonEmptyString(body.project) ? (body.project as string).trim() : "";
 
-      subject = `Demande de devis — ${firstName} ${lastName}`;
+      subject = `Demande de devis - ${firstName} ${lastName}`;
       html = `
         <h2>Nouvelle demande de devis</h2>
         <p><strong>Nom :</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p>
         <p><strong>Email :</strong> ${escapeHtml(email)}</p>
         <p><strong>Activité :</strong> ${escapeHtml(activity)}</p>
         <p><strong>Besoin :</strong> ${escapeHtml(need)}</p>
-        <p><strong>Projet :</strong><br/>${escapeHtml(project).replace(/\n/g, "<br/>") || "—"}</p>
+        <p><strong>Projet :</strong><br/>${escapeHtml(project).replace(/\n/g, "<br/>") || "-"}</p>
       `;
     } else {
       if (!isNonEmptyString(body.subject) || !isNonEmptyString(body.message)) {
@@ -62,7 +62,7 @@ export async function POST(request: Request) {
       const subjectField = (body.subject as string).trim();
       const message = (body.message as string).trim();
 
-      subject = `Question — ${firstName} (${subjectField})`;
+      subject = `Question - ${firstName} (${subjectField})`;
       html = `
         <h2>Nouvelle question</h2>
         <p><strong>Prénom :</strong> ${escapeHtml(firstName)}</p>

@@ -35,14 +35,14 @@ export const posts: Post[] = [
         paragraphs: [
           "La plupart des entreprises ajoutent des actions marketing sans savoir si les bases sont solides : un nouveau post, une campagne de pub, une refonte partielle du site. Le résultat est rarement à la hauteur, parce que le problème n'était pas là où on a cherché.",
           "C'est une situation qu'on retrouve très souvent : une entreprise qui publie beaucoup, mais dont le site ne convertit pas ; ou l'inverse, un site soigné qui reste invisible parce que personne ne travaille le référencement. Dans les deux cas, ajouter de l'action ne corrige rien tant que le vrai point de blocage n'est pas identifié.",
-          "Un audit sert à poser ce diagnostic avant de dépenser du temps ou du budget. Il ne s'agit pas de tout refaire, mais de savoir précisément ce qui mérite d'être corrigé en premier — et ce qui, au contraire, fonctionne déjà et ne doit pas être touché."
+          "Un audit sert à poser ce diagnostic avant de dépenser du temps ou du budget. Il ne s'agit pas de tout refaire, mais de savoir précisément ce qui mérite d'être corrigé en premier, et ce qui, au contraire, fonctionne déjà et ne doit pas être touché."
         ]
       },
       {
         id: "site",
         heading: "Le site : la vitrine que personne ne relit",
         paragraphs: [
-          "Un site se construit une fois, puis on l'oublie. Les offres changent, les tarifs évoluent, une page reste en ligne alors qu'elle ne correspond plus à rien — et personne ne s'en aperçoit, parce que personne ne le relit avec un regard neuf.",
+          "Un site se construit une fois, puis on l'oublie. Les offres changent, les tarifs évoluent, une page reste en ligne alors qu'elle ne correspond plus à rien, et personne ne s'en aperçoit, parce que personne ne le relit avec un regard neuf.",
           "L'audit consiste à se remettre à la place d'un visiteur qui découvre le site pour la première fois : comprend-il en quelques secondes ce que vous proposez ? Trouve-t-il facilement comment vous contacter ? Le site s'affiche-t-il correctement sur son téléphone ?"
         ],
         list: [
@@ -74,7 +74,7 @@ export const posts: Post[] = [
         heading: "Prioriser plutôt que tout corriger d'un coup",
         paragraphs: [
           "Une fois le diagnostic posé, tout n'a pas la même urgence. Ce qui bloque un visiteur au moment de vous contacter passe avant ce qui améliorerait légèrement la visibilité à long terme.",
-          "Un moyen simple de trier : reprendre chaque point relevé et le classer en trois colonnes — à corriger cette semaine, à corriger ce mois-ci, à prévoir plus tard sans urgence. C'est cette hiérarchie, et non une liste de tout ce qui pourrait être amélioré, qui rend un plan d'action réellement suivable."
+          "Un moyen simple de trier : reprendre chaque point relevé et le classer en trois colonnes : à corriger cette semaine, à corriger ce mois-ci, à prévoir plus tard sans urgence. C'est cette hiérarchie, et non une liste de tout ce qui pourrait être amélioré, qui rend un plan d'action réellement suivable."
         ]
       }
     ],
@@ -97,16 +97,16 @@ export const posts: Post[] = [
         id: "probleme",
         heading: "Le vrai problème n'est pas le manque d'idées",
         paragraphs: [
-          "La difficulté n'est presque jamais de trouver un sujet. C'est de le faire chaque semaine, sans que ça devienne une charge qui passe après tout le reste — après les clients, après l'administratif, après tout ce qui semble plus urgent sur le moment.",
+          "La difficulté n'est presque jamais de trouver un sujet. C'est de le faire chaque semaine, sans que ça devienne une charge qui passe après tout le reste, après les clients, après l'administratif, après tout ce qui semble plus urgent sur le moment.",
           "Résultat : le contenu part par vagues. Trois semaines actives, puis un silence de deux mois. Ce rythme irrégulier coûte plus cher qu'un rythme plus modeste mais tenu, parce qu'il faut à chaque fois reconstruire l'habitude de lecture chez ceux qui suivent.",
-          "Un calendrier éditorial efficace n'est pas une longue liste de sujets à trouver, mais une structure qui indique quoi produire, sous quel format, et pour quel canal — de façon à ne plus avoir à se poser la question chaque semaine."
+          "Un calendrier éditorial efficace n'est pas une longue liste de sujets à trouver, mais une structure qui indique quoi produire, sous quel format, et pour quel canal, de façon à ne plus avoir à se poser la question chaque semaine."
         ]
       },
       {
         id: "structure",
         heading: "Une structure qui tient sur une seule page",
         paragraphs: [
-          "Trois colonnes suffisent la plupart du temps : le sujet, le format (article, newsletter, post), et la date de publication. Le reste — brouillons, visuels, brainstorming — vit ailleurs, dans un dossier ou un document séparé.",
+          "Trois colonnes suffisent la plupart du temps : le sujet, le format (article, newsletter, post), et la date de publication. Le reste (brouillons, visuels, brainstorming) vit ailleurs, dans un dossier ou un document séparé.",
           "L'objectif n'est pas d'avoir un outil sophistiqué avec des dizaines de champs, mais un calendrier que vous ouvrez réellement chaque semaine, sans effort. Un calendrier trop complet, qu'on n'ouvre plus au bout d'un mois, ne sert à rien."
         ],
         list: [
@@ -152,7 +152,7 @@ export const posts: Post[] = [
         id: "comprendre",
         heading: "Un visiteur ne comprend pas votre offre en 5 secondes",
         paragraphs: [
-          "Sur la page d'accueil, le visiteur doit savoir immédiatement ce que vous faites et pour qui. Si la réponse demande de faire défiler la page ou de deviner, une bonne partie des visiteurs repart avant d'avoir compris — et ne reviendra pas.",
+          "Sur la page d'accueil, le visiteur doit savoir immédiatement ce que vous faites et pour qui. Si la réponse demande de faire défiler la page ou de deviner, une bonne partie des visiteurs repart avant d'avoir compris, et ne reviendra pas.",
           "Ce point se corrige souvent sans refonte complète : un titre plus direct et une sous-phrase claire suffisent la plupart du temps. L'erreur la plus courante consiste à mettre en avant un slogan élégant mais vague, plutôt qu'une phrase simple qui dit concrètement ce qui est proposé."
         ]
       },
@@ -161,7 +161,7 @@ export const posts: Post[] = [
         heading: "Le site est pensé pour l'ordinateur, pas pour le mobile",
         paragraphs: [
           "La majorité du trafic arrive désormais depuis un téléphone. Un site lent à charger ou difficile à lire sur mobile perd des visiteurs avant même qu'ils aient vu l'offre : texte trop petit, boutons difficiles à toucher, menu qui ne s'ouvre pas correctement.",
-          "Tester son propre site depuis son téléphone, en conditions réelles — pas seulement en réduisant la fenêtre du navigateur sur ordinateur — reste le moyen le plus simple de repérer ce type de problème."
+          "Tester son propre site depuis son téléphone, en conditions réelles (pas seulement en réduisant la fenêtre du navigateur sur ordinateur), reste le moyen le plus simple de repérer ce type de problème."
         ]
       },
       {
@@ -169,7 +169,7 @@ export const posts: Post[] = [
         heading: "Il n'y a pas de chemin clair vers le contact",
         paragraphs: [
           "Un site peut être joli et rater l'essentiel : donner envie de passer à l'étape suivante. Si le bouton de contact est difficile à trouver, ou si le formulaire demande trop d'informations, une partie des visiteurs abandonne avant d'aller au bout.",
-          "Un chemin de conversion efficace tient en une ou deux actions maximum, visibles depuis n'importe quelle page — pas seulement depuis une page « contact » qu'il faut aller chercher dans un menu."
+          "Un chemin de conversion efficace tient en une ou deux actions maximum, visibles depuis n'importe quelle page, pas seulement depuis une page « contact » qu'il faut aller chercher dans un menu."
         ]
       },
       {
@@ -209,7 +209,7 @@ export const posts: Post[] = [
         heading: "Rien n'est instantané, mais tout n'est pas long non plus",
         paragraphs: [
           "Une refonte de site peut changer la perception d'un visiteur immédiatement. Un référencement naturel, lui, prend généralement plusieurs mois avant de produire des résultats visibles. Confondre les deux délais mène à de mauvaises décisions : arrêter une action SEO trop tôt parce qu'elle « ne marche pas », ou au contraire attendre trop longtemps avant de corriger un site qui ne convertit visiblement pas.",
-          "Cette confusion des délais est l'une des causes les plus fréquentes de déception en marketing digital — non pas parce que les actions ne fonctionnent pas, mais parce qu'elles sont jugées au mauvais moment."
+          "Cette confusion des délais est l'une des causes les plus fréquentes de déception en marketing digital : non pas parce que les actions ne fonctionnent pas, mais parce qu'elles sont jugées au mauvais moment."
         ]
       },
       {
@@ -269,7 +269,7 @@ export const posts: Post[] = [
         heading: "Reconnaître la pause plutôt que l'ignorer",
         paragraphs: [
           "Le premier email de reprise gagne à assumer le silence : dire simplement qu'on n'a pas écrit depuis un moment, et pourquoi on revient, passe mieux qu'un email qui fait comme si la newsletter n'avait jamais été interrompue.",
-          "Cet email sert à réengager, pas à tout annoncer d'un coup. Il vaut mieux qu'il soit court, qu'il explique la raison du silence en une phrase, et qu'il donne une bonne raison concrète de continuer à lire — plutôt que de vouloir rattraper des mois de contenu en un seul envoi."
+          "Cet email sert à réengager, pas à tout annoncer d'un coup. Il vaut mieux qu'il soit court, qu'il explique la raison du silence en une phrase, et qu'il donne une bonne raison concrète de continuer à lire, plutôt que de vouloir rattraper des mois de contenu en un seul envoi."
         ]
       },
       {
@@ -318,7 +318,7 @@ export const posts: Post[] = [
         heading: "Les bases à vérifier en premier",
         paragraphs: [
           "La fiche d'établissement Google doit être complète et à jour : adresse, horaires, catégorie, photos récentes. C'est souvent le premier élément qu'un visiteur consulte, avant même de cliquer sur le site.",
-          "Le nom de la ville ou de la zone d'intervention doit apparaître naturellement dans les titres et les textes du site, sans être répété de façon artificielle — ce qui pourrait au contraire nuire au référencement plutôt que l'aider."
+          "Le nom de la ville ou de la zone d'intervention doit apparaître naturellement dans les titres et les textes du site, sans être répété de façon artificielle, ce qui pourrait au contraire nuire au référencement plutôt que l'aider."
         ],
         list: [
           "Fiche d'établissement Google complète, avec horaires et photos à jour",
@@ -339,7 +339,7 @@ export const posts: Post[] = [
         heading: "Les avis comptent plus qu'on ne le pense",
         paragraphs: [
           "Le nombre et la régularité des avis influencent à la fois la confiance des visiteurs et le classement local. Un établissement avec dix avis récents inspire davantage confiance qu'un établissement avec cinquante avis vieux de plusieurs années, même si le total est plus élevé.",
-          "Demander un avis après une prestation réussie, simplement et au bon moment, reste l'un des leviers les plus efficaces et les moins coûteux pour améliorer sa visibilité locale — bien plus qu'une action technique complexe."
+          "Demander un avis après une prestation réussie, simplement et au bon moment, reste l'un des leviers les plus efficaces et les moins coûteux pour améliorer sa visibilité locale, bien plus qu'une action technique complexe."
         ]
       }
     ],

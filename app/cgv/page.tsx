@@ -36,7 +36,7 @@ export default function CGVPage() {
       <p>Le client sélectionne la ressource, vérifie le récapitulatif de commande, accepte les CGV puis procède au paiement. La validation de la commande vaut acceptation pleine et entière des présentes CGV.</p>
 
       <h2>5. Paiement</h2>
-      <p>Le paiement est exigible immédiatement au moment de la commande. Il est effectué via un prestataire de paiement en ligne sécurisé [Stripe, PayPal ou autre — à confirmer avant l'ouverture des ventes]. Les informations de paiement sont traitées par ce prestataire et ne sont pas stockées par Néa Digital.</p>
+      <p>Le paiement est exigible immédiatement au moment de la commande. Il est effectué via un prestataire de paiement en ligne sécurisé [Stripe, PayPal ou autre : à confirmer avant l'ouverture des ventes]. Les informations de paiement sont traitées par ce prestataire et ne sont pas stockées par Néa Digital.</p>
 
       <h2>6. Livraison des ressources digitales</h2>
       <p>Les ressources digitales sont livrées par téléchargement, email ou accès à une page dédiée après validation du paiement. Aucun article physique n'est expédié.</p>

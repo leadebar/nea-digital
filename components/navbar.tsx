@@ -17,12 +17,12 @@ export function Navbar() {
           <BrandLogo lockup="stacked" className="h-11 md:h-12" />
         </Link>
         <div className="hidden items-center gap-8 md:flex">
-          {navItems.filter((item) => item.href !== "/shop").map((item) => (
+          {navItems.filter((item) => item.href !== "/contact").map((item) => (
             <Link key={item.href} href={item.href} className="text-sm text-ink/70 transition hover:text-ink">
               {item.label}
             </Link>
           ))}
-          <Button href="/shop" variant="dark">Boutique</Button>
+          <Button href="/contact" variant="dark">Contact</Button>
         </div>
         <button
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}

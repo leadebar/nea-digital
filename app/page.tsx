@@ -75,12 +75,6 @@ export default function Home() {
             <div className="absolute inset-0 bg-[#F5F1EB]/55" />
           </div>
 
-          <span
-            className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#1C1A1A]/[0.03] whitespace-nowrap leading-none"
-            style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(120px,25vw,380px)", letterSpacing: "0.05em" }}
-            aria-hidden="true"
-          >NÉA.</span>
-
           <p className="text-[11px] font-medium tracking-[0.25em] uppercase text-[#B08D57] mb-7 relative" style={{ animation: "nea-slide-top 0.7s 0.2s cubic-bezier(0.22,1,0.36,1) both" }}>
             Stratégie · Contenu · Web
           </p>
@@ -93,11 +87,7 @@ export default function Home() {
             <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>SITE WEB.</span>
           </h1>
 
-          <p className="text-[#7A7470] relative mt-4 mb-7 italic font-light" style={{ fontFamily: "'Museo_Moderno','Museo Moderno',serif", fontSize: "clamp(17px,2.2vw,24px)", animation: "nea-fade-up 0.8s 0.85s both" }}>
-            Néa Digital, par Léa Debar.
-          </p>
-
-          <p className="text-[15px] font-light text-[#5C564F] leading-[1.85] max-w-[540px] mx-auto mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
+          <p className="text-[15px] font-light text-[#5C564F] leading-[1.85] max-w-[540px] mx-auto mt-6 mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
             J'aide les entreprises, les marques et les indépendants à construire une présence en ligne qui tient debout : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie qui a du sens pour votre activité.
           </p>
 
@@ -129,7 +119,7 @@ export default function Home() {
                   <ul className="flex flex-col gap-2 mb-8">
                     {offer.items.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-[13px] text-[#1C1A1A] leading-[1.4]">
-                        <span className="text-[#B08D57] text-[11px] mt-[2px] shrink-0">—</span>
+                        <span className="mt-[7px] h-1 w-1 rounded-full bg-[#B08D57] shrink-0" />
                         {item}
                       </li>
                     ))}
@@ -213,7 +203,6 @@ export default function Home() {
             <div className="absolute inset-0 bg-[#1C1A1A]/85" />
           </div>
 
-          <span className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.03] whitespace-nowrap leading-none" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(80px,18vw,260px)", letterSpacing: "0.05em" }} aria-hidden="true">CONTACT</span>
           <h2 className="nea-reveal text-white relative tracking-[0.02em] leading-none mb-3" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(42px,6vw,76px)" }}>PARLONS DE<br />VOTRE PROJET.</h2>
           <p className="nea-reveal relative mb-4 italic font-light text-[#B08D57]" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(17px,2vw,22px)" }}>un échange, un devis, sans engagement.</p>
           <p className="nea-reveal text-[13px] text-white/45 tracking-[0.05em] relative mb-10">Devis gratuit · Réponse sous 48h</p>
