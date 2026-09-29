@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Museo+Moderno:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-display: "Monument Extended", "Arial Black", sans-serif;
-  --font-editorial: "Bebas Neue", "Arial Narrow", sans-serif;
-  --font-body: "TT Commons Pro", "Inter", system-ui, sans-serif;
-  --background: #f8f6f3;
-  --foreground: #1f1f21;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-editorial: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --background: #fbf6ef;
+  --foreground: #2b2620;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1f1f21;
-    --foreground: #f8f6f3;
+    --background: #2b2620;
+    --foreground: #fbf6ef;
     color-scheme: dark;
   }
 }
@@ -31,9 +31,7 @@ html {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(205, 187, 163, 0.22), transparent 34rem),
-    var(--background);
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
   text-rendering: optimizeLegibility;
@@ -50,8 +48,8 @@ body::before {
 }
 
 ::selection {
-  background: #4f503d;
-  color: #f8f6f3;
+  background: #c1502e;
+  color: #fbf6ef;
 }
 
 .container-premium {
@@ -83,7 +81,7 @@ body::before {
 }
 
 .focus-ring:focus-visible {
-  outline-color: #4f503d;
+  outline-color: #c1502e;
 }
 
 .prose-premium h2 {
