@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import { Button } from "@/components/button";
 import { Newsletter } from "@/components/newsletter";
+import { NotifyMeForm } from "@/components/notify-me-form";
 import { ProductVisual } from "@/components/product-visual";
 import { Product } from "@/data/products";
 
@@ -29,14 +30,21 @@ export function ProductLanding({
           ) : null}
           <p className="mt-6 max-w-xl text-lg leading-8 text-ink/65">{promise}</p>
           <p className="mt-4 max-w-xl text-sm leading-7 text-ink/58">{product.description}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {product.comingSoon ? (
-              <Button href="/contact">Être prévenu·e de la sortie</Button>
-            ) : (
+          {product.comingSoon ? (
+            <div id="notify" className="mt-8 max-w-md">
+              <NotifyMeForm product={product.name} />
+            </div>
+          ) : (
+            <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/contact">{product.ctaLabel}</Button>
-            )}
-            <Button href="#details" variant="light">Voir les fichiers inclus</Button>
-          </div>
+              <Button href="#details" variant="light">Voir les fichiers inclus</Button>
+            </div>
+          )}
+          {product.comingSoon ? (
+            <div className="mt-3">
+              <Button href="#details" variant="ghost">Voir les fichiers inclus</Button>
+            </div>
+          ) : null}
         </div>
         {product.heroVisual ? (
           <div className="relative aspect-[4/5] overflow-hidden rounded-[8px] bg-linen shadow-soft">
@@ -123,7 +131,11 @@ export function ProductLanding({
       </section>
       <Newsletter />
       <div className="fixed inset-x-4 bottom-4 z-30 md:hidden">
-        <Button href="/contact">{product.comingSoon ? "Être prévenu·e de la sortie" : `Commander ${product.price}`}</Button>
+        {product.comingSoon ? (
+          <Button href="#notify">Être prévenu·e de la sortie</Button>
+        ) : (
+          <Button href="/contact">{`Commander ${product.price}`}</Button>
+        )}
       </div>
     </main>
   );

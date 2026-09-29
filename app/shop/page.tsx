@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { NotifyMeForm } from "@/components/notify-me-form";
 import { ProductCard } from "@/components/product-card";
 import { products } from "@/data/products";
 
@@ -16,6 +17,9 @@ export default function ShopPage() {
         <p className="eyebrow mb-5 text-xs text-taupe">Boutique</p>
         <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">Boutique de planners digitaux, templates et ressources d'organisation.</h1>
         <p className="mt-5 text-sm text-ink/55">Les ressources arrivent prochainement. Un aperçu en avant-première, juste en dessous.</p>
+        <div className="mt-8 max-w-md">
+          <NotifyMeForm product="Boutique Néa Digital" />
+        </div>
       </div>
       <div className="mt-10 flex flex-wrap gap-2">
         {filters.map((filter) => (
