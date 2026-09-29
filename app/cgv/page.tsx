@@ -13,16 +13,16 @@ export default function CGVPage() {
       title="Conditions générales de vente"
       intro="Ces CGV encadrent la vente des ressources digitales Néa Digital, prévues pour une micro-entreprise française."
     >
-      <p><strong>Dernière mise à jour :</strong> 28 septembre 2026</p>
+      <p><strong>Dernière mise à jour :</strong> 29 septembre 2026</p>
 
       <div className="mb-8 rounded-[8px] border border-[#B08D57]/30 bg-[#F5F1EB] p-5 text-sm text-[#7A7470]">
-        Quatre informations restent à ajouter avant l'ouverture des ventes : le SIRET, l'adresse du siège, le prestataire de paiement retenu (Stripe, PayPal…) et le médiateur de la consommation choisi. Les ressources n'étant pas encore en vente, ces CGV peuvent être finalisées d'ici le lancement.
+        Une information reste à ajouter avant l'ouverture des ventes : le médiateur de la consommation choisi. Les ressources n'étant pas encore en vente, ce point peut être finalisé d'ici le lancement.
       </div>
 
       <h2>1. Vendeur</h2>
       <p>Les ressources sont vendues par Léa Debar, entrepreneur individuel (micro-entreprise), exerçant sous le nom commercial Néa Digital.</p>
-      <p><strong>SIRET :</strong> [SIRET à compléter]</p>
-      <p><strong>Adresse :</strong> [adresse professionnelle à compléter]</p>
+      <p><strong>SIRET :</strong> 105 313 126 00010</p>
+      <p><strong>Adresse :</strong> 21 Chemin du Vallon des Vaux, 06800 Cagnes-sur-Mer</p>
       <p><strong>Email :</strong> contact.neadigital@gmail.com</p>
       <p><strong>TVA :</strong> TVA non applicable, article 293 B du Code général des impôts, si ce régime est applicable à l'entreprise.</p>
 
@@ -36,7 +36,7 @@ export default function CGVPage() {
       <p>Le client sélectionne la ressource, vérifie le récapitulatif de commande, accepte les CGV puis procède au paiement. La validation de la commande vaut acceptation pleine et entière des présentes CGV.</p>
 
       <h2>5. Paiement</h2>
-      <p>Le paiement est exigible immédiatement au moment de la commande. Il est effectué via un prestataire de paiement en ligne sécurisé [Stripe, PayPal ou autre : à confirmer avant l'ouverture des ventes]. Les informations de paiement sont traitées par ce prestataire et ne sont pas stockées par Néa Digital.</p>
+      <p>Le paiement est exigible immédiatement au moment de la commande. Il est effectué via Stripe, prestataire de paiement en ligne sécurisé. Les informations de paiement sont traitées par Stripe et ne sont pas stockées par Néa Digital.</p>
 
       <h2>6. Livraison des ressources digitales</h2>
       <p>Les ressources digitales sont livrées par téléchargement, email ou accès à une page dédiée après validation du paiement. Aucun article physique n'est expédié.</p>

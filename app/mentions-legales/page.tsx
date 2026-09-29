@@ -13,17 +13,13 @@ export default function MentionsLegalesPage() {
       title="Mentions légales"
       intro="Cette page regroupe les informations d'identification de l'éditeur du site Néa Digital."
     >
-      <p><strong>Dernière mise à jour :</strong> 28 septembre 2026</p>
-
-      <div className="mb-8 rounded-[8px] border border-[#B08D57]/30 bg-[#F5F1EB] p-5 text-sm text-[#7A7470]">
-        Deux informations restent à ajouter avant mise en ligne officielle : le numéro de SIRET et l'adresse du siège d'activité. Ce sont des données personnelles que je ne peux pas deviner à ta place.
-      </div>
+      <p><strong>Dernière mise à jour :</strong> 29 septembre 2026</p>
 
       <h2>Éditeur du site</h2>
       <p><strong>Nom commercial :</strong> Néa Digital</p>
       <p><strong>Éditeur :</strong> Léa Debar, entrepreneur individuel (micro-entreprise)</p>
-      <p><strong>SIRET :</strong> [SIRET à compléter]</p>
-      <p><strong>Adresse du siège :</strong> [adresse professionnelle à compléter]</p>
+      <p><strong>SIRET :</strong> 105 313 126 00010</p>
+      <p><strong>Adresse du siège :</strong> 21 Chemin du Vallon des Vaux, 06800 Cagnes-sur-Mer</p>
       <p><strong>Email :</strong> contact.neadigital@gmail.com</p>
       <p><strong>Directrice de la publication :</strong> Léa Debar</p>
 
