@@ -16,15 +16,12 @@ const offerIcons = { strategy: StrategyIcon, content: ContentIcon, web: WebIcon 
 
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
 
-function ScallopEdge({ color = "text-porcelain", flip = false }: { color?: string; flip?: boolean }) {
-  return <div className={`${flip ? "scallop-edge-up" : "scallop-edge"} ${color}`} aria-hidden="true" />;
-}
-
-function Eyebrow({ children, onDark = false }: { children: React.ReactNode; onDark?: boolean }) {
+function KickerRule({ children }: { children: React.ReactNode }) {
   return (
-    <p className={`mb-4 font-display text-[13px] font-extrabold uppercase tracking-[0.04em] ${onDark ? "text-porcelain" : "text-sand"}`}>
-      {children}
-    </p>
+    <div className="flex items-center gap-3 mb-6">
+      <span className="h-px w-10 bg-sand" />
+      <span className="font-display text-[11px] font-extrabold uppercase tracking-[0.18em] text-sand">{children}</span>
+    </div>
   );
 }
 
@@ -42,31 +39,33 @@ export function HomeView() {
 
   return (
     <>
-      <main className="relative">
+      <main className="relative bg-porcelain">
 
-        {/* ── HERO ── */}
-        <section className="relative isolate bg-sand px-8 pt-16 pb-0 md:px-16">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 pb-16 pt-10 md:grid-cols-2">
-            <div className="text-center md:text-left">
-              <Eyebrow onDark>Agence marketing digital</Eyebrow>
-              <h1
-                className="font-display font-extrabold text-porcelain uppercase"
-                style={{ fontSize: "clamp(38px,5.6vw,66px)", lineHeight: 1.02, letterSpacing: "-0.01em" }}
-              >
-                Stratégie, contenu,
-                <br />
-                site web.
-              </h1>
-              <p className="mt-6 max-w-md text-[15px] leading-[1.8] text-porcelain/85 mx-auto md:mx-0">
-                J'aide les entreprises, les marques et les indépendants à améliorer leur présence en ligne : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie claire pour votre activité.
-              </p>
-              <div className="mt-9 flex flex-wrap justify-center gap-4 md:justify-start">
-                <a href="/contact" className="nea-pill nea-pill--cream">Demander un devis gratuit</a>
-                <a href="#services" className="nea-pill nea-pill--outline">Voir les offres</a>
-              </div>
+        {/* ── HERO : split asymétrique, pas de bandeau centré ── */}
+        <section className="relative isolate grid grid-cols-1 md:grid-cols-[1.3fr_1fr] md:min-h-[86vh]">
+          <div className="flex flex-col justify-center px-8 py-20 md:px-16 md:py-0">
+            <KickerRule>Agence marketing digital</KickerRule>
+            <h1
+              className="font-display font-extrabold text-ink uppercase"
+              style={{ fontSize: "clamp(42px,7vw,104px)", lineHeight: 0.92, letterSpacing: "-0.02em" }}
+            >
+              Stratégie.
+              <br />
+              Contenu.
+              <br />
+              <span className="text-sand">Site web.</span>
+            </h1>
+            <p className="mt-8 max-w-md text-[15px] leading-[1.8] text-ink/65">
+              J'aide les entreprises, les marques et les indépendants à améliorer leur présence en ligne : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie claire pour votre activité.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <a href="/contact" className="nea-btn nea-btn--fill">Demander un devis</a>
+              <a href="#offres" className="nea-btn nea-btn--line">Voir les offres ↓</a>
             </div>
+          </div>
 
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[28px] border-4 border-porcelain shadow-soft">
+          <div className="relative min-h-[320px] bg-sand md:min-h-0">
+            <div className="absolute inset-8 overflow-hidden rounded-[4px] rotate-[1.5deg] shadow-soft md:inset-12">
               <video
                 autoPlay
                 muted
@@ -82,127 +81,115 @@ export function HomeView() {
                 src="/images/hero-bg-poster.jpg"
                 alt=""
                 fill
-                sizes="(min-width: 768px) 30vw, 80vw"
+                sizes="(min-width: 768px) 35vw, 90vw"
                 className="hidden object-cover motion-reduce:block"
               />
             </div>
           </div>
-          <ScallopEdge color="text-porcelain" />
         </section>
 
-        {/* ── OFFRES ── */}
-        <section id="services" className="bg-porcelain px-8 py-24 md:px-16">
-          <div className="mx-auto max-w-6xl">
-            <div className="nea-reveal text-center">
-              <Eyebrow>Ce que je fais</Eyebrow>
-              <h2 className="font-display text-[clamp(28px,3.4vw,40px)] font-extrabold uppercase text-ink mb-16">
-                Comment travailler ensemble
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        {/* ── OFFRES : index numéroté, pas de cartes ── */}
+        <section id="offres" className="px-8 py-24 md:px-16">
+          <div className="mx-auto max-w-5xl">
+            <KickerRule>Ce que je fais</KickerRule>
+            <h2 className="font-display text-[clamp(26px,3vw,38px)] font-extrabold uppercase text-ink mb-4">
+              Comment travailler ensemble
+            </h2>
+
+            <div className="mt-8 border-t border-ink/12">
               {offers.map((offer, i) => {
                 const Icon = offerIcons[offer.key as keyof typeof offerIcons];
                 return (
-                  <div
-                    key={offer.key}
-                    className="nea-reveal rounded-[24px] border-2 border-ink/10 bg-linen p-8 relative overflow-hidden transition-transform duration-300 hover:-translate-y-1"
-                    style={{ transitionDelay: `${i * 0.1}s` }}
-                  >
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-full bg-sand">
-                        <Icon className="w-6 h-6 text-porcelain" />
+                  <div key={offer.key} className="nea-reveal nea-offer-row group border-b border-ink/12 py-8" style={{ transitionDelay: `${i * 0.08}s` }}>
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-[80px_1fr_1.4fr_auto] md:items-center md:gap-8">
+                      <span className="font-display text-[15px] font-extrabold text-sand">{offer.num}</span>
+                      <div className="flex items-center gap-3">
+                        <Icon className="h-6 w-6 text-sand shrink-0" />
+                        <div>
+                          <h3 className="font-display text-[20px] font-extrabold text-ink">{offer.title}</h3>
+                          <p className="text-[12px] italic text-ink/50">{offer.tagline}</p>
+                        </div>
                       </div>
-                      <span className="font-display text-[13px] font-extrabold uppercase text-sand">{offer.num}</span>
+                      <p className="text-[13px] leading-[1.7] text-ink/60">{offer.desc}</p>
+                      <a href="/contact" className="font-display text-[11px] font-extrabold uppercase tracking-[0.06em] text-ink whitespace-nowrap group-hover:text-sand transition-colors">
+                        Devis →
+                      </a>
                     </div>
-                    <h3 className="font-display text-[20px] font-extrabold text-ink mb-1">{offer.title}</h3>
-                    <p className="text-[13px] text-sand font-semibold mb-3">{offer.tagline}</p>
-                    <p className="text-[13px] text-ink/65 leading-[1.7] mb-6">{offer.desc}</p>
-                    <ul className="flex flex-col gap-2 mb-8">
-                      {offer.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-[13px] text-ink leading-[1.4]">
-                          <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-sand shrink-0" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <a href="/contact" className="nea-pill nea-pill--outline-small">Demander un devis</a>
                   </div>
                 );
               })}
             </div>
 
-            {/* Full Harmony */}
-            <div className="nea-reveal mt-8 rounded-[28px] bg-ink p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
-              <div>
-                <HarmonyIcon className="w-9 h-9 text-sand mb-4" />
-                <p className="font-display text-[12px] font-extrabold uppercase tracking-[0.04em] text-sand mb-3">Pack recommandé</p>
-                <h3 className="font-display text-[26px] font-extrabold text-porcelain mb-2">{fullHarmony.name}</h3>
-                <p className="text-[14px] text-porcelain/65 leading-[1.7] mb-4 max-w-md">{fullHarmony.desc}</p>
-                <ul className="flex flex-wrap gap-x-6 gap-y-2">
-                  {fullHarmony.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-[13px] text-porcelain/80">
-                      <span className="text-sand">✓</span>{item}
-                    </li>
-                  ))}
-                </ul>
+            {/* Full Harmony — bloc statement centré */}
+            <div className="nea-reveal mt-16 rounded-[4px] bg-ink px-8 py-14 text-center md:px-16">
+              <HarmonyIcon className="mx-auto h-8 w-8 text-sand mb-5" />
+              <p className="font-display text-[11px] font-extrabold uppercase tracking-[0.18em] text-sand mb-4">Pack recommandé</p>
+              <h3 className="font-display text-[clamp(26px,3.4vw,44px)] font-extrabold uppercase text-porcelain">{fullHarmony.name}</h3>
+              <p className="mx-auto mt-4 max-w-lg text-[14px] leading-[1.75] text-porcelain/65">{fullHarmony.desc}</p>
+              <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2">
+                {fullHarmony.items.map((item) => (
+                  <span key={item} className="text-[13px] text-porcelain/75">✓ {item}</span>
+                ))}
               </div>
-              <a href="/contact" className="nea-pill nea-pill--cream whitespace-nowrap">Demander un devis</a>
+              <a href="/contact" className="nea-btn nea-btn--fill mt-8 inline-block">Demander un devis</a>
             </div>
-            <p className="text-center text-[12px] text-ink/40 mt-8">Tarifs communiqués sur devis, adaptés à chaque projet.</p>
+            <p className="mt-6 text-center text-[12px] text-ink/40">Tarifs communiqués sur devis, adaptés à chaque projet.</p>
           </div>
         </section>
 
         {/* ── QUIZ ── */}
-        <section className="bg-porcelain px-8 pb-24 md:px-16">
-          <div className="mx-auto max-w-6xl text-center">
-            <div className="nea-reveal">
-              <Eyebrow>Quelle offre pour vous</Eyebrow>
-              <h2 className="font-display text-[clamp(24px,3vw,32px)] font-extrabold uppercase text-ink mb-10">Trouvez votre offre en 3 questions</h2>
-            </div>
+        <section className="bg-linen px-8 py-24 md:px-16">
+          <div className="mx-auto max-w-5xl">
+            <KickerRule>Quelle offre pour vous</KickerRule>
+            <h2 className="font-display text-[clamp(24px,2.8vw,32px)] font-extrabold uppercase text-ink mb-10">Trois questions pour trancher</h2>
             <OfferQuiz />
           </div>
         </section>
 
-        {/* ── MÉTHODE ── */}
-        <section className="relative isolate bg-ink px-8 pb-24 pt-16 md:px-16">
-          <ScallopEdge color="text-porcelain" flip />
-          <div className="mx-auto max-w-6xl text-center mt-8">
-            <div className="nea-reveal">
-              <Eyebrow onDark>Ma méthode</Eyebrow>
-              <h2 className="font-display text-[clamp(28px,3.4vw,40px)] font-extrabold uppercase text-porcelain mb-16">Comment ça se passe</h2>
-            </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-4 text-left">
+        {/* ── MÉTHODE : ligne de temps horizontale ── */}
+        <section className="px-8 py-24 md:px-16">
+          <div className="mx-auto max-w-5xl">
+            <KickerRule>Ma méthode</KickerRule>
+            <h2 className="font-display text-[clamp(26px,3vw,38px)] font-extrabold uppercase text-ink mb-16">Comment ça se passe</h2>
+            <div className="relative grid grid-cols-1 gap-10 md:grid-cols-4">
+              <div className="absolute left-0 right-0 top-[9px] hidden h-px bg-ink/15 md:block" />
               {processSteps.map((step, i) => (
-                <div key={step.num} className="nea-reveal rounded-[20px] bg-porcelain/[0.06] p-7" style={{ transitionDelay: `${i * 0.1}s` }}>
-                  <div className="font-display font-extrabold text-sand text-[30px] mb-3">{step.num}</div>
-                  <h3 className="font-display text-[15px] font-extrabold text-porcelain mb-2">{step.title}</h3>
-                  <p className="text-[13px] text-porcelain/60 leading-[1.7]">{step.desc}</p>
+                <div key={step.num} className="nea-reveal relative" style={{ transitionDelay: `${i * 0.1}s` }}>
+                  <div className="relative z-10 mb-5 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-sand">
+                    <span className="h-2 w-2 rounded-full bg-porcelain" />
+                  </div>
+                  <span className="font-display text-[12px] font-extrabold text-sand">{step.num}</span>
+                  <h3 className="mt-2 font-display text-[16px] font-extrabold text-ink">{step.title}</h3>
+                  <p className="mt-2 text-[13px] leading-[1.7] text-ink/60">{step.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── BLOG ── */}
-        <section className="bg-porcelain px-8 py-24 md:px-16">
-          <div className="mx-auto max-w-6xl">
-            <div className="nea-reveal text-center">
-              <Eyebrow>Blog</Eyebrow>
-              <h2 className="font-display text-[clamp(28px,3.4vw,40px)] font-extrabold uppercase text-ink mb-16">Quelques repères</h2>
-            </div>
-            <div className="grid gap-8 md:grid-cols-3">
-              {posts.map((post) => <BlogCard key={post.slug} post={post} />)}
+        {/* ── BLOG : asymétrique, un post en avant ── */}
+        <section className="bg-linen px-8 py-24 md:px-16">
+          <div className="mx-auto max-w-5xl">
+            <KickerRule>Blog</KickerRule>
+            <h2 className="font-display text-[clamp(26px,3vw,38px)] font-extrabold uppercase text-ink mb-14">Quelques repères</h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="md:col-span-2">
+                {posts[0] ? <BlogCard post={posts[0]} /> : null}
+              </div>
+              <div className="flex flex-col gap-8">
+                {posts.slice(1, 3).map((post) => <BlogCard key={post.slug} post={post} />)}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* ── CTA ── */}
-        <section id="contact" className="relative isolate bg-sand px-8 py-28 text-center md:px-16">
-          <h2 className="nea-reveal font-display text-porcelain uppercase font-extrabold mb-3" style={{ fontSize: "clamp(34px,5.5vw,64px)", lineHeight: 1.02 }}>
-            Parlons de votre projet
+        {/* ── CTA : bloc plein, une ligne ── */}
+        <section id="contact" className="bg-sand px-8 py-28 text-center md:px-16">
+          <h2 className="nea-reveal font-display font-extrabold uppercase text-porcelain" style={{ fontSize: "clamp(32px,5.2vw,64px)", lineHeight: 1.02 }}>
+            Parlons de votre projet.
           </h2>
-          <p className="nea-reveal text-[14px] text-porcelain/80 mb-10">Devis gratuit · Réponse sous 48h · Sans engagement</p>
-          <a href="/contact" className="nea-reveal nea-pill nea-pill--cream inline-block">Contactez-moi</a>
+          <p className="nea-reveal mt-4 text-[14px] text-porcelain/80">Devis gratuit · Réponse sous 48h · Sans engagement</p>
+          <a href="/contact" className="nea-reveal nea-btn nea-btn--cream mt-9 inline-block">Contactez-moi</a>
         </section>
 
         <Newsletter />
@@ -212,20 +199,23 @@ export function HomeView() {
 
       {/* ── GLOBAL STYLES ── */}
       <style>{`
-        .nea-reveal { opacity:0; transform:translateY(20px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+        .nea-reveal { opacity:0; transform:translateY(16px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
         .nea-reveal.nea-visible { opacity:1; transform:translateY(0); }
 
-        .nea-pill {
+        .nea-offer-row { transition: background-color 0.25s; }
+        .nea-offer-row:hover { background-color: rgba(227,54,62,0.05); }
+
+        .nea-btn {
           display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:13px; font-weight:800;
-          text-transform:uppercase; letter-spacing:0.02em; padding:14px 30px; border-radius:9999px;
-          text-decoration:none; border:2.5px solid transparent; transition: all 0.2s;
+          text-transform:uppercase; letter-spacing:0.03em; padding:15px 30px; border-radius:2px;
+          text-decoration:none; transition: all 0.2s;
         }
-        .nea-pill--cream { background:#FFF8EC; color:#E3363E; border-color:#FFF8EC; }
-        .nea-pill--cream:hover { background:transparent; color:#FFF8EC; border-color:#FFF8EC; }
-        .nea-pill--outline { background:transparent; color:#FFF8EC; border-color:#FFF8EC; }
-        .nea-pill--outline:hover { background:#FFF8EC; color:#E3363E; }
-        .nea-pill--outline-small { display:inline-block; font-family:'Bricolage Grotesque',sans-serif; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.02em; padding:10px 20px; border-radius:9999px; text-decoration:none; border:2px solid #E3363E; color:#E3363E; transition: all 0.2s; }
-        .nea-pill--outline-small:hover { background:#E3363E; color:#FFF8EC; }
+        .nea-btn--fill { background:#2B2320; color:#FFF8EC; }
+        .nea-btn--fill:hover { background:#E3363E; }
+        .nea-btn--line { background:transparent; color:#2B2320; border-bottom:2px solid #E3363E; border-radius:0; padding-left:0; padding-right:0; }
+        .nea-btn--line:hover { color:#E3363E; }
+        .nea-btn--cream { background:#FFF8EC; color:#E3363E; }
+        .nea-btn--cream:hover { background:#2B2320; color:#FFF8EC; }
       `}</style>
     </>
   );

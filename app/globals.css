@@ -39,15 +39,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.scallop-edge {
-  height: 22px;
-  background: radial-gradient(circle at 11px 0, transparent 11px, currentColor 11.5px) 0 0 / 22px 22px repeat-x;
-}
-.scallop-edge-up {
-  height: 22px;
-  background: radial-gradient(circle at 11px 22px, transparent 11px, currentColor 11.5px) 0 0 / 22px 22px repeat-x;
-}
-
 body::before {
   content: "";
   position: fixed;
