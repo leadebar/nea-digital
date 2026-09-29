@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import { BlogCard } from "@/components/blog-card";
 import { Newsletter } from "@/components/newsletter";
 import { FAQ } from "@/components/faq";
@@ -41,49 +40,24 @@ export function HomeView() {
     <>
       <main className="relative bg-porcelain">
 
-        {/* ── HERO : split asymétrique, pas de bandeau centré ── */}
-        <section className="relative isolate grid grid-cols-1 md:grid-cols-[1.3fr_1fr] md:min-h-[86vh]">
-          <div className="flex flex-col justify-center px-8 py-20 md:px-16 md:py-0">
+        {/* ── HERO : un seul bloc, pas de photo/vidéo séparée ── */}
+        <section className="relative isolate px-8 pt-32 pb-24 md:px-16 md:pt-44 md:pb-28">
+          <div className="mx-auto max-w-4xl text-center">
             <KickerRule>Agence marketing digital</KickerRule>
             <h1
               className="font-display font-extrabold text-ink uppercase"
-              style={{ fontSize: "clamp(42px,7vw,104px)", lineHeight: 0.92, letterSpacing: "-0.02em" }}
+              style={{ fontSize: "clamp(42px,8vw,120px)", lineHeight: 0.92, letterSpacing: "-0.02em" }}
             >
-              Stratégie.
-              <br />
-              Contenu.
+              Stratégie. Contenu.
               <br />
               <span className="text-sand">Site web.</span>
             </h1>
-            <p className="mt-8 max-w-md text-[15px] leading-[1.8] text-ink/65">
+            <p className="mx-auto mt-8 max-w-xl text-[15px] leading-[1.8] text-ink/65">
               J'aide les entreprises, les marques et les indépendants à améliorer leur présence en ligne : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie claire pour votre activité.
             </p>
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-wrap justify-center gap-4">
               <a href="/contact" className="nea-btn nea-btn--fill">Demander un devis</a>
               <a href="#offres" className="nea-btn nea-btn--line">Voir les offres ↓</a>
-            </div>
-          </div>
-
-          <div className="relative min-h-[320px] bg-sand md:min-h-0">
-            <div className="absolute inset-8 overflow-hidden rounded-[4px] rotate-[1.5deg] shadow-soft md:inset-12">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster="/images/hero-bg-poster.jpg"
-                className="h-full w-full object-cover motion-reduce:hidden"
-                onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
-              >
-                <source src="/videos/hero-bg.mp4" type="video/mp4" />
-              </video>
-              <Image
-                src="/images/hero-bg-poster.jpg"
-                alt=""
-                fill
-                sizes="(min-width: 768px) 35vw, 90vw"
-                className="hidden object-cover motion-reduce:block"
-              />
             </div>
           </div>
         </section>
