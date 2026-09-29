@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import { BlogCard } from "@/components/blog-card";
 import { Newsletter } from "@/components/newsletter";
 import { FAQ } from "@/components/faq";
@@ -66,10 +67,12 @@ export function HomeView() {
             >
               <source src="/videos/hero-bg.mp4" type="video/mp4" />
             </video>
-            <img
+            <Image
               src="/images/hero-bg-poster.jpg"
               alt=""
-              className="hidden motion-reduce:block w-full h-full object-cover scale-110"
+              fill
+              sizes="100vw"
+              className="hidden motion-reduce:block object-cover scale-110"
               style={{ filter: "blur(4px) saturate(1.05) brightness(1.05)" }}
             />
             <div className="absolute inset-0 bg-[#F5F1EB]/55" />
@@ -192,10 +195,12 @@ export function HomeView() {
         {/* ── CTA ── */}
         <section id="contact" className="relative isolate bg-[#1C1A1A] px-12 py-32 text-center overflow-hidden">
           <div className="absolute inset-0 z-0" aria-hidden="true">
-            <img
+            <Image
               src="/images/contact-bg.jpg"
               alt=""
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
             />
             <div className="absolute inset-0 bg-[#1C1A1A]/90" />

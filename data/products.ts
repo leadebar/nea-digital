@@ -66,7 +66,7 @@ export const products: Product[] = [
       {
         question: "Comment ça marche avec Google Sheets ?",
         answer:
-          "Tu importes le fichier dans Google Drive, tu fais clic droit, puis Ouvrir avec Google Sheets et Enregistrer comme Google Sheets. Un guide pas-à-pas est inclus dans le téléchargement."
+          "Tu importes le fichier dans Google Drive, tu fais clic droit, puis Ouvrir avec Google Sheets et Enregistrer au format Google Sheets. Un guide pas-à-pas est inclus dans le téléchargement."
       },
       {
         question: "Le planner est-il imprimable ?",
@@ -81,7 +81,7 @@ export const products: Product[] = [
       {
         question: "Et si je ne suis pas satisfaite ?",
         answer:
-          "Tu envoies un mail dans les 14 jours suivant ton achat. Le remboursement est intégral, sans question et sans justification."
+          "Tu envoies un mail dans les 14 jours suivant ton achat. Le remboursement est intégral, sans questions et sans justification."
       },
       {
         question: "Le paiement est-il sécurisé ?",

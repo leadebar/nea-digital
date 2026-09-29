@@ -106,7 +106,7 @@ export default function WeeklyResetPage() {
             <div className="rounded-[8px] border border-ink/10 bg-white p-8 shadow-line">
               <p className="eyebrow mb-3 text-[10px] text-taupe">Pour les pros</p>
               <h3 className="text-lg font-medium text-ink">Un accompagnement sur mesure</h3>
-              <p className="mt-3 text-sm leading-7 text-ink/62">Stratégie, contenu ou site : on regarde ensemble ce qui vous ferait le plus avancer.</p>
+              <p className="mt-3 text-sm leading-7 text-ink/62">Stratégie, contenu ou site : on regarde ensemble ce qui te ferait le plus avancer.</p>
               <Link href="/services" className="mt-5 inline-flex text-sm font-medium text-olive underline underline-offset-8">
                 Voir les services →
               </Link>

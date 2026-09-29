@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
+import Image from "next/image";
 
 type Tab = "devis" | "question";
 type FormState = "idle" | "loading" | "success" | "error";
@@ -30,16 +31,16 @@ export function ContactView() {
       const result = (await response.json()) as { ok?: boolean; message?: string };
 
       if (!response.ok || !result.ok) {
-        throw new Error(result.message || "Une erreur est survenue. Réessaie dans un instant.");
+        throw new Error(result.message || "Une erreur est survenue. Réessayez dans un instant.");
       }
 
       setState("success");
-      setFeedback("Message envoyé. Je te réponds sous 48h.");
+      setFeedback("Message envoyé. Je vous réponds sous 48h.");
       if (type === "devis") setDevis(initialDevis);
       else setQuestion(initialQuestion);
     } catch (error) {
       setState("error");
-      setFeedback(error instanceof Error ? error.message : "Une erreur est survenue. Réessaie dans un instant.");
+      setFeedback(error instanceof Error ? error.message : "Une erreur est survenue. Réessayez dans un instant.");
     }
   }
 
@@ -62,10 +63,12 @@ export function ContactView() {
           {/* Gauche — infos */}
           <div className="relative isolate bg-[#1C1A1A] flex flex-col justify-center px-14 py-20 overflow-hidden">
             <div className="absolute inset-0 z-0" aria-hidden="true">
-              <img
+              <Image
                 src="/images/contact-bg.jpg"
                 alt=""
-                className="w-full h-full object-cover"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
                 onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
               />
               <div className="absolute inset-0 bg-[#1C1A1A]/90" />

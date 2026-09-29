@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Image from "next/image";
 import { FAQ } from "@/components/faq";
 import { StrategyIcon, ContentIcon, WebIcon, HarmonyIcon } from "@/components/offer-icons";
 import { offers, fullHarmony, processSteps, servicesFaq } from "@/data/site";
@@ -47,7 +48,7 @@ export function ServicesView() {
 
         <section className="bg-white px-12 py-10 border-y border-[#EDE8DF]">
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 max-w-3xl mx-auto">
-            {["48H de délai de réponse", "2–3 semaines pour un site complet", "Tarifs sur devis, sans surprise"].map((s) => (
+            {["48h de délai de réponse", "2–3 semaines pour un site complet", "Tarifs sur devis, sans surprise"].map((s) => (
               <p key={s} className="text-[12px] text-[#7A7470] tracking-[0.02em]">{s}</p>
             ))}
           </div>
@@ -151,10 +152,12 @@ export function ServicesView() {
         {/* ── CTA ── */}
         <section id="contact" className="relative isolate bg-[#1C1A1A] px-12 py-32 overflow-hidden">
           <div className="absolute inset-0 z-0" aria-hidden="true">
-            <img
+            <Image
               src="/images/contact-bg.jpg"
               alt=""
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
             />
             <div className="absolute inset-0 bg-[#1C1A1A]/90" />

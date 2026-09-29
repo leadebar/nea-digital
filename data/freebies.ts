@@ -30,14 +30,14 @@ export const weeklyResetFreebie: Freebie = {
   fileName: "5-piliers-presence-digitale.pdf",
   benefits: [
     "Comprendre les 5 leviers qui font vraiment la différence.",
-    "Repérer en un coup d'œil ce qui manque à votre présence actuelle.",
+    "Repérer en un coup d'œil ce qui manque à ta présence actuelle.",
     "Avoir un langage commun pour en discuter avec un prestataire.",
     "Savoir par où commencer, sans jargon inutile."
   ],
   preview: [
     {
       title: "Positionnement",
-      text: "Ce que vous vendez, à qui, et pourquoi vous plutôt qu'un autre."
+      text: "Ce que tu vends, à qui, et pourquoi toi plutôt qu'un autre."
     },
     {
       title: "Site",
@@ -60,7 +60,7 @@ export const weeklyResetFreebie: Freebie = {
     {
       question: "Ce guide remplace-t-il un accompagnement ?",
       answer:
-        "Non. Il donne les repères pour comprendre où regarder. Néa Digital va plus loin avec un accompagnement adapté à votre situation."
+        "Non. Il donne les repères pour comprendre où regarder. Néa Digital va plus loin avec un accompagnement adapté à ta situation."
     },
     {
       question: "Comment je le reçois ?",
