@@ -52,6 +52,18 @@ export default function Home() {
 
         {/* ── HERO ── */}
         <section className="relative bg-[#F5F1EB] flex flex-col items-center justify-center text-center px-12 pt-40 pb-24 overflow-hidden">
+          {/* Fond photo flouté — dépose l'image générée dans public/images/hero-bg.jpg */}
+          <div className="absolute inset-0 -z-10" aria-hidden="true">
+            <img
+              src="/images/hero-bg.jpg"
+              alt=""
+              className="w-full h-full object-cover scale-110"
+              style={{ filter: "blur(6px) saturate(0.9)" }}
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+            <div className="absolute inset-0 bg-[#F5F1EB]/85" />
+          </div>
+
           <span
             className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#1C1A1A]/[0.03] whitespace-nowrap leading-none"
             style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(120px,25vw,380px)", letterSpacing: "0.05em" }}
@@ -88,7 +100,7 @@ export default function Home() {
         <section id="services" className="bg-[#F5F1EB] px-12 py-24">
           <div className="nea-reveal">
             <SectionTag>Ce que je fais</SectionTag>
-            <SectionTitle>Trois façons de travailler ensemble.</SectionTitle>
+            <SectionTitle>Comment travailler ensemble.</SectionTitle>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
             {offers.map((offer, i) => {
@@ -178,6 +190,18 @@ export default function Home() {
 
         {/* ── CTA ── */}
         <section id="contact" className="relative bg-[#1C1A1A] px-12 py-32 text-center overflow-hidden">
+          {/* Fond photo flouté — dépose l'image générée dans public/images/contact-bg.jpg */}
+          <div className="absolute inset-0 -z-10" aria-hidden="true">
+            <img
+              src="/images/contact-bg.jpg"
+              alt=""
+              className="w-full h-full object-cover scale-110"
+              style={{ filter: "blur(6px) saturate(0.9)" }}
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+            <div className="absolute inset-0 bg-[#1C1A1A]/85" />
+          </div>
+
           <span className="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/[0.03] whitespace-nowrap leading-none" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(80px,18vw,260px)", letterSpacing: "0.05em" }} aria-hidden="true">CONTACT</span>
           <h2 className="nea-reveal text-white relative tracking-[0.02em] leading-none mb-3" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(42px,6vw,76px)" }}>PARLONS DE<br />VOTRE PROJET.</h2>
           <p className="nea-reveal relative mb-4 italic font-light text-[#B08D57]" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(17px,2vw,22px)" }}>un échange, un devis, sans engagement.</p>
