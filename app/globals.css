@@ -29,6 +29,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom magnetic cursor: native cursor hidden everywhere except form fields */
+html.nea-custom-cursor,
+html.nea-custom-cursor * {
+  cursor: none !important;
+}
+
+html.nea-custom-cursor input,
+html.nea-custom-cursor textarea,
+html.nea-custom-cursor select {
+  cursor: auto !important;
+}
+
 body {
   margin: 0;
   background:
