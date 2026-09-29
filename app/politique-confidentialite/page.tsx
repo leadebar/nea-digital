@@ -53,7 +53,8 @@ export default function PolitiqueConfidentialitePage() {
       <p>Certains prestataires techniques, notamment l'hébergeur, peuvent être situés hors Union européenne. Lorsque cela est nécessaire, Néa Digital veille à utiliser des prestataires encadrant les transferts de données selon les mécanismes prévus par le RGPD.</p>
 
       <h2>Cookies</h2>
-      <p>Le site utilise les cookies strictement nécessaires à son fonctionnement. Si des outils de mesure d'audience, de publicité ou de suivi marketing sont ajoutés ultérieurement, un bandeau de consentement et une politique cookies dédiée devront être mis en place.</p>
+      <p>Le site utilise les cookies strictement nécessaires à son fonctionnement. Il utilise également Google Analytics (via Google Tag Manager) à des fins de mesure d'audience, uniquement après votre consentement recueilli via le bandeau affiché lors de votre première visite. Aucune donnée de mesure d'audience n'est utilisée à des fins publicitaires ni revendue à des tiers.</p>
+      <p>Vous pouvez à tout moment accepter, refuser ou modifier votre choix via le lien "Gérer les cookies" en bas de chaque page.</p>
 
       <h2>Newsletter</h2>
       <p>L'inscription à la newsletter est facultative. Vous pouvez vous désinscrire à tout moment via le lien présent dans les emails ou en écrivant à contact.neadigital@gmail.com.</p>

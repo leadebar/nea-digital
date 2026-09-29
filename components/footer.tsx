@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { navItems } from "@/data/site";
@@ -44,6 +46,13 @@ export function Footer() {
                 {item.label}
               </Link>
             ))}
+            <button
+              type="button"
+              onClick={() => window.dispatchEvent(new Event("nea-open-cookie-preferences"))}
+              className="text-left text-sm text-porcelain/70 hover:text-porcelain"
+            >
+              Gérer les cookies
+            </button>
           </div>
         </div>
       </div>
