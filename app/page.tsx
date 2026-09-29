@@ -52,14 +52,25 @@ export default function Home() {
 
         {/* ── HERO ── */}
         <section className="relative bg-[#F5F1EB] flex flex-col items-center justify-center text-center px-12 pt-40 pb-24 overflow-hidden">
-          {/* Fond photo flouté — dépose l'image générée dans public/images/hero-bg.jpg */}
+          {/* Fond vidéo flouté (loop, muet). Respecte "réduire les animations" en repassant sur le poster. */}
           <div className="absolute inset-0 -z-10" aria-hidden="true">
-            <img
-              src="/images/hero-bg.jpg"
-              alt=""
-              className="w-full h-full object-cover scale-110"
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/images/hero-bg-poster.jpg"
+              className="w-full h-full object-cover scale-110 motion-reduce:hidden"
               style={{ filter: "blur(6px) saturate(0.9)" }}
-              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+              onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
+            >
+              <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            </video>
+            <img
+              src="/images/hero-bg-poster.jpg"
+              alt=""
+              className="hidden motion-reduce:block w-full h-full object-cover scale-110"
+              style={{ filter: "blur(6px) saturate(0.9)" }}
             />
             <div className="absolute inset-0 bg-[#F5F1EB]/85" />
           </div>
