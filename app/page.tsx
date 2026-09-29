@@ -61,7 +61,7 @@ export default function Home() {
               playsInline
               poster="/images/hero-bg-poster.jpg"
               className="w-full h-full object-cover scale-110 motion-reduce:hidden"
-              style={{ filter: "blur(6px) saturate(0.9)" }}
+              style={{ filter: "blur(4px) saturate(1.05) brightness(1.05)" }}
               onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
             >
               <source src="/videos/hero-bg.mp4" type="video/mp4" />
@@ -70,9 +70,9 @@ export default function Home() {
               src="/images/hero-bg-poster.jpg"
               alt=""
               className="hidden motion-reduce:block w-full h-full object-cover scale-110"
-              style={{ filter: "blur(6px) saturate(0.9)" }}
+              style={{ filter: "blur(4px) saturate(1.05) brightness(1.05)" }}
             />
-            <div className="absolute inset-0 bg-[#F5F1EB]/85" />
+            <div className="absolute inset-0 bg-[#F5F1EB]/55" />
           </div>
 
           <span
