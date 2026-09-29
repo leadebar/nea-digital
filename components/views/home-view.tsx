@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import { BlogCard } from "@/components/blog-card";
 import { Newsletter } from "@/components/newsletter";
@@ -9,53 +9,6 @@ import { StrategyIcon, ContentIcon, WebIcon, HarmonyIcon } from "@/components/of
 import { OfferQuiz } from "@/components/offer-quiz";
 import { posts } from "@/data/posts";
 import { offers, fullHarmony, processSteps, servicesFaq } from "@/data/site";
-import { useMagnetic } from "@/lib/use-magnetic";
-
-const SCRAMBLE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-/** Reveals text letter by letter through a quick scramble before settling on the real word. */
-function useScramble(text: string, { delay = 0, speed = 28 }: { delay?: number; speed?: number } = {}) {
-  const [display, setDisplay] = useState(text);
-
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setDisplay(text);
-      return;
-    }
-
-    let frame = 0;
-    let interval: ReturnType<typeof setInterval> | undefined;
-    const totalFrames = text.length * 3;
-
-    const timeout = setTimeout(() => {
-      interval = setInterval(() => {
-        frame += 1;
-        const revealCount = Math.floor((frame / totalFrames) * text.length);
-        setDisplay(
-          text
-            .split("")
-            .map((char, i) => {
-              if (char === " ") return " ";
-              if (i < revealCount) return text[i];
-              return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
-            })
-            .join("")
-        );
-        if (frame >= totalFrames) {
-          setDisplay(text);
-          if (interval) clearInterval(interval);
-        }
-      }, speed);
-    }, delay);
-
-    return () => {
-      clearTimeout(timeout);
-      if (interval) clearInterval(interval);
-    };
-  }, [text, delay, speed]);
-
-  return display;
-}
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -93,11 +46,6 @@ export function HomeView() {
     document.querySelectorAll(".nea-reveal").forEach((el) => obs.observe(el));
     return () => obs.disconnect();
   }, []);
-
-  const heroLine1 = useScramble("STRATÉGIE, CONTENU,", { delay: 300, speed: 22 });
-  const heroLine2 = useScramble("SITE WEB.", { delay: 550, speed: 22 });
-  const ctaRef = useMagnetic<HTMLAnchorElement>(0.2);
-  const ghostRef = useMagnetic<HTMLAnchorElement>(0.2);
 
   return (
     <>
@@ -138,8 +86,8 @@ export function HomeView() {
             className="text-[#1C1A1A] relative"
             style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(48px,8vw,104px)", lineHeight: 0.98, letterSpacing: "0.02em" }}
           >
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) both" }}>{heroLine1}</span>
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>{heroLine2}</span>
+            <span className="block" style={{ animation: "nea-reveal 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) both" }}>STRATÉGIE, CONTENU,</span>
+            <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>SITE WEB.</span>
           </h1>
 
           <p className="text-[15px] font-light text-[#5C564F] leading-[1.85] max-w-[540px] mx-auto mt-6 mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
@@ -147,8 +95,8 @@ export function HomeView() {
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap relative" style={{ animation: "nea-fade-up 0.8s 1.15s both" }}>
-            <a ref={ctaRef} href="/contact" className="nea-btn-fill bg-[#1C1A1A] text-white"><span>Demander un devis gratuit</span></a>
-            <a ref={ghostRef} href="#services" className="nea-btn-ghost"><span>Voir les offres</span></a>
+            <a href="/contact" className="nea-btn-fill bg-[#1C1A1A] text-white"><span>Demander un devis gratuit</span></a>
+            <a href="#services" className="nea-btn-ghost"><span>Voir les offres</span></a>
           </div>
         </section>
 

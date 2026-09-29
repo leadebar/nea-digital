@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { CookieConsent } from "@/components/cookie-consent";
-import { CustomCursor } from "@/components/custom-cursor";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { JsonLd } from "@/components/seo";
@@ -60,7 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         <CookieConsent />
-        <CustomCursor />
       </body>
     </html>
   );

@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { useMagnetic } from "@/lib/use-magnetic";
 
 type ButtonProps = {
   href: string;
@@ -11,14 +8,11 @@ type ButtonProps = {
 };
 
 export function Button({ href, children, variant = "dark" }: ButtonProps) {
-  const ref = useMagnetic<HTMLAnchorElement>(0.25);
-
   return (
     <Link
-      ref={ref}
       href={href}
       className={cn(
-        "focus-ring inline-flex min-h-12 items-center justify-center rounded-[4px] px-6 text-sm font-medium",
+        "focus-ring inline-flex min-h-12 items-center justify-center rounded-[4px] px-6 text-sm font-medium transition duration-300",
         variant === "dark" && "border border-ink bg-ink text-porcelain hover:bg-olive hover:border-olive",
         variant === "light" && "border border-ink/14 bg-transparent text-ink hover:bg-linen",
         variant === "cream" && "border border-porcelain bg-porcelain text-ink hover:border-sand hover:bg-sand",
