@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { formatDate } from "@/lib/utils";
 import type { Post } from "@/data/posts";
@@ -6,10 +7,12 @@ export function BlogCard({ post }: { post: Post }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group grid gap-5">
       <div className="relative aspect-[16/11] overflow-hidden rounded-[8px] shadow-line">
-        <img
+        <Image
           src={post.image}
           alt={post.title}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          fill
+          sizes="(min-width: 768px) 33vw, 100vw"
+          className="object-cover transition duration-500 group-hover:scale-105"
         />
       </div>
       <div>

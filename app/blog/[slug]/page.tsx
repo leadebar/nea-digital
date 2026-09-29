@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BlogCard } from "@/components/blog-card";
 import { Newsletter } from "@/components/newsletter";
@@ -19,9 +20,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${post.slug}`
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: `https://neadigital.fr/blog/${post.slug}`,
       type: "article"
     }
   };
@@ -42,7 +47,7 @@ export default async function ArticlePage({ params }: Props) {
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink/64">{post.excerpt}</p>
         </header>
         <div className="relative mx-auto mt-12 aspect-[16/8] max-w-4xl overflow-hidden rounded-[8px] shadow-line">
-          <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
+          <Image src={post.image} alt={post.title} fill priority sizes="(min-width: 1024px) 896px, 100vw" className="object-cover" />
         </div>
         <div className="mt-14 grid gap-10 md:grid-cols-[220px_1fr]">
           <aside className="hidden md:block">
