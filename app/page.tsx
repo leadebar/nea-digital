@@ -51,9 +51,9 @@ export default function Home() {
       <main className="relative">
 
         {/* ── HERO ── */}
-        <section className="relative bg-[#F5F1EB] flex flex-col items-center justify-center text-center px-12 pt-40 pb-24 overflow-hidden">
+        <section className="relative isolate bg-[#F5F1EB] flex flex-col items-center justify-center text-center px-12 pt-40 pb-24 overflow-hidden">
           {/* Fond vidéo flouté (loop, muet). Respecte "réduire les animations" en repassant sur le poster. */}
-          <div className="absolute inset-0 -z-10" aria-hidden="true">
+          <div className="absolute inset-0 z-0" aria-hidden="true">
             <video
               autoPlay
               muted
@@ -200,9 +200,9 @@ export default function Home() {
         </section>
 
         {/* ── CTA ── */}
-        <section id="contact" className="relative bg-[#1C1A1A] px-12 py-32 text-center overflow-hidden">
+        <section id="contact" className="relative isolate bg-[#1C1A1A] px-12 py-32 text-center overflow-hidden">
           {/* Fond photo flouté — dépose l'image générée dans public/images/contact-bg.jpg */}
-          <div className="absolute inset-0 -z-10" aria-hidden="true">
+          <div className="absolute inset-0 z-0" aria-hidden="true">
             <img
               src="/images/contact-bg.jpg"
               alt=""
