@@ -4,8 +4,10 @@ export function JsonLd() {
     "@type": "Organization",
     name: "Néa Digital",
     url: "https://neadigital.fr",
-    sameAs: ["https://www.tiktok.com/@neadigital", "https://www.pinterest.com/neadigital"],
-    description: "Planners, templates et services pour organisation, branding et marketing digital."
+    logo: "https://neadigital.fr/icon.png",
+    email: "contact.neadigital@gmail.com",
+    sameAs: ["https://fr.pinterest.com/neadigitalpro/"],
+    description: "Stratégie digitale, contenu et création de site pour entreprises et indépendants, ainsi qu'une boutique de ressources digitales pour s'organiser au quotidien."
   };
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;

@@ -30,7 +30,7 @@ export const products: Product[] = [
     summary: "Planifie tes semaines, tes objectifs et tes projets au même endroit.",
     href: "/products/digital-planner",
     accent: "linen",
-    cardImage: "https://images.pexels.com/photos/12911169/pexels-photo-12911169.jpeg",
+    cardImage: "https://images.pexels.com/photos/33136468/pexels-photo-33136468.jpeg",
     includes: ["Planner principal 2026", "PDF A4 imprimable", "4 bonus inclus", "Version Google Sheets", "Guide d'utilisation"],
     headline: "Un planner 2026 complet pour organiser l'année sans multiplier les fichiers.",
     description:

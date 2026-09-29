@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Download, ExternalLink } from "lucide-react";
 import { BlogCard } from "@/components/blog-card";
 import { Button } from "@/components/button";
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const socialLinks = [
-  { label: "Pinterest", href: "https://www.pinterest.com/" }
+  { label: "Pinterest", href: "https://fr.pinterest.com/neadigitalpro/?actingBusinessId=1138425749465166573" }
 ];
 
 export default function DownloadSuccessPage() {
@@ -61,14 +60,16 @@ export default function DownloadSuccessPage() {
           </div>
           <div className="grid gap-3 sm:max-w-xs">
             {socialLinks.map((link) => (
-              <Link
+              <a
                 key={link.label}
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="focus-ring flex min-h-20 items-center justify-between rounded-[8px] bg-porcelain px-5 text-sm font-medium text-ink shadow-line transition hover:bg-white"
               >
                 {link.label}
                 <ExternalLink className="h-4 w-4 text-taupe" />
-              </Link>
+              </a>
             ))}
           </div>
         </div>

@@ -7,41 +7,46 @@ import { JsonLd } from "@/components/seo";
 export const metadata: Metadata = {
   metadataBase: new URL("https://neadigital.fr"),
   title: {
-    default: "Néa Digital | Planners, stratégie digitale et organisation",
+    default: "Néa Digital | Stratégie digitale, contenu et création de site",
     template: "%s | Néa Digital"
   },
   description:
-    "Néa Digital crée des planners, templates et services pour organiser ton activité digitale.",
+    "Néa Digital accompagne entreprises, marques et indépendants sur leur stratégie digitale, leur contenu et leur site web, et propose une boutique de planners pour s'organiser au quotidien.",
   keywords: [
-    "planner digital",
-    "organisation digitale",
-    "productivité",
-    "finances personnelles",
-    "marketing digital",
     "stratégie digitale",
-    "Pinterest",
-    "outils digitaux",
-    "templates digitaux",
-    "optimisation web"
+    "marketing digital",
+    "création de site web",
+    "référencement SEO",
+    "contenu et newsletter",
+    "audit de présence en ligne",
+    "planner digital",
+    "organisation et productivité"
   ],
+  alternates: {
+    canonical: "/"
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: "https://neadigital.fr",
     siteName: "Néa Digital",
-    title: "Néa Digital",
-    description: "Planners, templates et services pour organisation digitale."
+    title: "Néa Digital | Stratégie digitale, contenu et création de site",
+    description: "Stratégie digitale, contenu et création de site pour entreprises et indépendants, et une boutique de ressources pour s'organiser au quotidien."
   },
   twitter: {
     card: "summary_large_image",
     title: "Néa Digital",
-    description: "Planners, templates et services pour organiser ton digital."
-  },         
+    description: "Stratégie digitale, contenu et création de site pour entreprises et indépendants."
+  },
+  robots: {
+    index: true,
+    follow: true
+  },
   verification: {
     other: {
-      "p:domain_verify": "787c16db9f9201d42bed07da8ccf182f",
-    },
-  },
+      "p:domain_verify": "787c16db9f9201d42bed07da8ccf182f"
+    }
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
