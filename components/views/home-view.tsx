@@ -214,8 +214,6 @@ export function HomeView() {
 
       {/* ── GLOBAL STYLES ── */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Museo+Moderno:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
-
         @keyframes nea-fade-up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
         @keyframes nea-slide-top { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
         @keyframes nea-reveal { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
