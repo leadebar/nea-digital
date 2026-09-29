@@ -16,20 +16,18 @@ const offerIcons = { strategy: StrategyIcon, content: ContentIcon, web: WebIcon 
 
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
 
-function SectionTag({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+function Tag({ children }: { children: React.ReactNode }) {
   return (
-    <div className={`flex items-center gap-3 mb-3.5 ${light ? "text-[#B08D57]" : "text-[#8A8177]"}`}>
-      <span className="w-7 h-[1.5px] bg-[#B08D57]" />
-      <span className="font-['DM_Sans'] text-[10px] font-medium tracking-[0.2em] uppercase">
-        {children}
-      </span>
-    </div>
+    <span className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-linen px-3 py-1 font-editorial text-[11px] text-olive">
+      <span className="h-1.5 w-1.5 rounded-full bg-sand" />
+      {children}
+    </span>
   );
 }
 
-function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className={`font-['Museo_Moderno'] text-[clamp(26px,3.2vw,40px)] leading-[1.2] mb-14 ${light ? "text-white" : "text-[#1C1A1A]"}`}>
+    <h2 className="font-display text-[clamp(26px,3.2vw,38px)] font-bold leading-tight text-ink mb-14">
       {children}
     </h2>
   );
@@ -49,85 +47,93 @@ export function HomeView() {
 
   return (
     <>
-      <main className="relative">
+      <main className="relative bg-porcelain">
 
         {/* ── HERO ── */}
-        <section className="relative isolate bg-[#F5F1EB] flex flex-col items-center justify-center text-center px-12 pt-40 pb-24 overflow-hidden">
-          {/* Fond vidéo flouté (loop, muet). Respecte "réduire les animations" en repassant sur le poster. */}
-          <div className="absolute inset-0 z-0" aria-hidden="true">
+        <section className="relative isolate flex flex-col items-center justify-center text-center px-8 pt-36 pb-24 md:px-16 overflow-hidden">
+          <div className="absolute inset-0 z-0 opacity-25" aria-hidden="true">
             <video
               autoPlay
               muted
               loop
               playsInline
               poster="/images/hero-bg-poster.jpg"
-              className="w-full h-full object-cover scale-110 motion-reduce:hidden"
-              style={{ filter: "blur(4px) saturate(1.05) brightness(1.05)" }}
+              className="w-full h-full object-cover motion-reduce:hidden"
+              style={{ filter: "grayscale(1) contrast(1.2)" }}
               onError={(e) => { (e.currentTarget as HTMLVideoElement).style.display = "none"; }}
             >
               <source src="/videos/hero-bg.mp4" type="video/mp4" />
             </video>
-            <Image
-              src="/images/hero-bg-poster.jpg"
-              alt=""
-              fill
-              sizes="100vw"
-              className="hidden motion-reduce:block object-cover scale-110"
-              style={{ filter: "blur(4px) saturate(1.05) brightness(1.05)" }}
-            />
-            <div className="absolute inset-0 bg-[#F5F1EB]/55" />
+            <div className="absolute inset-0 bg-porcelain/80" />
           </div>
 
-          <p className="text-[11px] font-medium tracking-[0.25em] uppercase text-[#B08D57] mb-7 relative" style={{ animation: "nea-slide-top 0.7s 0.2s cubic-bezier(0.22,1,0.36,1) both" }}>
-            Agence marketing digital
-          </p>
+          <div className="nea-reveal relative mb-7" style={{ animation: "nea-fade-up 0.7s 0.1s both" }}>
+            <Tag>Marketing digital, sans détour</Tag>
+          </div>
 
           <h1
-            className="text-[#1C1A1A] relative"
-            style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(48px,8vw,104px)", lineHeight: 0.98, letterSpacing: "0.02em" }}
+            className="font-display font-extrabold text-ink relative"
+            style={{ fontSize: "clamp(38px,6.5vw,84px)", lineHeight: 1.02, letterSpacing: "-0.02em" }}
           >
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) both" }}>STRATÉGIE, CONTENU,</span>
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>SITE WEB.</span>
+            <span className="block" style={{ animation: "nea-reveal 0.8s 0.25s both" }}>Un site qui vend.</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-sand to-olive" style={{ animation: "nea-reveal 0.8s 0.4s both" }}>
+              Du contenu qui sort.
+            </span>
           </h1>
 
-          <p className="text-[15px] font-light text-[#5C564F] leading-[1.85] max-w-[540px] mx-auto mt-6 mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
-            J'aide les entreprises, les marques et les indépendants à améliorer leur présence en ligne : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie claire pour votre activité.
+          <p className="font-mono text-[13px] text-taupe leading-[1.8] max-w-[480px] mx-auto mt-7 mb-10 relative" style={{ animation: "nea-fade-up 0.7s 0.6s both" }}>
+            // stratégie + contenu + site web, pilotés par une seule personne. pas de jargon, pas de blabla, un plan clair et des livrables dans les temps.
           </p>
 
-          <div className="flex gap-4 justify-center flex-wrap relative" style={{ animation: "nea-fade-up 0.8s 1.15s both" }}>
-            <a href="/contact" className="nea-btn-fill bg-[#1C1A1A] text-white"><span>Demander un devis gratuit</span></a>
-            <a href="#services" className="nea-btn-ghost"><span>Voir les offres</span></a>
+          <div className="flex gap-4 justify-center flex-wrap relative" style={{ animation: "nea-fade-up 0.7s 0.75s both" }}>
+            <a href="/contact" className="nea-btn-solid">Demander un devis →</a>
+            <a href="#services" className="nea-btn-outline">Voir les offres</a>
+          </div>
+
+          <div className="nea-reveal relative mt-16 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[12px] font-mono text-taupe" style={{ animation: "nea-fade-up 0.7s 0.9s both" }}>
+            <span>5 ans d'expérience</span>
+            <span className="h-1 w-1 rounded-full bg-taupe/40" />
+            <span>Réponse sous 48h</span>
+            <span className="h-1 w-1 rounded-full bg-taupe/40" />
+            <span>Tarifs sur devis</span>
           </div>
         </section>
 
         {/* ── OFFRES ── */}
-        <section id="services" className="bg-[#F5F1EB] px-12 py-24">
+        <section id="services" className="px-8 py-24 md:px-16">
           <div className="nea-reveal">
-            <SectionTag>Ce que je fais</SectionTag>
-            <SectionTitle>Comment travailler ensemble.</SectionTitle>
+            <Tag>Ce que je fais</Tag>
+            <div className="mt-5">
+              <SectionTitle>Trois briques. Un seul plan.</SectionTitle>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {offers.map((offer, i) => {
               const Icon = offerIcons[offer.key as keyof typeof offerIcons];
               return (
-                <div key={offer.key} className="nea-reveal bg-white p-11 relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_30px_80px_rgba(28,26,26,0.06)]" style={{ transitionDelay: `${i * 0.1}s` }}>
-                  <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#B08D57] scale-x-0 origin-left transition-transform duration-400 group-hover:scale-x-100" />
-                  <div className="flex items-center gap-4 mb-5">
-                    <Icon className="w-9 h-9 text-[#B08D57] shrink-0" />
-                    <span className="text-[#EDE8DF] leading-none tracking-[0.05em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "38px" }}>{offer.num}</span>
+                <div
+                  key={offer.key}
+                  className="nea-reveal rounded-xl border border-ink/12 bg-linen p-8 relative overflow-hidden transition-all duration-300 hover:border-sand/50 hover:shadow-glow"
+                  style={{ transitionDelay: `${i * 0.1}s` }}
+                >
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-ink/15 bg-porcelain">
+                      <Icon className="w-5 h-5 text-olive" />
+                    </div>
+                    <span className="font-mono text-[12px] text-taupe">{offer.num}/03</span>
                   </div>
-                  <h3 className="text-[20px] font-semibold text-[#1C1A1A] mb-1" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }}>{offer.title}</h3>
-                  <p className="text-[13px] text-[#B08D57] font-medium mb-3 italic">{offer.tagline}</p>
-                  <p className="text-[13px] text-[#7A7470] leading-[1.7] mb-6">{offer.desc}</p>
+                  <h3 className="font-display text-[19px] font-bold text-ink mb-1">{offer.title}</h3>
+                  <p className="text-[13px] text-sand font-medium mb-3">{offer.tagline}</p>
+                  <p className="text-[13px] text-taupe leading-[1.7] mb-6">{offer.desc}</p>
                   <ul className="flex flex-col gap-2 mb-8">
                     {offer.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-[13px] text-[#1C1A1A] leading-[1.4]">
-                        <span className="mt-[7px] h-1 w-1 rounded-full bg-[#B08D57] shrink-0" />
+                      <li key={item} className="flex items-start gap-2 text-[13px] text-ink/80 leading-[1.4]">
+                        <span className="mt-[7px] h-1 w-1 rounded-full bg-olive shrink-0" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                  <a href="/contact" className="text-[11px] font-medium tracking-[0.08em] uppercase text-[#1C1A1A] border-b border-[#B08D57] pb-0.5 hover:text-[#7A7470] transition-colors">
+                  <a href="/contact" className="font-mono text-[11px] font-medium uppercase tracking-[0.05em] text-olive hover:text-sand transition-colors">
                     Demander un devis →
                   </a>
                 </div>
@@ -136,56 +142,60 @@ export function HomeView() {
           </div>
 
           {/* Full Harmony */}
-          <div className="nea-reveal mt-0.5 bg-[#1C1A1A] p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
+          <div className="nea-reveal mt-4 rounded-xl border border-sand/30 bg-linen p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center" style={{ boxShadow: "0 0 60px rgba(198,255,61,0.05)" }}>
             <div>
-              <HarmonyIcon className="w-9 h-9 text-[#B08D57] mb-4" />
-              <p className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#B08D57] mb-3">Pack recommandé</p>
-              <h3 className="text-[26px] text-white mb-2" style={{ fontFamily: "'Bebas Neue'", letterSpacing: "0.03em" }}>{fullHarmony.name}</h3>
-              <p className="text-[14px] text-white/60 leading-[1.7] mb-4 max-w-md">{fullHarmony.desc}</p>
+              <HarmonyIcon className="w-8 h-8 text-sand mb-4" />
+              <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-sand mb-3">Pack recommandé</p>
+              <h3 className="font-display text-[24px] font-bold text-ink mb-2">{fullHarmony.name}</h3>
+              <p className="text-[14px] text-taupe leading-[1.7] mb-4 max-w-md">{fullHarmony.desc}</p>
               <ul className="flex flex-wrap gap-x-6 gap-y-2">
                 {fullHarmony.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-[13px] text-white/75">
-                    <span className="text-[#B08D57]">✓</span>{item}
+                  <li key={item} className="flex items-center gap-2 text-[13px] text-ink/80">
+                    <span className="text-sand">✓</span>{item}
                   </li>
                 ))}
               </ul>
             </div>
-            <a href="/contact" className="nea-btn-fill bg-white text-[#1C1A1A] whitespace-nowrap"><span>Demander un devis</span></a>
+            <a href="/contact" className="nea-btn-solid whitespace-nowrap">Demander un devis</a>
           </div>
-          <p className="text-center text-[12px] text-[#9A928C] mt-8 tracking-[0.05em]">Tarifs communiqués sur devis, adaptés à chaque projet.</p>
+          <p className="text-center text-[12px] text-taupe mt-8 font-mono">// tarifs communiqués sur devis, adaptés à chaque projet</p>
         </section>
 
         {/* ── QUIZ ── */}
-        <section className="bg-[#F5F1EB] px-12 pb-24">
+        <section className="bg-linen px-8 py-24 md:px-16">
           <div className="nea-reveal">
-            <SectionTag>Quelle offre pour vous</SectionTag>
-            <h2 className="font-['Museo_Moderno'] text-[clamp(24px,3vw,34px)] leading-[1.2] text-[#1C1A1A] mb-10">Trouvez votre offre en 3 questions.</h2>
+            <Tag>Quelle offre pour vous</Tag>
+            <h2 className="font-display text-[clamp(24px,3vw,32px)] font-bold leading-[1.2] text-ink mt-5 mb-10">Trois questions pour trancher.</h2>
           </div>
           <OfferQuiz />
         </section>
 
         {/* ── MÉTHODE ── */}
-        <section className="bg-white px-12 py-24">
+        <section className="px-8 py-24 md:px-16">
           <div className="nea-reveal">
-            <SectionTag>Ma méthode</SectionTag>
-            <SectionTitle>Comment ça se passe.</SectionTitle>
+            <Tag>Ma méthode</Tag>
+            <div className="mt-5">
+              <SectionTitle>Comment ça se passe.</SectionTitle>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0.5">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {processSteps.map((step, i) => (
-              <div key={step.num} className="nea-reveal bg-[#F5F1EB] p-9" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="leading-none mb-5 tracking-[0.05em] text-[#B08D57]" style={{ fontFamily: "'Bebas Neue'", fontSize: "34px" }}>{step.num}</div>
-                <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[16px] font-semibold text-[#1C1A1A] mb-3">{step.title}</h3>
-                <p className="text-[13px] text-[#7A7470] leading-[1.7]">{step.desc}</p>
+              <div key={step.num} className="nea-reveal rounded-xl border border-ink/12 bg-linen p-7" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="font-mono text-[12px] text-sand mb-4">{step.num}</div>
+                <h3 className="font-display text-[15px] font-bold text-ink mb-2">{step.title}</h3>
+                <p className="text-[13px] text-taupe leading-[1.7]">{step.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── BLOG ── */}
-        <section className="bg-[#F5F1EB] px-12 py-24">
+        <section className="bg-linen px-8 py-24 md:px-16">
           <div className="nea-reveal">
-            <SectionTag>Blog</SectionTag>
-            <SectionTitle>Stratégie, contenu, web : quelques repères.</SectionTitle>
+            <Tag>Blog</Tag>
+            <div className="mt-5">
+              <SectionTitle>Stratégie, contenu, web : quelques repères.</SectionTitle>
+            </div>
           </div>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {posts.map((post) => <BlogCard key={post.slug} post={post} />)}
@@ -193,23 +203,24 @@ export function HomeView() {
         </section>
 
         {/* ── CTA ── */}
-        <section id="contact" className="relative isolate bg-[#1C1A1A] px-12 py-32 text-center overflow-hidden">
+        <section id="contact" className="relative isolate px-8 py-32 text-center md:px-16 overflow-hidden">
           <div className="absolute inset-0 z-0" aria-hidden="true">
             <Image
               src="/images/contact-bg.jpg"
               alt=""
               fill
               sizes="100vw"
-              className="object-cover"
+              className="object-cover opacity-20 grayscale"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
             />
-            <div className="absolute inset-0 bg-[#1C1A1A]/90" />
           </div>
 
-          <h2 className="nea-reveal text-white relative tracking-[0.02em] leading-none mb-3" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(42px,6vw,76px)" }}>PARLONS DE<br />VOTRE PROJET.</h2>
-          <p className="nea-reveal relative mb-4 italic font-light text-[#B08D57]" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(17px,2vw,22px)" }}>un échange, un devis, sans engagement.</p>
-          <p className="nea-reveal text-[13px] text-white/45 tracking-[0.05em] relative mb-10">Devis gratuit · Réponse sous 48h</p>
-          <a href="/contact" className="nea-reveal nea-btn-fill bg-white text-[#1C1A1A] inline-block relative"><span>Contactez-moi →</span></a>
+          <p className="nea-reveal relative font-mono text-[12px] text-sand mb-4">// prochaine étape</p>
+          <h2 className="nea-reveal font-display text-ink relative tracking-[-0.01em] leading-[1.05] mb-6 font-extrabold" style={{ fontSize: "clamp(34px,5.5vw,60px)" }}>
+            On regarde ça ensemble ?
+          </h2>
+          <p className="nea-reveal text-[14px] text-taupe relative mb-10">Devis gratuit · Réponse sous 48h · Sans engagement</p>
+          <a href="/contact" className="nea-reveal nea-btn-solid inline-block relative">Contactez-moi →</a>
         </section>
 
         <Newsletter />
@@ -220,23 +231,25 @@ export function HomeView() {
       {/* ── GLOBAL STYLES ── */}
       <style>{`
         @keyframes nea-fade-up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-        @keyframes nea-slide-top { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
         @keyframes nea-reveal { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
 
         .nea-reveal { opacity:0; transform:translateY(24px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
         .nea-reveal.nea-visible { opacity:1; transform:translateY(0); }
 
-        .nea-btn-fill { position:relative; overflow:hidden; font-size:12px; font-weight:500; padding:15px 32px; border-radius:2px; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.35s; display:inline-block; }
-        .nea-btn-fill::before { content:''; position:absolute; inset:0; background:#B08D57; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
-        .nea-btn-fill:hover { color:white; }
-        .nea-btn-fill:hover::before { transform:translateY(0); }
-        .nea-btn-fill span { position:relative; z-index:1; }
+        .nea-btn-solid {
+          display:inline-block; font-family:'Sora',sans-serif; font-size:13px; font-weight:700;
+          padding:14px 28px; border-radius:6px; text-decoration:none;
+          background:#C6FF3D; color:#0B0F1A; transition: box-shadow 0.25s, transform 0.2s;
+        }
+        .nea-btn-solid:hover { box-shadow:0 0 0 1px rgba(198,255,61,0.5), 0 0 40px rgba(198,255,61,0.25); transform:translateY(-2px); }
 
-        .nea-btn-ghost { position:relative; overflow:hidden; border:1.5px solid rgba(28,26,26,0.2); color:#1C1A1A; font-size:12px; font-weight:500; padding:15px 32px; border-radius:2px; text-decoration:none; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.35s, border-color 0.3s; display:inline-block; }
-        .nea-btn-ghost::before { content:''; position:absolute; inset:0; background:rgba(28,26,26,0.06); transform:translateX(-101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
-        .nea-btn-ghost:hover { border-color:rgba(28,26,26,0.4); }
-        .nea-btn-ghost:hover::before { transform:translateX(0); }
-        .nea-btn-ghost span { position:relative; z-index:1; }
+        .nea-btn-outline {
+          display:inline-block; font-family:'Sora',sans-serif; font-size:13px; font-weight:700;
+          padding:14px 28px; border-radius:6px; text-decoration:none;
+          background:transparent; color:#E8ECF5; border:1px solid rgba(232,236,245,0.2);
+          transition: border-color 0.25s, color 0.25s;
+        }
+        .nea-btn-outline:hover { border-color:#4DD8FF; color:#4DD8FF; }
       `}</style>
     </>
   );
