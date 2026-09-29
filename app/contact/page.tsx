@@ -60,7 +60,16 @@ export default function ContactPage() {
         <section className="min-h-screen grid grid-cols-1 md:grid-cols-2 pt-[58px]">
 
           {/* Gauche — infos */}
-          <div className="bg-[#1C1A1A] flex flex-col justify-center px-14 py-20 relative overflow-hidden">
+          <div className="relative isolate bg-[#1C1A1A] flex flex-col justify-center px-14 py-20 overflow-hidden">
+            <div className="absolute inset-0 z-0" aria-hidden="true">
+              <img
+                src="/images/contact-bg.jpg"
+                alt=""
+                className="w-full h-full object-cover"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+              />
+              <div className="absolute inset-0 bg-[#1C1A1A]/90" />
+            </div>
             <div className="flex items-center gap-3 mb-6 relative" style={{ animation: "ct-fade-up 0.7s 0.2s both" }}>
               <span className="w-7 h-px bg-[#B08D57]" />
               <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#B08D57]">Parlons de votre projet</span>

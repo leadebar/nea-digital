@@ -149,7 +149,16 @@ export default function ServicesPage() {
         </div>
 
         {/* ── CTA ── */}
-        <section id="contact" className="relative bg-[#1C1A1A] px-12 py-32 overflow-hidden">
+        <section id="contact" className="relative isolate bg-[#1C1A1A] px-12 py-32 overflow-hidden">
+          <div className="absolute inset-0 z-0" aria-hidden="true">
+            <img
+              src="/images/contact-bg.jpg"
+              alt=""
+              className="w-full h-full object-cover"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
+            <div className="absolute inset-0 bg-[#1C1A1A]/90" />
+          </div>
           <div className="relative max-w-2xl">
             <h2 className="pro-reveal text-white leading-none mb-4 tracking-[0.02em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(42px,6vw,76px)" }}>
               DISCUTONS DE<br /><span className="text-[#B08D57]">VOTRE PROJET.</span>

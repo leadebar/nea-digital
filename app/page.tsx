@@ -191,16 +191,14 @@ export default function Home() {
 
         {/* ── CTA ── */}
         <section id="contact" className="relative isolate bg-[#1C1A1A] px-12 py-32 text-center overflow-hidden">
-          {/* Fond photo flouté — dépose l'image générée dans public/images/contact-bg.jpg */}
           <div className="absolute inset-0 z-0" aria-hidden="true">
             <img
               src="/images/contact-bg.jpg"
               alt=""
-              className="w-full h-full object-cover scale-110"
-              style={{ filter: "blur(6px) saturate(0.9)" }}
+              className="w-full h-full object-cover"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
             />
-            <div className="absolute inset-0 bg-[#1C1A1A]/85" />
+            <div className="absolute inset-0 bg-[#1C1A1A]/90" />
           </div>
 
           <h2 className="nea-reveal text-white relative tracking-[0.02em] leading-none mb-3" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(42px,6vw,76px)" }}>PARLONS DE<br />VOTRE PROJET.</h2>
