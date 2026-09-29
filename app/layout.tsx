@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { CookieConsent } from "@/components/cookie-consent";
 import { Footer } from "@/components/footer";
-import { GrainOverlay } from "@/components/grain-overlay";
 import { Navbar } from "@/components/navbar";
-import { PageTransition } from "@/components/page-transition";
 import { JsonLd } from "@/components/seo";
 
 export const metadata: Metadata = {
@@ -61,8 +59,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         <CookieConsent />
-        <GrainOverlay />
-        <PageTransition />
       </body>
     </html>
   );
