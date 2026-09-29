@@ -7,3 +7,4 @@ node_modules
 .pnpm-latest.json
 .data
 *.log
+*.tsbuildinfo
