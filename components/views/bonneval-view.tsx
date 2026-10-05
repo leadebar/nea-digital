@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import { CopyEmailButton } from "@/components/copy-email-button";
 
 // ─── Contenu modifiable ────────────────────────────────────────────────
 const EMAIL = "contact.neadigital@gmail.com";
@@ -105,6 +106,10 @@ export function BonnevalView() {
               <Mail className="h-4 w-4" aria-hidden="true" /> Écrivez-moi
             </a>
           </div>
+          <p className="mt-5 text-[12px] font-light text-[#5C564F]">
+            Ou à {EMAIL} <span className="mx-1">·</span>
+            <CopyEmailButton email={EMAIL} tone="light" />
+          </p>
         </div>
       </section>
 
@@ -230,6 +235,9 @@ export function BonnevalView() {
           >
             <Mail className="h-4 w-4" aria-hidden="true" /> {EMAIL}
           </a>
+          <div className="mt-5">
+            <CopyEmailButton email={EMAIL} tone="dark" />
+          </div>
         </div>
       </section>
     </main>
