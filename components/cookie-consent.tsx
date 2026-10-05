@@ -37,6 +37,27 @@ export function CookieConsent() {
     return () => window.removeEventListener("nea-open-cookie-preferences", handleReopen);
   }, []);
 
+  // Suivi des clics sur les liens mail et téléphone, uniquement après consentement.
+  useEffect(() => {
+    if (consent !== "accepted") return;
+
+    function handleClick(event: MouseEvent) {
+      const target = event.target as Element | null;
+      const link = target?.closest?.("a[href^='mailto:'], a[href^='tel:']") as HTMLAnchorElement | null;
+      if (!link) return;
+
+      const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({
+        event: link.href.startsWith("mailto:") ? "click_email" : "click_phone",
+        page_path: window.location.pathname
+      });
+    }
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, [consent]);
+
   function accept() {
     try {
       window.localStorage.setItem(STORAGE_KEY, "accepted");
