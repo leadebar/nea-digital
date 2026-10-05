@@ -43,7 +43,8 @@ const offers = [
   {
     name: "Contenu régulier",
     price: "300 €",
-    unit: "à partir de, par mois",
+    suffix: ", PAR MOIS",
+    unit: "à partir de",
     desc: "Newsletter, articles, publications : je m'occupe de la rédaction et du calendrier. Le tarif dépend du nombre de contenus par mois."
   }
 ];
@@ -155,7 +156,12 @@ export function BonnevalView() {
                 <span className="absolute left-0 right-0 top-0 h-[2px] bg-[#B08D57]" />
                 <h3 className="mb-4 text-[19px] font-semibold text-[#1C1A1A]" style={heading}>{o.name}</h3>
                 <p className="mb-1 text-[10px] uppercase tracking-[0.15em] text-[#7A7470]">{o.unit}</p>
-                <p className="mb-4 leading-none text-[#B08D57]" style={{ ...display, fontSize: "46px" }}>{o.price}</p>
+                <p className="mb-4 leading-none text-[#B08D57]" style={{ ...display, fontSize: "46px" }}>
+                  {o.price}
+                  {"suffix" in o && o.suffix ? (
+                    <span className="ml-1 text-[18px] tracking-[0.05em]">{o.suffix}</span>
+                  ) : null}
+                </p>
                 <p className="text-[13px] leading-[1.75] text-[#7A7470]">{o.desc}</p>
               </div>
             ))}
