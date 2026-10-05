@@ -1,15 +1,15 @@
-import { Phone, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 // ─── Contenu modifiable ────────────────────────────────────────────────
-const PHONE_DISPLAY = "07 66 61 29 67";
-const PHONE_HREF = "tel:+33766612967";
 const EMAIL = "contact.neadigital@gmail.com";
+// Le sujet permet de reconnaître les messages venus de la page (et donc des cartes de visite).
+const MAIL_HREF = `mailto:${EMAIL}?subject=${encodeURIComponent("Demande depuis neadigital.fr/bonneval")}`;
 
 // Offre d'entrée mise en avant sur la page. À ajuster selon ce que tu veux offrir.
 const welcomeOffer = {
   label: "Offre de lancement",
-  title: "Mini-audit offert",
-  desc: "En 15 minutes, je regarde votre fiche Google, votre site et vos réseaux, et je vous dis ce qui vous fait perdre des clients. Gratuit, sans engagement."
+  title: "Diagnostic offert de 15 minutes",
+  desc: "Je regarde votre fiche Google, votre site et vos réseaux, et je vous donne les 3 points qui vous font le plus perdre de clients. Gratuit, sans engagement. Le plan d'action complet, lui, fait l'objet de l'audit."
 };
 
 const painPoints = [
@@ -43,13 +43,13 @@ const offers = [
   {
     name: "Contenu régulier",
     price: "300 €",
-    unit: "par mois",
-    desc: "Newsletter, articles, publications : je m'occupe de la rédaction et du calendrier."
+    unit: "à partir de, par mois",
+    desc: "Newsletter, articles, publications : je m'occupe de la rédaction et du calendrier. Le tarif dépend du nombre de contenus par mois."
   }
 ];
 
 const steps = [
-  { num: "01", title: "On se parle", desc: "Un appel ou un passage en boutique, pour comprendre votre activité." },
+  { num: "01", title: "On se parle", desc: "Un message, un appel ou un passage en boutique, pour comprendre votre activité." },
   { num: "02", title: "Devis sous 48h", desc: "Une proposition chiffrée, claire, sans engagement." },
   { num: "03", title: "Je m'en occupe", desc: "50 % à la commande, 50 % à la livraison. Un site complet est livré en 2 à 3 semaines." }
 ];
@@ -98,16 +98,10 @@ export function BonnevalView() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href={PHONE_HREF}
+              href={MAIL_HREF}
               className="inline-flex min-h-12 items-center gap-2 rounded-[2px] bg-[#1C1A1A] px-7 text-[12px] font-medium uppercase tracking-[0.07em] text-white transition-colors hover:bg-[#B08D57]"
             >
-              <Phone className="h-4 w-4" aria-hidden="true" /> {PHONE_DISPLAY}
-            </a>
-            <a
-              href="/contact"
-              className="inline-flex min-h-12 items-center rounded-[2px] border border-[#1C1A1A] px-7 text-[12px] font-medium uppercase tracking-[0.07em] text-[#1C1A1A] transition-colors hover:border-[#B08D57] hover:text-[#B08D57]"
-            >
-              Demander un devis
+              <Mail className="h-4 w-4" aria-hidden="true" /> Écrivez-moi
             </a>
           </div>
         </div>
@@ -122,10 +116,10 @@ export function BonnevalView() {
           </h2>
           <p className="mx-auto mb-7 max-w-lg text-[14px] font-light leading-[1.8] text-white/70">{welcomeOffer.desc}</p>
           <a
-            href={PHONE_HREF}
+            href={MAIL_HREF}
             className="inline-flex min-h-12 items-center rounded-[2px] bg-[#F5F1EB] px-7 text-[12px] font-medium uppercase tracking-[0.07em] text-[#1C1A1A] transition-colors hover:bg-[#B08D57] hover:text-white"
           >
-            Réserver mon mini-audit
+            Demander mon diagnostic
           </a>
         </div>
       </section>
@@ -223,21 +217,13 @@ export function BonnevalView() {
           <h2 className="mb-4 leading-none tracking-[0.02em] text-white" style={{ ...display, fontSize: "clamp(38px,6vw,64px)" }}>
             PARLONS DE <span className="text-[#B08D57]">VOTRE ACTIVITÉ.</span>
           </h2>
-          <p className="mb-9 text-[14px] font-light text-white/60">Un appel suffit. Réponse sous 48h, devis gratuit.</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href={PHONE_HREF}
-              className="inline-flex min-h-12 items-center gap-2 rounded-[2px] bg-[#F5F1EB] px-7 text-[12px] font-medium uppercase tracking-[0.07em] text-[#1C1A1A] transition-colors hover:bg-[#B08D57] hover:text-white"
-            >
-              <Phone className="h-4 w-4" aria-hidden="true" /> {PHONE_DISPLAY}
-            </a>
-            <a
-              href={`mailto:${EMAIL}`}
-              className="inline-flex min-h-12 items-center gap-2 rounded-[2px] border border-white/30 px-7 text-[12px] font-medium uppercase tracking-[0.07em] text-white transition-colors hover:border-[#B08D57] hover:text-[#B08D57]"
-            >
-              <Mail className="h-4 w-4" aria-hidden="true" /> Écrire
-            </a>
-          </div>
+          <p className="mb-9 text-[14px] font-light text-white/60">Un message suffit. Réponse sous 48h, devis gratuit.</p>
+          <a
+            href={MAIL_HREF}
+            className="inline-flex min-h-12 items-center gap-2 rounded-[2px] bg-[#F5F1EB] px-7 text-[12px] font-medium uppercase tracking-[0.07em] text-[#1C1A1A] transition-colors hover:bg-[#B08D57] hover:text-white"
+          >
+            <Mail className="h-4 w-4" aria-hidden="true" /> {EMAIL}
+          </a>
         </div>
       </section>
     </main>

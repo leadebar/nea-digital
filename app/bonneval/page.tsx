@@ -3,7 +3,7 @@ import { BonnevalView } from "@/components/views/bonneval-view";
 
 const title = "Marketing digital à Bonneval";
 const description =
-  "Consultante en marketing digital pour les commerces, restaurants, salons et artisans de Bonneval, Châteaudun, Chartres et Orléans. Site web, Google, contenu. Mini-audit offert.";
+  "Consultante en marketing digital pour les commerces, restaurants, salons et artisans de Bonneval, Châteaudun, Chartres et Orléans. Site web, Google, contenu. Diagnostic offert.";
 
 export const metadata: Metadata = {
   title,
