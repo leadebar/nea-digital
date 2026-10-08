@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Download } from "lucide-react";
 import { imprimables } from "@/data/imprimables";
@@ -22,7 +23,8 @@ export default async function MerciPage({ searchParams }: { searchParams: Promis
 
   return (
     <main className="container-premium py-24">
-      <div className="max-w-xl">
+      <div className="grid max-w-3xl gap-10 md:grid-cols-[220px_1fr] md:items-start">
+      <div className="max-w-xl md:col-start-2 md:row-start-1">
         {paid ? (
           <>
             <p className="eyebrow mb-5 text-xs text-taupe">Paiement confirmé</p>
@@ -37,6 +39,13 @@ export default async function MerciPage({ searchParams }: { searchParams: Promis
               <a href={`/api/imprimables/telecharger?session=${session_id}&fmt=letter`} className={btn}>
                 <Download className="h-4 w-4" /> PDF US Letter
               </a>
+              <a
+                href={`/resources/imprimables/covers/${product.slug}-couverture.jpg`}
+                download={`${product.slug}-couverture.jpg`}
+                className="focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-[4px] border border-ink/20 px-6 text-sm font-medium text-ink transition duration-300 hover:bg-linen"
+              >
+                <Download className="h-4 w-4" /> Couverture (JPG)
+              </a>
             </div>
           </>
         ) : (
@@ -50,6 +59,16 @@ export default async function MerciPage({ searchParams }: { searchParams: Promis
             </Link>
           </>
         )}
+      </div>
+      {paid ? (
+        <Image
+          src={`/resources/imprimables/covers/${product.slug}-couverture.jpg`}
+          alt={`Couverture de ${product.title}`}
+          width={440}
+          height={660}
+          className="h-auto w-full rounded-[6px] shadow-line md:col-start-1 md:row-start-1"
+        />
+      ) : null}
       </div>
     </main>
   );

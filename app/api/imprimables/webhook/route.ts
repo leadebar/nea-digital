@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       await sendEmail({
         to: email,
         subject: `Ton téléchargement : ${product.title}`,
-        html: `<p>Merci pour ton achat.</p><p><strong>${escapeHtml(product.title)}</strong> est prêt. Tu y trouveras les fichiers A4 et US Letter :</p><p><a href="${link}">Télécharger mes fichiers</a></p><p>Le lien reste valable, garde cet email. Une question ? Réponds simplement à ce message.</p><p>Néa Digital</p>`
+        html: `<p>Merci pour ton achat.</p><p><strong>${escapeHtml(product.title)}</strong> est prêt. Tu y trouveras les fichiers A4 et US Letter, ainsi que la couverture en image :</p><p><a href="${link}">Télécharger mes fichiers</a></p><p>Le lien reste valable, garde cet email. Une question ? Réponds simplement à ce message.</p><p>Néa Digital</p>`
       });
     }
   }
