@@ -12,8 +12,18 @@ export function GET() {
   } catch {
     filesOk = false;
   }
+  const key = process.env.STRIPE_SECRET_KEY ?? "";
+  const mode = key.startsWith("rk_live_") || key.startsWith("sk_live_") ? "reel" : key.startsWith("rk_test_") || key.startsWith("sk_test_") ? "test" : key ? "inconnu" : "absent";
+  let siteHost = "";
+  try {
+    siteHost = process.env.NEXT_PUBLIC_SITE_URL ? new URL(process.env.NEXT_PUBLIC_SITE_URL).host : "";
+  } catch {
+    siteHost = "invalide";
+  }
   return NextResponse.json({
     environnement: process.env.VERCEL_ENV ?? "local",
+    modeStripe: mode,
+    domaineDuSite: siteHost,
     STRIPE_SECRET_KEY: Boolean(process.env.STRIPE_SECRET_KEY),
     STRIPE_WEBHOOK_SECRET: Boolean(process.env.STRIPE_WEBHOOK_SECRET),
     IMPRIMABLES_FILES: filesOk,
