@@ -25,9 +25,9 @@ export default async function ShopPage({ searchParams }: Props) {
     <main className="container-premium py-12 md:py-14">
       <div className="max-w-3xl">
         <p className="eyebrow mb-4 text-xs text-taupe">Boutique</p>
-        <h1 className="display-title text-2xl leading-tight text-ink md:text-4xl">Planners imprimables, à remplir à la main.</h1>
+        <h1 className="display-title text-2xl leading-tight text-ink md:text-4xl">Les planners.</h1>
         <p className="mt-4 text-sm leading-7 text-ink/60">
-          Des carnets en PDF à imprimer chez toi ou en imprimerie.
+          Des planners à remplir à la main, pour t'organiser au quotidien.
         </p>
       </div>
 
