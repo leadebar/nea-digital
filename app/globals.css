@@ -134,18 +134,19 @@ body::before {
 }
 
 /* ---------- Articles de blog, mise en page magazine ---------- */
-.mag-serif { font-family: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif; font-optical-sizing: auto; }
-.mag-text { font-family: "Newsreader", Georgia, "Times New Roman", serif; }
+.mag-serif { font-family: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif; font-weight: 600; }
+.mag-text { font-family: var(--font-body); }
 
 .mag-title {
   font-family: "Bodoni Moda", "Didot", Georgia, serif;
-  font-weight: 500;
-  letter-spacing: -0.018em;
-  line-height: 1.02;
+  font-weight: 600;
+  font-optical-sizing: none;
+  letter-spacing: -0.012em;
+  line-height: 1.06;
   text-wrap: balance;
 }
 
-.mag-body { font-family: "Newsreader", Georgia, serif; font-size: 1.22rem; line-height: 1.8; color: rgba(31, 31, 33, 0.86); }
+.mag-body { font-family: var(--font-body); font-size: 1.1875rem; line-height: 1.75; color: #1f1f21; }
 .mag-body p { margin: 1.5rem 0 0; }
 .mag-body a { color: var(--mag-accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
 .mag-body a:hover { text-decoration-thickness: 2px; }
@@ -153,8 +154,9 @@ body::before {
 .mag-body h2 {
   margin: 5rem 0 0;
   font-family: "Bodoni Moda", "Didot", Georgia, serif;
-  font-weight: 500;
-  font-size: clamp(1.9rem, 4.2vw, 2.7rem);
+  font-weight: 600;
+  font-optical-sizing: none;
+  font-size: clamp(1.9rem, 4.2vw, 2.6rem);
   line-height: 1.08;
   letter-spacing: -0.012em;
   color: #1f1f21;
@@ -166,8 +168,8 @@ body::before {
   float: left;
   margin: 0.08em 0.12em 0 0;
   font-family: "Bodoni Moda", "Didot", Georgia, serif;
-  font-weight: 500;
-  font-size: 5.6em;
+  font-weight: 600;
+  font-size: 5.2em;
   line-height: 0.74;
   color: var(--mag-accent);
 }
@@ -189,16 +191,16 @@ body::before {
   margin: 1.75rem 0 0;
   padding: 1.6rem 1.8rem;
   background: var(--mag-tint);
-  font-style: italic;
-  font-size: 1.12rem;
+  font-size: 1.1rem;
   line-height: 1.75;
 }
 
 .mag-pullquote {
   font-family: "Bodoni Moda", "Didot", Georgia, serif;
   font-style: italic;
-  font-weight: 400;
-  font-size: clamp(1.8rem, 4.6vw, 3.1rem);
+  font-weight: 500;
+  font-optical-sizing: none;
+  font-size: clamp(1.8rem, 4.4vw, 2.9rem);
   line-height: 1.18;
   letter-spacing: -0.01em;
   color: var(--mag-accent);

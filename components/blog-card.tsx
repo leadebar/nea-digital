@@ -16,10 +16,10 @@ export function BlogCard({ post }: { post: Post }) {
         />
       </div>
       <div>
-        <p className="mag-serif text-base italic" style={{ color: post.theme?.accent ?? "#4F503D" }}>{post.category}</p>
+        <p className="mag-serif text-base" style={{ color: post.theme?.accent ?? "#4F503D" }}>{post.category}</p>
         <h3 className="mag-title mt-2 text-[1.7rem] leading-[1.1] text-ink group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{post.title}</h3>
-        <p className="mag-text mt-3 text-base leading-7 text-ink/65">{post.excerpt}</p>
-        <p className="mt-3 text-sm text-ink/45">{formatDate(post.date)}, {post.readTime}</p>
+        <p className="mag-text mt-3 text-base leading-7 text-ink/80">{post.excerpt}</p>
+        <p className="mt-3 text-sm text-ink/65">{formatDate(post.date)}, {post.readTime}</p>
       </div>
     </Link>
   );

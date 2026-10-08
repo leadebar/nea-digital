@@ -70,7 +70,7 @@ function Section({ section }: { section: (typeof posts)[number]["sections"][numb
               <Image key={img.src} src={img.src} alt={img.alt} width={1200} height={1200} sizes="(min-width: 768px) 800px, 100vw" className="h-auto w-full" />
             ))}
           </div>
-          <figcaption className="mt-3 text-center text-sm italic text-ink/55">{section.figure.caption}</figcaption>
+          <figcaption className="mt-3 text-center text-sm text-ink/70">{section.figure.caption}</figcaption>
         </figure>
       ) : null}
     </section>
@@ -132,14 +132,14 @@ export default async function ArticlePage({ params }: Props) {
 
       <article>
         <header className="container-premium pt-12 text-center md:pt-20">
-          <nav aria-label="Fil d'Ariane" className="text-sm text-ink/55">
+          <nav aria-label="Fil d'Ariane" className="text-sm text-ink/70">
             <Link href="/blog" className="hover:text-ink">Blog</Link>
             <span className="mx-2">/</span>
-            <span className="mag-serif italic" style={{ color: theme.accent }}>{post.category}</span>
+            <span className="mag-serif" style={{ color: theme.accent }}>{post.category}</span>
           </nav>
           <h1 className="mag-title mx-auto mt-8 max-w-5xl text-[clamp(2.5rem,7.2vw,5.6rem)] text-ink">{post.title}</h1>
-          <p className="mag-text mx-auto mt-8 max-w-2xl text-xl italic leading-9 text-ink/70 md:text-2xl md:leading-10">{post.excerpt}</p>
-          <p className="mt-8 text-sm text-ink/55">
+          <p className="mag-text mx-auto mt-8 max-w-2xl text-xl leading-8 text-ink/80 md:text-[1.375rem] md:leading-9">{post.excerpt}</p>
+          <p className="mt-8 text-sm text-ink/70">
             Par <Link href="/about" className="underline underline-offset-4 hover:text-ink">Néa Digital</Link>, le {formatDate(post.date)}, {post.readTime} de lecture
           </p>
         </header>
@@ -154,8 +154,8 @@ export default async function ArticlePage({ params }: Props) {
           <div className="mx-auto max-w-[40rem]">
             <nav aria-label="Sommaire" className="mb-14 text-[15px]" style={{ background: theme.tint }}>
               <div className="p-6 md:p-8">
-                <p className="mag-serif text-xl italic" style={{ color: theme.accent }}>Dans cet article</p>
-                <ul className="mt-4 grid gap-2.5 text-ink/75">
+                <p className="mag-serif text-xl" style={{ color: theme.accent }}>Dans cet article</p>
+                <ul className="mt-4 grid gap-2.5 text-ink">
                   {post.sections.map((section) => (
                     <li key={section.id}><a href={`#${section.id}`} className="hover:text-ink hover:underline hover:underline-offset-4">{section.heading}</a></li>
                   ))}
@@ -179,7 +179,7 @@ export default async function ArticlePage({ params }: Props) {
                         <Image src={alsoRead.image} alt="" fill sizes="150px" className="object-cover" />
                       </div>
                       <div>
-                        <p className="mag-serif text-lg italic" style={{ color: theme.accent }}>À lire aussi</p>
+                        <p className="mag-serif text-lg" style={{ color: theme.accent }}>À lire aussi</p>
                         <p className="mag-serif mt-1 text-2xl leading-tight">
                           <Link href={`/blog/${alsoRead.slug}`} className="!no-underline hover:!underline">{alsoRead.title}</Link>
                         </p>
@@ -206,7 +206,7 @@ export default async function ArticlePage({ params }: Props) {
 
             {post.takeaways?.length ? (
               <div className="mt-20 p-8 md:p-10" style={{ background: theme.tint }}>
-                <p className="mag-serif text-3xl italic" style={{ color: theme.accent }}>À retenir</p>
+                <p className="mag-serif text-3xl" style={{ color: theme.accent }}>À retenir</p>
                 <ul className="mag-list mag-body !mt-6 !text-[1.1rem]">
                   {post.takeaways.map((item) => (
                     <li key={item}>{item}</li>
@@ -222,11 +222,11 @@ export default async function ArticlePage({ params }: Props) {
             <div className="mx-auto grid max-w-5xl items-center gap-10 px-6 py-12 text-porcelain md:grid-cols-[260px_1fr] md:gap-14 md:px-14 md:py-16" style={{ background: theme.accent }}>
               <Image src={`/resources/imprimables/${product.slug}.jpg`} alt={`${product.title}, couverture`} width={800} height={1200} sizes="260px" className="mx-auto h-auto w-[200px] shadow-soft md:w-full" />
               <div>
-                <p className="mag-serif text-xl italic text-porcelain/75">
+                <p className="mag-serif text-lg text-porcelain/90">
                   {productCategory ? <Link href={`/shop?categorie=${productCategory.slug}`} className="hover:underline">{productCategory.label}</Link> : "Boutique"}, PDF à imprimer
                 </p>
                 <p className="mag-title mt-3 text-4xl md:text-5xl">{product.title}</p>
-                <p className="mag-text mt-5 max-w-md text-lg leading-8 text-porcelain/85">{product.pitch}</p>
+                <p className="mag-text mt-5 max-w-md text-lg leading-8 text-porcelain">{product.pitch}</p>
                 <div className="mt-8 flex flex-wrap items-center gap-6">
                   <Link href={`/shop/${product.slug}`} className="focus-ring bg-porcelain px-7 py-3.5 text-sm font-medium text-ink transition hover:bg-linen">Découvrir le carnet</Link>
                   {product.price !== null ? <span className="mag-serif text-3xl">{product.price} €</span> : null}
