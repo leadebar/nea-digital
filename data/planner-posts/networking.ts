@@ -10,6 +10,9 @@ export const networkingPost: Post = {
   readTime: "10 min",
   image: "/resources/imprimables/networking-planner-4.jpg",
   imageAlt: "Planner de networking et carnet de contacts sur un bureau",
+  theme: { accent: "#1D382E", tint: "#F6E0D6" },
+  pullquote: "Une absence de réponse veut très souvent dire pas maintenant, ou j'ai oublié.",
+  alsoRead: "planning-reseaux-sociaux-90-jours-methode",
   productSlug: "networking-planner",
   sections: [
     {
@@ -39,6 +42,7 @@ export const networkingPost: Post = {
     },
     {
       id: "preparer",
+      figure: { images: [{ src: "/resources/imprimables/networking-planner-5.jpg", alt: "Fiche d'échange du Networking Planner" }, { src: "/resources/imprimables/networking-planner-6.jpg", alt: "Plan de la semaine du Networking Planner" }], caption: "La fiche d'échange et le plan de la semaine, pour préparer et suivre chaque contact." },
       heading: "Préparer chaque échange avec une fiche de conversation",
       paragraphs: [
         "Un café ou un appel ne s'improvise pas, surtout quand la personne te donne de son temps. Avant l'échange, prends dix minutes pour noter ce que tu sais d'elle, ce que tu veux comprendre, deux ou trois questions précises, et ce que tu peux lui apporter en retour.",
@@ -94,7 +98,7 @@ export const networkingPost: Post = {
       heading: "Se fixer un rythme hebdomadaire plutôt que des grandes sessions",
       paragraphs: [
         "Le réseau se construit par petites touches régulières, pas par grandes campagnes. Fixe-toi chaque semaine un objectif réaliste : par exemple, contacter deux nouvelles personnes, relancer celles qui sont en attente et remercier celles que tu as rencontrées.",
-        "Un point mensuel complète le dispositif. Combien de personnes as-tu contactées ? Combien ont répondu ? Quelles conversations ont débouché sur quelque chose ? Ce regard sur plusieurs semaines t'évite de te décourager sur un message resté sans réponse, et te montre ce qui avance vraiment."
+        "Un point mensuel complète le dispositif. Combien de personnes as-tu contactées ? Combien ont répondu ? Quelles conversations ont débouché sur quelque chose ? Ce regard sur plusieurs semaines t'évite de te décourager sur un message resté sans réponse, et te montre ce qui avance vraiment. Un profil à jour et une présence régulière rendent aussi chaque prise de contact plus crédible : c'est ce que détaille notre [méthode de planning de contenu sur 90 jours](/blog/planning-reseaux-sociaux-90-jours-methode). Et si tu es indépendant, garde un œil sur tes [revenus et tes factures](/blog/livre-des-recettes-micro-entrepreneur-modele) pour savoir quelles prises de contact se transforment en missions."
       ]
     },
     {
@@ -111,6 +115,7 @@ export const networkingPost: Post = {
     },
     {
       id: "carnet",
+      figure: { images: [{ src: "/resources/imprimables/networking-planner-1.jpg", alt: "The Networking Planner et ses pages intérieures" }], caption: "The Networking Planner, 84 pages à imprimer en A4 ou en US Letter." },
       heading: "Un carnet pour garder le fil",
       paragraphs: [
         "Pour rassembler tout ce système, [The Networking Planner](/shop/networking-planner) propose un carnet PDF à imprimer : liste d'entreprises cibles, journal de contacts, 30 fiches de conversation, modèles de messages, 16 plans d'action hebdomadaires et bilans mensuels.",

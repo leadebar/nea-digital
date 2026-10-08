@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ImprimableDetail } from "@/components/imprimables-list";
 import { categories, imprimables } from "@/data/imprimables";
+import { posts } from "@/data/posts";
 
 export const dynamic = "force-dynamic";
 
@@ -23,6 +24,7 @@ export default async function ImprimablePage({ params }: Props) {
   const p = imprimables.find((item) => item.slug === slug);
   if (!p) notFound();
   const categorie = categories.find((c) => c.slug === p.categorie);
+  const guide = posts.find((post) => post.productSlug === p.slug);
 
   return (
     <main className="container-premium py-12 md:py-16">
@@ -36,6 +38,11 @@ export default async function ImprimablePage({ params }: Props) {
         ) : null}
       </nav>
       <ImprimableDetail p={p} />
+      {guide ? (
+        <p className="mt-12 text-sm text-ink/60">
+          Pour aller plus loin : <Link href={`/blog/${guide.slug}`} className="text-olive underline underline-offset-4 hover:text-ink">{guide.title}</Link>
+        </p>
+      ) : null}
       <p className="mt-16 max-w-2xl text-xs leading-6 text-ink/40">
         Outils d'organisation personnelle. Ils ne constituent pas un avis médical, juridique, fiscal ou financier.
       </p>

@@ -10,6 +10,9 @@ export const contentPost: Post = {
   readTime: "10 min",
   image: "/resources/imprimables/social-media-planner-4.jpg",
   imageAlt: "Planner de contenu sur 90 jours ouvert sur un bureau",
+  theme: { accent: "#22304F", tint: "#F7EBC6" },
+  pullquote: "Mieux vaut deux publications par semaine pendant trois mois que cinq pendant deux semaines.",
+  alsoRead: "livre-des-recettes-micro-entrepreneur-modele",
   productSlug: "social-media-planner",
   sections: [
     {
@@ -27,7 +30,7 @@ export const contentPost: Post = {
       paragraphs: [
         "Avant de remplir un calendrier, réponds à trois questions. À qui parles-tu précisément ? Que veux-tu qu'ils fassent après t'avoir lu : te suivre, s'abonner, te contacter, acheter ? Et comment veux-tu qu'on te perçoive ?",
         "Sans ces réponses, tu publies pour tout le monde, donc pour personne. Avec elles, chaque idée de contenu passe un filtre simple : est-ce utile à mon audience, et est-ce cohérent avec mon objectif ?",
-        "Note aussi quelques mots qui décrivent ton ton. Direct, chaleureux, expert, drôle : peu importe, mais choisis-les, car c'est ce qui rend tes publications reconnaissables d'un jour à l'autre."
+        "Si tu veux un regard extérieur sur ton positionnement, nos [services de stratégie digitale](/services) existent pour ça. Note aussi quelques mots qui décrivent ton ton. Direct, chaleureux, expert, drôle : peu importe, mais choisis-les, car c'est ce qui rend tes publications reconnaissables d'un jour à l'autre."
       ]
     },
     {
@@ -56,6 +59,7 @@ export const contentPost: Post = {
     },
     {
       id: "plan-hebdo",
+      figure: { images: [{ src: "/resources/imprimables/social-media-planner-5.jpg", alt: "Plan de contenu de la semaine du 90-Day Content Planner" }, { src: "/resources/imprimables/social-media-planner-6.jpg", alt: "Brouillon de légende du 90-Day Content Planner" }], caption: "Le plan de contenu de la semaine et le brouillon de légende." },
       heading: "Étape 4 : un plan de contenu pour chaque semaine",
       paragraphs: [
         "Découpe tes 90 jours en treize semaines, et pour chacune, décide à l'avance de ce que tu publies, sous quel pilier et avec quel objectif. Une semaine type peut ressembler à ceci : un contenu éducatif, un contenu de coulisses ou personnel, un contenu qui mène vers ton offre.",
@@ -101,7 +105,7 @@ export const contentPost: Post = {
       paragraphs: [
         "Les plateformes donnent des dizaines de statistiques. Pour ne pas t'y perdre, choisis deux ou trois indicateurs en fonction de ton objectif et note-les chaque semaine : la portée si tu veux être vu, les enregistrements et partages si tu veux être utile, les clics ou messages si tu veux convertir.",
         "Ce qui compte n'est pas un chiffre isolé, mais la tendance sur plusieurs semaines. Quels piliers obtiennent le plus de réactions ? À quels moments ? Avec quels types d'accroches ? Chaque réponse te permet d'ajuster le plan des semaines suivantes.",
-        "Un bilan en fin de mois, avec trois questions simples, suffit : qu'est-ce qui a bien marché, qu'est-ce qui a moins marché, qu'est-ce que je change le mois prochain ?"
+        "Un bilan en fin de mois, avec trois questions simples, suffit : qu'est-ce qui a bien marché, qu'est-ce qui a moins marché, qu'est-ce que je change le mois prochain ? Si tu publies pour trouver des clients, rapproche ces chiffres de ton [suivi de revenus et de factures](/blog/livre-des-recettes-micro-entrepreneur-modele) pour voir ce qui rapporte vraiment."
       ]
     },
     {
@@ -118,6 +122,7 @@ export const contentPost: Post = {
     },
     {
       id: "carnet",
+      figure: { images: [{ src: "/resources/imprimables/social-media-planner-1.jpg", alt: "The 90-Day Content Planner et ses pages intérieures" }], caption: "The 90-Day Content Planner, 80 pages à imprimer en A4 ou en US Letter." },
       heading: "Un carnet pour tout poser au même endroit",
       paragraphs: [
         "Si tu veux un cadre déjà prêt, [The 90-Day Content Planner](/shop/social-media-planner) rassemble ces étapes dans un carnet PDF à imprimer : marque, audience et piliers de contenu, 13 plans de contenu hebdomadaires, banque d'idées, 28 pages de légendes, hashtags, suivi des stats, bilans mensuels et formules d'accroche.",

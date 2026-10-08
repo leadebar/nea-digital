@@ -5,6 +5,8 @@ export type PostSection = {
   heading: string;
   paragraphs: string[];
   list?: string[];
+  /** Photo ou visuel inséré après le texte de la section (1 ou 2 images côte à côte). */
+  figure?: { images: { src: string; alt: string }[]; caption: string };
 };
 
 export type Post = {
@@ -21,6 +23,12 @@ export type Post = {
   takeaways: string[];
   /** Titre court pour la balise <title> (le gabarit ajoute " | Néa Digital"). */
   metaTitle?: string;
+  /** Couleurs de l'article : accent foncé (titres, lettrine, bloc produit) et teinte claire (encadrés). */
+  theme?: { accent: string; tint: string };
+  /** Phrase mise en exergue en grand, affichée après la 3e section. */
+  pullquote?: string;
+  /** Slug d'un autre article, recommandé en encadré après la 4e section (maillage interne). */
+  alsoRead?: string;
   /** Slug du planner mis en avant en fin d'article (voir data/imprimables.ts). */
   productSlug?: string;
   /** Questions fréquentes, affichées en fin d'article et exposées en FAQPage. */

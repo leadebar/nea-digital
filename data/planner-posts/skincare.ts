@@ -10,6 +10,8 @@ export const skincarePost: Post = {
   readTime: "9 min",
   image: "/resources/imprimables/skincare-journal-4.jpg",
   imageAlt: "Journal skincare ouvert à côté de produits de soin",
+  theme: { accent: "#31433B", tint: "#F6E3DD" },
+  pullquote: "Introduire un seul produit à la fois te permet de relier un changement à sa cause.",
   productSlug: "skincare-journal",
   sections: [
     {
@@ -18,7 +20,7 @@ export const skincarePost: Post = {
       paragraphs: [
         "Si tu as déjà racheté un sérum en te demandant ensuite si tu ne l'avais pas déjà essayé, tu sais pourquoi un journal skincare est utile. La mémoire est un mauvais outil de suivi : on retient l'enthousiasme du premier jour, rarement la façon dont la peau a réagi trois semaines plus tard.",
         "Un journal ne sert pas à faire de ta routine une contrainte. Il sert à garder une trace de ce que tu utilises, depuis quand, et de ce que tu observes. Avec le temps, tu repères ce qui te convient, ce qui ne te convient pas, et ce que tu rachètes par habitude plutôt que par envie.",
-        "C'est aussi un excellent moyen de dépenser mieux. Quand tu vois noir sur blanc que trois produits de ton étagère font à peu près la même chose, la liste d'envies raccourcit toute seule."
+        "C'est aussi un excellent moyen de dépenser mieux. Quand tu vois noir sur blanc que trois produits de ton étagère font à peu près la même chose, la liste d'envies raccourcit toute seule. Si tu aimes t'organiser avec du papier, tu retrouveras d'autres carnets dans la catégorie [Beauté](/shop?categorie=beaute) de la boutique."
       ]
     },
     {
@@ -71,6 +73,7 @@ export const skincarePost: Post = {
     },
     {
       id: "avis-produits",
+      figure: { images: [{ src: "/resources/imprimables/skincare-journal-5.jpg", alt: "Fiche d'avis produit du Skincare Journal" }, { src: "/resources/imprimables/skincare-journal-6.jpg", alt: "Suivi de la semaine du Skincare Journal" }], caption: "La fiche d'avis produit et le suivi hebdomadaire, les deux pages les plus utilisées." },
       heading: "Écrire un avis sur chaque produit, pour toi",
       paragraphs: [
         "Une fiche d'avis, c'est quelques lignes à remplir quand tu as utilisé un produit assez longtemps pour te faire une idée. Le nom et la marque, la date d'achat, le prix payé, la texture, le parfum, ce que tu as aimé, ce qui t'a dérangée, et surtout une réponse claire à la question : est-ce que je le rachète ?",
@@ -103,6 +106,7 @@ export const skincarePost: Post = {
     },
     {
       id: "carnet",
+      figure: { images: [{ src: "/resources/imprimables/skincare-journal-1.jpg", alt: "The Skincare Journal et ses pages intérieures" }], caption: "The Skincare Journal, 82 pages à imprimer en A4 ou en US Letter." },
       heading: "Un carnet prêt à remplir",
       paragraphs: [
         "Si tu préfères un format déjà structuré, [The Skincare Journal](/shop/skincare-journal) rassemble tout cela dans un carnet PDF à imprimer : profil de peau, routine du matin et du soir, étagère de produits avec dates d'ouverture, 24 fiches d'avis, 26 suivis hebdomadaires, bilans mensuels, produits terminés et liste d'envies.",

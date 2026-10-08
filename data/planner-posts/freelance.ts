@@ -10,6 +10,9 @@ export const freelancePost: Post = {
   readTime: "10 min",
   image: "/resources/imprimables/freelance-tracker-4.jpg",
   imageAlt: "Carnet de suivi des revenus de freelance posé sur un bureau",
+  theme: { accent: "#0D3E3C", tint: "#E3EEE9" },
+  pullquote: "Le livre des recettes répond à une obligation, pas à tes questions de tous les jours.",
+  alsoRead: "relancer-un-contact-professionnel-modeles-de-messages",
   productSlug: "freelance-tracker",
   sections: [
     {
@@ -56,6 +59,7 @@ export const freelancePost: Post = {
     },
     {
       id: "methode",
+      figure: { images: [{ src: "/resources/imprimables/freelance-tracker-5.jpg", alt: "Pages de suivi de projets et de suivi des factures du carnet" }, { src: "/resources/imprimables/freelance-tracker-6.jpg", alt: "Suivi des factures du Freelance Income Tracker" }], caption: "Le suivi des projets et des factures, deux pages à remplir au fil de l'eau." },
       heading: "Une méthode en quatre gestes pour tenir ton suivi",
       paragraphs: [
         "Le suivi qui fonctionne est celui que tu fais vraiment. Plutôt qu'une grande séance de rattrapage tous les trois mois, mieux vaut quelques gestes courts et réguliers.",
@@ -87,7 +91,7 @@ export const freelancePost: Post = {
         "Beaucoup de freelances fixent leurs prix en regardant ce que font les autres. C'est un repère utile, mais ça ne dit pas si ton tarif couvre tes besoins. Le calcul du tarif minimum part de l'inverse : de combien as-tu besoin pour vivre et faire tourner ton activité ?",
         "La logique est la suivante : tu additionnes ce dont tu as besoin par mois (ta vie personnelle, tes dépenses professionnelles, ce que tu mets de côté pour les cotisations, ton épargne), tu multiplies par douze, puis tu divises par le nombre de jours que tu peux réellement facturer sur l'année. Tous tes jours ne sont pas facturables : il y a la prospection, l'administratif, les congés, les jours sans client.",
         "Exemple fictif, uniquement pour illustrer : si tes besoins annuels totaux s'élèvent à 30 000 € et que tu estimes pouvoir facturer 150 jours dans l'année, ton tarif journalier minimum est de 200 €. Si tu en estimes seulement 120, il monte à 250 €. Les chiffres sont inventés, c'est la méthode qui compte, et c'est elle qui montre à quel point le nombre de jours facturables pèse sur ton prix.",
-        "Une fois ce plancher connu, tu peux dire non plus sereinement à une mission qui ne le respecte pas, ou la compenser autrement."
+        "Une fois ce plancher connu, tu peux dire non plus sereinement à une mission qui ne le respecte pas, ou la compenser autrement. Reste à trouver les clients qui acceptent ce tarif : c'est le sujet de notre guide pour [relancer un contact professionnel](/blog/relancer-un-contact-professionnel-modeles-de-messages), et pour rester visible entre deux missions, de notre [planning réseaux sociaux sur 90 jours](/blog/planning-reseaux-sociaux-90-jours-methode)."
       ]
     },
     {
@@ -115,6 +119,7 @@ export const freelancePost: Post = {
     },
     {
       id: "carnet",
+      figure: { images: [{ src: "/resources/imprimables/freelance-tracker-1.jpg", alt: "The Freelance Income Tracker et ses pages intérieures" }], caption: "The Freelance Income Tracker, 80 pages à imprimer en A4 ou en US Letter." },
       heading: "Un carnet pour regrouper tout ça",
       paragraphs: [
         "C'est exactement le besoin qui a donné naissance à [The Freelance Income Tracker](/shop/freelance-tracker), un carnet PDF à imprimer qui rassemble ce suivi au même endroit : fiche activité et calcul du tarif minimum, 12 suivis de factures et 12 suivis de dépenses, répertoire clients, suivi de projets, budget pour revenus irréguliers et bilans trimestriels.",

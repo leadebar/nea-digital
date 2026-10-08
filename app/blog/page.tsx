@@ -5,7 +5,7 @@ import { categories, posts } from "@/data/posts";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Articles sur la stratégie digitale, le contenu et le web : conseils concrets pour développer votre présence en ligne."
+  description: "Guides pour s'organiser (suivi des revenus, routine, networking, planning de contenu) et articles sur la stratégie digitale, le contenu et le web."
 };
 
 export default function BlogPage() {
@@ -13,8 +13,8 @@ export default function BlogPage() {
     <main className="container-premium py-16">
       <div className="grid gap-10 md:grid-cols-[.9fr_1fr] md:items-end">
         <div>
-          <p className="eyebrow mb-5 text-xs text-taupe">Blog</p>
-          <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">Le blog : stratégie, contenu et web.</h1>
+          <p className="mag-serif mb-5 text-xl italic text-taupe">Le blog Néa Digital</p>
+          <h1 className="mag-title text-4xl text-ink md:text-6xl">Le blog : organisation, contenu et stratégie digitale.</h1>
         </div>
         <div className="rounded-[8px] bg-white p-3 shadow-line">
           <label className="flex min-h-12 items-center gap-3 px-3 text-sm text-ink/45">

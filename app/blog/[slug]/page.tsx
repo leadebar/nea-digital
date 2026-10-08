@@ -1,7 +1,8 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { notFound } from "next/navigation";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { BlogCard } from "@/components/blog-card";
 import { Newsletter } from "@/components/newsletter";
 import { RichText } from "@/components/rich-text";
@@ -10,6 +11,8 @@ import { posts } from "@/data/posts";
 import { categories as shopCategories, imprimables } from "@/data/imprimables";
 
 type Props = { params: Promise<{ slug: string }> };
+
+const defaultTheme = { accent: "#4F503D", tint: "#E9E2DA" };
 
 export function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
@@ -39,15 +42,56 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function Section({ section }: { section: (typeof posts)[number]["sections"][number] }) {
+  return (
+    <section>
+      <h2 id={section.id}>{section.heading}</h2>
+      {section.paragraphs.map((paragraph, index) => (
+        <p key={index}><RichText text={paragraph} /></p>
+      ))}
+      {section.list ? (
+        <ul className="mag-list">
+          {section.list.map((item) => {
+            const isModel = item.startsWith("«") || item.startsWith("Variante");
+            return isModel ? (
+              <li key={item} className="!pl-0 before:!hidden">
+                <blockquote className="mag-model">{item}</blockquote>
+              </li>
+            ) : (
+              <li key={item}><RichText text={item} /></li>
+            );
+          })}
+        </ul>
+      ) : null}
+      {section.figure ? (
+        <figure className="my-10 md:-mx-16">
+          <div className={section.figure.images.length > 1 ? "grid grid-cols-2 gap-3" : ""}>
+            {section.figure.images.map((img) => (
+              <Image key={img.src} src={img.src} alt={img.alt} width={1200} height={1200} sizes="(min-width: 768px) 800px, 100vw" className="h-auto w-full" />
+            ))}
+          </div>
+          <figcaption className="mt-3 text-center text-sm italic text-ink/55">{section.figure.caption}</figcaption>
+        </figure>
+      ) : null}
+    </section>
+  );
+}
+
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
   const post = posts.find((item) => item.slug === slug);
   if (!post) notFound();
+
+  const theme = post.theme ?? defaultTheme;
+  const themeStyle = { "--mag-accent": theme.accent, "--mag-tint": theme.tint } as CSSProperties;
   const others = posts.filter((item) => item.slug !== post.slug);
-  const related = [...others.filter((item) => item.category === post.category), ...others.filter((item) => item.category !== post.category)].slice(0, 2);
+  const related = [...others.filter((item) => item.category === post.category), ...others.filter((item) => item.category !== post.category)].slice(0, 3);
+  const alsoRead = post.alsoRead ? posts.find((item) => item.slug === post.alsoRead) : undefined;
   const product = post.productSlug ? imprimables.find((p) => p.slug === post.productSlug) : undefined;
+  const productCategory = product ? shopCategories.find((c) => c.slug === product.categorie) : undefined;
   const absImage = post.image.startsWith("/") ? `https://neadigital.fr${post.image}` : post.image;
   const url = `https://neadigital.fr/blog/${post.slug}`;
+
   const schemas: object[] = [
     {
       "@context": "https://schema.org",
@@ -79,99 +123,135 @@ export default async function ArticlePage({ params }: Props) {
       mainEntity: post.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") } }))
     });
   }
-  const productCategory = product ? shopCategories.find((c) => c.slug === product.categorie)?.label : undefined;
 
   return (
-    <main>
+    <main style={themeStyle}>
       {schemas.map((schema, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       ))}
-      <article className="container-premium py-14">
-        <header className="mx-auto max-w-4xl text-center">
-          <p className="eyebrow mb-5 text-xs text-taupe">{post.category} · {formatDate(post.date)} · {post.readTime}</p>
-          <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">{post.title}</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-ink/64">{post.excerpt}</p>
+
+      <article>
+        <header className="container-premium pt-12 text-center md:pt-20">
+          <nav aria-label="Fil d'Ariane" className="text-sm text-ink/55">
+            <Link href="/blog" className="hover:text-ink">Blog</Link>
+            <span className="mx-2">/</span>
+            <span className="mag-serif italic" style={{ color: theme.accent }}>{post.category}</span>
+          </nav>
+          <h1 className="mag-title mx-auto mt-8 max-w-5xl text-[clamp(2.5rem,7.2vw,5.6rem)] text-ink">{post.title}</h1>
+          <p className="mag-text mx-auto mt-8 max-w-2xl text-xl italic leading-9 text-ink/70 md:text-2xl md:leading-10">{post.excerpt}</p>
+          <p className="mt-8 text-sm text-ink/55">
+            Par <Link href="/about" className="underline underline-offset-4 hover:text-ink">Néa Digital</Link>, le {formatDate(post.date)}, {post.readTime} de lecture
+          </p>
         </header>
-        <div className="relative mx-auto mt-12 aspect-[16/8] max-w-4xl overflow-hidden rounded-[8px] shadow-line">
-          <Image src={post.image} alt={post.imageAlt ?? post.title} fill priority sizes="(min-width: 1024px) 896px, 100vw" className="object-cover" />
+
+        <div className="container-premium mt-12 md:mt-16">
+          <div className="relative mx-auto aspect-[4/3] max-w-6xl overflow-hidden sm:aspect-[16/9]">
+            <Image src={post.image} alt={post.imageAlt ?? post.title} fill priority sizes="(min-width: 1180px) 1150px, 100vw" className="object-cover" />
+          </div>
         </div>
-        <div className="mt-14 grid gap-10 md:grid-cols-[220px_1fr]">
-          <aside className="hidden md:block">
-            <div className="sticky top-28 border-l border-ink/10 pl-5 text-sm text-ink/55">
-              <p className="eyebrow mb-4 text-[11px] text-taupe">Sommaire</p>
-              {post.sections.map((section) => (
-                <a key={section.id} href={`#${section.id}`} className="block py-2 hover:text-ink">{section.heading}</a>
+
+        <div className="container-premium mt-16 md:mt-20">
+          <div className="mx-auto max-w-[40rem]">
+            <nav aria-label="Sommaire" className="mb-14 text-[15px]" style={{ background: theme.tint }}>
+              <div className="p-6 md:p-8">
+                <p className="mag-serif text-xl italic" style={{ color: theme.accent }}>Dans cet article</p>
+                <ul className="mt-4 grid gap-2.5 text-ink/75">
+                  {post.sections.map((section) => (
+                    <li key={section.id}><a href={`#${section.id}`} className="hover:text-ink hover:underline hover:underline-offset-4">{section.heading}</a></li>
+                  ))}
+                  {post.faq?.length ? <li><a href="#faq" className="hover:text-ink hover:underline hover:underline-offset-4">Questions fréquentes</a></li> : null}
+                </ul>
+              </div>
+            </nav>
+
+            <div className="mag-body">
+              {post.sections.map((section, index) => (
+                <div key={section.id}>
+                  <Section section={section} />
+                  {index === 2 && post.pullquote ? (
+                    <aside className="my-20 text-center md:-mx-16">
+                      <p className="mag-pullquote">{post.pullquote}</p>
+                    </aside>
+                  ) : null}
+                  {index === 3 && alsoRead ? (
+                    <aside className="my-14 grid items-center gap-5 p-5 sm:grid-cols-[150px_1fr]" style={{ background: theme.tint }}>
+                      <div className="relative aspect-[4/3] w-full overflow-hidden sm:aspect-square">
+                        <Image src={alsoRead.image} alt="" fill sizes="150px" className="object-cover" />
+                      </div>
+                      <div>
+                        <p className="mag-serif text-lg italic" style={{ color: theme.accent }}>À lire aussi</p>
+                        <p className="mag-serif mt-1 text-2xl leading-tight">
+                          <Link href={`/blog/${alsoRead.slug}`} className="!no-underline hover:!underline">{alsoRead.title}</Link>
+                        </p>
+                      </div>
+                    </aside>
+                  ) : null}
+                </div>
               ))}
-              {post.faq?.length ? <a href="#faq" className="block py-2 hover:text-ink">Questions fréquentes</a> : null}
-            </div>
-          </aside>
-          <div className="prose-premium max-w-none">
-            {post.sections.map((section) => (
-              <div key={section.id}>
-                <h2 id={section.id}>{section.heading}</h2>
-                {section.paragraphs.map((paragraph, index) => (
-                  <p key={index}><RichText text={paragraph} /></p>
-                ))}
-                {section.list ? (
-                  <ul className="!my-6 !list-none !pl-0">
-                    {section.list.map((item) => (
-                      <li key={item} className="flex items-start gap-3 border-t border-ink/10 py-3 text-[15px] leading-7 text-ink/75">
-                        <span className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-olive" />
-                        <span><RichText text={item} /></span>
-                      </li>
+
+              {post.faq?.length ? (
+                <section>
+                  <h2 id="faq">Questions fréquentes</h2>
+                  <div className="mt-8 grid gap-9">
+                    {post.faq.map((f) => (
+                      <div key={f.q}>
+                        <h3 className="mag-serif text-2xl leading-snug text-ink">{f.q}</h3>
+                        <p className="!mt-2"><RichText text={f.a} /></p>
+                      </div>
                     ))}
-                  </ul>
-                ) : null}
-              </div>
-            ))}
-            {post.faq?.length ? (
-              <div>
-                <h2 id="faq">Questions fréquentes</h2>
-                {post.faq.map((f) => (
-                  <div key={f.q} className="border-t border-ink/10 py-5">
-                    <h3 className="text-lg font-medium text-ink">{f.q}</h3>
-                    <p className="!mt-2"><RichText text={f.a} /></p>
                   </div>
-                ))}
-              </div>
-            ) : null}
+                </section>
+              ) : null}
+            </div>
+
             {post.takeaways?.length ? (
-              <div className="!mt-12 rounded-[8px] bg-linen p-7">
-                <p className="eyebrow mb-4 text-[11px] text-taupe">À retenir</p>
-                <ul className="!my-0 !list-none !pl-0">
+              <div className="mt-20 p-8 md:p-10" style={{ background: theme.tint }}>
+                <p className="mag-serif text-3xl italic" style={{ color: theme.accent }}>À retenir</p>
+                <ul className="mag-list mag-body !mt-6 !text-[1.1rem]">
                   {post.takeaways.map((item) => (
-                    <li key={item} className="flex items-start gap-3 py-2 text-[15px] leading-7 text-ink/80">
-                      <span className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-olive" />
-                      {item}
-                    </li>
+                    <li key={item}>{item}</li>
                   ))}
                 </ul>
               </div>
             ) : null}
-            {product ? (
-              <div className="!mt-12 grid gap-6 rounded-[8px] border border-ink/10 p-6 sm:grid-cols-[140px_1fr] sm:items-center">
-                <Image src={`/resources/imprimables/${product.slug}.jpg`} alt={`${product.title}, couverture`} width={800} height={1200} sizes="140px" className="mx-auto aspect-[2/3] w-[140px] rounded-[4px] object-cover shadow-line" />
-                <div>
-                  <p className="eyebrow text-[11px] text-taupe">{productCategory ?? "Boutique"} · PDF imprimable</p>
-                  <p className="mt-2 text-xl font-medium text-ink">{product.title}</p>
-                  <p className="!mt-2 text-sm leading-7 text-ink/65">{product.pitch}</p>
-                  <div className="mt-4 flex flex-wrap items-center gap-4">
-                    {product.price !== null ? <span className="text-lg font-medium text-ink">{product.price} €</span> : null}
-                    <Link href={`/shop/${product.slug}`} className="focus-ring rounded-[4px] bg-ink px-5 py-2.5 text-sm text-porcelain transition hover:bg-olive">Découvrir le carnet</Link>
-                  </div>
-                </div>
-              </div>
-            ) : null}
           </div>
         </div>
+
+        {product ? (
+          <div className="container-premium mt-20 md:mt-28">
+            <div className="mx-auto grid max-w-5xl items-center gap-10 px-6 py-12 text-porcelain md:grid-cols-[260px_1fr] md:gap-14 md:px-14 md:py-16" style={{ background: theme.accent }}>
+              <Image src={`/resources/imprimables/${product.slug}.jpg`} alt={`${product.title}, couverture`} width={800} height={1200} sizes="260px" className="mx-auto h-auto w-[200px] shadow-soft md:w-full" />
+              <div>
+                <p className="mag-serif text-xl italic text-porcelain/75">
+                  {productCategory ? <Link href={`/shop?categorie=${productCategory.slug}`} className="hover:underline">{productCategory.label}</Link> : "Boutique"}, PDF à imprimer
+                </p>
+                <p className="mag-title mt-3 text-4xl md:text-5xl">{product.title}</p>
+                <p className="mag-text mt-5 max-w-md text-lg leading-8 text-porcelain/85">{product.pitch}</p>
+                <div className="mt-8 flex flex-wrap items-center gap-6">
+                  <Link href={`/shop/${product.slug}`} className="focus-ring bg-porcelain px-7 py-3.5 text-sm font-medium text-ink transition hover:bg-linen">Découvrir le carnet</Link>
+                  {product.price !== null ? <span className="mag-serif text-3xl">{product.price} €</span> : null}
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null}
       </article>
-      <Newsletter />
-      <section className="container-premium py-20">
-        <p className="eyebrow mb-8 text-xs text-taupe">Articles liés</p>
-        <div className="grid gap-8 md:grid-cols-2">
+
+      <section className="container-premium mt-24 md:mt-32">
+        <h2 className="mag-title text-center text-4xl md:text-5xl">Continuer la lecture</h2>
+        <div className="mt-12 grid gap-10 md:grid-cols-3">
           {related.map((item) => <BlogCard key={item.slug} post={item} />)}
         </div>
+        <p className="mt-12 text-center text-[15px] text-ink/60">
+          <Link href="/blog" className="underline underline-offset-4 hover:text-ink">Tous les articles</Link>
+          <span className="mx-3">et</span>
+          <Link href="/shop" className="underline underline-offset-4 hover:text-ink">toute la boutique</Link>
+        </p>
       </section>
+
+      <div className="mt-24 md:mt-32">
+        <Newsletter />
+      </div>
     </main>
   );
 }
