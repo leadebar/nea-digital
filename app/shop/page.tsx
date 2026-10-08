@@ -27,7 +27,7 @@ export default async function ShopPage({ searchParams }: Props) {
         <p className="eyebrow mb-4 text-xs text-taupe">Boutique</p>
         <h1 className="display-title text-2xl leading-tight text-ink md:text-4xl">Planners imprimables, à remplir à la main.</h1>
         <p className="mt-4 text-sm leading-7 text-ink/60">
-          Des carnets en PDF à imprimer chez toi ou en imprimerie. Les textes et mises en page ont été réalisés avec des outils d'IA et relus par mes soins.
+          Des carnets en PDF à imprimer chez toi ou en imprimerie.
         </p>
       </div>
 

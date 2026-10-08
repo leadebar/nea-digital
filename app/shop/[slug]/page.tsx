@@ -37,7 +37,7 @@ export default async function ImprimablePage({ params }: Props) {
       </nav>
       <ImprimableDetail p={p} />
       <p className="mt-16 max-w-2xl text-xs leading-6 text-ink/40">
-        Outils d'organisation personnelle. Ils ne constituent pas un avis médical, juridique, fiscal ou financier. Les textes et mises en page ont été réalisés avec des outils d'IA et relus par mes soins.
+        Outils d'organisation personnelle. Ils ne constituent pas un avis médical, juridique, fiscal ou financier.
       </p>
     </main>
   );
