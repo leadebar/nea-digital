@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const expertises = [
   { title: "Marketing digital", items: ["Stratégie digitale", "SEO et référencement", "Contenu et newsletter", "Création de site web"] },
-  { title: "Organisation et productivité", items: ["Carnets PDF à imprimer", "Suivi des revenus et des factures", "Routines et suivi personnel", "Planning de contenu"] }
+  { title: "Organisation et productivité", items: ["Planners", "Suivi des revenus et des factures", "Routines et suivi personnel", "Planning de contenu"] }
 ];
 
 export function AboutView() {
@@ -15,7 +15,7 @@ export function AboutView() {
           <p className="mag-serif text-xl text-olive">À propos de Néa Digital</p>
           <h1 className="mag-title mt-5 text-[clamp(2.8rem,6.5vw,5.4rem)] text-ink">Une marque, deux univers.</h1>
           <p className="mag-text mt-8 max-w-xl text-xl leading-9 text-ink/80">
-            Néa Digital, c'est deux choses : des <strong className="font-semibold text-ink">services de marketing digital</strong> pour les entreprises, les marques et les indépendants, et une boutique de <strong className="font-semibold text-ink">carnets à imprimer</strong> pour s'organiser au quotidien.
+            Néa Digital, c'est deux choses : des <strong className="font-semibold text-ink">services de marketing digital</strong> pour les entreprises, les marques et les indépendants, et une boutique de <strong className="font-semibold text-ink">planners</strong> pour s'organiser au quotidien.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
             <Link href="/services" className="focus-ring bg-ink px-7 py-3.5 text-sm font-medium text-porcelain transition hover:bg-olive">Voir les services</Link>
@@ -50,9 +50,9 @@ export function AboutView() {
           </div>
           <div className="md:order-1">
             <p className="mag-serif text-lg text-olive">Pour s'organiser</p>
-            <h2 className="mag-title mt-3 text-4xl text-ink md:text-5xl">Des carnets à imprimer.</h2>
+            <h2 className="mag-title mt-3 text-4xl text-ink md:text-5xl">Les planners.</h2>
             <p className="mag-text mt-6 max-w-lg text-lg leading-8 text-ink/80">
-              Suivi des revenus, routine skincare, networking, planning de contenu : des carnets PDF simples, à imprimer chez soi ou en imprimerie, pour planifier, prioriser et suivre ce qui compte. Des tableaux Excel arrivent bientôt.
+              Suivi des revenus, routine skincare, networking, planning de contenu : des planners simples, pour planifier, prioriser et suivre ce qui compte. Des tableaux Excel arrivent bientôt.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium">
               <Link href="/shop" className="text-ink underline underline-offset-8 hover:text-olive">Voir la boutique</Link>

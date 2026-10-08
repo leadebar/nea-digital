@@ -223,12 +223,12 @@ export default async function ArticlePage({ params }: Props) {
               <Image src={`/resources/imprimables/${product.slug}.jpg`} alt={`${product.title}, couverture`} width={800} height={1200} sizes="260px" className="mx-auto h-auto w-[200px] shadow-soft md:w-full" />
               <div>
                 <p className="mag-serif text-lg text-porcelain/90">
-                  {productCategory ? <Link href={`/shop?categorie=${productCategory.slug}`} className="hover:underline">{productCategory.label}</Link> : "Boutique"}, PDF à imprimer
+                  {productCategory ? <Link href={`/shop?categorie=${productCategory.slug}`} className="hover:underline">{productCategory.label}</Link> : "Boutique"}
                 </p>
                 <p className="mag-title mt-3 text-4xl md:text-5xl">{product.title}</p>
                 <p className="mag-text mt-5 max-w-md text-lg leading-8 text-porcelain">{product.pitch}</p>
                 <div className="mt-8 flex flex-wrap items-center gap-6">
-                  <Link href={`/shop/${product.slug}`} className="focus-ring bg-porcelain px-7 py-3.5 text-sm font-medium text-ink transition hover:bg-linen">Découvrir le carnet</Link>
+                  <Link href={`/shop/${product.slug}`} className="focus-ring bg-porcelain px-7 py-3.5 text-sm font-medium text-ink transition hover:bg-linen">Découvrir le planner</Link>
                   {product.price !== null ? <span className="mag-serif text-3xl">{product.price} €</span> : null}
                 </div>
               </div>

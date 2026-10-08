@@ -120,7 +120,7 @@ export const freelancePost: Post = {
     {
       id: "carnet",
       figure: { images: [{ src: "/resources/imprimables/freelance-tracker-1.jpg", alt: "The Freelance Income Tracker et ses pages intérieures" }], caption: "The Freelance Income Tracker, 80 pages à imprimer en A4 ou en US Letter." },
-      heading: "Un carnet pour regrouper tout ça",
+      heading: "Le planner qui regroupe tout ça",
       paragraphs: [
         "C'est exactement le besoin qui a donné naissance à [The Freelance Income Tracker](/shop/freelance-tracker), un carnet PDF à imprimer qui rassemble ce suivi au même endroit : fiche activité et calcul du tarif minimum, 12 suivis de factures et 12 suivis de dépenses, répertoire clients, suivi de projets, budget pour revenus irréguliers et bilans trimestriels.",
         "Il ne remplace ni un logiciel de comptabilité ni les documents officiels que ton activité exige. Il t'aide à tenir ton suivi régulièrement, à voir où en est ton activité, et à prendre tes décisions avec des chiffres sous les yeux. Tu l'imprimes en A4 ou en US Letter, chez toi ou en imprimerie, et tu le remplis au stylo."

@@ -116,7 +116,7 @@ export const networkingPost: Post = {
     {
       id: "carnet",
       figure: { images: [{ src: "/resources/imprimables/networking-planner-1.jpg", alt: "The Networking Planner et ses pages intérieures" }], caption: "The Networking Planner, 84 pages à imprimer en A4 ou en US Letter." },
-      heading: "Un carnet pour garder le fil",
+      heading: "Un planner pour garder le fil",
       paragraphs: [
         "Pour rassembler tout ce système, [The Networking Planner](/shop/networking-planner) propose un carnet PDF à imprimer : liste d'entreprises cibles, journal de contacts, 30 fiches de conversation, modèles de messages, 16 plans d'action hebdomadaires et bilans mensuels.",
         "L'idée est de ne plus rien perdre de tes échanges et de savoir chaque semaine qui contacter, qui relancer et qui remercier. Tu l'imprimes en A4 ou en US Letter, et tu le remplis au fil de tes rencontres."

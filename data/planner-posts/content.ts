@@ -2,7 +2,7 @@ import type { Post } from "@/data/posts";
 
 export const contentPost: Post = {
   slug: "planning-reseaux-sociaux-90-jours-methode",
-  title: "Planning réseaux sociaux sur 90 jours : méthode et modèle à imprimer",
+  title: "Planning réseaux sociaux sur 90 jours : méthode et modèle",
   metaTitle: "Planning réseaux sociaux 90 jours : méthode",
   excerpt: "Un planning de contenu sur 90 jours : choisir ses piliers, écrire par lots, suivre ce qui fonctionne et tenir la régularité sans y passer ses week-ends.",
   category: "Organisation",
@@ -123,7 +123,7 @@ export const contentPost: Post = {
     {
       id: "carnet",
       figure: { images: [{ src: "/resources/imprimables/social-media-planner-1.jpg", alt: "The 90-Day Content Planner et ses pages intérieures" }], caption: "The 90-Day Content Planner, 80 pages à imprimer en A4 ou en US Letter." },
-      heading: "Un carnet pour tout poser au même endroit",
+      heading: "Un planner pour tout poser au même endroit",
       paragraphs: [
         "Si tu veux un cadre déjà prêt, [The 90-Day Content Planner](/shop/social-media-planner) rassemble ces étapes dans un carnet PDF à imprimer : marque, audience et piliers de contenu, 13 plans de contenu hebdomadaires, banque d'idées, 28 pages de légendes, hashtags, suivi des stats, bilans mensuels et formules d'accroche.",
         "Il fonctionne sur la plateforme de ton choix. Tu l'imprimes en A4 ou en US Letter, chez toi ou en imprimerie, et tu avances semaine après semaine."

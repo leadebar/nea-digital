@@ -107,7 +107,7 @@ export const skincarePost: Post = {
     {
       id: "carnet",
       figure: { images: [{ src: "/resources/imprimables/skincare-journal-1.jpg", alt: "The Skincare Journal et ses pages intérieures" }], caption: "The Skincare Journal, 82 pages à imprimer en A4 ou en US Letter." },
-      heading: "Un carnet prêt à remplir",
+      heading: "Un planner prêt à remplir",
       paragraphs: [
         "Si tu préfères un format déjà structuré, [The Skincare Journal](/shop/skincare-journal) rassemble tout cela dans un carnet PDF à imprimer : profil de peau, routine du matin et du soir, étagère de produits avec dates d'ouverture, 24 fiches d'avis, 26 suivis hebdomadaires, bilans mensuels, produits terminés et liste d'envies.",
         "C'est un outil de suivi personnel, pas un avis médical ni un conseil dermatologique. Tu l'imprimes en A4 ou en US Letter, chez toi ou en imprimerie, et tu le remplis au rythme qui te convient."
