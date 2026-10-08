@@ -5,10 +5,8 @@ export type Imprimable = {
   pitch: string
   inside: string[]
   pages: number
-  /** À DÉFINIR : prix en euros. null = prix non affiché. */
+  /** Prix TTC en euros. null = prix non affiché et achat désactivé. */
   price: number | null
-  /** À DÉFINIR : lien de paiement (Lemon Squeezy, Gumroad, Stripe Payment Link). Vide = bouton désactivé. */
-  buyUrl: string
   /** Optionnel : lien de l'annonce Etsy. */
   etsyUrl?: string
   /** Couleur de la couverture, utilisée pour les détails graphiques */
@@ -29,8 +27,7 @@ export const imprimables: Imprimable[] = [
       'Bilans trimestriels',
     ],
     pages: 80,
-    price: null,
-    buyUrl: '',
+    price: 9,
     accent: '#0D3E3C',
   },
   {
@@ -46,8 +43,7 @@ export const imprimables: Imprimable[] = [
       'Bilans mensuels, produits terminés et liste d’envies',
     ],
     pages: 82,
-    price: null,
-    buyUrl: '',
+    price: 9,
     accent: '#31433B',
   },
   {
@@ -63,8 +59,7 @@ export const imprimables: Imprimable[] = [
       'Bilans mensuels',
     ],
     pages: 84,
-    price: null,
-    buyUrl: '',
+    price: 9,
     accent: '#1D382E',
   },
   {
@@ -80,8 +75,7 @@ export const imprimables: Imprimable[] = [
       'Formules d’accroche',
     ],
     pages: 80,
-    price: null,
-    buyUrl: '',
+    price: 9,
     accent: '#22304F',
   },
 ]

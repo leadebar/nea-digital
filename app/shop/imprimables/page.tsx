@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { stripeConfigured } from "@/lib/stripe";
 import { ImprimableGallery } from "@/components/ImprimableGallery";
 import { imprimables } from "@/data/imprimables";
 
@@ -6,6 +7,8 @@ export const metadata: Metadata = {
   title: "Planners imprimables",
   description: "Quatre planners et carnets imprimables en PDF : freelance, skincare, networking et contenu. Téléchargement immédiat, formats A4 et US Letter."
 };
+
+export const dynamic = "force-dynamic";
 
 export default function ImprimablesPage() {
   return (
@@ -40,8 +43,11 @@ export default function ImprimablesPage() {
               <p className="mt-5 text-xs text-ink/45">Fichiers A4 et US Letter inclus. Téléchargement immédiat, rien n'est expédié.</p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 {p.price !== null ? <span className="text-xl font-medium text-ink">{p.price} €</span> : null}
-                {p.buyUrl ? (
-                  <a href={p.buyUrl} className="focus-ring rounded-[4px] bg-ink px-6 py-3 text-sm text-porcelain transition hover:bg-olive">Acheter</a>
+                {p.price !== null && stripeConfigured() ? (
+                  <form method="post" action="/api/imprimables/checkout">
+                    <input type="hidden" name="slug" value={p.slug} />
+                    <button type="submit" className="focus-ring rounded-[4px] bg-ink px-6 py-3 text-sm text-porcelain transition hover:bg-olive">Acheter</button>
+                  </form>
                 ) : (
                   <span className="rounded-[4px] border border-ink/10 px-6 py-3 text-sm text-ink/40">Bientôt disponible</span>
                 )}

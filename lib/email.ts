@@ -4,11 +4,13 @@ type SendEmailInput = {
   subject: string;
   html: string;
   replyTo?: string;
+  /** Destinataire. Par défaut : NEA_CONTACT_TO. */
+  to?: string;
 };
 
 type SendEmailResult = { ok: true } | { ok: false; reason: "not-configured" | "send-failed" };
 
-export async function sendEmail({ subject, html, replyTo }: SendEmailInput): Promise<SendEmailResult> {
+export async function sendEmail({ subject, html, replyTo, to: toOverride }: SendEmailInput): Promise<SendEmailResult> {
   const apiKey = process.env.RESEND_API_KEY;
 
   if (!apiKey) {
@@ -16,7 +18,7 @@ export async function sendEmail({ subject, html, replyTo }: SendEmailInput): Pro
   }
 
   const from = process.env.NEA_CONTACT_FROM || "Néa Digital <onboarding@resend.dev>";
-  const to = process.env.NEA_CONTACT_TO || "contact.neadigital@gmail.com";
+  const to = toOverride || process.env.NEA_CONTACT_TO || "contact.neadigital@gmail.com";
 
   try {
     const response = await fetch(RESEND_ENDPOINT, {
