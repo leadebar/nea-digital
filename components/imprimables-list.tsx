@@ -1,27 +1,10 @@
-import type { Metadata } from "next";
-import { stripeConfigured } from "@/lib/stripe";
 import { ImprimableGallery } from "@/components/ImprimableGallery";
 import { imprimables } from "@/data/imprimables";
+import { stripeConfigured } from "@/lib/stripe";
 
-export const metadata: Metadata = {
-  title: "Planners imprimables",
-  description: "Quatre planners et carnets imprimables en PDF : freelance, skincare, networking et contenu. Téléchargement immédiat, formats A4 et US Letter."
-};
-
-export const dynamic = "force-dynamic";
-
-export default function ImprimablesPage() {
+export function ImprimablesList() {
   return (
-    <main className="container-premium py-16">
-      <div className="max-w-3xl">
-        <p className="eyebrow mb-5 text-xs text-taupe">Boutique</p>
-        <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">Planners imprimables, à remplir à la main.</h1>
-        <p className="mt-5 text-sm leading-7 text-ink/60">
-          Quatre carnets en PDF à imprimer chez toi ou en imprimerie. Les textes et mises en page ont été réalisés avec des outils d'IA et relus par mes soins.
-        </p>
-      </div>
-
-      <div className="mt-16 space-y-24">
+      <div className="space-y-24">
         {imprimables.map((p, index) => (
           <article key={p.slug} className="grid gap-10 md:grid-cols-2 md:items-center">
             <div className={index % 2 === 1 ? "md:order-2" : ""}>
@@ -59,10 +42,5 @@ export default function ImprimablesPage() {
           </article>
         ))}
       </div>
-
-      <p className="mt-24 max-w-2xl text-xs leading-6 text-ink/40">
-        Outils d'organisation personnelle. Ils ne constituent pas un avis médical, juridique, fiscal ou financier.
-      </p>
-    </main>
   );
 }

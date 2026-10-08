@@ -11,7 +11,7 @@ export async function POST(request: Request) {
   const origin = process.env.NEXT_PUBLIC_SITE_URL || new URL(request.url).origin;
 
   if (!product || product.price === null || !stripeConfigured()) {
-    return NextResponse.redirect(`${origin}/shop/imprimables`, 303);
+    return NextResponse.redirect(`${origin}/shop`, 303);
   }
 
   const p = new URLSearchParams({
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     "line_items[0][price_data][product_data][description]": `${product.subtitle}. Fichiers A4 et US Letter, téléchargement immédiat.`,
     "metadata[slug]": product.slug,
     success_url: `${origin}/merci?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${origin}/shop/imprimables`
+    cancel_url: `${origin}/shop`
   });
 
   // Accord exprès pour l'accès immédiat et renonciation au droit de rétractation (voir CGV).
@@ -42,6 +42,6 @@ export async function POST(request: Request) {
     return NextResponse.redirect(session.url!, 303);
   } catch (error) {
     console.error("checkout imprimable", error);
-    return NextResponse.redirect(`${origin}/shop/imprimables?erreur=paiement`, 303);
+    return NextResponse.redirect(`${origin}/shop?erreur=paiement`, 303);
   }
 }

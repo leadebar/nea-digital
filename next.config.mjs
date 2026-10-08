@@ -6,6 +6,9 @@ const withMDX = createMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [{ source: "/shop/imprimables", destination: "/shop", permanent: false }];
+  },
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   images: {
     formats: ["image/avif", "image/webp"],

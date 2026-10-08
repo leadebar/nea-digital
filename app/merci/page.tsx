@@ -45,7 +45,7 @@ export default async function MerciPage({ searchParams }: { searchParams: Promis
             <p className="mt-5 text-sm leading-7 text-ink/65">
               Si tu viens de payer, patiente quelques secondes et recharge la page, ou écris à contact.neadigital@gmail.com.
             </p>
-            <Link href="/shop/imprimables" className="mt-8 inline-block text-sm text-olive underline underline-offset-4">
+            <Link href="/shop" className="mt-8 inline-block text-sm text-olive underline underline-offset-4">
               Retour aux planners
             </Link>
           </>
