@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { imprimables } from "@/data/imprimables";
 import { posts } from "@/data/posts";
 
 const routes = [
@@ -27,6 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: route === "" ? 1 : 0.8
+    })),
+    ...imprimables.map((p) => ({
+      url: `${base}/shop/${p.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8
     })),
     ...posts.map((post) => ({
       url: `${base}/blog/${post.slug}`,

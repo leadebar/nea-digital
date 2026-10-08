@@ -11,7 +11,16 @@ export type Imprimable = {
   etsyUrl?: string
   /** Couleur de la couverture, utilisée pour les détails graphiques */
   accent: string
+  /** Slug de la catégorie de la boutique (voir `categories`) */
+  categorie: string
 }
+
+/** Catégories de la boutique. Ajoute une ligne ici pour créer un nouvel onglet. */
+export const categories = [
+  { slug: 'business', label: 'Business' },
+  { slug: 'carriere', label: 'Carrière' },
+  { slug: 'beaute', label: 'Beauté' },
+] as const
 
 export const imprimables: Imprimable[] = [
   {
@@ -29,6 +38,7 @@ export const imprimables: Imprimable[] = [
     pages: 80,
     price: 9,
     accent: '#0D3E3C',
+    categorie: 'business',
   },
   {
     slug: 'skincare-journal',
@@ -45,6 +55,7 @@ export const imprimables: Imprimable[] = [
     pages: 82,
     price: 9,
     accent: '#31433B',
+    categorie: 'beaute',
   },
   {
     slug: 'networking-planner',
@@ -61,6 +72,7 @@ export const imprimables: Imprimable[] = [
     pages: 84,
     price: 9,
     accent: '#1D382E',
+    categorie: 'carriere',
   },
   {
     slug: 'social-media-planner',
@@ -77,5 +89,6 @@ export const imprimables: Imprimable[] = [
     pages: 80,
     price: 9,
     accent: '#22304F',
+    categorie: 'business',
   },
 ]

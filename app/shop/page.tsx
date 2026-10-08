@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { ImprimablesList } from "@/components/imprimables-list";
+import Link from "next/link";
+import { ShopCard } from "@/components/shop-card";
+import { categories, imprimables } from "@/data/imprimables";
 import { NotifyMeForm } from "@/components/notify-me-form";
 import { ProductCard } from "@/components/product-card";
 import { products } from "@/data/products";
@@ -11,22 +13,47 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-export default function ShopPage() {
+type Props = { searchParams: Promise<{ categorie?: string }> };
+
+export default async function ShopPage({ searchParams }: Props) {
+  const { categorie } = await searchParams;
+  const active = categories.find((c) => c.slug === categorie)?.slug;
+  const items = active ? imprimables.filter((p) => p.categorie === active) : imprimables;
+  const tabs = [{ slug: "", label: "Tout" }, ...categories.filter((c) => imprimables.some((p) => p.categorie === c.slug))];
+
   return (
-    <main className="container-premium py-16">
+    <main className="container-premium py-12 md:py-14">
       <div className="max-w-3xl">
-        <p className="eyebrow mb-5 text-xs text-taupe">Boutique</p>
-        <h1 className="display-title text-3xl leading-tight text-ink md:text-5xl">Planners imprimables, à remplir à la main.</h1>
-        <p className="mt-5 text-sm leading-7 text-ink/60">
-          Quatre carnets en PDF à imprimer chez toi ou en imprimerie. Les textes et mises en page ont été réalisés avec des outils d'IA et relus par mes soins.
+        <p className="eyebrow mb-4 text-xs text-taupe">Boutique</p>
+        <h1 className="display-title text-2xl leading-tight text-ink md:text-4xl">Planners imprimables, à remplir à la main.</h1>
+        <p className="mt-4 text-sm leading-7 text-ink/60">
+          Des carnets en PDF à imprimer chez toi ou en imprimerie. Les textes et mises en page ont été réalisés avec des outils d'IA et relus par mes soins.
         </p>
       </div>
 
-      <div className="mt-16">
-        <ImprimablesList />
+      <nav aria-label="Catégories" className="mt-8 flex flex-wrap gap-2">
+        {tabs.map((tab) => {
+          const isActive = (active ?? "") === tab.slug;
+          return (
+            <Link
+              key={tab.slug || "tout"}
+              href={tab.slug ? `/shop?categorie=${tab.slug}` : "/shop"}
+              aria-current={isActive ? "page" : undefined}
+              className={`focus-ring rounded-full border px-4 py-1.5 text-xs transition ${
+                isActive ? "border-ink bg-ink text-porcelain" : "border-ink/15 text-ink/70 hover:border-ink/40"
+              }`}
+            >
+              {tab.label}
+            </Link>
+          );
+        })}
+      </nav>
+
+      <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+        {items.map((p) => <ShopCard key={p.slug} p={p} />)}
       </div>
 
-      <section className="mt-28 border-t border-ink/10 pt-16">
+      <section className="mt-20 border-t border-ink/10 pt-12">
         <p className="eyebrow mb-4 text-xs text-taupe">Bientôt</p>
         <h2 className="display-title text-2xl leading-tight text-ink md:text-3xl">La Méthode Néa, planners digitaux à venir.</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
