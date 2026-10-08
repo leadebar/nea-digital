@@ -1,171 +1,108 @@
-"use client";
-
-import { useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const expertises = [
-  { num: "01", title: "Marketing digital", items: ["Stratégie digitale", "SEO & référencement", "Contenu & newsletter", "Création de site web"] },
-  { num: "02", title: "Organisation & productivité", items: ["Planners digitaux", "Trackers d'habitudes", "Suivi financier", "Gestion de projets", "Systèmes d'organisation"] },
+  { title: "Marketing digital", items: ["Stratégie digitale", "SEO et référencement", "Contenu et newsletter", "Création de site web"] },
+  { title: "Organisation et productivité", items: ["Carnets PDF à imprimer", "Suivi des revenus et des factures", "Routines et suivi personnel", "Planning de contenu"] }
 ];
 
 export function AboutView() {
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("ab-visible"); }),
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll(".ab-reveal").forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
-
   return (
-    <>
-      <main>
+    <main>
+      {/* Introduction */}
+      <section className="container-premium grid items-center gap-12 pb-24 pt-16 md:grid-cols-[1.1fr_.9fr] md:gap-20 md:pb-32 md:pt-24">
+        <div>
+          <p className="mag-serif text-xl text-olive">À propos de Néa Digital</p>
+          <h1 className="mag-title mt-5 text-[clamp(2.8rem,6.5vw,5.4rem)] text-ink">Une marque, deux univers.</h1>
+          <p className="mag-text mt-8 max-w-xl text-xl leading-9 text-ink/80">
+            Néa Digital, c'est deux choses : des <strong className="font-semibold text-ink">services de marketing digital</strong> pour les entreprises, les marques et les indépendants, et une boutique de <strong className="font-semibold text-ink">carnets à imprimer</strong> pour s'organiser au quotidien.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <Link href="/services" className="focus-ring bg-ink px-7 py-3.5 text-sm font-medium text-porcelain transition hover:bg-olive">Voir les services</Link>
+            <Link href="/shop" className="text-sm font-medium text-ink underline underline-offset-8 hover:text-olive">Visiter la boutique</Link>
+          </div>
+        </div>
+        <div className="relative aspect-[4/5] overflow-hidden">
+          <Image src="/resources/imprimables/networking-planner-4.jpg" alt="Carnet Néa Digital posé près d'une tasse de café" fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+        </div>
+      </section>
 
-        {/* ── HERO ── */}
-        <section className="bg-[#1C1A1A] px-12 pt-36 pb-24 relative overflow-hidden">
-          <div className="relative max-w-3xl">
-            <div className="flex items-center gap-3 mb-6" style={{ animation: "ab-slide-top 0.7s 0.2s both" }}>
-              <span className="w-7 h-px bg-[#B08D57]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#B08D57]">Néa Digital</span>
-            </div>
-            <h1
-              className="text-white leading-none mb-6"
-              style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(48px,7vw,88px)", letterSpacing: "0.03em", animation: "ab-reveal 0.9s 0.35s both" }}
-            >
-              UNE MARQUE,<br />DEUX UNIVERS.
-            </h1>
-            <p
-              className="text-[16px] font-light text-white/65 leading-[1.85] max-w-2xl"
-              style={{ animation: "ab-fade-up 0.8s 0.6s both" }}
-            >
-              Néa Digital, c'est deux choses : des <strong className="text-white/90 font-medium">services marketing digital</strong> pour les entreprises, marques et indépendants, et une boutique de <strong className="text-white/90 font-medium">ressources digitales</strong> pour s'organiser au quotidien.
+      {/* Les deux univers */}
+      <section className="container-premium grid gap-24 pb-24 md:gap-32 md:pb-32">
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-20">
+          <div className="relative aspect-[4/3] overflow-hidden">
+            <Image src="/images/hero-bg-poster.jpg" alt="Bureau en bois avec un ordinateur portable et un carnet" fill sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+          </div>
+          <div>
+            <p className="mag-serif text-lg text-olive">Pour les entreprises et les indépendants</p>
+            <h2 className="mag-title mt-3 text-4xl text-ink md:text-5xl">Services de marketing digital.</h2>
+            <p className="mag-text mt-6 max-w-lg text-lg leading-8 text-ink/80">
+              Stratégie, contenu et visibilité en ligne, avec la possibilité de créer ou de refondre un site quand le projet le demande. Des prestations soignées, sans jargon, pour développer une présence à la hauteur de votre activité.
             </p>
+            <Link href="/services" className="mt-8 inline-block text-sm font-medium text-ink underline underline-offset-8 hover:text-olive">Découvrir les services</Link>
           </div>
-        </section>
+        </div>
 
-        {/* ── DEUX UNIVERS ── */}
-        <section className="grid grid-cols-1 md:grid-cols-2">
-          <div className="ab-reveal bg-[#F5F1EB] px-12 py-20 border-r border-[#EDE8DF]">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-7 h-px bg-[#B08D57]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Pour les pros</span>
-            </div>
-            <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(24px,3vw,36px)] text-[#1C1A1A] leading-[1.15] mb-5">
-              Services marketing pour entreprises & indépendants.
-            </h2>
-            <p className="text-[14px] text-[#7A7470] leading-[1.8] mb-8">
-              Stratégie, contenu et visibilité digitale, avec la possibilité de créer ou refondre un site quand le projet le demande. J'accompagne entreprises, marques et indépendants pour développer une présence en ligne à la hauteur de leur activité, avec des prestations soignées, sans jargon.
+        <div className="grid items-center gap-10 md:grid-cols-2 md:gap-20">
+          <div className="md:order-2 grid grid-cols-2 gap-3">
+            <Image src="/resources/imprimables/freelance-tracker-4.jpg" alt="The Freelance Income Tracker sur un bureau" width={800} height={800} sizes="(min-width: 768px) 22vw, 50vw" className="aspect-[3/4] h-full w-full object-cover" />
+            <Image src="/resources/imprimables/skincare-journal-4.jpg" alt="The Skincare Journal près d'un verre d'eau" width={800} height={800} sizes="(min-width: 768px) 22vw, 50vw" className="mt-10 aspect-[3/4] h-full w-full object-cover" />
+          </div>
+          <div className="md:order-1">
+            <p className="mag-serif text-lg text-olive">Pour s'organiser</p>
+            <h2 className="mag-title mt-3 text-4xl text-ink md:text-5xl">Des carnets à imprimer.</h2>
+            <p className="mag-text mt-6 max-w-lg text-lg leading-8 text-ink/80">
+              Suivi des revenus, routine skincare, networking, planning de contenu : des carnets PDF simples, à imprimer chez soi ou en imprimerie, pour planifier, prioriser et suivre ce qui compte. Des tableaux Excel arrivent bientôt.
             </p>
-            <a href="/services" className="ab-btn-dark inline-block"><span>Voir les services →</span></a>
-          </div>
-
-          <div className="ab-reveal bg-[#EDE8DF] px-12 py-20">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-7 h-px bg-[#B08D57]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Pour s'organiser</span>
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium">
+              <Link href="/shop" className="text-ink underline underline-offset-8 hover:text-olive">Voir la boutique</Link>
+              <Link href="/blog" className="text-ink underline underline-offset-8 hover:text-olive">Lire les guides du blog</Link>
             </div>
-            <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(24px,3vw,36px)] text-[#1C1A1A] leading-[1.15] mb-5">
-              Ressources digitales pour s'organiser.
-            </h2>
-            <p className="text-[14px] text-[#7A7470] leading-[1.8] mb-8">
-              Planners digitaux, trackers d'habitudes, suivi financier : des outils simples pour planifier, prioriser et suivre ce qui compte. Compatibles GoodNotes, Notability et imprimables A4.
+          </div>
+        </div>
+      </section>
+
+      {/* L'approche */}
+      <section className="bg-linen py-24 md:py-32">
+        <div className="container-premium">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mag-serif text-lg text-olive">L'approche</p>
+            <p className="mag-title mt-5 text-3xl text-ink md:text-5xl">D'un côté, des indépendantes qui veulent s'organiser. De l'autre, des entreprises qui veulent une présence en ligne qui fonctionne.</p>
+            <p className="mag-text mx-auto mt-8 max-w-2xl text-lg leading-8 text-ink/80">
+              Dans les deux cas, je travaille pareil : je comprends d'abord ce dont vous avez besoin, puis je livre quelque chose d'utilisable tout de suite, sans y ajouter de complexité.
             </p>
-            <a href="/shop" className="ab-btn-dark inline-block"><span>Voir la boutique →</span></a>
+            <p className="mag-serif mt-8 text-lg text-olive">Organisation, branding, contenu, conversion.</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── APPROCHE ── */}
-        <section className="bg-[#FFFFFF] px-12 py-24">
-          <div className="ab-reveal mb-16 max-w-2xl">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-px bg-[#B08D57]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">L'approche</span>
-            </div>
-            <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(28px,3.5vw,44px)] text-[#1C1A1A] leading-[1.15]">
-              Une même approche pour les deux.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
-            <div className="ab-reveal md:col-span-2 bg-[#F5F1EB] p-11">
-              <p className="text-[16px] text-[#1C1A1A] leading-[1.85] mb-6">
-                D'un côté, des créatrices et indépendantes qui veulent une organisation plus claire. De l'autre, des entreprises qui veulent une présence en ligne qui fonctionne vraiment.
-              </p>
-              <p className="text-[15px] text-[#7A7470] leading-[1.85]">
-                Dans les deux cas, je travaille pareil : je comprends d'abord ce dont vous avez besoin, puis je livre quelque chose d'utilisable tout de suite, <strong className="text-[#1C1A1A] font-medium">sans y ajouter de complexité</strong>.
-              </p>
-            </div>
-            <div className="ab-reveal bg-[#1C1A1A] p-11 flex flex-col justify-between">
-              <div>
-                {["Organisation", "Branding", "Contenu", "Conversion"].map((tag) => (
-                  <span key={tag} className="inline-block text-[11px] font-medium tracking-[0.1em] uppercase text-[#B08D57] border border-[#B08D57]/30 rounded-sm px-3 py-1 mr-2 mb-2">{tag}</span>
+      {/* Compétences */}
+      <section className="container-premium py-24 md:py-32">
+        <h2 className="mag-title text-center text-4xl text-ink md:text-5xl">Compétences</h2>
+        <div className="mx-auto mt-14 grid max-w-4xl gap-14 md:grid-cols-2 md:gap-24">
+          {expertises.map((exp) => (
+            <div key={exp.title}>
+              <h3 className="mag-serif text-2xl text-ink">{exp.title}</h3>
+              <ul className="mag-text mt-5 grid gap-3 text-lg text-ink/80">
+                {exp.items.map((item) => (
+                  <li key={item}>{item}</li>
                 ))}
-              </div>
-              <div>
-                <a href="mailto:contact.neadigital@gmail.com" className="block text-[10px] tracking-[0.15em] uppercase text-white/30 mb-2 hover:text-white/60">contact.neadigital@gmail.com</a>
-                <a href="https://fr.pinterest.com/neadigitalpro/?actingBusinessId=1138425749465166573" target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-[0.15em] uppercase text-white/30 hover:text-white/60">Pinterest</a>
-              </div>
+              </ul>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* ── EXPERTISES ── */}
-        <section className="bg-[#1C1A1A] px-12 py-24">
-          <div className="ab-reveal mb-14">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-px bg-[#B08D57]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#B08D57]">Expertises</span>
-            </div>
-            <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(28px,3.5vw,44px)] text-white leading-[1.15]">
-              Compétences.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.06]">
-            {expertises.map((exp, i) => (
-              <div key={exp.num} className="ab-reveal bg-[#1C1A1A] p-11" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="text-white/10 leading-none mb-5 tracking-[0.05em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "56px" }}>{exp.num}</div>
-                <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[22px] font-semibold text-white mb-6">{exp.title}</h3>
-                <ul className="flex flex-col gap-3">
-                  {exp.items.map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-[13px] text-white/60">
-                      <span className="w-4 h-px bg-[#B08D57] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── CTA ── */}
-        <section className="bg-[#F5F1EB] px-12 py-28 relative overflow-hidden">
-          <div className="relative text-center">
-            <h2 className="ab-reveal text-[#1C1A1A] leading-none mb-4 tracking-[0.04em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(44px,6vw,80px)" }}>
-              UN PROJET ?<br />UNE QUESTION ?
-            </h2>
-            <p className="ab-reveal italic font-light text-[#7A7470] mb-10" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(16px,2vw,22px)" }}>
-              je réponds sous 48h.
-            </p>
-            <a href="/contact" className="ab-reveal ab-btn-dark inline-block"><span>Contactez-moi →</span></a>
-          </div>
-        </section>
-
-      </main>
-
-      <style>{`
-        @keyframes ab-fade-up { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-        @keyframes ab-slide-top { from { opacity:0; transform:translateY(-16px); } to { opacity:1; transform:translateY(0); } }
-        @keyframes ab-reveal { from { opacity:0; transform:translateY(36px) skewY(2deg); } to { opacity:1; transform:translateY(0) skewY(0); } }
-
-        .ab-reveal { opacity:0; transform:translateY(28px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
-        .ab-reveal.ab-visible { opacity:1; transform:translateY(0); }
-
-        .ab-btn-dark { position:relative; overflow:hidden; background:#1C1A1A; color:white; font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; padding:12px 24px; border-radius:2px; text-decoration:none; transition:color 0.3s; display:inline-block; }
-        .ab-btn-dark::before { content:''; position:absolute; inset:0; background:#B08D57; transform:translateY(101%); transition:transform 0.4s cubic-bezier(0.4,0,0.2,1); }
-        .ab-btn-dark:hover { color:#1C1A1A; }
-        .ab-btn-dark:hover::before { transform:translateY(0); }
-        .ab-btn-dark span { position:relative; z-index:1; }
-      `}</style>
-    </>
+      {/* Contact */}
+      <section className="container-premium pb-24 text-center md:pb-32">
+        <h2 className="mag-title mx-auto max-w-3xl text-4xl text-ink md:text-6xl">Un projet ? Une question ?</h2>
+        <p className="mag-text mt-6 text-lg text-ink/80">Je réponds sous 48 h.</p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          <Link href="/contact" className="focus-ring bg-ink px-7 py-3.5 text-sm font-medium text-porcelain transition hover:bg-olive">Me contacter</Link>
+          <a href="mailto:contact.neadigital@gmail.com" className="text-sm font-medium text-ink underline underline-offset-8 hover:text-olive">contact.neadigital@gmail.com</a>
+          <a href="https://fr.pinterest.com/neadigitalpro/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-ink underline underline-offset-8 hover:text-olive">Pinterest</a>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -3,10 +3,8 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { FAQ } from "@/components/faq";
-import { StrategyIcon, ContentIcon, WebIcon, HarmonyIcon } from "@/components/offer-icons";
 import { offers, fullHarmony, processSteps, servicesFaq } from "@/data/site";
 
-const offerIcons = { strategy: StrategyIcon, content: ContentIcon, web: WebIcon } as const;
 
 export function ServicesView() {
   useEffect(() => {
@@ -67,12 +65,10 @@ export function ServicesView() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
             {offers.map((offer, i) => {
-              const Icon = offerIcons[offer.key as keyof typeof offerIcons];
               return (
                 <div key={offer.key} className="bg-white p-11 relative overflow-hidden pro-reveal" style={{ transitionDelay: `${(i % 3) * 0.1}s` }}>
                   <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#B08D57]" />
                   <div className="flex items-center gap-4 mb-4">
-                    <Icon className="w-9 h-9 text-[#B08D57] shrink-0" />
                     <span className="leading-none tracking-[0.05em] text-[#EDE8DF]" style={{ fontFamily: "'Bebas Neue'", fontSize: "38px" }}>{offer.num}</span>
                   </div>
                   <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[21px] font-semibold text-[#1C1A1A] mb-1">{offer.title}</h3>
@@ -108,7 +104,6 @@ export function ServicesView() {
           </div>
           <div className="pro-reveal bg-[#F5F1EB] p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 items-center">
             <div>
-              <HarmonyIcon className="w-9 h-9 text-[#B08D57] mb-4" />
               <p className="text-[15px] text-[#1C1A1A] leading-[1.7] mb-6 max-w-lg">{fullHarmony.desc}</p>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {fullHarmony.items.map((item) => (

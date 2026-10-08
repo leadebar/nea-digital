@@ -5,14 +5,12 @@ import Image from "next/image";
 import { BlogCard } from "@/components/blog-card";
 import { Newsletter } from "@/components/newsletter";
 import { FAQ } from "@/components/faq";
-import { StrategyIcon, ContentIcon, WebIcon, HarmonyIcon } from "@/components/offer-icons";
 import { OfferQuiz } from "@/components/offer-quiz";
 import { posts } from "@/data/posts";
 import { offers, fullHarmony, processSteps, servicesFaq } from "@/data/site";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
-const offerIcons = { strategy: StrategyIcon, content: ContentIcon, web: WebIcon } as const;
 
 // ─── COMPONENTS ──────────────────────────────────────────────────────────────
 
@@ -108,12 +106,10 @@ export function HomeView() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
             {offers.map((offer, i) => {
-              const Icon = offerIcons[offer.key as keyof typeof offerIcons];
               return (
                 <div key={offer.key} className="nea-reveal bg-white p-11 relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_30px_80px_rgba(28,26,26,0.06)]" style={{ transitionDelay: `${i * 0.1}s` }}>
                   <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#B08D57] scale-x-0 origin-left transition-transform duration-400 group-hover:scale-x-100" />
                   <div className="flex items-center gap-4 mb-5">
-                    <Icon className="w-9 h-9 text-[#B08D57] shrink-0" />
                     <span className="text-[#EDE8DF] leading-none tracking-[0.05em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "38px" }}>{offer.num}</span>
                   </div>
                   <h3 className="text-[20px] font-semibold text-[#1C1A1A] mb-1" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }}>{offer.title}</h3>
@@ -138,7 +134,6 @@ export function HomeView() {
           {/* Full Harmony */}
           <div className="nea-reveal mt-0.5 bg-[#1C1A1A] p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
             <div>
-              <HarmonyIcon className="w-9 h-9 text-[#B08D57] mb-4" />
               <p className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#B08D57] mb-3">Pack recommandé</p>
               <h3 className="text-[26px] text-white mb-2" style={{ fontFamily: "'Bebas Neue'", letterSpacing: "0.03em" }}>{fullHarmony.name}</h3>
               <p className="text-[14px] text-white/60 leading-[1.7] mb-4 max-w-md">{fullHarmony.desc}</p>
@@ -185,11 +180,14 @@ export function HomeView() {
         <section className="bg-[#F5F1EB] px-12 py-24">
           <div className="nea-reveal">
             <SectionTag>Blog</SectionTag>
-            <SectionTitle>Stratégie, contenu, web : quelques repères.</SectionTitle>
+            <SectionTitle>Nos derniers articles.</SectionTitle>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {posts.map((post) => <BlogCard key={post.slug} post={post} />)}
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {posts.slice(0, 3).map((post) => <BlogCard key={post.slug} post={post} compact />)}
           </div>
+          <p className="mt-10 text-center text-sm">
+            <a href="/blog" className="font-medium text-[#1C1A1A] underline underline-offset-8 hover:text-[#7A7470]">Voir tous les articles</a>
+          </p>
         </section>
 
         {/* ── CTA ── */}
