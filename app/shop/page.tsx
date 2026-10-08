@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ShopCard } from "@/components/shop-card";
 import { categories, imprimables } from "@/data/imprimables";
 import { NotifyMeForm } from "@/components/notify-me-form";
-import { ProductCard } from "@/components/product-card";
+import { ShopSoonCard } from "@/components/shop-soon-card";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
@@ -54,21 +54,21 @@ export default async function ShopPage({ searchParams }: Props) {
       </div>
 
       <section className="mt-20 border-t border-ink/10 pt-12">
-        <p className="eyebrow mb-4 text-xs text-taupe">Bientôt</p>
-        <h2 className="display-title text-2xl leading-tight text-ink md:text-3xl">La Méthode Néa, planners digitaux à venir.</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {products.map((product) => <ProductCard key={product.slug} product={product} />)}
+        <p className="eyebrow mb-3 text-xs text-taupe">Bientôt</p>
+        <h2 className="display-title text-xl leading-tight text-ink md:text-2xl">Des tableaux Excel à venir.</h2>
+        <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+          {products.map((product) => <ShopSoonCard key={product.slug} product={product} />)}
         </div>
-        <div className="mt-12 max-w-md rounded-[8px] bg-linen p-8">
-          <p className="eyebrow mb-3 text-xs text-taupe">Aucune date encore fixée</p>
-          <h3 className="text-lg font-medium text-ink">Sois prévenue dès l'ouverture.</h3>
-          <div className="mt-6">
+        <div className="mt-10 max-w-md rounded-[8px] bg-linen p-6">
+          <p className="eyebrow mb-2 text-xs text-taupe">Aucune date encore fixée</p>
+          <h3 className="text-base font-medium text-ink">Sois prévenue dès l'ouverture.</h3>
+          <div className="mt-5">
             <NotifyMeForm product="Boutique Néa Digital" />
           </div>
         </div>
       </section>
 
-      <p className="mt-24 max-w-2xl text-xs leading-6 text-ink/40">
+      <p className="mt-16 max-w-2xl text-xs leading-6 text-ink/40">
         Outils d'organisation personnelle. Ils ne constituent pas un avis médical, juridique, fiscal ou financier.
       </p>
     </main>
