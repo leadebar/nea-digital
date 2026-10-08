@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ImprimableGallery } from "@/components/ImprimableGallery";
 import { imprimables } from "@/data/imprimables";
 
 export const metadata: Metadata = {
@@ -22,13 +22,7 @@ export default function ImprimablesPage() {
         {imprimables.map((p, index) => (
           <article key={p.slug} className="grid gap-10 md:grid-cols-2 md:items-center">
             <div className={index % 2 === 1 ? "md:order-2" : ""}>
-              <Image
-                src={`/resources/imprimables/${p.slug}-mockup.jpg`}
-                alt={`${p.title} en situation`}
-                width={1200}
-                height={1200}
-                className="h-auto w-full rounded-[8px] shadow-line"
-              />
+              <ImprimableGallery slug={p.slug} title={p.title} />
             </div>
             <div>
               <p className="eyebrow text-[11px]" style={{ color: p.accent }}>PDF imprimable, {p.pages} pages</p>

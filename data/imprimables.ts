@@ -19,7 +19,7 @@ export const imprimables: Imprimable[] = [
   {
     slug: 'freelance-tracker',
     title: 'The Freelance Income Tracker',
-    subtitle: 'Invoices, expenses and budgets',
+    subtitle: 'Factures, dépenses et budget',
     pitch: 'Clients, factures, dépenses et budget mensuel au même endroit, pour savoir ce que tu as gagné, ce qui t’est dû et ce que tu peux dépenser.',
     inside: [
       'Fiche activité, objectifs et calcul du tarif minimum',
@@ -36,14 +36,14 @@ export const imprimables: Imprimable[] = [
   {
     slug: 'skincare-journal',
     title: 'The Skincare Journal',
-    subtitle: 'Routine, products and skin log',
+    subtitle: 'Routine, produits et suivi de la peau',
     pitch: 'Un carnet pour noter ta routine, tes produits et l’état de ta peau, et arrêter de racheter deux fois la même chose. Suivi personnel, pas un avis médical.',
     inside: [
       'Profil de peau et routine matin et soir',
       'Étagère produits avec dates d’ouverture',
       '24 fiches d’avis produit',
       '26 suivis hebdomadaires',
-      'Bilans mensuels, produits terminés et wishlist',
+      'Bilans mensuels, produits terminés et liste d’envies',
     ],
     pages: 82,
     price: null,
@@ -53,7 +53,7 @@ export const imprimables: Imprimable[] = [
   {
     slug: 'networking-planner',
     title: 'The Networking Planner',
-    subtitle: 'Outreach, coffee chats and follow-ups',
+    subtitle: 'Prises de contact, cafés et relances',
     pitch: 'Un système simple pour contacter, préparer tes échanges et relancer, sans perdre le fil de qui tu as rencontré et de ce qui a été dit.',
     inside: [
       'Liste d’entreprises cibles et journal de contacts',
@@ -70,7 +70,7 @@ export const imprimables: Imprimable[] = [
   {
     slug: 'social-media-planner',
     title: 'The 90-Day Content Planner',
-    subtitle: 'Plan, batch and track your posts',
+    subtitle: 'Planifie, prépare et suis tes publications',
     pitch: 'Décide quoi publier, écris par lots et suis ce qui fonctionne, semaine après semaine, sur la plateforme de ton choix.',
     inside: [
       'Marque, audience et piliers de contenu',
