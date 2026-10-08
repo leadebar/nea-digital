@@ -10,7 +10,7 @@ type Props = {
   order?: number[];
 };
 
-export function ImprimableGallery({ slug, title, order = [4, 1, 2, 5, 6, 3] }: Props) {
+export function ImprimableGallery({ slug, title, order = [7, 4, 1, 2, 5, 6, 3] }: Props) {
   const [active, setActive] = useState(0);
 
   return (
@@ -24,7 +24,7 @@ export function ImprimableGallery({ slug, title, order = [4, 1, 2, 5, 6, 3] }: P
         className="h-auto w-full rounded-[8px] shadow-line"
         priority={false}
       />
-      <ul className="mt-3 grid grid-cols-6 gap-2" aria-label={`Photos de ${title}`}>
+      <ul className="mt-3 grid grid-cols-7 gap-2" aria-label={`Photos de ${title}`}>
         {order.map((n, i) => (
           <li key={n}>
             <button
