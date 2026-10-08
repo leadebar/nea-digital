@@ -1,3 +1,5 @@
+import { plannerPosts } from "@/data/posts-planners";
+
 export type PostSection = {
   id: string;
   heading: string;
@@ -13,13 +15,21 @@ export type Post = {
   date: string;
   readTime: string;
   image: string;
+  /** Texte alternatif de l'image (par défaut : le titre). */
+  imageAlt?: string;
   sections: PostSection[];
   takeaways: string[];
+  /** Titre court pour la balise <title> (le gabarit ajoute " | Néa Digital"). */
+  metaTitle?: string;
+  /** Slug du planner mis en avant en fin d'article (voir data/imprimables.ts). */
+  productSlug?: string;
+  /** Questions fréquentes, affichées en fin d'article et exposées en FAQPage. */
+  faq?: { q: string; a: string }[];
 };
 
-export const categories = ["Stratégie", "Contenu", "Web & SEO"];
+export const categories = ["Stratégie", "Contenu", "Web & SEO", "Organisation"];
 
-export const posts: Post[] = [
+const servicePosts: Post[] = [
   {
     slug: "auditer-sa-presence-en-ligne",
     title: "Auditer sa présence en ligne : par où commencer",
@@ -350,3 +360,5 @@ export const posts: Post[] = [
     ]
   }
 ];
+
+export const posts: Post[] = [...plannerPosts, ...servicePosts];
