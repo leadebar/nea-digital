@@ -34,7 +34,7 @@ export function ImprimableDetail({ p }: { p: Imprimable }) {
             <span className="rounded-[4px] border border-ink/10 px-6 py-3 text-sm text-ink/40">Bientôt disponible</span>
           )}
           {p.etsyUrl ? (
-            <a href={p.etsyUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-olive underline underline-offset-4">Voir sur Etsy</a>
+            <a href={p.etsyUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-olive underline underline-offset-4">English version on Etsy</a>
           ) : null}
         </div>
       </div>
