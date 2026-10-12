@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/politique-confidentialite" },
   title: "Politique de confidentialité",
   description: "Politique de confidentialité RGPD de Néa Digital."
 };

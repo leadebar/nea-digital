@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!p) return {};
   return {
     title: p.title,
+    alternates: { canonical: `/shop/${slug}` },
     description: `${p.title} : ${p.subtitle}. PDF à imprimer, formats A4 et US Letter, téléchargement immédiat.`
   };
 }

@@ -9,6 +9,7 @@ import { MotionDiv, MotionSection, reveal } from "@/components/motion";
 import { weeklyResetFreebie } from "@/data/freebies";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/weekly-reset" },
   title: "Les 5 Piliers d'une Présence Digitale qui Convertit",
   description:
     "Télécharge Les 5 Piliers d'une Présence Digitale qui Convertit, un guide gratuit Néa Digital pour comprendre ce qui fait vraiment la différence.",

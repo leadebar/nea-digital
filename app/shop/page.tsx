@@ -7,6 +7,7 @@ import { ShopSoonCard } from "@/components/shop-soon-card";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/shop" },
   title: "Boutique",
   description: "Planners et carnets imprimables en PDF : freelance, skincare, networking et contenu. Téléchargement immédiat, formats A4 et US Letter."
 };
