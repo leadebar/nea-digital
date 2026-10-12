@@ -25,6 +25,7 @@ export const categories = [
 export const imprimables: Imprimable[] = [
   {
     slug: 'freelance-tracker',
+    etsyUrl: 'https://www.etsy.com/listing/4593793658/freelance-income-tracker-printable-pdf',
     title: 'The Freelance Income Tracker',
     subtitle: 'Factures, dépenses et budget',
     pitch: 'Clients, factures, dépenses et budget mensuel au même endroit, pour savoir ce que tu as gagné, ce qui t’est dû et ce que tu peux dépenser.',
@@ -42,6 +43,7 @@ export const imprimables: Imprimable[] = [
   },
   {
     slug: 'skincare-journal',
+    etsyUrl: 'https://www.etsy.com/listing/4593795016/skincare-journal-printable-pdf-skincare',
     title: 'The Skincare Journal',
     subtitle: 'Routine, produits et suivi de la peau',
     pitch: 'Un carnet pour noter ta routine, tes produits et l’état de ta peau, et arrêter de racheter deux fois la même chose. Suivi personnel, pas un avis médical.',
@@ -59,6 +61,7 @@ export const imprimables: Imprimable[] = [
   },
   {
     slug: 'networking-planner',
+    etsyUrl: 'https://www.etsy.com/listing/4593771257/networking-planner-printable-pdf-job',
     title: 'The Networking Planner',
     subtitle: 'Prises de contact, cafés et relances',
     pitch: 'Un système simple pour contacter, préparer tes échanges et relancer, sans perdre le fil de qui tu as rencontré et de ce qui a été dit.',
@@ -76,6 +79,7 @@ export const imprimables: Imprimable[] = [
   },
   {
     slug: 'social-media-planner',
+    etsyUrl: 'https://www.etsy.com/listing/4593796146/90-day-content-planner-printable-pdf',
     title: 'The 90-Day Content Planner',
     subtitle: 'Planifie, prépare et suis tes publications',
     pitch: 'Décide quoi publier, écris par lots et suis ce qui fonctionne, semaine après semaine, sur la plateforme de ton choix.',
