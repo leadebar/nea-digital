@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cgv" },
   title: "Conditions générales de vente",
   description: "CGV des ressources digitales vendues par Néa Digital."
 };

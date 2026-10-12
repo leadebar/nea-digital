@@ -3,6 +3,7 @@ import { ProductLanding } from "@/components/landing";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/products/90-days-reset" },
   title: "90 Days Reset",
   description: "90 Days Reset pour organisation personnelle et routine."
 };

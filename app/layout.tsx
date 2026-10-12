@@ -23,9 +23,6 @@ export const metadata: Metadata = {
     "planner digital",
     "organisation et productivité"
   ],
-  alternates: {
-    canonical: "/"
-  },
   openGraph: {
     type: "website",
     locale: "fr_FR",

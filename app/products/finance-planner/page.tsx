@@ -3,6 +3,7 @@ import { ProductLanding } from "@/components/landing";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/products/finance-planner" },
   title: "Finance Planner",
   description: "Planner finance pour budget, dépenses, épargne et objectifs."
 };

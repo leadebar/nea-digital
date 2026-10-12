@@ -3,6 +3,7 @@ import { ProductLanding } from "@/components/landing";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/products/digital-planner" },
   title: "Digital Planner",
   description: "Néa Digital Planner pour organisation et productivité."
 };

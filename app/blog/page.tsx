@@ -4,6 +4,7 @@ import { BlogCard } from "@/components/blog-card";
 import { categories, posts } from "@/data/posts";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/blog" },
   title: "Blog",
   description: "Guides pour s'organiser (suivi des revenus, routine, networking, planning de contenu) et articles sur la stratégie digitale, le contenu et le web."
 };
