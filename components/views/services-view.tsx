@@ -65,14 +65,10 @@ export function ServicesView() {
               Trois offres, prises séparément ou ensemble.
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {offers.map((offer, i) => {
               return (
-                <div key={offer.key} className="bg-white p-11 relative overflow-hidden pro-reveal" style={{ transitionDelay: `${(i % 3) * 0.1}s` }}>
-                  <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#B08D57]" />
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="leading-none tracking-[0.05em] text-[#EDE8DF]" style={{ fontFamily: "'Bebas Neue'", fontSize: "38px" }}>{offer.num}</span>
-                  </div>
+                <div key={offer.key} className="relative px-2 py-10 pro-reveal md:border-l md:border-[#1C1A1A]/10 md:px-10 md:first:border-l-0" style={{ transitionDelay: `${(i % 3) * 0.1}s` }}>
                   <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[21px] font-semibold text-[#1C1A1A] mb-1">{offer.title}</h3>
                   <p className="text-[13px] text-[#B08D57] font-medium mb-3 italic">{offer.tagline}</p>
                   <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-6">{offer.desc}</p>
@@ -136,10 +132,9 @@ export function ServicesView() {
           {processSteps.map((step, i) => (
             <div
               key={step.num}
-              className="pro-reveal bg-white p-11 border-r border-[#EDE8DF] last:border-r-0"
+              className="pro-reveal bg-white px-8 py-10 md:border-l md:border-[#1C1A1A]/10 md:first:border-l-0"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <div className="leading-none mb-5 tracking-[0.05em] text-[#B08D57]" style={{ fontFamily: "'Bebas Neue'", fontSize: "40px" }}>{step.num}</div>
               <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[17px] font-semibold text-[#1C1A1A] mb-3">{step.title}</h3>
               <p className="text-[13px] text-[#7A7470] leading-[1.7]">{step.desc}</p>
             </div>
@@ -176,7 +171,7 @@ export function ServicesView() {
             <h2 className="display-title mb-6 text-2xl text-ink md:text-3xl">Selon votre activité.</h2>
             <div className="flex flex-wrap gap-3">
               {secteurs.map((s) => (
-                <Link key={s.slug} href={`/services/${s.slug}`} className="rounded-[2px] border border-ink/15 px-5 py-3 text-sm text-ink transition-colors hover:border-[#B08D57] hover:text-[#B08D57]">
+                <Link key={s.slug} href={`/services/${s.slug}`} className="rounded-full border border-ink/15 px-5 py-2.5 text-sm text-ink transition-colors hover:border-[#B08D57] hover:text-[#B08D57]">
                   {s.nom}
                 </Link>
               ))}

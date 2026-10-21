@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 :root {
-  --font-display: "Monument Extended", "Arial Black", sans-serif;
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
   --font-editorial: "Bebas Neue", "Arial Narrow", sans-serif;
-  --font-body: "TT Commons Pro", "Inter", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
   --background: #f8f6f3;
   --foreground: #1f1f21;
   color-scheme: light;
@@ -67,7 +67,7 @@ body::before {
 
 .display-title {
   font-family: var(--font-display);
-  letter-spacing: 0;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
