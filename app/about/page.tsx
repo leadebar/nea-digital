@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     canonical: "/about"
   },
   openGraph: {
+    images: ["https://www.neadigital.fr/opengraph-image"],
     title: "Léa Debar, consultante marketing digital | Néa Digital",
     description:
       "Des services de marketing digital pour les entreprises et indépendants, et une boutique de ressources digitales pour s'organiser au quotidien.",

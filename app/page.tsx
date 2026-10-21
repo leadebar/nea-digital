@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     canonical: "/"
   },
   openGraph: {
+    images: ["https://www.neadigital.fr/opengraph-image"],
     title: "Consultante marketing digital freelance | Néa Digital",
     description:
       "J'aide les entreprises, marques et indépendants à améliorer leur présence en ligne : stratégie, contenu et création de site.",

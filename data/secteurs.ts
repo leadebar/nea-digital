@@ -39,7 +39,7 @@ export const secteurs: Secteur[] = [
       { question: "Travaillez-vous avec des restaurants loin de chez vous ?", answer: "Oui. Je travaille à distance, par téléphone, visio et e-mail, partout en France." },
       { question: "Combien de temps avant de voir des résultats ?", answer: "La fiche Google peut bouger en quelques semaines. Pour le site et le référencement, comptez plusieurs mois. Je ne promets pas de position précise." }
     ],
-    articles: ["seo-local-etre-visible-dans-sa-ville", "signes-site-internet-perd-des-clients"]
+    articles: ["fiche-google-business-checklist", "repondre-aux-avis-google-negatifs", "seo-local-etre-visible-dans-sa-ville"]
   },
   {
     slug: "salons",
@@ -66,7 +66,7 @@ export const secteurs: Secteur[] = [
       { question: "Dois-je fournir mes photos ?", answer: "Idéalement oui, elles reflètent votre salon. Je vous indique quoi photographier et comment les préparer." },
       { question: "Faut-il être sur les réseaux sociaux ?", answer: "Pas obligatoirement. La fiche Google et le site apportent des clientes sans publier tous les jours." }
     ],
-    articles: ["seo-local-etre-visible-dans-sa-ville", "calendrier-editorial-sans-y-passer-ses-soirees"]
+    articles: ["fiche-google-business-checklist", "site-ou-reseaux-sociaux-commerce-local", "calendrier-editorial-sans-y-passer-ses-soirees"]
   },
   {
     slug: "artisans",
@@ -93,7 +93,7 @@ export const secteurs: Secteur[] = [
       { question: "Je n'ai pas de photos de chantiers, c'est un problème ?", answer: "Pas au départ. On commence avec ce que vous avez, puis je vous indique comment en constituer au fil des chantiers." },
       { question: "Pouvez-vous gérer le site après sa mise en ligne ?", answer: "Oui, je peux m'occuper des mises à jour et des nouveaux contenus, ou vous laisser autonome selon votre préférence." }
     ],
-    articles: ["seo-local-etre-visible-dans-sa-ville", "combien-de-temps-pour-voir-des-resultats"],
+    articles: ["site-vitrine-artisan-ce-qu-il-faut", "fiche-google-business-checklist", "repondre-aux-avis-google-negatifs"],
     reference: {
       nom: "LP Plomberie",
       domaine: "lpplomberie.com",
