@@ -43,9 +43,9 @@ const offers = [
 ];
 
 const steps = [
-  { num: "01", title: "On se parle", desc: "Un message, ou un appel, pour comprendre votre activité." },
-  { num: "02", title: "Devis sous 48h", desc: "Une proposition chiffrée, claire, sans engagement." },
-  { num: "03", title: "Je m'en occupe", desc: "50 % à la commande, 50 % à la livraison. Un site complet est livré en 2 à 3 semaines." }
+  { title: "On se parle", desc: "Un message, ou un appel, pour comprendre votre activité." },
+  { title: "Devis sous 48h", desc: "Une proposition chiffrée, claire, sans engagement." },
+  { title: "Je m'en occupe", desc: "50 % à la commande, 50 % à la livraison. Un site complet est livré en 2 à 3 semaines." }
 ];
 
 const faq = [
@@ -130,10 +130,9 @@ export function BonnevalView() {
           <h2 className="mb-10 text-[clamp(24px,3.2vw,36px)] leading-[1.2] text-[#1C1A1A]" style={heading}>
             Ce qui coûte des clients, le plus souvent.
           </h2>
-          <div className="grid gap-px bg-[#EDE8DF] md:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-3 md:gap-0">
             {painPoints.map((p) => (
-              <div key={p.title} className="bg-white p-8">
-                <span className="mb-4 block h-[2px] w-8 bg-[#B08D57]" />
+              <div key={p.title} className="md:border-l md:border-[#1C1A1A]/10 md:px-8 md:first:border-l-0 md:first:pl-0">
                 <h3 className="mb-2 text-[17px] font-semibold text-[#1C1A1A]" style={heading}>{p.title}</h3>
                 <p className="text-[13px] leading-[1.75] text-[#7A7470]">{p.desc}</p>
               </div>
@@ -149,10 +148,9 @@ export function BonnevalView() {
             Ce que je peux faire pour vous.
           </h2>
           <p className="mb-10 text-[13px] text-[#7A7470]">Chaque projet fait l'objet d'un devis gratuit, adapté à votre activité.</p>
-          <div className="grid gap-0.5 md:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-3 md:gap-0">
             {offers.map((o) => (
-              <div key={o.name} className="relative bg-white p-8">
-                <span className="absolute left-0 right-0 top-0 h-[2px] bg-[#B08D57]" />
+              <div key={o.name} className="md:border-l md:border-[#1C1A1A]/10 md:px-8 md:first:border-l-0 md:first:pl-0">
                 <h3 className="mb-3 text-[19px] font-semibold text-[#1C1A1A]" style={heading}>{o.name}</h3>
                 <p className="text-[13px] leading-[1.75] text-[#7A7470]">{o.desc}</p>
               </div>
@@ -169,8 +167,7 @@ export function BonnevalView() {
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             {steps.map((s) => (
-              <div key={s.num}>
-                <p className="mb-3 leading-none text-[#B08D57]" style={{ ...display, fontSize: "40px" }}>{s.num}</p>
+              <div key={s.title} className="md:border-l md:border-[#1C1A1A]/10 md:pl-8 md:first:border-l-0 md:first:pl-0">
                 <h3 className="mb-2 text-[17px] font-semibold text-[#1C1A1A]" style={heading}>{s.title}</h3>
                 <p className="text-[13px] leading-[1.75] text-[#7A7470]">{s.desc}</p>
               </div>

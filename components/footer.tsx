@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { navItems } from "@/data/site";
+import { secteurs } from "@/data/secteurs";
 import { BrandLogo } from "@/components/brand-logo";
 
 const legalItems = [
@@ -34,9 +35,9 @@ export function Footer() {
         <div>
           <p className="eyebrow mb-4 text-xs text-sand">Services</p>
           <div className="grid gap-3">
-            <Link href="/services/restaurants" className="text-sm text-porcelain/70 hover:text-porcelain">Restaurants</Link>
-            <Link href="/services/salons" className="text-sm text-porcelain/70 hover:text-porcelain">Salons</Link>
-            <Link href="/services/artisans" className="text-sm text-porcelain/70 hover:text-porcelain">Artisans</Link>
+            {secteurs.map((x) => (
+              <Link key={x.slug} href={`/services/${x.slug}`} className="text-sm text-porcelain/70 hover:text-porcelain">{x.nom}</Link>
+            ))}
           </div>
         </div>
         <div>

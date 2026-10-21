@@ -7,6 +7,8 @@ import { secteurs } from "@/data/secteurs";
 
 type Props = { params: Promise<{ secteur: string }> };
 
+const museo = { fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" } as const;
+
 export function generateStaticParams() {
   return secteurs.map((s) => ({ secteur: s.slug }));
 }
@@ -67,14 +69,14 @@ export default async function SecteurPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <section className="bg-[#F5F1EB] px-6 pb-16 pt-32 md:px-12 md:pb-24 md:pt-40">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-5xl">
           <nav aria-label="Fil d'Ariane" className="mb-8 text-xs text-ink/50">
             <Link href="/services" className="underline-offset-4 hover:underline">Services</Link>
             <span className="mx-2">/</span>
             <span>{s.nom}</span>
           </nav>
-          <h1 className="display-title text-4xl leading-[1.05] text-ink md:text-6xl">{s.h1}</h1>
-          <p className="mt-6 max-w-2xl text-[16px] leading-8 text-ink/70">{s.intro}</p>
+          <h1 className="display-title text-5xl leading-[1] text-ink md:text-7xl">{s.h1}</h1>
+          <p className="mt-6 max-w-2xl text-[17px] leading-8 text-ink/70">{s.intro}</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link href="/contact" className="inline-flex min-h-12 items-center rounded-[2px] bg-[#1C1A1A] px-7 text-[12px] font-medium uppercase tracking-[0.07em] text-white transition-colors hover:bg-[#B08D57]">
               Demander mon diagnostic offert
@@ -83,33 +85,31 @@ export default async function SecteurPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-16 md:px-12 md:py-20">
+      <section className="bg-white px-6 py-16 md:px-12 md:py-24">
         <div className="mx-auto max-w-5xl">
-          <h2 className="display-title mb-10 text-2xl text-ink md:text-4xl">Ce qui fait perdre des clients.</h2>
-          <div className="grid gap-px bg-[#EDE8DF] md:grid-cols-3">
+          <h2 className="display-title mb-12 text-3xl text-ink md:text-5xl">Ce qui fait perdre des clients.</h2>
+          <div className="grid gap-10 md:grid-cols-3 md:gap-0">
             {s.problemes.map((p) => (
-              <div key={p.titre} className="bg-white p-8">
-                <span className="mb-4 block h-[2px] w-8 bg-[#B08D57]" />
-                <h3 className="mb-2 text-lg font-semibold text-ink">{p.titre}</h3>
-                <p className="text-sm leading-7 text-ink/65">{p.texte}</p>
+              <div key={p.titre} className="md:border-l md:border-ink/10 md:px-8 md:first:border-l-0 md:first:pl-0">
+                <h3 className="mb-3 text-[19px] font-semibold text-ink" style={museo}>{p.titre}</h3>
+                <p className="text-[15px] leading-8 text-ink/65">{p.texte}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F5F1EB] px-6 py-16 md:px-12 md:py-20">
+      <section className="bg-[#F5F1EB] px-6 py-16 md:px-12 md:py-24">
         <div className="mx-auto max-w-5xl">
-          <h2 className="display-title mb-10 text-2xl text-ink md:text-4xl">Ce que je mets en place.</h2>
-          <div className="grid gap-0.5 md:grid-cols-2">
+          <h2 className="display-title mb-12 text-3xl text-ink md:text-5xl">Ce que je mets en place.</h2>
+          <dl className="divide-y divide-ink/10 border-y border-ink/10">
             {s.actions.map((a) => (
-              <div key={a.titre} className="relative bg-white p-8">
-                <span className="absolute left-0 right-0 top-0 h-[2px] bg-[#B08D57]" />
-                <h3 className="mb-2 text-lg font-semibold text-ink">{a.titre}</h3>
-                <p className="text-sm leading-7 text-ink/65">{a.texte}</p>
+              <div key={a.titre} className="grid gap-2 py-7 md:grid-cols-[.8fr_1.2fr] md:gap-12">
+                <dt className="text-[20px] font-semibold text-ink" style={museo}>{a.titre}</dt>
+                <dd className="text-[15px] leading-8 text-ink/65">{a.texte}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </section>
 
@@ -137,8 +137,8 @@ export default async function SecteurPage({ params }: Props) {
       ) : null}
 
       {s.reference?.image ? (
-        <section className="bg-[#1C1A1A] px-6 py-16 md:px-12 md:py-24">
-          <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_1.1fr]">
+        <section className="bg-[#F5F1EB] px-4 py-6 md:px-10 md:py-10">
+          <div className="mx-auto grid max-w-6xl rounded-[28px] bg-[#1C1A1A] px-6 py-14 md:rounded-[40px] md:px-14 md:py-20 items-center gap-10 md:grid-cols-[1fr_1.1fr]">
             <div>
               <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[#B08D57]">Réalisation</p>
               <h2 className="display-title mb-4 text-3xl text-white md:text-5xl">{s.reference.nom}</h2>

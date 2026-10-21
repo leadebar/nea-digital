@@ -104,14 +104,10 @@ export function HomeView() {
             <SectionTag>Ce que je fais</SectionTag>
             <SectionTitle>Comment travailler ensemble.</SectionTitle>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
             {offers.map((offer, i) => {
               return (
-                <div key={offer.key} className="nea-reveal bg-white p-11 relative overflow-hidden transition-shadow duration-300 hover:shadow-[0_30px_80px_rgba(28,26,26,0.06)]" style={{ transitionDelay: `${i * 0.1}s` }}>
-                  <span className="absolute top-0 left-0 right-0 h-[2px] bg-[#B08D57] scale-x-0 origin-left transition-transform duration-400 group-hover:scale-x-100" />
-                  <div className="flex items-center gap-4 mb-5">
-                    <span className="text-[#EDE8DF] leading-none tracking-[0.05em]" style={{ fontFamily: "'Bebas Neue'", fontSize: "38px" }}>{offer.num}</span>
-                  </div>
+                <div key={offer.key} className="nea-reveal relative px-2 py-10 md:border-l md:border-[#1C1A1A]/10 md:px-10 md:first:border-l-0" style={{ transitionDelay: `${i * 0.1}s` }}>
                   <h3 className="text-[20px] font-semibold text-[#1C1A1A] mb-1" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }}>{offer.title}</h3>
                   <p className="text-[13px] text-[#B08D57] font-medium mb-3 italic">{offer.tagline}</p>
                   <p className="text-[13px] text-[#7A7470] leading-[1.7] mb-6">{offer.desc}</p>
@@ -165,10 +161,9 @@ export function HomeView() {
             <SectionTag>Ma méthode</SectionTag>
             <SectionTitle>Comment ça se passe.</SectionTitle>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0.5">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
             {processSteps.map((step, i) => (
-              <div key={step.num} className="nea-reveal bg-[#F5F1EB] p-9" style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="leading-none mb-5 tracking-[0.05em] text-[#B08D57]" style={{ fontFamily: "'Bebas Neue'", fontSize: "34px" }}>{step.num}</div>
+              <div key={step.num} className="nea-reveal px-2 py-8 md:border-l md:border-[#1C1A1A]/10 md:px-8 md:first:border-l-0" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <h3 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[16px] font-semibold text-[#1C1A1A] mb-3">{step.title}</h3>
                 <p className="text-[13px] text-[#7A7470] leading-[1.7]">{step.desc}</p>
               </div>
