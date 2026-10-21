@@ -13,10 +13,7 @@ const routes = [
   "/weekly-reset",
   "/mentions-legales",
   "/politique-confidentialite",
-  "/cgv",
-  "/products/digital-planner",
-  "/products/90-days-reset",
-  "/products/finance-planner"
+  "/cgv"
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
