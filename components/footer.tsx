@@ -14,7 +14,7 @@ const legalItems = [
 export function Footer() {
   return (
     <footer className="border-t border-ink/10 bg-ink text-porcelain">
-      <div className="container-premium grid gap-10 py-14 md:grid-cols-[1.2fr_.6fr_.6fr_.7fr]">
+      <div className="container-premium grid gap-10 py-14 md:grid-cols-[1.2fr_.6fr_.6fr_.6fr_.7fr]">
         <div>
           <BrandLogo tone="sand" className="h-10" />
           <p className="mt-5 max-w-md text-sm leading-7 text-porcelain/65">
@@ -29,6 +29,14 @@ export function Footer() {
                 {item.label}
               </Link>
             ))}
+          </div>
+        </div>
+        <div>
+          <p className="eyebrow mb-4 text-xs text-sand">Services</p>
+          <div className="grid gap-3">
+            <Link href="/services/restaurants" className="text-sm text-porcelain/70 hover:text-porcelain">Restaurants</Link>
+            <Link href="/services/salons" className="text-sm text-porcelain/70 hover:text-porcelain">Salons</Link>
+            <Link href="/services/artisans" className="text-sm text-porcelain/70 hover:text-porcelain">Artisans</Link>
           </div>
         </div>
         <div>
