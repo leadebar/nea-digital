@@ -8,8 +8,8 @@ import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/shop" },
-  title: "Boutique",
-  description: "Planners et carnets imprimables en PDF : freelance, skincare, networking et contenu. Téléchargement immédiat, formats A4 et US Letter."
+  title: "Planners imprimables pour freelances",
+  description: "Planners et trackers imprimables en PDF : freelance, skincare, networking et contenu. Téléchargement immédiat, formats A4 et US Letter."
 };
 
 export const dynamic = "force-dynamic";

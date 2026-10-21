@@ -5,7 +5,7 @@ import { categories, posts } from "@/data/posts";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
-  title: "Blog",
+  title: "Blog : SEO, site web et organisation freelance",
   description: "Guides pour s'organiser (suivi des revenus, routine, networking, planning de contenu) et articles sur la stratégie digitale, le contenu et le web."
 };
 

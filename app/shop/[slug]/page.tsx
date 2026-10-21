@@ -7,6 +7,25 @@ import { posts } from "@/data/posts";
 
 export const dynamic = "force-dynamic";
 
+const seo: Record<string, { title: string; description: string }> = {
+  "freelance-tracker": {
+    title: "Suivi de revenus freelance imprimable (PDF)",
+    description: "Suivi de factures, dépenses et budget pour revenus irréguliers, avec calcul du tarif minimum. PDF imprimable A4 et US Letter, téléchargement immédiat."
+  },
+  "skincare-journal": {
+    title: "Journal skincare imprimable (PDF)",
+    description: "Fiches d'avis produits, étagère de produits avec dates d'ouverture et suivi hebdomadaire de la peau. PDF imprimable A4 et US Letter."
+  },
+  "networking-planner": {
+    title: "Planner de networking imprimable (PDF)",
+    description: "Modèles de messages, journal de contacts et plans d'action hebdomadaires pour préparer cafés et relances. PDF imprimable A4 et US Letter."
+  },
+  "social-media-planner": {
+    title: "Planner contenu 90 jours imprimable (PDF)",
+    description: "Banque d'idées, pages de légendes, formules d'accroche et plans hebdomadaires pour planifier 90 jours de publications. PDF imprimable A4 et US Letter."
+  }
+};
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -14,9 +33,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const p = imprimables.find((item) => item.slug === slug);
   if (!p) return {};
   return {
-    title: p.title,
+    title: seo[slug]?.title ?? p.title,
     alternates: { canonical: `/shop/${slug}` },
-    description: `${p.title} : ${p.subtitle}. PDF à imprimer, formats A4 et US Letter, téléchargement immédiat.`
+    description: seo[slug]?.description ?? `${p.title} : ${p.subtitle}. PDF à imprimer, formats A4 et US Letter, téléchargement immédiat.`
   };
 }
 
