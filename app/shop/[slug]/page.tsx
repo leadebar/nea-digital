@@ -1,3 +1,4 @@
+import { ProductJsonLd } from "@/components/seo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -48,6 +49,14 @@ export default async function ImprimablePage({ params }: Props) {
 
   return (
     <main className="container-premium py-12 md:py-16">
+      {p.price !== null ? (
+        <ProductJsonLd
+          slug={p.slug}
+          name={seo[slug]?.title ?? p.title}
+          description={seo[slug]?.description ?? p.pitch}
+          price={p.price}
+        />
+      ) : null}
       <nav aria-label="Fil d'Ariane" className="mb-8 text-xs text-ink/50">
         <Link href="/shop" className="underline-offset-4 hover:underline">Boutique</Link>
         {categorie ? (
