@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     canonical: "/contact"
   },
   openGraph: {
+    images: ["https://www.neadigital.fr/opengraph-image"],
     title: "Devis et diagnostic gratuit marketing digital | Néa Digital",
     description: "Discutons de votre projet : devis gratuit, réponse sous 48h.",
     url: "https://www.neadigital.fr/contact"

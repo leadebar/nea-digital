@@ -1,4 +1,5 @@
 import { plannerPosts } from "@/data/posts-planners";
+import { localPosts } from "@/data/posts-local";
 
 export type PostSection = {
   id: string;
@@ -369,4 +370,4 @@ const servicePosts: Post[] = [
   }
 ];
 
-export const posts: Post[] = [...plannerPosts, ...servicePosts];
+export const posts: Post[] = [...plannerPosts, ...servicePosts, ...localPosts];

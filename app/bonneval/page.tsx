@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: "/bonneval" },
   openGraph: {
+    images: ["https://www.neadigital.fr/opengraph-image"],
     title: `${title} | Néa Digital`,
     description,
     url: "https://www.neadigital.fr/bonneval"

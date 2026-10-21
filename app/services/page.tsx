@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     canonical: "/services"
   },
   openGraph: {
+    images: ["https://www.neadigital.fr/opengraph-image"],
     title: "Création de site web, SEO et contenu | Néa Digital",
     description:
       "Stratégie digitale, contenu et création de site, à la carte ou dans un pack complet. Devis gratuit, réponse sous 48h.",

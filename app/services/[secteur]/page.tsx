@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: s.metaDescription,
     alternates: { canonical: `/services/${s.slug}` },
     openGraph: {
+    images: ["https://www.neadigital.fr/opengraph-image"],
       title: `${s.metaTitle} | Néa Digital`,
       description: s.metaDescription,
       url: `https://www.neadigital.fr/services/${s.slug}`

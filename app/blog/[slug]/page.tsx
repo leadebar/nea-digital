@@ -103,7 +103,7 @@ export default async function ArticlePage({ params }: Props) {
       dateModified: post.date,
       inLanguage: "fr-FR",
       mainEntityOfPage: url,
-      author: { "@type": "Organization", name: "Néa Digital", url: "https://www.neadigital.fr" },
+      author: { "@type": "Person", name: "Léa Debar", jobTitle: "Consultante marketing digital freelance", url: "https://www.neadigital.fr/about" },
       publisher: { "@type": "Organization", name: "Néa Digital", logo: { "@type": "ImageObject", url: "https://www.neadigital.fr/icon.png" } }
     },
     {
@@ -140,7 +140,7 @@ export default async function ArticlePage({ params }: Props) {
           <h1 className="mag-title mx-auto mt-8 max-w-5xl text-[clamp(2.5rem,7.2vw,5.6rem)] text-ink">{post.title}</h1>
           <p className="mag-text mx-auto mt-8 max-w-2xl text-xl leading-8 text-ink/80 md:text-[1.375rem] md:leading-9">{post.excerpt}</p>
           <p className="mt-8 text-sm text-ink/70">
-            Par <Link href="/about" className="underline underline-offset-4 hover:text-ink">Néa Digital</Link>, le {formatDate(post.date)}, {post.readTime} de lecture
+            Par <Link href="/about" className="underline underline-offset-4 hover:text-ink">Léa Debar</Link>, le {formatDate(post.date)}, {post.readTime} de lecture
           </p>
         </header>
 
