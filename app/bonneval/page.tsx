@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${title} | Néa Digital`,
     description,
-    url: "https://neadigital.fr/bonneval"
+    url: "https://www.neadigital.fr/bonneval"
   }
 };
 

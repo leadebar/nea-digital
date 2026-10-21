@@ -32,11 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: post.metaTitle ?? post.title,
       description: post.excerpt,
-      url: `https://neadigital.fr/blog/${post.slug}`,
+      url: `https://www.neadigital.fr/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
       locale: "fr_FR",
-      images: [post.image.startsWith("/") ? `https://neadigital.fr${post.image}` : post.image]
+      images: [post.image.startsWith("/") ? `https://www.neadigital.fr${post.image}` : post.image]
     },
     twitter: { card: "summary_large_image" }
   };
@@ -89,8 +89,8 @@ export default async function ArticlePage({ params }: Props) {
   const alsoRead = post.alsoRead ? posts.find((item) => item.slug === post.alsoRead) : undefined;
   const product = post.productSlug ? imprimables.find((p) => p.slug === post.productSlug) : undefined;
   const productCategory = product ? shopCategories.find((c) => c.slug === product.categorie) : undefined;
-  const absImage = post.image.startsWith("/") ? `https://neadigital.fr${post.image}` : post.image;
-  const url = `https://neadigital.fr/blog/${post.slug}`;
+  const absImage = post.image.startsWith("/") ? `https://www.neadigital.fr${post.image}` : post.image;
+  const url = `https://www.neadigital.fr/blog/${post.slug}`;
 
   const schemas: object[] = [
     {
@@ -103,15 +103,15 @@ export default async function ArticlePage({ params }: Props) {
       dateModified: post.date,
       inLanguage: "fr-FR",
       mainEntityOfPage: url,
-      author: { "@type": "Organization", name: "Néa Digital", url: "https://neadigital.fr" },
-      publisher: { "@type": "Organization", name: "Néa Digital", logo: { "@type": "ImageObject", url: "https://neadigital.fr/icon.png" } }
+      author: { "@type": "Organization", name: "Néa Digital", url: "https://www.neadigital.fr" },
+      publisher: { "@type": "Organization", name: "Néa Digital", logo: { "@type": "ImageObject", url: "https://www.neadigital.fr/icon.png" } }
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Accueil", item: "https://neadigital.fr" },
-        { "@type": "ListItem", position: 2, name: "Blog", item: "https://neadigital.fr/blog" },
+        { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.neadigital.fr" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.neadigital.fr/blog" },
         { "@type": "ListItem", position: 3, name: post.title, item: url }
       ]
     }

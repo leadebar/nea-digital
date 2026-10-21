@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact | Néa Digital",
     description: "Discutons de votre projet : devis gratuit, réponse sous 48h.",
-    url: "https://neadigital.fr/contact"
+    url: "https://www.neadigital.fr/contact"
   }
 };
 

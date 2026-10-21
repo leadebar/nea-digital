@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "À propos | Néa Digital",
     description:
       "Des services de marketing digital pour les entreprises et indépendants, et une boutique de ressources digitales pour s'organiser au quotidien.",
-    url: "https://neadigital.fr/about"
+    url: "https://www.neadigital.fr/about"
   }
 };
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Néa Digital | Stratégie digitale, contenu et création de site",
     description:
       "J'aide les entreprises, marques et indépendants à améliorer leur présence en ligne : stratégie, contenu et création de site.",
-    url: "https://neadigital.fr"
+    url: "https://www.neadigital.fr"
   }
 };
 

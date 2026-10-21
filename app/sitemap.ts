@@ -20,7 +20,7 @@ const routes = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://neadigital.fr";
+  const base = "https://www.neadigital.fr";
 
   return [
     ...routes.map((route) => ({
