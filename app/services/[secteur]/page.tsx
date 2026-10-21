@@ -109,16 +109,52 @@ export default async function SecteurPage({ params }: Props) {
               </div>
             ))}
           </div>
-          {s.reference ? (
-            <p className="mt-8 text-sm text-ink/70">
-              {s.reference.texte}{" "}
-              <a href={s.reference.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-[#B08D57]">
-                {s.reference.label}
-              </a>
-            </p>
-          ) : null}
         </div>
       </section>
+
+      {s.reference ? (
+        <section className="bg-[#1C1A1A] px-6 py-16 md:px-12 md:py-24">
+          <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_1.1fr]">
+            <div>
+              <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[#B08D57]">Réalisation</p>
+              <h2 className="display-title mb-4 text-3xl text-white md:text-5xl">{s.reference.nom}</h2>
+              <p className="mb-6 max-w-md text-[15px] font-light leading-8 text-white/70">{s.reference.accroche}</p>
+              <ul className="mb-8 space-y-2 text-sm text-white/80">
+                {s.reference.points.map((pt) => (
+                  <li key={pt} className="flex items-center gap-3">
+                    <span className="h-px w-5 bg-[#B08D57]" />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={s.reference.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center rounded-[2px] bg-[#F5F1EB] px-7 text-[12px] font-medium uppercase tracking-[0.07em] text-[#1C1A1A] transition-colors hover:bg-[#B08D57] hover:text-white"
+              >
+                {s.reference.label}
+              </a>
+            </div>
+            <a href={s.reference.href} target="_blank" rel="noopener noreferrer" aria-label={`Ouvrir ${s.reference.domaine}`} className="group block">
+              <div className="overflow-hidden rounded-lg border border-white/10 bg-[#2A2726] shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:-translate-y-1">
+                <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                  <span className="ml-3 truncate rounded bg-white/5 px-3 py-1 text-[11px] text-white/50">{s.reference.domaine}</span>
+                </div>
+                {s.reference.image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={s.reference.image} alt={`Capture du site ${s.reference.nom}`} className="block w-full" loading="lazy" />
+                ) : (
+                  <div className="flex aspect-[16/10] items-center justify-center text-sm tracking-[0.2em] text-white/30">{s.reference.domaine.toUpperCase()}</div>
+                )}
+              </div>
+            </a>
+          </div>
+        </section>
+      ) : null}
 
       <FAQ items={s.faq.map((f) => ({ question: f.question, answer: f.answer }))} title="Questions fréquentes." />
 

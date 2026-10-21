@@ -10,7 +10,7 @@ export type Secteur = {
   actions: { titre: string; texte: string }[];
   faq: { question: string; answer: string }[];
   articles: string[];
-  reference?: { texte: string; label: string; href: string };
+  reference?: { nom: string; domaine: string; accroche: string; points: string[]; label: string; href: string; image?: string };
 };
 
 export const secteurs: Secteur[] = [
@@ -95,8 +95,11 @@ export const secteurs: Secteur[] = [
     ],
     articles: ["seo-local-etre-visible-dans-sa-ville", "combien-de-temps-pour-voir-des-resultats"],
     reference: {
-      texte: "J'ai réalisé le site et géré la présence en ligne d'une entreprise de plomberie.",
-      label: "Voir lpplomberie.com",
+      nom: "LP Plomberie",
+      domaine: "lpplomberie.com",
+      accroche: "Le site web et l'Instagram d'une entreprise de plomberie, que je fais évoluer au fil du temps.",
+      points: ["Amélioration et suivi du site web", "Stratégie Instagram"],
+      label: "Voir le site",
       href: "https://lpplomberie.com"
     }
   }
