@@ -82,10 +82,10 @@ export function HomeView() {
 
           <h1
             className="text-[#1C1A1A] relative"
-            style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(48px,8vw,104px)", lineHeight: 0.98, letterSpacing: "0.02em" }}
+            style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(34px,6vw,80px)", lineHeight: 0.98, letterSpacing: "0.02em" }}
           >
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) both" }}>STRATÉGIE, CONTENU,</span>
-            <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>SITE WEB.</span>
+            <span className="block" style={{ animation: "nea-reveal 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) both" }}>CONSULTANTE MARKETING DIGITAL :</span>
+            <span className="block" style={{ animation: "nea-reveal 0.9s 0.6s cubic-bezier(0.22,1,0.36,1) both" }}>STRATÉGIE, CONTENU, SITE WEB.</span>
           </h1>
 
           <p className="text-[15px] font-light text-[#5C564F] leading-[1.85] max-w-[540px] mx-auto mt-6 mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>

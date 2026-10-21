@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/seo";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.neadigital.fr"),
   title: {
-    default: "Néa Digital | Stratégie digitale, contenu et création de site",
+    default: "Consultante marketing digital freelance | Néa Digital",
     template: "%s | Néa Digital"
   },
   description:

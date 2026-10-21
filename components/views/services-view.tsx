@@ -29,7 +29,7 @@ export function ServicesView() {
               <span className="w-7 h-px bg-[#B08D57]" />
             </div>
             <h1 className="text-[#1C1A1A] mb-4 leading-none" style={{ fontFamily: "'Bebas Neue'", fontSize: "clamp(44px,7vw,80px)", letterSpacing: "0.02em" }}>
-              <span className="block" style={{ animation: "pro-reveal 0.9s 0.35s both" }}>MES SERVICES</span>
+              <span className="block" style={{ animation: "pro-reveal 0.9s 0.35s both" }}>SITE WEB, SEO ET CONTENU</span>
             </h1>
             <p className="italic font-light text-[#7A7470] mb-8" style={{ fontFamily: "'Museo Moderno','Museo_Moderno',serif", fontSize: "clamp(16px,2vw,20px)", animation: "pro-fade-up 0.8s 0.8s both" }}>
               trois offres, un pack complet.
