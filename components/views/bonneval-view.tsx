@@ -31,27 +31,20 @@ const painPoints = [
 const offers = [
   {
     name: "Audit et plan d'action",
-    price: "400 €",
-    unit: "à partir de",
     desc: "Je fais le point sur votre présence en ligne et je vous remets un plan d'action concret, dans l'ordre."
   },
   {
     name: "Création ou refonte de site",
-    price: "1 500 €",
-    unit: "à partir de",
     desc: "Un site rapide, clair et bien placé sur Google, avec un vrai chemin vers l'appel ou la réservation."
   },
   {
     name: "Contenu régulier",
-    price: "300 €",
-    suffix: ", PAR MOIS",
-    unit: "à partir de",
-    desc: "Newsletter, articles, publications : je m'occupe de la rédaction et du calendrier. Le tarif dépend du nombre de contenus par mois."
+    desc: "Newsletter, articles, publications : je m'occupe de la rédaction et du calendrier, au rythme qui vous convient."
   }
 ];
 
 const steps = [
-  { num: "01", title: "On se parle", desc: "Un message, un appel ou un passage en boutique, pour comprendre votre activité." },
+  { num: "01", title: "On se parle", desc: "Un message, ou un appel, pour comprendre votre activité." },
   { num: "02", title: "Devis sous 48h", desc: "Une proposition chiffrée, claire, sans engagement." },
   { num: "03", title: "Je m'en occupe", desc: "50 % à la commande, 50 % à la livraison. Un site complet est livré en 2 à 3 semaines." }
 ];
@@ -60,7 +53,7 @@ const faq = [
   {
     question: "Où travaillez-vous ?",
     answer:
-      "À Bonneval et dans les environs (Châteaudun, Cloyes, Brou, Illiers-Combray), ainsi qu'à Chartres et Orléans. Je peux aussi travailler à distance avec vous."
+      "Je travaille à distance, par téléphone, visio et e-mail, avec des commerces et des indépendants dans toute la France."
   },
   {
     question: "J'ai déjà un site, pouvez-vous l'améliorer ?",
@@ -84,7 +77,7 @@ export function BonnevalView() {
           <div className="mb-6 flex items-center justify-center gap-3">
             <span className="h-px w-7 bg-[#B08D57]" />
             <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-[#B08D57]">
-              Bonneval · Chartres · Orléans
+              Site web · Google · Contenu
             </span>
             <span className="h-px w-7 bg-[#B08D57]" />
           </div>
@@ -96,7 +89,7 @@ export function BonnevalView() {
           </h1>
           <p className="mx-auto mb-9 max-w-md text-[15px] font-light leading-[1.85] text-[#5C564F]">
             Je suis Léa Debar, consultante en marketing digital. J'aide les commerces, restaurants, salons et artisans
-            de Bonneval et des environs à être visibles sur Google et à recevoir plus de demandes.
+            à être visibles sur Google et à recevoir plus de demandes.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
@@ -148,25 +141,18 @@ export function BonnevalView() {
         </div>
       </section>
 
-      {/* OFFRES ET PRIX */}
+      {/* OFFRES */}
       <section className="bg-[#F5F1EB] px-6 py-16 md:px-12 md:py-24">
         <div className="mx-auto max-w-5xl">
           <h2 className="mb-3 text-[clamp(24px,3.2vw,36px)] leading-[1.2] text-[#1C1A1A]" style={heading}>
-            Des tarifs clairs, dès le départ.
+            Ce que je peux faire pour vous.
           </h2>
-          <p className="mb-10 text-[13px] text-[#7A7470]">Chaque projet fait l'objet d'un devis précis. Voici les points de départ.</p>
+          <p className="mb-10 text-[13px] text-[#7A7470]">Chaque projet fait l'objet d'un devis gratuit, adapté à votre activité.</p>
           <div className="grid gap-0.5 md:grid-cols-3">
             {offers.map((o) => (
               <div key={o.name} className="relative bg-white p-8">
                 <span className="absolute left-0 right-0 top-0 h-[2px] bg-[#B08D57]" />
-                <h3 className="mb-4 text-[19px] font-semibold text-[#1C1A1A]" style={heading}>{o.name}</h3>
-                <p className="mb-1 text-[10px] uppercase tracking-[0.15em] text-[#7A7470]">{o.unit}</p>
-                <p className="mb-4 leading-none text-[#B08D57]" style={{ ...display, fontSize: "46px" }}>
-                  {o.price}
-                  {"suffix" in o && o.suffix ? (
-                    <span className="ml-1 text-[18px] tracking-[0.05em]">{o.suffix}</span>
-                  ) : null}
-                </p>
+                <h3 className="mb-3 text-[19px] font-semibold text-[#1C1A1A]" style={heading}>{o.name}</h3>
                 <p className="text-[13px] leading-[1.75] text-[#7A7470]">{o.desc}</p>
               </div>
             ))}
