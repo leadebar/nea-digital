@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     const email = session.customer_details?.email;
 
     if (product && email && session.payment_status === "paid") {
-      const origin = process.env.NEXT_PUBLIC_SITE_URL || "https://neadigital.fr";
+      const origin = process.env.NEXT_PUBLIC_SITE_URL || "https://www.neadigital.fr";
       const link = `${origin}/merci?session_id=${encodeURIComponent(session.id)}`;
       await sendEmail({
         to: email,
