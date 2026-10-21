@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { secteurs } from "@/data/secteurs";
 import { FAQ } from "@/components/faq";
 import { offers, fullHarmony, processSteps, servicesFaq } from "@/data/site";
 
@@ -166,6 +168,19 @@ export function ServicesView() {
             </p>
             <p className="pro-reveal text-[12px] text-white/25 tracking-[0.08em] uppercase mb-10">Sans engagement · 50% à la commande, 50% à la livraison</p>
             <a href="/contact" className="pro-reveal pro-btn-cream inline-block"><span>Contactez-moi →</span></a>
+          </div>
+        </section>
+
+        <section className="bg-white px-6 py-14 md:px-12">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="display-title mb-6 text-2xl text-ink md:text-3xl">Selon votre activité.</h2>
+            <div className="flex flex-wrap gap-3">
+              {secteurs.map((s) => (
+                <Link key={s.slug} href={`/services/${s.slug}`} className="rounded-[2px] border border-ink/15 px-5 py-3 text-sm text-ink transition-colors hover:border-[#B08D57] hover:text-[#B08D57]">
+                  {s.nom}
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
