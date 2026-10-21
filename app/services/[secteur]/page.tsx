@@ -159,21 +159,23 @@ export default async function SecteurPage({ params }: Props) {
                 {s.reference.label}
               </a>
             </div>
-            <a href={s.reference.href} target="_blank" rel="noopener noreferrer" aria-label={`Ouvrir ${s.reference.domaine}`} className="group block">
-              <div className="overflow-hidden rounded-lg border border-white/10 bg-[#2A2726] shadow-2xl shadow-black/40 transition-transform duration-500 group-hover:-translate-y-1">
+            <a href={s.reference.href} target="_blank" rel="noopener noreferrer" aria-label={`Ouvrir ${s.reference.domaine}`} className="group relative block pb-10 md:pb-14">
+              <div className="overflow-hidden rounded-lg border border-white/10 bg-[#2A2726] shadow-2xl shadow-black/50 transition-transform duration-500 group-hover:-translate-y-1">
                 <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                   <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
                   <span className="ml-3 truncate rounded bg-white/5 px-3 py-1 text-[11px] text-white/50">{s.reference.domaine}</span>
                 </div>
-                {s.reference.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={s.reference.image} alt={`Capture du site ${s.reference.nom}`} className="block w-full" loading="lazy" />
-                ) : (
-                  <div className="flex aspect-[16/10] items-center justify-center text-sm tracking-[0.2em] text-white/30">{s.reference.domaine.toUpperCase()}</div>
-                )}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={s.reference.image} alt={`Capture du site ${s.reference.nom} sur ordinateur`} className="block w-full" loading="lazy" />
               </div>
+              {s.reference.imageMobile ? (
+                <div className="absolute bottom-0 right-3 w-[26%] overflow-hidden rounded-[18px] border-[3px] border-[#3A3735] bg-[#2A2726] shadow-2xl shadow-black/60 transition-transform duration-500 group-hover:-translate-y-2 md:right-6">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={s.reference.imageMobile} alt={`Capture du site ${s.reference.nom} sur mobile`} className="block w-full" loading="lazy" />
+                </div>
+              ) : null}
             </a>
           </div>
         </section>

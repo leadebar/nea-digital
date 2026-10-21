@@ -10,7 +10,7 @@ export type Secteur = {
   actions: { titre: string; texte: string }[];
   faq: { question: string; answer: string }[];
   articles: string[];
-  reference?: { nom: string; domaine: string; accroche: string; points: string[]; label: string; href: string; image?: string };
+  reference?: { nom: string; domaine: string; accroche: string; points: string[]; label: string; href: string; image?: string; imageMobile?: string };
 };
 
 export const secteurs: Secteur[] = [
@@ -98,7 +98,9 @@ export const secteurs: Secteur[] = [
       nom: "LP Plomberie",
       domaine: "lpplomberie.com",
       accroche: "Le site web et l'Instagram d'une entreprise de plomberie, que je fais évoluer au fil du temps.",
-      points: ["Amélioration et suivi du site web", "Stratégie Instagram"],
+      points: ["Appel et devis en un clic, sur ordinateur et mobile", "Pages services, réalisations, avis et FAQ", "Stratégie Instagram"],
+      image: "/images/references/lp-plomberie-desktop.jpg",
+      imageMobile: "/images/references/lp-plomberie-mobile.jpg",
       label: "Voir le site",
       href: "https://lpplomberie.com"
     }
