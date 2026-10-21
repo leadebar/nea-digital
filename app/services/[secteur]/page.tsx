@@ -112,7 +112,30 @@ export default async function SecteurPage({ params }: Props) {
         </div>
       </section>
 
-      {s.reference ? (
+      {s.reference && !s.reference.image ? (
+        <section className="bg-white px-6 py-16 md:px-12 md:py-24">
+          <div className="mx-auto max-w-3xl border-y border-[#B08D57]/40 py-14 text-center">
+            <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.2em] text-[#B08D57]">Réalisation</p>
+            <h2 className="display-title mb-4 text-4xl text-ink md:text-6xl">{s.reference.nom}</h2>
+            <p className="mx-auto mb-7 max-w-lg text-[16px] leading-8 text-ink/70">{s.reference.accroche}</p>
+            <div className="mb-9 flex flex-wrap justify-center gap-2">
+              {s.reference.points.map((pt) => (
+                <span key={pt} className="rounded-full border border-ink/15 px-4 py-1.5 text-xs text-ink/75">{pt}</span>
+              ))}
+            </div>
+            <a
+              href={s.reference.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center rounded-[2px] bg-[#1C1A1A] px-7 text-[12px] font-medium uppercase tracking-[0.07em] text-white transition-colors hover:bg-[#B08D57]"
+            >
+              {s.reference.label}
+            </a>
+          </div>
+        </section>
+      ) : null}
+
+      {s.reference?.image ? (
         <section className="bg-[#1C1A1A] px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto grid max-w-5xl items-center gap-10 md:grid-cols-[1fr_1.1fr]">
             <div>
