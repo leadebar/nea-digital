@@ -9,6 +9,8 @@ export type Secteur = {
   problemes: { titre: string; texte: string }[];
   actions: { titre: string; texte: string }[];
   faq: { question: string; answer: string }[];
+  /** Blocs de contenu long, affichés avant la réalisation. Optionnel. */
+  sections?: { titre: string; paragraphes: string[] }[];
   articles: string[];
   reference?: { nom: string; domaine: string; accroche: string; points: string[]; label: string; href: string; image?: string; imageMobile?: string };
 };
@@ -135,29 +137,72 @@ export const secteurs: Secteur[] = [
   {
     slug: "professions-liberales",
     nom: "Professions libérales",
-    metaTitle: "Site web et SEO pour profession libérale",
+    metaTitle: "Agence marketing digital pour professions libérales",
     metaDescription:
-      "Site web, fiche Google et référencement pour professions libérales : avocats, consultants, architectes, experts-comptables, kinésithérapeutes. Diagnostic offert.",
-    h1: "Site web et référencement pour professions libérales.",
+      "Agence de marketing digital et de référencement pour professions libérales : avocats, kinésithérapeutes, architectes, experts-comptables, consultants. Site web, SEO local, fiche Google. À distance, partout en France.",
+    h1: "Marketing digital et référencement pour professions libérales.",
     intro:
-      "Un nouveau client vous cherche d'abord sur Google : votre nom, votre spécialité, votre ville. Je construis une présence sobre et crédible, qui explique clairement ce que vous faites et facilite la prise de contact, dans le respect des règles de votre profession.",
+      "Un nouveau client vous cherche d'abord sur Google : votre spécialité, votre ville, parfois votre nom. Je suis consultante en marketing digital et j'accompagne les professions libérales sur ce moment précis : un site sobre qui explique ce que vous faites, un référencement qui vous place sur les recherches de votre secteur, et une prise de contact simple. Le tout dans le respect des règles de votre ordre ou de votre organisation.",
     problemes: [
-      { titre: "Une présence qui rassure peu", texte: "Un site daté ou trop vague donne peu envie de prendre contact, alors que le choix repose sur la confiance." },
-      { titre: "Une spécialité mal expliquée", texte: "Les clients cherchent un besoin précis, pas un titre. Sans pages dédiées, vous n'apparaissez pas sur ces recherches." },
-      { titre: "Aucune visibilité locale", texte: "La fiche Google et les pages par spécialité sont souvent absentes ou incomplètes." }
+      { titre: "Une présence qui rassure peu", texte: "Un site daté, lent ou trop vague donne peu envie de prendre contact, alors que le choix d'un professionnel repose presque entièrement sur la confiance." },
+      { titre: "Une spécialité mal expliquée", texte: "Vos clients cherchent un besoin précis, pas un titre professionnel. Sans page dédiée à chaque domaine d'intervention, vous n'apparaissez simplement pas sur ces recherches." },
+      { titre: "Aucune visibilité locale", texte: "La fiche Google et les pages par spécialité et par ville sont souvent absentes ou incomplètes, alors que la majorité des recherches sont locales." },
+      { titre: "Des règles déontologiques mal comprises", texte: "Beaucoup de professionnels n'osent rien publier, par crainte de sortir du cadre. Résultat : une page de contact et plus rien pendant des années." },
+      { titre: "Un site que personne ne met à jour", texte: "Tarifs obsolètes, associé parti, horaires faux. Chaque information périmée coûte des prises de contact, et Google remarque un site qui ne bouge plus." }
     ],
     actions: [
-      { titre: "Site sobre et lisible", texte: "Présentation, spécialités, parcours et contact, avec un ton qui correspond à votre pratique." },
-      { titre: "Pages par spécialité", texte: "Une page par domaine d'intervention, écrite pour les questions que se posent vos clients." },
-      { titre: "Fiche Google et prise de rendez-vous", texte: "Fiche à jour et lien de rendez-vous visible, pour les recherches locales." },
-      { titre: "Articles de fond", texte: "Quelques contenus utiles sur les questions fréquentes, qui montrent votre expertise sans promesse excessive." }
+      { titre: "Site sobre et lisible", texte: "Présentation, spécialités, parcours, honoraires si vous le souhaitez, et contact. Un ton qui correspond à votre pratique, sans effet de style inutile." },
+      { titre: "Une page par domaine d'intervention", texte: "C'est le levier le plus efficace. Une page par spécialité, écrite à partir des questions réelles de vos clients, qui vous rend visible sur des recherches précises plutôt que sur votre seul titre." },
+      { titre: "Référencement local", texte: "Fiche Google complète, pages par ville quand vous couvrez plusieurs secteurs, cohérence des coordonnées sur les annuaires professionnels." },
+      { titre: "Prise de rendez-vous évidente", texte: "Lien de prise de rendez-vous, formulaire court, téléphone cliquable sur mobile. Un contact perdu par friction est un contact perdu pour de bon." },
+      { titre: "Articles de fond", texte: "Quelques contenus utiles sur les questions fréquentes de vos clients. Ils montrent votre expertise, ils vous apportent des visiteurs, et ils restent dans le cadre informatif autorisé par la plupart des ordres." },
+      { titre: "Suivi des résultats", texte: "Search Console et suivi d'audience en place dès le départ, avec un point régulier sur ce qui remonte et ce qui ne remonte pas. Sans mesure, on avance à l'aveugle." }
+    ],
+    sections: [
+      {
+        titre: "Pourquoi le référencement compte particulièrement pour une profession libérale",
+        paragraphes: [
+          "La plupart des professions libérales ne peuvent pas faire de publicité agressive, ne veulent pas démarcher, et travaillent historiquement par recommandation. Le référencement naturel est l'un des rares canaux qui correspond à cette contrainte : il ne vous demande pas de vendre, il vous rend simplement trouvable au moment où quelqu'un cherche ce que vous faites.",
+          "La différence avec un commerce est importante. Un restaurant est cherché sur une requête générique et locale. Un professionnel libéral est cherché sur un besoin précis, souvent formulé comme une question ou comme un problème. Ces recherches sont moins fréquentes, mais beaucoup plus qualifiées : la personne qui les tape a déjà le besoin.",
+          "C'est pour cette raison que je privilégie toujours les pages par domaine d'intervention plutôt qu'une page de services unique. Une page qui traite un sujet précis et complet se positionne beaucoup plus vite qu'une page qui énumère dix prestations en trois lignes chacune."
+        ]
+      },
+      {
+        titre: "Communiquer dans le cadre de votre déontologie",
+        paragraphes: [
+          "Plusieurs professions encadrent strictement la communication : avocats, professions de santé, experts-comptables, architectes. Les règles diffèrent selon l'ordre, et elles évoluent. Ce qui est constant, c'est qu'une information claire et vérifiable sur votre activité est autorisée, alors que la promesse de résultat et la comparaison avec des confrères ne le sont pas.",
+          "Ma façon de travailler tient compte de ça. Je rédige dans un registre informatif, sans superlatif ni promesse chiffrée. Vous relisez et validez chaque texte avant publication, et c'est vous qui restez l'interlocuteur de votre ordre sur ces questions. Je ne me substitue pas à votre instance ni à un conseil juridique.",
+          "Dans les faits, cette contrainte joue souvent en votre faveur. Un contenu sobre et précis se positionne mieux qu'un contenu promotionnel, parce qu'il répond réellement à la question posée."
+        ]
+      },
+      {
+        titre: "Ce que ça donne selon votre métier",
+        paragraphes: [
+          "Pour un avocat, l'essentiel se joue sur les pages par domaine de droit et par ville. Quelqu'un ne cherche pas un avocat, il cherche un avocat en droit du travail dans sa ville, ou la réponse à une question précise sur une rupture conventionnelle.",
+          "Pour un kinésithérapeute, un ostéopathe ou un autre professionnel de santé, la fiche Google et la prise de rendez-vous en ligne pèsent plus que le site lui-même. Le site sert à expliquer les prises en charge et à rassurer avant le premier rendez-vous.",
+          "Pour un architecte ou un designer, le site est un portfolio avant tout. L'enjeu est que les projets soient visibles rapidement, lisibles sur mobile, et accompagnés de suffisamment de texte pour que Google comprenne de quoi il s'agit.",
+          "Pour un consultant, un expert-comptable ou un formateur indépendant, ce sont les contenus de fond qui font la différence. Une poignée d'articles sérieux sur vos sujets apportent plus de contacts qu'une page de présentation, aussi soignée soit-elle."
+        ]
+      },
+      {
+        titre: "Combien de temps avant de voir des résultats",
+        paragraphes: [
+          "La fiche Google peut bouger en quelques semaines. Pour le référencement du site, comptez plusieurs mois : un site neuf met en général six à douze mois à se positionner sérieusement, et un site existant qu'on retravaille bouge plus vite parce qu'il a déjà un historique.",
+          "Je ne promets aucune position, ni aucun délai précis. Personne ne peut le faire honnêtement : les résultats dépendent de votre secteur, de votre ville et de ce que font déjà vos confrères. Ce que je peux faire, c'est mettre la mesure en place dès le premier jour pour que vous voyiez ce qui progresse au lieu de le deviner."
+        ]
+      }
     ],
     faq: [
-      { question: "Les règles de ma profession limitent-elles la communication ?", answer: "Certaines professions encadrent la publicité. Je rédige dans un ton informatif et je vous laisse valider les textes avec les règles de votre ordre ou de votre organisation." },
-      { question: "Dois-je être présent sur les réseaux sociaux ?", answer: "Pas obligatoirement. Un site clair et une fiche Google soignée suffisent souvent à démarrer." },
-      { question: "Pouvez-vous rédiger les textes ?", answer: "Oui, à partir d'un échange avec vous. Vous relisez et validez chaque texte avant publication." }
+      { question: "Les règles de ma profession limitent-elles la communication ?", answer: "Certaines professions encadrent la publicité, notamment les avocats, les professions de santé, les experts-comptables et les architectes. Je rédige dans un ton informatif, sans promesse de résultat ni comparaison avec vos confrères, et vous validez chaque texte au regard des règles de votre ordre. Je ne me substitue pas à votre instance sur ces questions." },
+      { question: "Dois-je être présent sur les réseaux sociaux ?", answer: "Pas obligatoirement, et pour beaucoup de professions libérales ce n'est pas le canal le plus rentable. Un site clair, des pages par spécialité et une fiche Google soignée suffisent souvent à démarrer. On ajoute les réseaux seulement si votre activité s'y prête et si vous avez le temps de tenir un rythme." },
+      { question: "Pouvez-vous rédiger les textes ?", answer: "Oui, à partir d'un échange avec vous pour comprendre votre pratique et votre vocabulaire. Vous relisez et validez chaque texte avant publication. C'est important : un contenu qui ne vous ressemble pas se repère immédiatement." },
+      { question: "J'ai déjà un site, faut-il tout refaire ?", answer: "Pas forcément. Dans beaucoup de cas, ajouter des pages par spécialité, corriger la structure et remettre la fiche Google à niveau suffit à faire bouger les choses. Je commence toujours par un diagnostic avant de proposer une refonte." },
+      { question: "Travaillez-vous avec des professionnels loin de chez vous ?", answer: "Oui. Je travaille à distance, par téléphone, visio et e-mail, partout en France. La distance ne change rien au travail de référencement, qui se joue sur votre secteur à vous, pas sur le mien." },
+      { question: "Comment se passe le premier échange ?", answer: "Par un diagnostic offert : je regarde votre site, votre fiche Google et votre visibilité actuelle sur vos requêtes principales, puis je vous dis ce qui me semble prioritaire. Sans engagement de votre part." },
+      { question: "Que se passe-t-il si je n'ai pas de temps à y consacrer ?", answer: "C'est le cas le plus fréquent. Je travaille avec le minimum de temps de votre côté : un échange au départ, puis des relectures ponctuelles. Les contenus réguliers peuvent être tenus par mes soins dans le cadre d'un forfait mensuel." },
+      { question: "Mesurez-vous les résultats ?", answer: "Oui, systématiquement. Search Console et un outil d'audience sont installés dès le départ, et vous voyez les impressions, les clics et les requêtes sur lesquelles vous remontez. Sans ces outils, il est impossible de dire si quelque chose fonctionne." }
     ],
-    articles: ["auditer-sa-presence-en-ligne", "fiche-google-business-checklist", "site-ou-reseaux-sociaux-commerce-local"]
+    articles: ["auditer-sa-presence-en-ligne", "combien-de-temps-pour-voir-des-resultats", "seo-local-etre-visible-dans-sa-ville", "signes-site-internet-perd-des-clients"]
   },
   {
     slug: "coachs-et-independants",

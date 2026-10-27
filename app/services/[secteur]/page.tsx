@@ -113,6 +113,23 @@ export default async function SecteurPage({ params }: Props) {
         </div>
       </section>
 
+      {s.sections?.length ? (
+        <section className="bg-white px-6 py-16 md:px-12 md:py-24">
+          <div className="mx-auto max-w-3xl space-y-14">
+            {s.sections.map((b) => (
+              <article key={b.titre}>
+                <h2 className="display-title mb-5 text-2xl leading-tight text-ink md:text-4xl">{b.titre}</h2>
+                <div className="space-y-5">
+                  {b.paragraphes.map((p) => (
+                    <p key={p.slice(0, 40)} className="text-[16px] leading-8 text-ink/70">{p}</p>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {s.reference && !s.reference.image ? (
         <section className="bg-white px-6 py-16 md:px-12 md:py-24">
           <div className="mx-auto max-w-3xl border-y border-[#B08D57]/40 py-14 text-center">
