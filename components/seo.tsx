@@ -58,7 +58,7 @@ export function ProductJsonLd({
     "@type": "Product",
     name,
     description,
-    ...(image ? { image } : {}),
+    image: [image ?? `${SITE}/resources/imprimables/${slug}.jpg`],
     brand: { "@type": "Brand", name: "Néa Digital" },
     url: `${SITE}/shop/${slug}`,
     offers: {
