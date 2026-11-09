@@ -47,6 +47,7 @@ const servicePosts: Post[] = [
     date: "2026-08-12",
     readTime: "9 min",
     image: "https://images.pexels.com/photos/5561913/pexels-photo-5561913.jpeg",
+    alsoRead: "presence-digitale-profession-liberale",
     sections: [
       {
         id: "pourquoi",
@@ -322,6 +323,7 @@ const servicePosts: Post[] = [
     date: "2026-08-04",
     readTime: "8 min",
     image: "https://images.pexels.com/photos/7663519/pexels-photo-7663519.jpeg",
+    alsoRead: "presence-digitale-profession-liberale",
     sections: [
       {
         id: "priorite",
