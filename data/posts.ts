@@ -367,6 +367,106 @@ const servicePosts: Post[] = [
       "La fiche Google et la cohérence des informations comptent avant toute optimisation avancée.",
       "Des avis récents et réguliers pèsent plus qu'un grand nombre d'avis anciens."
     ]
+  },
+  {
+    slug: "presence-digitale-profession-liberale",
+    title: "Présence digitale d'une profession libérale : par où commencer",
+    metaTitle: "Présence digitale pour profession libérale",
+    excerpt: "Fiche Google, site, avis, contenu : les quatre briques d'une présence digitale utile quand on exerce en libéral, dans l'ordre où les construire.",
+    category: "Stratégie",
+    date: "2026-11-09",
+    readTime: "8 min",
+    image: "/resources/imprimables/networking-planner-4.jpg",
+    imageAlt: "Carnet posé sur un bureau près d'une tasse de café",
+    sections: [
+      {
+        id: "definition",
+        heading: "Ce que recouvre vraiment la présence digitale",
+        paragraphs: [
+          "Pour une profession libérale, la présence digitale désigne tout ce qu'un client potentiel trouve de vous avant de vous contacter : votre fiche Google, votre site, vos avis, vos profils professionnels, éventuellement vos publications. Ce n'est pas une question de volume, c'est une question de cohérence et de clarté.",
+          "La plupart des clients ne vous découvrent plus par hasard. Ils tapent une recherche, comparent deux ou trois noms, jettent un œil à vos informations pratiques et décident s'ils vous écrivent ou s'ils passent au suivant. Une présence digitale réussie fait en sorte que ce passage en revue vous soit favorable."
+        ]
+      },
+      {
+        id: "briques",
+        heading: "Les quatre briques, dans l'ordre où les construire",
+        paragraphs: [
+          "Inutile de tout lancer en même temps. L'ordre compte, parce que chaque brique s'appuie sur la précédente et que les premières sont les moins coûteuses en temps.",
+          "Commencez par ce qui répond à la question la plus simple d'un client : où êtes-vous, quand, et comment vous joindre ? Le reste vient ensuite."
+        ],
+        list: [
+          "La fiche Google : adresse, horaires, spécialité, téléphone, lien de prise de rendez-vous",
+          "Un site de quelques pages claires, qui explique ce que vous faites et pour qui",
+          "Des avis récents, obtenus simplement après une prestation réussie",
+          "Du contenu utile (articles, réponses aux questions fréquentes) quand les trois premières briques tiennent"
+        ]
+      },
+      {
+        id: "client",
+        heading: "Ce que cherche un client avant de vous contacter",
+        paragraphs: [
+          "Un client n'évalue pas votre expertise sur un site : il vérifie qu'il est au bon endroit. Il veut savoir si vous traitez son type de situation, si vous exercez près de chez lui ou à distance, comment prendre contact et à quoi s'attendre pour une première consultation.",
+          "Chaque information manquante est une raison de partir. Un numéro difficile à trouver, une spécialité noyée dans un texte générique ou des horaires obsolètes pèsent souvent plus lourd qu'un site peu moderne."
+        ]
+      },
+      {
+        id: "site",
+        heading: "Le site : l'essentiel pour une activité libérale",
+        paragraphs: [
+          "Un site efficace pour un cabinet ou une activité libérale tient en peu de pages, à condition que chacune ait un rôle précis. Une page d'accueil qui dit en une phrase qui vous êtes et ce que vous faites, une page par spécialité ou type de demande, une page de contact avec un moyen de rendez-vous évident, et les mentions légales.",
+          "La page par spécialité est celle qui travaille le mieux pour le référencement : elle correspond à ce que tape un client (par exemple un type de situation et une ville), et elle lui montre tout de suite qu'il est au bon endroit."
+        ],
+        list: [
+          "Une page d'accueil qui indique votre activité, votre zone et comment vous contacter",
+          "Une page par spécialité ou type de demande, avec le nom de la ville quand l'activité est locale",
+          "Une page de contact avec téléphone, formulaire ou prise de rendez-vous",
+          "Mentions légales à jour"
+        ]
+      },
+      {
+        id: "regles",
+        heading: "Les règles propres à votre profession",
+        paragraphs: [
+          "Plusieurs professions libérales sont encadrées par des règles de communication fixées par leur ordre ou leur organisme de tutelle : ce qu'on a le droit d'afficher, la façon de présenter ses résultats, l'usage des témoignages ou des avis, le démarchage.",
+          "Avant de publier ou de demander des avis, vérifiez ce qui s'applique à votre profession auprès de votre ordre ou de votre organisme professionnel. Ces règles diffèrent d'un métier à l'autre et ne se résument pas en quelques lignes."
+        ]
+      },
+      {
+        id: "semaine",
+        heading: "Par où commencer cette semaine",
+        paragraphs: [
+          "Une présence digitale se construit par petites étapes, mais la première peut être faite en une heure ou deux. L'objectif n'est pas de tout régler, c'est de supprimer les frictions les plus évidentes.",
+          "Faites le test vous-même : tapez votre activité et votre ville dans Google, puis regardez ce qu'un inconnu verrait en dix secondes."
+        ],
+        list: [
+          "Jour 1 : vérifier et compléter la fiche Google (horaires, spécialité, téléphone, photos)",
+          "Jour 2 : relire la page d'accueil du site et s'assurer qu'elle dit qui vous êtes et comment vous joindre",
+          "Jour 3 : lister les types de demandes que vous recevez et repérer lesquels n'ont pas de page dédiée",
+          "Jour 4 : envoyer une demande d'avis à deux ou trois clients satisfaits, dans le respect des règles de votre profession"
+        ]
+      }
+    ],
+    pullquote: "Une bonne présence digitale n'a pas besoin d'être grande : elle a besoin d'être claire, cohérente et à jour.",
+    alsoRead: "auditer-sa-presence-en-ligne",
+    takeaways: [
+      "La présence digitale d'une profession libérale, c'est ce qu'un client trouve de vous avant de vous contacter.",
+      "Construisez dans l'ordre : fiche Google, site, avis, puis contenu.",
+      "Vérifiez les règles de communication de votre profession avant de publier ou de solliciter des avis."
+    ],
+    faq: [
+      {
+        q: "Faut-il un site internet quand on a déjà une fiche Google ?",
+        a: "La fiche Google répond aux questions pratiques, mais elle ne permet pas d'expliquer votre approche ni de présenter chaque spécialité. Un site simple complète la fiche, et c'est lui qui peut se positionner sur des recherches précises."
+      },
+      {
+        q: "Combien de temps pour voir des résultats ?",
+        a: "Cela dépend de la concurrence de votre zone et de votre spécialité. Les améliorations de la fiche Google se voient en général plus vite que celles du site, qui demandent plusieurs semaines à plusieurs mois."
+      },
+      {
+        q: "Les réseaux sociaux sont-ils indispensables pour une profession libérale ?",
+        a: "Non. Une fiche Google soignée, un site clair et quelques avis passent avant les réseaux sociaux. Ils deviennent utiles si votre clientèle s'y trouve et si vous pouvez publier régulièrement."
+      }
+    ]
   }
 ];
 
