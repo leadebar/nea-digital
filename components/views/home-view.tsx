@@ -128,20 +128,20 @@ export function HomeView() {
           </div>
 
           {/* Full Harmony */}
-          <div className="nea-reveal mt-0.5 bg-[#1C1A1A] p-11 md:p-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
+          <div className="nea-reveal mt-12 border-t border-[#1C1A1A]/10 px-2 pt-12 md:px-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center">
             <div>
               <p className="text-[10px] font-medium tracking-[0.15em] uppercase text-[#B08D57] mb-3">Pack recommandé</p>
-              <h3 className="text-[26px] text-white mb-2" style={{ fontFamily: "'Bebas Neue'", letterSpacing: "0.03em" }}>{fullHarmony.name}</h3>
-              <p className="text-[14px] text-white/60 leading-[1.7] mb-4 max-w-md">{fullHarmony.desc}</p>
+              <h3 className="text-[26px] text-[#1C1A1A] mb-2" style={{ fontFamily: "'Bebas Neue'", letterSpacing: "0.03em" }}>{fullHarmony.name}</h3>
+              <p className="text-[14px] text-[#7A7470] leading-[1.7] mb-4 max-w-md">{fullHarmony.desc}</p>
               <ul className="flex flex-wrap gap-x-6 gap-y-2">
                 {fullHarmony.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-[13px] text-white/75">
+                  <li key={item} className="flex items-center gap-2 text-[13px] text-[#1C1A1A]">
                     <span className="text-[#B08D57]">✓</span>{item}
                   </li>
                 ))}
               </ul>
             </div>
-            <a href="/contact" className="nea-btn-fill bg-white text-[#1C1A1A] whitespace-nowrap"><span>Demander un devis</span></a>
+            <a href="/contact" className="nea-btn-fill bg-[#1C1A1A] text-white whitespace-nowrap"><span>Demander un devis</span></a>
           </div>
           <p className="text-center text-[12px] text-[#9A928C] mt-8 tracking-[0.05em]">Tarifs communiqués sur devis, adaptés à chaque projet.</p>
         </section>
