@@ -156,11 +156,14 @@ export function ContactView() {
                 </FormGroup>
                 <FormGroup label="Besoin *">
                   <select required className="ct-input ct-select" value={devis.need} onChange={(e) => setDevis({ ...devis, need: e.target.value })}>
-                    <option value="">Choisir une prestation</option>
-                    <option>Néa Strategy</option>
-                    <option>Néa Content</option>
-                    <option>Néa Web</option>
-                    <option>Full Harmony (pack complet)</option>
+                    <option value="">Choisir votre besoin principal</option>
+                    <option>Je veux être plus visible sur Google</option>
+                    <option>Je ne sais pas par où commencer, j'ai besoin d'un état des lieux</option>
+                    <option>Je ne sais pas quoi publier ou je manque de temps</option>
+                    <option>Je veux créer ou relancer ma newsletter</option>
+                    <option>Je n'ai pas de site ou il est à refaire</option>
+                    <option>Mon site ne m'apporte pas de clients</option>
+                    <option>Plusieurs de ces besoins à la fois</option>
                     <option>Autre / Je ne sais pas encore</option>
                   </select>
                 </FormGroup>
