@@ -89,7 +89,7 @@ export function HomeView() {
           </h1>
 
           <p className="text-[15px] font-light text-[#5C564F] leading-[1.85] max-w-[540px] mx-auto mt-6 mb-12 relative" style={{ animation: "nea-fade-up 0.8s 1s both" }}>
-            J'aide les entreprises, les marques et les indépendants à améliorer leur présence en ligne : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie claire pour votre activité.
+            J'aide les entreprises, les marques et les indépendants à construire une présence digitale solide : un site qui fonctionne, du contenu qui sort régulièrement, une stratégie claire pour votre activité.
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap relative" style={{ animation: "nea-fade-up 0.8s 1.15s both" }}>

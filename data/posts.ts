@@ -24,6 +24,10 @@ export type Post = {
   takeaways: string[];
   /** Titre court pour la balise <title> (le gabarit ajoute " | Néa Digital"). */
   metaTitle?: string;
+  /** Meta description dédiée (par défaut : l'extrait). */
+  metaDescription?: string;
+  /** Lien vers une page service, affiché avant la FAQ (maillage interne). */
+  serviceLink?: { href: string; label: string };
   /** Couleurs de l'article : accent foncé (titres, lettrine, bloc produit) et teinte claire (encadrés). */
   theme?: { accent: string; tint: string };
   /** Phrase mise en exergue en grand, affichée après la 3e section. */
@@ -218,6 +222,9 @@ const servicePosts: Post[] = [
   {
     slug: "combien-de-temps-pour-voir-des-resultats",
     title: "Combien de temps pour voir des résultats en marketing digital",
+    metaTitle: "Combien de temps pour voir des résultats SEO ?",
+    metaDescription:
+      "Le SEO demande en général plusieurs mois avant des résultats visibles, alors qu'une refonte agit tout de suite. Des délais réalistes, sans promesse, pour juger au bon moment.",
     excerpt: "SEO, contenu, notoriété : des délais réalistes pour ne pas juger une action trop tôt, ni attendre trop longtemps avant d'ajuster.",
     category: "Stratégie",
     date: "2026-09-08",
@@ -374,6 +381,7 @@ const servicePosts: Post[] = [
     slug: "presence-digitale-profession-liberale",
     title: "Présence digitale d'une profession libérale : par où commencer",
     metaTitle: "Présence digitale pour profession libérale",
+    serviceLink: { href: "/services/professions-liberales", label: "Site web, SEO et marketing digital pour professions libérales" },
     excerpt: "Fiche Google, site, avis, contenu : les quatre briques d'une présence digitale utile quand on exerce en libéral, dans l'ordre où les construire.",
     category: "Stratégie",
     date: "2026-11-09",

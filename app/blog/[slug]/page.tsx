@@ -25,13 +25,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: post.metaTitle ?? post.title,
-    description: post.excerpt,
+    description: post.metaDescription ?? post.excerpt,
     alternates: {
       canonical: `/blog/${post.slug}`
     },
     openGraph: {
       title: post.metaTitle ?? post.title,
-      description: post.excerpt,
+      description: post.metaDescription ?? post.excerpt,
       url: `https://www.neadigital.fr/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
@@ -188,6 +188,15 @@ export default async function ArticlePage({ params }: Props) {
                   ) : null}
                 </div>
               ))}
+
+              {post.serviceLink ? (
+                <aside className="my-14 p-5" style={{ background: theme.tint }}>
+                  <p className="mag-serif text-lg" style={{ color: theme.accent }}>Aller plus loin</p>
+                  <p className="mag-serif mt-1 text-2xl leading-tight">
+                    <Link href={post.serviceLink.href} className="!no-underline hover:!underline">{post.serviceLink.label}</Link>
+                  </p>
+                </aside>
+              ) : null}
 
               {post.faq?.length ? (
                 <section>
