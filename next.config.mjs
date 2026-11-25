@@ -7,7 +7,15 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
-    return [{ source: "/shop/imprimables", destination: "/shop", permanent: false }];
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "neadigital.fr" }],
+        destination: "https://www.neadigital.fr/:path*",
+        permanent: true
+      },
+      { source: "/shop/imprimables", destination: "/shop", permanent: false }
+    ];
   },
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   images: {

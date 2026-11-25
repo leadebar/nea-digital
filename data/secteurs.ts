@@ -135,10 +135,10 @@ export const secteurs: Secteur[] = [
   {
     slug: "professions-liberales",
     nom: "Professions libérales",
-    metaTitle: "Site web et SEO pour profession libérale",
+    metaTitle: "SEO et marketing digital pour professions libérales",
     metaDescription:
-      "Site web, fiche Google et référencement pour professions libérales : avocats, consultants, architectes, experts-comptables, kinésithérapeutes. Diagnostic offert.",
-    h1: "Site web et référencement pour professions libérales.",
+      "Agence digitale pour professions libérales : site web, SEO, fiche Google et marketing digital pour avocats, consultants, architectes, experts-comptables, kinésithérapeutes. Diagnostic offert.",
+    h1: "SEO, site web et marketing digital pour professions libérales.",
     intro:
       "Un nouveau client vous cherche d'abord sur Google : votre nom, votre spécialité, votre ville. Je construis une présence sobre et crédible, qui explique clairement ce que vous faites et facilite la prise de contact, dans le respect des règles de votre profession.",
     problemes: [
