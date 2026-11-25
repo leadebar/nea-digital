@@ -16,6 +16,15 @@ function isValidEmail(value: unknown): value is string {
   return typeof value === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
 }
 
+function offreProbable(need: string): string {
+  const n = need.toLowerCase();
+  if (n.includes("visible sur google") || n.includes("état des lieux")) return "Néa Strategy";
+  if (n.includes("quoi publier") || n.includes("newsletter")) return "Néa Content";
+  if (n.includes("site")) return "Néa Web";
+  if (n.includes("plusieurs")) return "Full Harmony";
+  return "À qualifier";
+}
+
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as Record<string, unknown>;
@@ -45,6 +54,7 @@ export async function POST(request: Request) {
       const need = (body.need as string).trim();
       const project = isNonEmptyString(body.project) ? (body.project as string).trim() : "";
 
+      const offre = offreProbable(need);
       subject = `Demande de devis - ${firstName} ${lastName}`;
       html = `
         <h2>Nouvelle demande de devis</h2>
@@ -52,6 +62,7 @@ export async function POST(request: Request) {
         <p><strong>Email :</strong> ${escapeHtml(email)}</p>
         <p><strong>Activité :</strong> ${escapeHtml(activity)}</p>
         <p><strong>Besoin :</strong> ${escapeHtml(need)}</p>
+        <p><strong>Offre probable :</strong> ${escapeHtml(offre)}</p>
         <p><strong>Projet :</strong><br/>${escapeHtml(project).replace(/\n/g, "<br/>") || "-"}</p>
       `;
     } else {
