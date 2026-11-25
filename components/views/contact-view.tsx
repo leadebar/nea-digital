@@ -218,30 +218,14 @@ export function ContactView() {
         </section>
 
         {/* ── BAS DE PAGE ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="ct-reveal bg-[#FFFFFF] px-14 py-20 flex flex-col justify-center border-r border-[#EDE8DF]">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-px bg-[#B08D57]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Services pro</span>
-            </div>
-            <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(22px,2.5vw,32px)] text-[#1C1A1A] leading-[1.2] mb-4">
-              Vous cherchez à <em className="italic font-light text-[#7A7470]">développer votre visibilité</em> en ligne ?
-            </h2>
-            <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-7">Stratégie, contenu, création de site : je m'occupe de tout. Devis gratuit, sans engagement.</p>
-            <a href="/services" className="ct-btn-dark inline-block self-start"><span>Voir les services →</span></a>
-          </div>
-
-          <div className="ct-reveal bg-[#EDE8DF] px-14 py-20 flex flex-col justify-center">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="w-7 h-px bg-[#B08D57]" />
-              <span className="text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7470]">Boutique</span>
-            </div>
-            <h2 style={{ fontFamily: "'Museo Moderno','Museo_Moderno',sans-serif" }} className="text-[clamp(22px,2.5vw,32px)] text-[#1C1A1A] leading-[1.2] mb-4">
-              Vous cherchez un <em className="italic font-light text-[#7A7470]">planner digital</em> pour vous organiser ?
-            </h2>
-            <p className="text-[13px] text-[#7A7470] leading-[1.75] mb-7">Planners, trackers, finance : des ressources pour gagner en clarté au quotidien.</p>
-            <a href="/shop" className="ct-btn-dark inline-block self-start"><span>Voir la boutique →</span></a>
-          </div>
+        <div className="ct-reveal bg-[#F5F1EB] px-8 py-14 text-center">
+          <p className="text-[13px] text-[#7A7470] leading-[1.8]">
+            Vous cherchez plutôt à développer votre visibilité ?{" "}
+            <a href="/services" className="text-[#1C1A1A] border-b border-[#B08D57] pb-0.5 hover:text-[#7A7470] transition-colors">Voir les services</a>
+            <span className="mx-3 text-[#B08D57]">·</span>
+            Un planner pour vous organiser ?{" "}
+            <a href="/shop" className="text-[#1C1A1A] border-b border-[#B08D57] pb-0.5 hover:text-[#7A7470] transition-colors">Voir la boutique</a>
+          </p>
         </div>
 
       </main>
